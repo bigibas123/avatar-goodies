@@ -37,7 +37,7 @@ Shader "BigiAudioLink_fragv6"
             
 
             half B_AlLerp(half2 xy1, half2 xy2) {
-                return lerp( AudioLinkLerp(xy1).r, AudioLinkLerp(xy2).r, 0.25);
+                return lerp( AudioLinkLerp(xy1).r, AudioLinkLerp(xy2).r, 0.5);
             }
 
             half4 B_AudioLink_Allchanels(){
@@ -49,6 +49,10 @@ Shader "BigiAudioLink_fragv6"
                 sound.b = B_AlLerp(al_cords+int2(0,2),filteredCords+int2(0,2)); //high-mid
                 sound.a = B_AlLerp(al_cords+int2(0,3),filteredCords+int2(0,3)); //treble
                 return sound;
+            }
+
+            fixed4 B_Scale(fixed4 x){
+                return -pow((x-1.0),6.0)+1.0;
             }
 
             fragOutput frag (v2f i)
@@ -71,7 +75,7 @@ Shader "BigiAudioLink_fragv6"
                 if(mask.b > Epsilon){
                     if(_ALThreshold > Epsilon){
                         if(AudioLinkIsAvailable()){
-                            fixed4 sound =  B_AudioLink_Allchanels();
+                            fixed4 sound =  B_Scale(B_AudioLink_Allchanels());
                             fixed3 endColor = fixed3(0.0,0.0,0.0);
                             if(_ColorChordIndex <= Epsilon){
                                 endColor.r = sound.a;
@@ -103,7 +107,6 @@ Shader "BigiAudioLink_fragv6"
                             half soundIntensity = RGBToHSV(endColor.rgb).z;
 
                             if(soundIntensity > Epsilon){
-                                //half selfWeight = mask.b  - _ALThreshold;
                                 half selfWeight = soundIntensity * mask.b * _ALThreshold;
                                 weight += selfWeight;
                                 count++;
