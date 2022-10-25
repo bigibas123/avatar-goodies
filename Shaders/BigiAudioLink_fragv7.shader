@@ -30,9 +30,9 @@ Shader "BigiAudioLink_fragv6"
             #pragma vertex vert
             #pragma fragment frag
            
-            #include "./Includes/PassDefault.cginc"
-            #include "./Includes/AudioLink.cginc"
-            #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
+            #include "../Includes/PassDefault.cginc"
+            #include "../Includes/AudioLink.cginc"
+            #include "../Includes/VRSL-DMXAvatarFunctions.cginc"
 
             
 
@@ -168,7 +168,7 @@ Shader "BigiAudioLink_fragv6"
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            #include "./Includes/PassDefault.cginc"
+            #include "../Includes/PassDefault.cginc"
         
 
             fragOutput frag (v2f i)
@@ -199,7 +199,7 @@ Shader "BigiAudioLink_fragv6"
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            #include "./Includes/PassDefault.cginc"
+            #include "../Includes/PassDefault.cginc"
         
 
             fragOutput frag (v2f i)

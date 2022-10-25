@@ -21,7 +21,7 @@
         #pragma target 3.0
 		
 		#include "UnityCG.cginc"
-		#include "../../../AudioLink/Shaders/AudioLink.cginc"
+		#include "../Includes/AudioLink.cginc"
 		
         sampler2D _MainTex;
 		sampler2D _ReplaceMask;
