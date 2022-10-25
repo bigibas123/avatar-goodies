@@ -1,4 +1,6 @@
-Shader "BigiAudioLink_fragv6"
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Bigi/AudioLink_fragv7"
 {
     Properties
     {
@@ -10,31 +12,37 @@ Shader "BigiAudioLink_fragv6"
         _ColorChordIndex ("ColorChord Index (0=Old behaviour, 5=Weird mix) (0-5)", Int) = 0
         _DMXGroup ("DMX Group", Int) = 2
         _ExtraLightIntensity ("Other lighting intensity", Range(0.0,1.0)) = 1.0
+        _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
 
     }
     SubShader
     {
+        Blend SrcAlpha OneMinusSrcAlpha
         
-        
-
         LOD 100
 
         Pass
         {
+            Name "OpaqueForwardBase"
             Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"}
             Cull Back
             ZWrite On
             ZTest LEqual
             Blend One OneMinusSrcAlpha
+            Stencil
+            {
+                Ref 1
+                Comp Always
+                Pass Replace
+            } 
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
            
-            #include "../Includes/PassDefault.cginc"
-            #include "../Includes/AudioLink.cginc"
-            #include "../Includes/VRSL-DMXAvatarFunctions.cginc"
-
-            
+            #include "./Includes/PassDefault.cginc"
+            #include "./Includes/SimpleVert.cginc"
+            #include "./Includes/AudioLink.cginc"
+            #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
 
             half B_AlLerp(half2 xy1, half2 xy2) {
                 return lerp( AudioLinkLerp(xy1).r, AudioLinkLerp(xy2).r, 0.5);
@@ -158,8 +166,8 @@ Shader "BigiAudioLink_fragv6"
             ENDCG
         }
 
-
         Pass {
+            Name "TransparentForwardBase"
             Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"}
             Cull Off
             ZWrite Off
@@ -168,7 +176,8 @@ Shader "BigiAudioLink_fragv6"
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            #include "../Includes/PassDefault.cginc"
+            //#include "./Includes/PassDefault.cginc"
+            #include "./Includes/SimpleVert.cginc"
         
 
             fragOutput frag (v2f i)
@@ -191,6 +200,7 @@ Shader "BigiAudioLink_fragv6"
         }
 
         Pass {
+            Name "ForwardAdd"
             Tags { "LightMode" = "ForwardAdd" "RenderType"="Transparent" "Queue" = "Transparent" }
             Cull Off
             ZWrite Off
@@ -199,8 +209,10 @@ Shader "BigiAudioLink_fragv6"
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            #include "../Includes/PassDefault.cginc"
-        
+            //#include "./Includes/PassDefault.cginc"
+            #include "./Includes/SimpleVert.cginc"
+            float Epsilon = 1e-10;
+            uniform half _ExtraLightIntensity;
 
             fragOutput frag (v2f i)
             {
@@ -223,6 +235,77 @@ Shader "BigiAudioLink_fragv6"
             }
 
             ENDCG
+        }
+
+        Pass
+        {
+            Name "Outline"
+            Tags { "RenderType" = "TransparentCutout" "Queue" = "Transparent+100"}
+            Cull Front
+            ZWrite On
+            ZTest LEqual
+            Stencil
+            {
+                Ref 1
+                Comp NotEqual
+            }
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "UnityCG.cginc"
+            #include "./Includes/AudioLink.cginc"
+
+            struct appdata {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+            };
+
+            //intermediate
+            struct v2f
+            {
+                UNITY_POSITION(pos);//float4 pos : SV_POSITION;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_OUTPUT_STEREO
+            };
+
+            struct fragOutput {
+                fixed4 color : SV_Target;
+            };
+            uniform int _ColorChordIndex;
+            uniform float _OutlineWidth;
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_OUTPUT(v2f, o)
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
+                float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
+                o.pos = UnityObjectToClipPos(v.vertex + offset);
+                return o;
+            }
+
+            fragOutput frag(v2f i)
+            {
+                fragOutput o;
+                if(AudioLinkIsAvailable()){
+                    UNITY_SETUP_INSTANCE_ID(i);
+                    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+                    int ccI = (_ColorChordIndex - 1) & 3;
+                    o.color=AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccI,0.0));
+                }else{
+                    clip(-1.0);
+                    discard;
+                    o.color=float4(0.0,0.0,0.0,0.0);
+                }
+                return o;
+            }
+
+            ENDCG
+
         }
 
         Pass{
