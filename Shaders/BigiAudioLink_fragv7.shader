@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Bigi/AudioLink_fragv7"
 {
     Properties
@@ -13,6 +11,7 @@ Shader "Bigi/AudioLink_fragv7"
         _DMXGroup ("DMX Group", Int) = 2
         _ExtraLightIntensity ("Other lighting intensity", Range(0.0,1.0)) = 1.0
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
+
 
     }
     SubShader
@@ -33,6 +32,7 @@ Shader "Bigi/AudioLink_fragv7"
             {
                 Ref 1
                 Comp Always
+                WriteMask 1 
                 Pass Replace
             } 
             CGPROGRAM
@@ -70,8 +70,8 @@ Shader "Bigi/AudioLink_fragv7"
                 fragOutput o;
                 fixed4 orig_color= UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 if(orig_color.a < 1.0){
-                    clip(-1.0);
                     discard;
+                    clip(-1.0);
                 }
                 fixed shadow = SHADOW_ATTENUATION(i);
                 fixed3 lighting = i.diff * shadow + i.ambient;
@@ -187,8 +187,8 @@ Shader "Bigi/AudioLink_fragv7"
                 fragOutput o;
                 fixed4 orig_color= UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 if(!(orig_color.a < 1.0)){
-                   clip(-1.0);
-                   discard;
+                    discard;
+                    clip(-1.0);
                 }
                 fixed shadow = SHADOW_ATTENUATION(i);
                 fixed3 lighting = i.diff * shadow + i.ambient;
@@ -227,8 +227,8 @@ Shader "Bigi/AudioLink_fragv7"
                     fixed3 lighting = i.diff * shadow  * orig_color.rgb * _ExtraLightIntensity * orig_color.a;
                     o.color = half4(lighting, orig_color.a);
                 }else{
-                    clip(-1.0);
                     discard;
+                    clip(-1.0);
                     o.color = 0.0;
                 }
                 return o;
@@ -240,14 +240,15 @@ Shader "Bigi/AudioLink_fragv7"
         Pass
         {
             Name "Outline"
-            Tags { "RenderType" = "TransparentCutout" "Queue" = "Transparent+100"}
-            Cull Front
+            Tags { "RenderType" = "TransparentCutout" "Queue" = "Transparent+-1"}
+            Cull Off
             ZWrite On
             ZTest LEqual
             Stencil
             {
-                Ref 1
-                Comp NotEqual
+                Ref 0
+                ReadMask 7
+                Comp GEqual
             }
             CGPROGRAM
             #pragma vertex vert
@@ -297,8 +298,8 @@ Shader "Bigi/AudioLink_fragv7"
                     int ccI = (_ColorChordIndex - 1) & 3;
                     o.color=AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccI,0.0));
                 }else{
-                    clip(-1.0);
                     discard;
+                    clip(-1.0);
                     o.color=float4(0.0,0.0,0.0,0.0);
                 }
                 return o;
@@ -314,6 +315,11 @@ Shader "Bigi/AudioLink_fragv7"
             Cull Off
             ZWrite On
             ZTest LEqual
+            Stencil
+            {
+                Comp Always
+                Pass IncrSat
+            } 
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
