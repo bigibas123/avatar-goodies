@@ -72,6 +72,7 @@ uniform int _DMXGroup;
 uniform half _ALThreshold;
 uniform int _ColorChordIndex;
 uniform half _ExtraLightIntensity;
+uniform float _OutlineWidth;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

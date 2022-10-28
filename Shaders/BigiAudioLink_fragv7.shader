@@ -23,7 +23,7 @@ Shader "Bigi/AudioLink_fragv7"
         Pass
         {
             Name "OpaqueForwardBase"
-            Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"}
+            Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase" "PassFlags" = "OnlyDirectional"}
             Cull Back
             ZWrite On
             ZTest LEqual
@@ -40,7 +40,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag
            
             #include "./Includes/PassDefault.cginc"
-            #include "./Includes/SimpleVert.cginc"
+            #include "./Includes/ToonVert.cginc"
             #include "./Includes/AudioLink.cginc"
             #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
 
@@ -74,8 +74,9 @@ Shader "Bigi/AudioLink_fragv7"
                     clip(-1.0);
                 }
                 fixed shadow = SHADOW_ATTENUATION(i);
-                fixed3 lighting = i.diff * shadow + i.ambient;
-                o.color = orig_color * half4(lighting,1.0);
+                fixed3 lighting = (i.diff*shadow) + i.ambient;
+                //lighting.rgb = lighting.rgb/1.5;
+                o.color = orig_color * fixed4(lighting,1.0);
                 fixed weight = 0.0;
                 int count = 0;
                 fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask,_MainTex, i.uv);
@@ -140,7 +141,7 @@ Shader "Bigi/AudioLink_fragv7"
                 }
 
                 if(mask.g > Epsilon){
-                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,i.screenPos * _SpaceyScaling);
+                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,i.screenPos);
                     half selfWeight = mask.g;
                     weight += selfWeight;
                     count++;
@@ -168,7 +169,7 @@ Shader "Bigi/AudioLink_fragv7"
 
         Pass {
             Name "TransparentForwardBase"
-            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"}
+            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout" "PassFlags" = "OnlyDirectional"}
             Cull Off
             ZWrite Off
             ZTest LEqual
@@ -177,7 +178,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma vertex vert alpha
             #pragma fragment frag alpha
             //#include "./Includes/PassDefault.cginc"
-            #include "./Includes/SimpleVert.cginc"
+            #include "./Includes/ToonVert.cginc"
         
 
             fragOutput frag (v2f i)
@@ -190,53 +191,17 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
+
                 fixed shadow = SHADOW_ATTENUATION(i);
-                fixed3 lighting = i.diff * shadow + i.ambient;
-                o.color = orig_color * half4(lighting,1.0);
+                fixed3 lighting = (i.diff*shadow) + i.ambient;
+                //lighting.rgb = lighting.rgb/1.5;
+                o.color = orig_color * fixed4(lighting,1.0);
                 return o;
             }
 
             ENDCG
         }
-
-        Pass {
-            Name "ForwardAdd"
-            Tags { "LightMode" = "ForwardAdd" "RenderType"="Transparent" "Queue" = "Transparent" }
-            Cull Off
-            ZWrite Off
-            ZTest LEqual
-            Blend One One
-            CGPROGRAM
-            #pragma vertex vert alpha
-            #pragma fragment frag alpha
-            //#include "./Includes/PassDefault.cginc"
-            #include "./Includes/SimpleVert.cginc"
-            float Epsilon = 1e-10;
-            uniform half _ExtraLightIntensity;
-
-            fragOutput frag (v2f i)
-            {
-                fragOutput o;
-                
-                
-                if(_ExtraLightIntensity > Epsilon) {
-                    UNITY_SETUP_INSTANCE_ID(i);
-                    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                    fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-                    fixed shadow = SHADOW_ATTENUATION(i);
-                    fixed3 lighting = i.diff * shadow  * orig_color.rgb * _ExtraLightIntensity * orig_color.a;
-                    o.color = half4(lighting, orig_color.a);
-                }else{
-                    discard;
-                    clip(-1.0);
-                    o.color = 0.0;
-                }
-                return o;
-            }
-
-            ENDCG
-        }
-
+        
         Pass
         {
             Name "Outline"
@@ -254,8 +219,10 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma vertex vert
             #pragma fragment frag
 
-            #include "UnityCG.cginc"
+            #include "./Includes/PassDefault.cginc"
             #include "./Includes/AudioLink.cginc"
+            #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
+            
 
             struct appdata {
                 float4 vertex : POSITION;
@@ -271,11 +238,20 @@ Shader "Bigi/AudioLink_fragv7"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            struct fragOutput {
-                fixed4 color : SV_Target;
-            };
+            #ifndef BIGI_EPSILON
+            #define BIGI_EPSILON
+            float Epsilon = 1e-10;
+            #endif
+
+            #ifndef BIGI_V1_UNIFORMS
+            #define BIGI_V1_UNIFORMS
+            uniform half _SpaceyScaling;
+            uniform int _DMXGroup;
+            uniform half _ALThreshold;
             uniform int _ColorChordIndex;
             uniform float _OutlineWidth;
+            uniform half _ExtraLightIntensity;
+            #endif
 
             v2f vert (appdata v)
             {
@@ -292,15 +268,55 @@ Shader "Bigi/AudioLink_fragv7"
             fragOutput frag(v2f i)
             {
                 fragOutput o;
-                if(AudioLinkIsAvailable()){
-                    UNITY_SETUP_INSTANCE_ID(i);
-                    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                    int ccI = (_ColorChordIndex - 1) & 3;
-                    o.color=AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccI,0.0));
+                if(_ALThreshold > Epsilon){
+                    if(AudioLinkIsAvailable()){
+                        UNITY_SETUP_INSTANCE_ID(i);
+                        UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+                        if(_ColorChordIndex <= 0){
+                            o.color=AudioLinkData(ALPASS_THEME_COLOR0);
+                            o.color.rgb *= AudioLinkLerp(ALPASS_FILTEREDAUDIOLINK + uint2(15.0,0)).r;
+                        }else if(_ColorChordIndex <= 4){
+                            o.color=AudioLinkData(ALPASS_THEME_COLOR0 + uint2(clamp(_ColorChordIndex - 1,0,3),0.0));
+                        }else{
+                            o.color = float4(0,0,0,1.0);
+                            half iWeight = 1.0;
+                            float4 c1 = AudioLinkData(ALPASS_THEME_COLOR0);
+                            float4 c2 = AudioLinkData(ALPASS_THEME_COLOR1);
+                            float4 c3 = AudioLinkData(ALPASS_THEME_COLOR2);
+                            float4 c4 = AudioLinkData(ALPASS_THEME_COLOR3);
+                            iWeight += c1.a;
+                            o.color = lerp(o.color,float4(c1.rgb,1.0),c1.a/iWeight);
+                            iWeight += c2.a;
+                            o.color = lerp(o.color,float4(c2.rgb,1.0),c2.a/iWeight);
+                            iWeight += c3.a;
+                            o.color = lerp(o.color,float4(c3.rgb,1.0),c3.a/iWeight);
+                            iWeight += c4.a;
+                            o.color = lerp(o.color,float4(c4.rgb,1.0),c4.a/iWeight);
+                            o.color.a = 1.0;
+                        }
+                        o.color = o.color * clamp(_ALThreshold*2.0,0.0,1.0);
+                        
+                    }else{
+                        discard;
+                        clip(-1.0);
+                        o.color=float4(0.0,0.0,0.0,0.0);
+                    }
                 }else{
-                    discard;
-                    clip(-1.0);
-                    o.color=float4(0.0,0.0,0.0,0.0);
+                    if(_DMXGroup > Epsilon){
+                        //half4 dmxMask = tex2D (_DMXEmissionMask, IN.uv_DMXEmissionMask);
+                        half dmxIntensity = GetDMXIntensity(_DMXGroup);
+                        half3 dmxColor = GetDMXColor(_DMXGroup).rgb;
+                        
+                        half3 dmxHSV = RGBtoHCV(dmxColor.rgb);
+
+                        if(dmxIntensity - 0.5 > Epsilon){
+                            o.color = half4(dmxColor,dmxIntensity) * ((clamp(dmxIntensity-0.5,0.0,0.5))*2.0);
+                        }
+                    }else{
+                        discard;
+                        clip(-1.0);
+                        o.color=float4(0.0,0.0,0.0,0.0); 
+                    }
                 }
                 return o;
             }
