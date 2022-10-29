@@ -69,9 +69,8 @@ UNITY_DECLARE_TEX2D(_Spacey);
 
 uniform half _SpaceyScaling;
 uniform int _DMXGroup;
-uniform half _ALThreshold;
+uniform half _AudioIntensity;
 uniform int _ColorChordIndex;
-uniform half _ExtraLightIntensity;
 uniform float _OutlineWidth;
 #endif
 

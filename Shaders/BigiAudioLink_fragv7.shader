@@ -2,14 +2,13 @@ Shader "Bigi/AudioLink_fragv7"
 {
     Properties
     {
-        [MainTexture] _MainTex ("Texture", 2D) = "black" {}
-        _Spacey ("Spacey Texture", 2D) = "black" {}
+        [MainTexture] [NoScaleOffset] _MainTex ("Texture", 2D) = "black" {}
+        [NoScaleOffset] _Spacey ("Spacey Texture", 2D) = "black" {}
         _SpaceyScaling ("Spraycey Texture scaling (high values shrink the texture)", Float) = 5.0
-        _Mask ("Mask", 2D) = "black" {}
-        _ALThreshold ("AudioLink Threshold", Range(0.0,1.0)) = 0.001
-        _ColorChordIndex ("ColorChord Index (0=Old behaviour, 5=Weird mix) (0-5)", Int) = 0
+        [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
+        _AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
+        _ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
         _DMXGroup ("DMX Group", Int) = 2
-        _ExtraLightIntensity ("Other lighting intensity", Range(0.0,1.0)) = 1.0
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
 
 
@@ -41,8 +40,7 @@ Shader "Bigi/AudioLink_fragv7"
            
             #include "./Includes/PassDefault.cginc"
             #include "./Includes/ToonVert.cginc"
-            #include "./Includes/AudioLink.cginc"
-            #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
+            #include "./Includes/BigiUtils.cginc"
 
             half B_AlLerp(half2 xy1, half2 xy2) {
                 return lerp( AudioLinkLerp(xy1).r, AudioLinkLerp(xy2).r, 0.5);
@@ -82,61 +80,21 @@ Shader "Bigi/AudioLink_fragv7"
                 fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask,_MainTex, i.uv);
                 fixed3 alc = 0.0;
                 if(mask.b > Epsilon){
-                    if(_ALThreshold > Epsilon){
+                    if(_AudioIntensity > Epsilon){
                         if(AudioLinkIsAvailable()){
-                            fixed4 sound =  B_Scale(B_AudioLink_Allchanels());
-                            fixed3 endColor = fixed3(0.0,0.0,0.0);
-                            if(_ColorChordIndex <= Epsilon){
-                                endColor.r = sound.a;
-                                endColor.g = (sound.g/2.0) + (sound.b/2.0);
-                                endColor.b = sound.r;
-                            }else{
-                                if(_ColorChordIndex >= 5){
-                                    half iWeight = 1.0;
-                                    float4 c1 = AudioLinkData(ALPASS_THEME_COLOR0);
-                                    float4 c2 = AudioLinkData(ALPASS_THEME_COLOR1);
-                                    float4 c3 = AudioLinkData(ALPASS_THEME_COLOR2);
-                                    float4 c4 = AudioLinkData(ALPASS_THEME_COLOR3);
-                                    iWeight += sound.r * c1.a;
-                                    endColor = lerp(endColor,c1,sound.r/iWeight);
-                                    iWeight += sound.g * c2.a;
-                                    endColor = lerp(endColor,c2,sound.g/iWeight);
-                                    iWeight += sound.b * c3.a;
-                                    endColor = lerp(endColor,c3,sound.b/iWeight);
-                                    iWeight += sound.a * c4.a;
-                                    endColor = lerp(endColor,c4,sound.a/iWeight);
-                                }else{
-                                    float4 col = AudioLinkData(ALPASS_THEME_COLOR0+(half2(_ColorChordIndex - 1.0,0.0)));
-                                    half3 hsv = RGBToHSV(col.rgb);
-                                    hsv.z = (float(sound.r/4.0) + float(sound.g/4.0) + float(sound.b/4.0) + float(sound.a/4.0)) * col.a;
-                                    endColor = HSVToRGB(hsv);
-                                }
-                            }
-
-                            half soundIntensity = RGBToHSV(endColor.rgb).z;
-
-                            if(soundIntensity > Epsilon){
-                                half selfWeight = soundIntensity * mask.b * _ALThreshold;
-                                weight += selfWeight;
-                                count++;
-                                alc = lerp(alc, endColor.rgb , selfWeight/weight);
-                            }
+                            fixed3 soundColor = Bigi::GetSoundColor(_ColorChordIndex,false);
+                            half soundIntensity = RGBToHSV(soundColor.rgb).z;
+                            half selfWeight = soundIntensity * mask.b * Bigi::GetScaleFactor(_AudioIntensity);
+                            weight += selfWeight;
+                            count++;
+                            alc = lerp(alc, soundColor.rgb , selfWeight/weight);
                         }
                     }else{
-                        if(_DMXGroup > Epsilon){
-                            //half4 dmxMask = tex2D (_DMXEmissionMask, IN.uv_DMXEmissionMask);
-                            half dmxIntensity = GetDMXIntensity(_DMXGroup);
-                            half3 dmxColor = GetDMXColor(_DMXGroup).rgb * dmxIntensity;
-                            
-                            half3 dmxHSV = RGBtoHCV(dmxColor.rgb);
-
-                            if(dmxIntensity - 0.5 > Epsilon){
-                                half selfWeight = (clamp(dmxIntensity-0.5,0.0,0.5) * mask.b)*2.0;
-                                weight += selfWeight;
-                                count++;
-                                alc = lerp(alc, dmxColor * dmxHSV.z, selfWeight/weight);
-                            }
-                        }
+                        Bigi::DMXInfo dmxI = Bigi::GetDMXInfo(_DMXGroup);
+                        half selfWeight = dmxI.Intensity * mask.b;
+                        weight += selfWeight;
+                        count++;
+                        alc = lerp(alc, dmxI.ResultColor, selfWeight/weight);
                     }
                 }
 
@@ -220,8 +178,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag
 
             #include "./Includes/PassDefault.cginc"
-            #include "./Includes/AudioLink.cginc"
-            #include "./Includes/VRSL-DMXAvatarFunctions.cginc"
+            #include "./Includes/BigiUtils.cginc"
             
 
             struct appdata {
@@ -247,10 +204,9 @@ Shader "Bigi/AudioLink_fragv7"
             #define BIGI_V1_UNIFORMS
             uniform half _SpaceyScaling;
             uniform int _DMXGroup;
-            uniform half _ALThreshold;
+            uniform half _AudioIntensity;
             uniform int _ColorChordIndex;
             uniform float _OutlineWidth;
-            uniform half _ExtraLightIntensity;
             #endif
 
             v2f vert (appdata v)
@@ -268,34 +224,11 @@ Shader "Bigi/AudioLink_fragv7"
             fragOutput frag(v2f i)
             {
                 fragOutput o;
-                if(_ALThreshold > Epsilon){
+                if(_AudioIntensity > Epsilon){
                     if(AudioLinkIsAvailable()){
                         UNITY_SETUP_INSTANCE_ID(i);
                         UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                        if(_ColorChordIndex <= 0){
-                            o.color=AudioLinkData(ALPASS_THEME_COLOR0);
-                            o.color.rgb *= AudioLinkLerp(ALPASS_FILTEREDAUDIOLINK + uint2(15.0,0)).r;
-                        }else if(_ColorChordIndex <= 4){
-                            o.color=AudioLinkData(ALPASS_THEME_COLOR0 + uint2(clamp(_ColorChordIndex - 1,0,3),0.0));
-                        }else{
-                            o.color = float4(0,0,0,1.0);
-                            half iWeight = 1.0;
-                            float4 c1 = AudioLinkData(ALPASS_THEME_COLOR0);
-                            float4 c2 = AudioLinkData(ALPASS_THEME_COLOR1);
-                            float4 c3 = AudioLinkData(ALPASS_THEME_COLOR2);
-                            float4 c4 = AudioLinkData(ALPASS_THEME_COLOR3);
-                            iWeight += c1.a;
-                            o.color = lerp(o.color,float4(c1.rgb,1.0),c1.a/iWeight);
-                            iWeight += c2.a;
-                            o.color = lerp(o.color,float4(c2.rgb,1.0),c2.a/iWeight);
-                            iWeight += c3.a;
-                            o.color = lerp(o.color,float4(c3.rgb,1.0),c3.a/iWeight);
-                            iWeight += c4.a;
-                            o.color = lerp(o.color,float4(c4.rgb,1.0),c4.a/iWeight);
-                            o.color.a = 1.0;
-                        }
-                        o.color = o.color * clamp(_ALThreshold*2.0,0.0,1.0);
-                        
+                        o.color = Bigi::Scale(Bigi::GetSoundColor(_ColorChordIndex,false),_AudioIntensity);
                     }else{
                         discard;
                         clip(-1.0);
@@ -303,15 +236,7 @@ Shader "Bigi/AudioLink_fragv7"
                     }
                 }else{
                     if(_DMXGroup > Epsilon){
-                        //half4 dmxMask = tex2D (_DMXEmissionMask, IN.uv_DMXEmissionMask);
-                        half dmxIntensity = GetDMXIntensity(_DMXGroup);
-                        half3 dmxColor = GetDMXColor(_DMXGroup).rgb;
-                        
-                        half3 dmxHSV = RGBtoHCV(dmxColor.rgb);
-
-                        if(dmxIntensity - 0.5 > Epsilon){
-                            o.color = half4(dmxColor,dmxIntensity) * ((clamp(dmxIntensity-0.5,0.0,0.5))*2.0);
-                        }
+                        o.color = half4(Bigi::GetDMXInfo(_DMXGroup).ResultColor,1.0);
                     }else{
                         discard;
                         clip(-1.0);
