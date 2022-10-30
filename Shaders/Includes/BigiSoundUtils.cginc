@@ -1,5 +1,5 @@
-#ifndef BIGI_UTILS_INCLUDE
-#define BIGI_UTILS_INCLUDE
+#ifndef BIGI_SOUND_UTILS_INCLUDE
+#define BIGI_SOUND_UTILS_INCLUDE
 
 
 #ifndef BIGI_DMXAL_INCLUDES
@@ -8,22 +8,18 @@
 #include "./VRSL-DMXAvatarFunctions.cginc"
 #endif
 
-namespace Bigi {
-    //Audiolink COLOR Selection
+namespace b_sound {
+    //Audiolink COLOR Selection (ccI)
     const uint OLD_STYLE = 0u;
     const uint TC_1 = 1u;
     const uint TC_2 = 2u;
     const uint TC_3 = 3u;
     const uint TC_4 = 4u;
 
-    //Audiolink Theme color scaling via bass or just the color
-    const bool TC_THEME = true;
-    const bool TC_CC = false;
-
-    half4 GetSoundColor(uint ccI, bool ccM){
+    half4 GetSoundColor(uint ccI, half ccM){
+        uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15,0);
         switch(ccI){
-            case 0u:
-                uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15,0);
+            case 0u: 
                 return half4(
                     AudioLinkData(fal+uint2(0,3)).r,
                     (AudioLinkData(fal+uint2(0,1)).r/2.0) + (AudioLinkData(fal+uint2(0,2)).r/2.0),
@@ -34,7 +30,9 @@ namespace Bigi {
             case 2u:
             case 3u:
             case 4u:
-                return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(clamp(ccI - 1,0,3),0)) * (ccM ? AudioLinkData(ALPASS_FILTEREDAUDIOLINK + uint2(15,0)).r : 1);
+                float mult = ccM + (clamp(AudioLinkData(fal).r * 10.0,0.0,2.0) * ccM);
+                mult = 1;
+                return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(clamp(ccI - 1,0,3),0)) * float4(mult,mult,mult,1.0);
                 break;
             default:
                 return half4(0,0,0,1);

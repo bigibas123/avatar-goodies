@@ -34,7 +34,7 @@ Shader "BigiAudioLink_fragv6"
             #include "./../Includes/SimpleVert.cginc"
             #include "./../Includes/AudioLink.cginc"
             #include "./../Includes/VRSL-DMXAvatarFunctions.cginc"
-
+            uniform float _ALThreshold;
             
 
             half B_AlLerp(half2 xy1, half2 xy2) {

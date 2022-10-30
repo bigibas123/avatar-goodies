@@ -65,13 +65,12 @@ UNITY_DECLARE_TEX2D(_Spacey);
 
 #ifndef BIGI_V1_UNIFORMS
 #define BIGI_V1_UNIFORMS
-
-
-uniform half _SpaceyScaling;
 uniform int _DMXGroup;
 uniform half _AudioIntensity;
 uniform int _ColorChordIndex;
 uniform float _OutlineWidth;
+uniform float _SpaceyScaling;
+uniform half _UseBassIntensity;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

@@ -10,7 +10,7 @@ Shader "Bigi/AudioLink_fragv7"
         _ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
         _DMXGroup ("DMX Group", Int) = 2
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
-
+        [MaterialToggle] _UseBassIntensity ("Use Bass intensity", Range(0.0,1.0) ) = 0.0
 
     }
     SubShader
@@ -22,7 +22,7 @@ Shader "Bigi/AudioLink_fragv7"
         Pass
         {
             Name "OpaqueForwardBase"
-            Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase" "PassFlags" = "OnlyDirectional"}
+            Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"}
             Cull Back
             ZWrite On
             ZTest LEqual
@@ -40,26 +40,8 @@ Shader "Bigi/AudioLink_fragv7"
            
             #include "./Includes/PassDefault.cginc"
             #include "./Includes/ToonVert.cginc"
-            #include "./Includes/BigiUtils.cginc"
-
-            half B_AlLerp(half2 xy1, half2 xy2) {
-                return lerp( AudioLinkLerp(xy1).r, AudioLinkLerp(xy2).r, 0.5);
-            }
-
-            half4 B_AudioLink_Allchanels(){
-                half4 sound;
-                half2 al_cords = ALPASS_AUDIOLINK;
-                half2 filteredCords = ALPASS_FILTEREDAUDIOLINK + uint2(15,0);
-                sound.r = B_AlLerp(al_cords,filteredCords); //bass
-                sound.g = B_AlLerp(al_cords+int2(0,1),filteredCords+int2(0,1)); //low-mid
-                sound.b = B_AlLerp(al_cords+int2(0,2),filteredCords+int2(0,2)); //high-mid
-                sound.a = B_AlLerp(al_cords+int2(0,3),filteredCords+int2(0,3)); //treble
-                return sound;
-            }
-
-            fixed4 B_Scale(fixed4 x){
-                return -pow((x-1.0),6.0)+1.0;
-            }
+            #include "./Includes/BigiSoundUtils.cginc"
+            #include "./Includes/BigiLightUtils.cginc"
 
             fragOutput frag (v2f i)
             {
@@ -71,10 +53,7 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
-                fixed shadow = SHADOW_ATTENUATION(i);
-                fixed3 lighting = (i.diff*shadow) + i.ambient;
-                //lighting.rgb = lighting.rgb/1.5;
-                o.color = orig_color * fixed4(lighting,1.0);
+                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
                 fixed weight = 0.0;
                 int count = 0;
                 fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask,_MainTex, i.uv);
@@ -82,15 +61,15 @@ Shader "Bigi/AudioLink_fragv7"
                 if(mask.b > Epsilon){
                     if(_AudioIntensity > Epsilon){
                         if(AudioLinkIsAvailable()){
-                            fixed3 soundColor = Bigi::GetSoundColor(_ColorChordIndex,false);
+                            fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity);
                             half soundIntensity = RGBToHSV(soundColor.rgb).z;
-                            half selfWeight = soundIntensity * mask.b * Bigi::GetScaleFactor(_AudioIntensity);
+                            half selfWeight = soundIntensity * mask.b * b_sound::GetScaleFactor(_AudioIntensity);
                             weight += selfWeight;
                             count++;
                             alc = lerp(alc, soundColor.rgb , selfWeight/weight);
                         }
                     }else{
-                        Bigi::DMXInfo dmxI = Bigi::GetDMXInfo(_DMXGroup);
+                        b_sound::DMXInfo dmxI = b_sound::GetDMXInfo(_DMXGroup);
                         half selfWeight = dmxI.Intensity * mask.b;
                         weight += selfWeight;
                         count++;
@@ -99,7 +78,7 @@ Shader "Bigi/AudioLink_fragv7"
                 }
 
                 if(mask.g > Epsilon){
-                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,i.screenPos);
+                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,(i.screenPos.xy / i.screenPos.w) * _SpaceyScaling);
                     half selfWeight = mask.g;
                     weight += selfWeight;
                     count++;
@@ -137,6 +116,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag alpha
             //#include "./Includes/PassDefault.cginc"
             #include "./Includes/ToonVert.cginc"
+            #include "./Includes/BigiLightUtils.cginc"
         
 
             fragOutput frag (v2f i)
@@ -149,11 +129,7 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
-
-                fixed shadow = SHADOW_ATTENUATION(i);
-                fixed3 lighting = (i.diff*shadow) + i.ambient;
-                //lighting.rgb = lighting.rgb/1.5;
-                o.color = orig_color * fixed4(lighting,1.0);
+                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
                 return o;
             }
 
@@ -178,7 +154,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag
 
             #include "./Includes/PassDefault.cginc"
-            #include "./Includes/BigiUtils.cginc"
+            #include "./Includes/BigiSoundUtils.cginc"
             
 
             struct appdata {
@@ -228,7 +204,7 @@ Shader "Bigi/AudioLink_fragv7"
                     if(AudioLinkIsAvailable()){
                         UNITY_SETUP_INSTANCE_ID(i);
                         UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                        o.color = Bigi::Scale(Bigi::GetSoundColor(_ColorChordIndex,false),_AudioIntensity);
+                        o.color = b_sound::Scale(b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity),_AudioIntensity);
                     }else{
                         discard;
                         clip(-1.0);
@@ -236,7 +212,7 @@ Shader "Bigi/AudioLink_fragv7"
                     }
                 }else{
                     if(_DMXGroup > Epsilon){
-                        o.color = half4(Bigi::GetDMXInfo(_DMXGroup).ResultColor,1.0);
+                        o.color = half4(b_sound::GetDMXInfo(_DMXGroup).ResultColor,1.0);
                     }else{
                         discard;
                         clip(-1.0);
