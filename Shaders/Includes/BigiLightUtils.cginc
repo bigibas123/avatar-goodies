@@ -6,7 +6,7 @@ namespace b_light {
         half3 worldNormal = UnityObjectToWorldNormal(normal);
         half3 ambient = max(ShadeSH9(half4(worldNormal,1)), half3(0.05,0.05,0.05));
         float nl = max(0, dot(worldNormal, worldSpaceLightPos.xyz));
-        float lightIntensity = smoothstep(0, 0.01, nl);
+        float lightIntensity = smoothstep(0, 0.1, nl);
         fixed3 diff = lightIntensity * lightColor;
         return fixed4((diff*shadowAttenuation) + ambient,1.0);
     }

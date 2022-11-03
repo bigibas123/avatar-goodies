@@ -10,7 +10,7 @@ Shader "Bigi/AudioLink_fragv7"
         _ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
         _DMXGroup ("DMX Group", Int) = 2
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
-        [MaterialToggle] _UseBassIntensity ("Use Bass intensity", Range(0.0,1.0) ) = 0.0
+        [MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
 
     }
     SubShader
@@ -61,9 +61,9 @@ Shader "Bigi/AudioLink_fragv7"
                 if(mask.b > Epsilon){
                     if(_AudioIntensity > Epsilon){
                         if(AudioLinkIsAvailable()){
-                            fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity);
+                            fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity,_AudioIntensity);
                             half soundIntensity = RGBToHSV(soundColor.rgb).z;
-                            half selfWeight = soundIntensity * mask.b * b_sound::GetScaleFactor(_AudioIntensity);
+                            half selfWeight = soundIntensity * mask.b;
                             weight += selfWeight;
                             count++;
                             alc = lerp(alc, soundColor.rgb , selfWeight/weight);
@@ -204,7 +204,7 @@ Shader "Bigi/AudioLink_fragv7"
                     if(AudioLinkIsAvailable()){
                         UNITY_SETUP_INSTANCE_ID(i);
                         UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                        o.color = b_sound::Scale(b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity),_AudioIntensity);
+                        o.color = b_sound::GetSoundColor(_ColorChordIndex,_UseBassIntensity,_AudioIntensity);
                     }else{
                         discard;
                         clip(-1.0);
