@@ -5,6 +5,7 @@ Shader "Bigi/AudioLink_fragv7"
         [MainTexture] [NoScaleOffset] _MainTex ("Texture", 2D) = "black" {}
         [NoScaleOffset] _Spacey ("Spacey Texture", 2D) = "black" {}
         _SpaceyScaling ("Spraycey Texture scaling (high values shrink the texture)", Float) = 5.0
+        _EmissionStrength ("Emission strength", Range(0.0,1.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
         _AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
         _ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
@@ -87,7 +88,7 @@ Shader "Bigi/AudioLink_fragv7"
 
                 if(mask.r > Epsilon){
                     if(weight < .1){
-                        half selfWeight = mask.r;
+                        half selfWeight = mask.r * _EmissionStrength;
                         weight += selfWeight;
                         count++;
                         alc = lerp(alc,orig_color,selfWeight/weight);

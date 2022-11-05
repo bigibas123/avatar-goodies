@@ -71,6 +71,7 @@ uniform int _ColorChordIndex;
 uniform float _OutlineWidth;
 uniform float _SpaceyScaling;
 uniform half _UseBassIntensity;
+uniform half _EmissionStrength;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT
