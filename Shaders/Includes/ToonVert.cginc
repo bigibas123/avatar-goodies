@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 #ifndef BIGI_TOONVERT_INCLUDED
 // Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members normal)
 #pragma exclude_renderers d3d11
@@ -14,8 +16,9 @@ struct v2f
     UNITY_POSITION(pos);//float4 pos : SV_POSITION;
     float3 normal : NORMAL;
     half2 uv : TEXCOORD0; //texture coordinates
-    SHADOW_COORDS(1) // put shadows data into TEXCOORD1
-    float4 screenPos : TEXCOORD2;
+    LIGHTING_COORDS(1,2)
+    UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
+    float4 screenPos : TEXCOORD4;
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 };
@@ -27,13 +30,8 @@ struct fragOutput {
 };
 #endif
 
-#ifndef BIGI_V1_TEXTURES
-#define BIGI_V1_TEXTURES
-UNITY_DECLARE_TEX2D(_MainTex);
-UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
-UNITY_DECLARE_TEX2D(_Spacey);
-#endif
-
+#ifndef BIGI_V1_TOONVERTSHADER
+#define BIGI_V1_TOONVERTSHADER
 v2f vert (appdata_base v)
 
 {
@@ -43,11 +41,14 @@ v2f vert (appdata_base v)
     UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     UNITY_TRANSFER_INSTANCE_ID(v, o);
     o.pos = UnityObjectToClipPos(v.vertex);
-    o.uv = v.texcoord;
+    o.uv = TRANSFORM_TEX(v.texcoord,_MainTex);
     o.normal = v.normal;
     o.screenPos = ComputeScreenPos(o.pos);
-    TRANSFER_SHADOW(o)
+    UNITY_TRANSFER_LIGHTING(o,o.pos)
+    //TRANSFER_SHADOW(o)
+    UNITY_TRANSFER_FOG(o,o.pos);
     return o;
 }
+#endif
 
 #endif

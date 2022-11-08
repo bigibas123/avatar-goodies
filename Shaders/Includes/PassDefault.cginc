@@ -15,6 +15,7 @@ float Epsilon = 1e-10;
 #pragma multi_compile_fwdbasealpha
 #pragma multi_compile_lightpass
 #pragma multi_compile_shadowcollector
+#pragma multi_compile_fog
 #pragma target 3.0
 #endif
 
@@ -59,8 +60,11 @@ half3 HSVToRGB(in half3 c)
 #define BIGI_V1_TEXTURES
 
 UNITY_DECLARE_TEX2D(_MainTex);
+float4 _MainTex_ST;
 UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
+UNITY_DECLARE_TEX2D_NOSAMPLER(_AOMap);
 UNITY_DECLARE_TEX2D(_Spacey);
+float4 _Spacey_ST;
 #endif
 
 #ifndef BIGI_V1_UNIFORMS

@@ -2,11 +2,11 @@ Shader "Bigi/AudioLink_fragv7"
 {
     Properties
     {
-        [MainTexture] [NoScaleOffset] _MainTex ("Texture", 2D) = "black" {}
-        [NoScaleOffset] _Spacey ("Spacey Texture", 2D) = "black" {}
-        _SpaceyScaling ("Spraycey Texture scaling (high values shrink the texture)", Float) = 5.0
+        [MainTexture] _MainTex ("Texture", 2D) = "black" {}
+        _Spacey ("Spacey Texture", 2D) = "black" {}
         _EmissionStrength ("Emission strength", Range(0.0,1.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
+        [NoScaleOffset] _AOMap ("Ambient occlusion map", 2D) = "white" {}
         _AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
         _ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
         _DMXGroup ("DMX Group", Int) = 2
@@ -54,7 +54,8 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
-                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
+                fixed4 lighting = b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i), UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap,_MainTex, i.uv).r);
+                o.color = orig_color * lighting;
                 fixed weight = 0.0;
                 int count = 0;
                 fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask,_MainTex, i.uv);
@@ -79,8 +80,9 @@ Shader "Bigi/AudioLink_fragv7"
                 }
 
                 if(mask.g > Epsilon){
-                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,(i.screenPos.xy / i.screenPos.w) * _SpaceyScaling);
-                    half selfWeight = mask.g;
+                    float2 tpos = TRANSFORM_TEX((i.screenPos.xy / i.screenPos.w),_Spacey);
+                    fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey,tpos);
+                    half selfWeight = mask.g * clamp(lighting,0.2,1.0);
                     weight += selfWeight;
                     count++;
                     alc = lerp(alc, bg.rgb, selfWeight/weight);
@@ -99,6 +101,7 @@ Shader "Bigi/AudioLink_fragv7"
                     o.color = lerp(o.color,fixed4(alc,o.color.a),weight/count);
                     //o.color = fixed4(alc,1.0);
                 }
+                UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
 
@@ -107,15 +110,14 @@ Shader "Bigi/AudioLink_fragv7"
 
         Pass {
             Name "TransparentForwardBase"
-            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout" "PassFlags" = "OnlyDirectional"}
+            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"}
             Cull Off
             ZWrite Off
             ZTest LEqual
-            Blend SrcAlpha OneMinusSrcAlpha
+            //Blend SrcAlpha OneMinusSrcAlpha
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            //#include "./Includes/PassDefault.cginc"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/BigiLightUtils.cginc"
         
@@ -130,12 +132,64 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
-                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
+                o.color = b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
                 return o;
             }
 
             ENDCG
         }
+
+        
+        Pass {
+            Tags { "LightMode" = "ForwardAdd" "Queue" = "Transparent" }
+            Cull Off
+            ZWrite Off
+            ZTest LEqual
+            Blend One One
+            Stencil
+            {
+                Ref 1
+                ReadMask 1
+                Comp Equal
+            }
+            CGPROGRAM
+            #pragma vertex vert alpha
+            #pragma fragment frag alpha
+            #pragma instancing_options assumeuniformscaling
+            #pragma multi_compile_instancing
+            #pragma multi_compile_fwdbase
+            #pragma multi_compile_fwdbasealpha
+            #pragma multi_compile_lightpass
+            #pragma multi_compile_shadowcollector
+            #pragma target 3.0
+
+            #include "./Includes/ToonVert.cginc"
+            #include "./Includes/BigiLightUtils.cginc"
+            
+            fragOutput frag (v2f i)
+            {
+                fragOutput o;
+                
+                UNITY_SETUP_INSTANCE_ID(i);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+                fixed4 orig_color= UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+                if(orig_color.a < 1.0){
+                    discard;
+                    clip(-1.0);
+                }
+                fixed3 lighting = lerp(
+                    orig_color.rgb,
+                    b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i),UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap,_MainTex, i.uv).r)
+                    ,LIGHT_ATTENUATION(i)
+                );
+                o.color = half4(lighting, 1.0);
+                //o.color = float4(1.0,1.0,1.0,1.0);
+                return o;
+            }
+
+            ENDCG
+        }
+
         
         Pass
         {
@@ -226,6 +280,8 @@ Shader "Bigi/AudioLink_fragv7"
             ENDCG
 
         }
+
+        //UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 
         Pass{
             Name "ShadowPass"
