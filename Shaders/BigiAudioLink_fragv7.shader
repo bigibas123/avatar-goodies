@@ -132,7 +132,7 @@ Shader "Bigi/AudioLink_fragv7"
                     discard;
                     clip(-1.0);
                 }
-                o.color = b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
+                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
                 return o;
             }
 
