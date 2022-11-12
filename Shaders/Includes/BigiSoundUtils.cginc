@@ -44,7 +44,7 @@ namespace b_sound {
             case 2u:
             case 3u:
             case 4u:
-                float mult = (1.0 - ccM)+ (Scale((AudioLinkData(fal)+AudioLinkData(fal+uint2(0,1))),factor) * ccM);
+                float mult = Scale(1.0 - ccM,factor) + (Scale((AudioLinkData(fal)+AudioLinkData(fal+uint2(0,1))),factor) * ccM);
                 return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(clamp(ccI - 1,0,3),0)) * float4(mult,mult,mult,1.0);
                 break;
             default:

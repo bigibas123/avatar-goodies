@@ -102,7 +102,10 @@ Shader "Bigi/LogoPlane"
                     clip(-1.0);
                     discard;
                 }
-                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i));
+                half4 sound = b_sound::GetSoundColor(1,1.0,0.5);
+                half soundIntensity = RGBToHSV(sound).z;
+                fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i));
+                o.color = lerp(normalColor,fixed4(sound.rgb,normalColor.a),b_sound::Scale(soundIntensity,1.0));
                 //o.color = orig_color;
                 //UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
