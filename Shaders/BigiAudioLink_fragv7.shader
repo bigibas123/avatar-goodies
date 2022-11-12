@@ -40,6 +40,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag
            
             #include "./Includes/PassDefault.cginc"
+            #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/BigiSoundUtils.cginc"
             #include "./Includes/BigiLightUtils.cginc"
@@ -209,6 +210,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma fragment frag
 
             #include "./Includes/PassDefault.cginc"
+            #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/BigiSoundUtils.cginc"
             
 
@@ -225,20 +227,6 @@ Shader "Bigi/AudioLink_fragv7"
                 UNITY_VERTEX_INPUT_INSTANCE_ID
                 UNITY_VERTEX_OUTPUT_STEREO
             };
-
-            #ifndef BIGI_EPSILON
-            #define BIGI_EPSILON
-            float Epsilon = 1e-10;
-            #endif
-
-            #ifndef BIGI_V1_UNIFORMS
-            #define BIGI_V1_UNIFORMS
-            uniform half _SpaceyScaling;
-            uniform int _DMXGroup;
-            uniform half _AudioIntensity;
-            uniform int _ColorChordIndex;
-            uniform float _OutlineWidth;
-            #endif
 
             v2f vert (appdata v)
             {

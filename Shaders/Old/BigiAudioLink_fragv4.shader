@@ -36,7 +36,7 @@
             #include "UnityCG.cginc"
             #include "UnityLightingCommon.cginc"
             #include "AutoLight.cginc"
-			#include "../../../AudioLink/Shaders/AudioLink.cginc"
+			#include "../Includes/AudioLink.cginc"
 
 			UNITY_DECLARE_SCREENSPACE_TEXTURE(_MainTex);
             UNITY_DECLARE_TEX2D(_Mask);

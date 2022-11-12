@@ -63,8 +63,8 @@ namespace b_sound {
             case 2u:
             case 3u:
             case 4u:
-                ret.Intensity = clamp(GetDMXIntensity(_DMXGroup)-0.5,0.0,0.5)*2.0;
-                ret.ResultColor = GetDMXColor(_DMXGroup).rgb * ret.Intensity;
+                ret.Intensity = clamp(GetDMXIntensity(group)-0.5,0.0,0.5)*2.0;
+                ret.ResultColor = GetDMXColor(group).rgb * ret.Intensity;
                 return ret;
             case 0u:
             default:

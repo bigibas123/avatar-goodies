@@ -19,7 +19,7 @@
             #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
-			#include "../../../AudioLink/Shaders/AudioLink.cginc"
+			#include "../Includes/AudioLink.cginc"
             struct appdata
             {
                 float4 vertex : POSITION;

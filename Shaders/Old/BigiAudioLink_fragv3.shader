@@ -29,7 +29,7 @@
             #include "UnityCG.cginc"
             #include "UnityLightingCommon.cginc"
             #include "AutoLight.cginc"
-			#include "../../../AudioLink/Shaders/AudioLink.cginc"
+			#include "../Includes/AudioLink.cginc"
 
             
 

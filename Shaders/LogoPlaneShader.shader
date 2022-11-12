@@ -43,9 +43,10 @@ Shader "Bigi/LogoPlane"
             uniform uint _VDivs;
             uniform uint _HDivs;
             uniform uint _CellNumber;
-            float Epsilon = 1e-10;
 
+            #include "./Includes/PassDefault.cginc"
             #include "./Includes/BigiLightUtils.cginc"
+            #include "./Includes/BigiSoundUtils.cginc"
 
             //intermediate
             struct v2f
@@ -58,6 +59,14 @@ Shader "Bigi/LogoPlane"
                 UNITY_VERTEX_INPUT_INSTANCE_ID
                 UNITY_VERTEX_OUTPUT_STEREO
             };
+
+
+            #ifndef BIGI_DEFAULT_FRAGOUT
+            #define BIGI_DEFAULT_FRAGOUT
+            struct fragOutput {
+                fixed4 color : SV_Target;
+            };
+            #endif
 
             v2f vert (appdata_base v)
             {
@@ -82,10 +91,6 @@ Shader "Bigi/LogoPlane"
                 return o;
             }
 
-            struct fragOutput {
-                fixed4 color : SV_Target;
-            };
-
             fragOutput frag (v2f i)
             {
                 UNITY_TRANSFER_INSTANCE_ID(i, o);
@@ -97,8 +102,8 @@ Shader "Bigi/LogoPlane"
                     clip(-1.0);
                     discard;
                 }
-                //o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
-                o.color = orig_color;
+                o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i));
+                //o.color = orig_color;
                 //UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }

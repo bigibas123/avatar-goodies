@@ -9,6 +9,7 @@
 #include "UnityLightingCommon.cginc"
 #include "AutoLight.cginc"
 #include "./PassDefault.cginc"
+#include "./BigiShaderParams.cginc"
 
 //intermediate
 struct v2f

@@ -31,6 +31,7 @@ Shader "BigiAudioLink_fragv6"
             #pragma fragment frag
            
             #include "./../Includes/PassDefault.cginc"
+            #include "./../Includes/BigiShaderParams.cginc"
             #include "./../Includes/SimpleVert.cginc"
             #include "./../Includes/AudioLink.cginc"
             #include "./../Includes/VRSL-DMXAvatarFunctions.cginc"
