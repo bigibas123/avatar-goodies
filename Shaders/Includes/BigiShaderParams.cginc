@@ -20,6 +20,7 @@ uniform float _OutlineWidth;
 uniform float _SpaceyScaling;
 uniform half _UseBassIntensity;
 uniform half _EmissionStrength;
+uniform float _AddLightIntensity;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

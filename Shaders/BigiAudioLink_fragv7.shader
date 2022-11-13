@@ -12,6 +12,7 @@ Shader "Bigi/AudioLink_fragv7"
         _DMXGroup ("DMX Group", Int) = 2
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
         [MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
+        _AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
 
     }
     SubShader
@@ -183,7 +184,7 @@ Shader "Bigi/AudioLink_fragv7"
                     b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i),UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap,_MainTex, i.uv).r)
                     ,LIGHT_ATTENUATION(i)
                 );
-                o.color = half4(lighting, 1.0);
+                o.color = half4(lighting * _AddLightIntensity, 1.0);
                 //o.color = float4(1.0,1.0,1.0,1.0);
                 return o;
             }
