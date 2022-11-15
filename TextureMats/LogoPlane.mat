@@ -67,6 +67,7 @@ Material:
     - _ColorChord: 0
     - _ColorChordIndex: 1
     - _Cutoff: 0.5
+    - _DMXGroup: 2
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
