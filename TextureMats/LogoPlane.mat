@@ -60,8 +60,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AudioIntensity: 0.5
+    - _BassReactive: 0
     - _BumpScale: 1
-    - _CellNumber: 3
+    - _CellNumber: 2
+    - _ColorChord: 0
+    - _ColorChordIndex: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
@@ -77,6 +81,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UseBassIntensity: 0
     - _VDivs: 8
     - _ZWrite: 0
     m_Colors:
