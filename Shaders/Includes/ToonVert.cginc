@@ -14,10 +14,10 @@
 //intermediate
 struct v2f
 {
-    UNITY_POSITION(pos);//float4 pos : SV_POSITION;
+    UNITY_POSITION(pos); //float4 pos : SV_POSITION;
     float3 normal : NORMAL;
     half2 uv : TEXCOORD0; //texture coordinates
-    LIGHTING_COORDS(1,2)
+    LIGHTING_COORDS(1, 2)
     UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
     float4 screenPos : TEXCOORD4;
     UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -33,7 +33,8 @@ struct fragOutput {
 
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
-v2f vert (appdata_base v)
+
+v2f vert(appdata_base v)
 
 {
     v2f o;
@@ -42,12 +43,12 @@ v2f vert (appdata_base v)
     UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     UNITY_TRANSFER_INSTANCE_ID(v, o);
     o.pos = UnityObjectToClipPos(v.vertex);
-    o.uv = TRANSFORM_TEX(v.texcoord,_MainTex);
+    o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
     o.normal = v.normal;
     o.screenPos = ComputeScreenPos(o.pos);
-    UNITY_TRANSFER_LIGHTING(o,o.pos)
+    UNITY_TRANSFER_LIGHTING(o, o.pos)
     //TRANSFER_SHADOW(o)
-    UNITY_TRANSFER_FOG(o,o.pos);
+    UNITY_TRANSFER_FOG(o, o.pos);
     return o;
 }
 #endif

@@ -51,6 +51,7 @@ Shader "Bigi/AudioLink_fragv7"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
                 fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 fixed4 orig_color= UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 if(orig_color.a < 1.0){
                     discard;
@@ -73,7 +74,7 @@ Shader "Bigi/AudioLink_fragv7"
                             alc = lerp(alc, soundColor.rgb , selfWeight/weight);
                         }
                     }else{
-                        b_sound::DMXInfo dmxI = b_sound::GetDMXInfo(_DMXGroup);
+                        b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
                         half selfWeight = dmxI.Intensity * mask.b;
                         weight += selfWeight;
                         count++;
@@ -126,13 +127,15 @@ Shader "Bigi/AudioLink_fragv7"
 
             fragOutput frag (v2f i)
             {
+                fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                fragOutput o;
+                
                 fixed4 orig_color= UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 if(!(orig_color.a < 1.0)){
-                    discard;
-                    clip(-1.0);
+                     discard;
+                     clip(-1.0);
                 }
                 o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
                 return o;
@@ -171,6 +174,7 @@ Shader "Bigi/AudioLink_fragv7"
             fragOutput frag (v2f i)
             {
                 fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
@@ -244,6 +248,7 @@ Shader "Bigi/AudioLink_fragv7"
             fragOutput frag(v2f i)
             {
                 fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);;
                 if(_AudioIntensity > Epsilon){
                     if(AudioLinkIsAvailable()){
                         UNITY_SETUP_INSTANCE_ID(i);
@@ -252,7 +257,6 @@ Shader "Bigi/AudioLink_fragv7"
                     }else{
                         discard;
                         clip(-1.0);
-                        o.color=float4(0.0,0.0,0.0,0.0);
                     }
                 }else{
                     if(_DMXGroup > Epsilon){
@@ -260,7 +264,6 @@ Shader "Bigi/AudioLink_fragv7"
                     }else{
                         discard;
                         clip(-1.0);
-                        o.color=float4(0.0,0.0,0.0,0.0); 
                     }
                 }
                 return o;

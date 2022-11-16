@@ -107,11 +107,7 @@ Shader "Bigi/LogoPlane"
                 fragOutput o;
                 UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-                if (orig_color.a <= Epsilon)
-                {
-                    clip(-1.0);
-                    discard;
-                }
+                clip(orig_color.a - Epsilon);
                 half4 sound;
                 half soundIntensity;
                 if (_AudioIntensity > Epsilon)
@@ -121,13 +117,13 @@ Shader "Bigi/LogoPlane"
                 }
                 else
                 {
-                    b_sound::DMXInfo dmxI = b_sound::GetDMXInfo(_DMXGroup);
+                    b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
                     sound = half4(dmxI.ResultColor, 1.0);
                     soundIntensity = dmxI.Intensity;
                 }
                 fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0,
                                                                        LIGHT_ATTENUATION(i));
-                half intensity = clamp(RGBToHSV(orig_color).z * soundIntensity,0.0,1.0);
+                half intensity = clamp(RGBToHSV(orig_color).z * soundIntensity, 0.0, 1.0);
                 o.color = lerp(normalColor,fixed4(sound.rgb, normalColor.a),
                                b_sound::Scale(intensity, 1.0));
                 //o.color = orig_color;

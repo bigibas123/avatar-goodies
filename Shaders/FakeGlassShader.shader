@@ -1,13 +1,14 @@
 Shader "Bigi/FakeGlass"
 {
-    Properties
-    {
-    }
+    Properties {}
     SubShader
     {
         Blend SrcAlpha OneMinusSrcAlpha
-        Tags { "RenderType" = "Opaque" "Queue" = "Geometry+1" "IgnoreProjector" = "True"}
-        
+        Tags
+        {
+            "RenderType" = "Opaque" "Queue" = "Geometry+1" "IgnoreProjector" = "True"
+        }
+
         LOD 100
         GrabPass
         {
@@ -16,7 +17,10 @@ Shader "Bigi/FakeGlass"
 
         Pass
         {
-            Tags { "RenderType" = "Opaque" "Queue"="Overlay+1"}
+            Tags
+            {
+                "RenderType" = "Opaque" "Queue"="Overlay+1"
+            }
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -28,7 +32,8 @@ Shader "Bigi/FakeGlass"
                 float4 pos : SV_POSITION;
             };
 
-            v2f vert(appdata_base v) {
+            v2f vert(appdata_base v)
+            {
                 v2f o;
                 // use UnityObjectToClipPos from UnityCG.cginc to calculate 
                 // the clip-space of the vertex

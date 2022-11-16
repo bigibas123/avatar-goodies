@@ -25,8 +25,10 @@ uniform float _AddLightIntensity;
 
 #ifndef BIGI_DEFAULT_FRAGOUT
 #define BIGI_DEFAULT_FRAGOUT
-struct fragOutput {
-	fixed4 color : SV_Target;
+
+struct fragOutput
+{
+    fixed4 color : SV_Target;
 };
 #endif
 

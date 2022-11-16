@@ -1,24 +1,30 @@
 Shader "Bigi/BS"
 {
-    Properties
-    {
-
-    }
+    Properties {}
     SubShader
     {
         Blend SrcAlpha OneMinusSrcAlpha
-        
+
         LOD 100
-        Tags { "Queue" = "Overlay" }
+        Tags
+        {
+            "Queue" = "Overlay"
+        }
         GrabPass
         {
             "_BackgroundTexture"
-            Tags { "Queue" = "Overlay" }
+            Tags
+            {
+                "Queue" = "Overlay"
+            }
         }
         Pass
         {
             Name "OpaqueForwardBase"
-            Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"}
+            Tags
+            {
+                "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"
+            }
             Cull Back
             ZWrite On
             ZTest LEqual
@@ -36,7 +42,7 @@ Shader "Bigi/BS"
 
             struct v2f
             {
-                UNITY_POSITION(pos);//float4 pos : SV_POSITION;
+                UNITY_POSITION(pos); //float4 pos : SV_POSITION;
                 half2 uv : TEXCOORD0; //texture coordinates
                 float4 grabPos : TEXCOORD1;
                 float4 screenPos : TEXCOORD2;
@@ -44,7 +50,7 @@ Shader "Bigi/BS"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            v2f vert (appdata_base v)
+            v2f vert(appdata_base v)
             {
                 v2f o;
                 UNITY_INITIALIZE_OUTPUT(v2f, o)
@@ -59,53 +65,61 @@ Shader "Bigi/BS"
             }
 
 
-            struct fragOutput {
+            struct fragOutput
+            {
                 fixed4 color : SV_Target;
             };
 
-            
 
-            float3 tTocPos(float4 i){
-                return i.xyz/i.w;
-            }
-            float4 cTotPos(float3 i, float w){
-                return float4(i * w,w);
+            float3 tTocPos(float4 i)
+            {
+                return i.xyz / i.w;
             }
 
-            half4 sub(half4 c1, half4 c2){
+            float4 cTotPos(float3 i, float w)
+            {
+                return float4(i * w, w);
+            }
+
+            half4 sub(half4 c1, half4 c2)
+            {
                 return c1 - c2;
             }
 
-            half4 samp(sampler2D text, float3 npos, float w){
-                return half4(tex2Dproj(text,cTotPos(npos,w)).rgb,1.0);
-            }
-
-            half4 sampf(sampler2D text, float3 npos,float m,float w){
-                npos.xy = floor(npos.xy*m)/m;
-                return samp(text,npos,w);
-            }
-
-            half4 sampc(sampler2D text, float3 npos,float m,float w){
-                npos.xy = ceil(npos.xy*m)/m;
-                return samp(text,npos,w);
-            }
-            
-
-            float tresh = 1e-10;
-
-            fragOutput frag (v2f i)
+            half4 samp(sampler2D text, float3 npos, float w)
             {
-                float mult = 100.0;
+                return half4(tex2Dproj(text, cTotPos(npos, w)).rgb, 1.0);
+            }
+
+            half4 sampf(sampler2D text, float3 npos, float m, float w)
+            {
+                npos.xy = floor(npos.xy * m) / m;
+                return samp(text, npos, w);
+            }
+
+            half4 sampc(sampler2D text, float3 npos, float m, float w)
+            {
+                npos.xy = ceil(npos.xy * m) / m;
+                return samp(text, npos, w);
+            }
+
+
+            const float tresh = 1e-10;
+            const float mult = 100.0;
+
+            fragOutput frag(v2f i)
+            {
+                fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-                fragOutput o;
                 float3 npos = tTocPos(i.grabPos);
-                half4 center = samp(_BackgroundTexture, npos,i.grabPos.w);
+                half4 center = samp(_BackgroundTexture, npos, i.grabPos.w);
 
-                half4 left = sampf(_BackgroundTexture,npos,mult,i.grabPos.w);
-                half4 right = sampc(_BackgroundTexture,npos,mult,i.grabPos.w);
+                half4 left = sampf(_BackgroundTexture, npos, mult, i.grabPos.w);
+                half4 right = sampc(_BackgroundTexture, npos, mult, i.grabPos.w);
 
-                fixed4 end = fixed4(center.rgb,1.0);
+                fixed4 end = fixed4(center.rgb, 1.0);
                 end.r += 0.2;
                 end.g += 0.1;
                 end.b += 0.1;
@@ -113,7 +127,6 @@ Shader "Bigi/BS"
                 o.color = end;
                 return o;
             }
-
             ENDCG
         }
 
