@@ -26,26 +26,17 @@ Shader "Bigi/LogoPlane"
             Name "TransparentForwardBase"
             Tags
             {
-                "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
+                "LightMode" = "ForwardBase" "VRCFallback"="Hidden"
             }
             Cull Off
             ZWrite Off
             ZTest LEqual
             Blend SrcAlpha OneMinusSrcAlpha
             CGPROGRAM
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbase
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            #pragma multi_compile_fog
-            #pragma target 3.0
             #pragma vertex vert alpha
             #pragma fragment frag alpha
 
-            #include "UnityCG.cginc"
-            #include "UnityLightingCommon.cginc"
-            #include "AutoLight.cginc"
+            #include "./Includes/PassDefault.cginc"
 
             UNITY_DECLARE_TEX2D(_MainTex);
             float4 _MainTex_ST;
@@ -53,8 +44,7 @@ Shader "Bigi/LogoPlane"
             uniform uint _VDivs;
             uniform uint _HDivs;
             uniform uint _CellNumber;
-
-            #include "./Includes/PassDefault.cginc"
+            
             #include "./Includes/BigiLightUtils.cginc"
             #include "./Includes/BigiSoundUtils.cginc"
 
@@ -102,11 +92,12 @@ Shader "Bigi/LogoPlane"
 
             fragOutput frag(v2f i)
             {
-                UNITY_TRANSFER_INSTANCE_ID(i, o);
-                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
                 fragOutput o;
                 UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-                fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+                UNITY_TRANSFER_INSTANCE_ID(i, o);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+                
+                const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 clip(orig_color.a - Epsilon);
                 half4 sound;
                 half soundIntensity;
@@ -117,13 +108,13 @@ Shader "Bigi/LogoPlane"
                 }
                 else
                 {
-                    b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
+                    const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
                     sound = half4(dmxI.ResultColor, 1.0);
                     soundIntensity = dmxI.Intensity;
                 }
-                fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0,
+                const fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0,
                                                                        LIGHT_ATTENUATION(i));
-                half intensity = clamp(RGBToHSV(orig_color).z * soundIntensity, 0.0, 1.0);
+                const half intensity = clamp(RGBToHSV(orig_color).z * soundIntensity, 0.0, 1.0);
                 o.color = lerp(normalColor,fixed4(sound.rgb, normalColor.a),
                                b_sound::Scale(intensity, 1.0));
                 //o.color = orig_color;
