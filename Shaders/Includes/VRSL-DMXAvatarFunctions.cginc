@@ -25,7 +25,7 @@ float GetValueAtCoords(uint group, uint channel)
 {
     float2 xyUV = GetGroupUVs(group, channel);
     float4 uvcoords = float4(xyUV.x, xyUV.y, 0,0);
-   // float4 c = tex2Dlod(_DMXTexture, uvcoords);
+    // float4 c = tex2Dlod(_DMXTexture, uvcoords);
     float4 c = _DMXTexture.SampleLevel(sampler_point_clamp, xyUV, 0);
     float3 cRGB = float3(c.r, c.g, c.b);
     float value = LinearRgbToLuminance(cRGB);
@@ -47,7 +47,7 @@ float4 GetDMXColor(uint group)
 
 float4 GetDMXColorAndIntensity(uint group)
 {
-   //return lerp(fixed4(0,0,0,1), GetDMXColor(group), GetDMXIntensity(group));
-   return GetDMXColor(group) * GetDMXIntensity(group);
+    //return lerp(fixed4(0,0,0,1), GetDMXColor(group), GetDMXIntensity(group));
+    return GetDMXColor(group) * GetDMXIntensity(group);
 }
 

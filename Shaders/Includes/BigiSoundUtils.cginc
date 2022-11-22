@@ -10,14 +10,14 @@
 
 namespace b_sound
 {
-    half GetScaleFactor(half al_tresh)
+    half GetScaleFactor(const half factor)
     {
-        return al_tresh * 2.0;
+        return factor * 2.0;
     }
 
-    half4 Scale(half4 c, half factor)
+    half4 Scale(const half4 color, const half factor)
     {
-        return pow(c, 0.3) * GetScaleFactor(factor);
+        return pow(color, 0.3) * GetScaleFactor(factor);
     }
     
     half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor)
@@ -46,7 +46,7 @@ namespace b_sound
         {
             ret = half4(0, 0, 0, 1);
         }
-        return ret;
+        return clamp(ret,0,1);
     }
 
     struct dmx_info
