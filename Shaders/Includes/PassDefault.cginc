@@ -6,19 +6,6 @@
 float Epsilon = 1e-10;
 #endif
 
-
-#ifndef BIGI_MULTICOMPILE
-#define BIGI_MULTICOMPILE
-#pragma instancing_options assumeuniformscaling
-#pragma multi_compile_instancing
-#pragma multi_compile_fwdbase
-#pragma multi_compile_fwdbasealpha
-#pragma multi_compile_lightpass
-#pragma multi_compile_shadowcollector
-#pragma multi_compile_fog
-#pragma target 3.0
-#endif
-
 #ifndef BIGI_UNITY_DEFAULT_INCLUDES
 #define BIGI_UNITY_DEFAULT_INCLUDES
 #include "UnityCG.cginc"

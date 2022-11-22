@@ -28,34 +28,42 @@ Shader "Bigi/LogoPlane" {
 			#include "./Includes/BigiLightUtils.cginc"
 			#include "./Includes/BigiSoundUtils.cginc"
 
+			struct appdata {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
+				UNITY_VERTEX_INPUT_INSTANCE_ID
+			};
+		
 			//intermediate
 			struct v2f {
 				UNITY_POSITION(pos); //float4 pos : SV_POSITION;
 				float3 normal : NORMAL;
 				half2 uv : TEXCOORD0; //texture coordinates
 				LIGHTING_COORDS(1, 2) UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
-				UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO };
+				UNITY_VERTEX_OUTPUT_STEREO
+			};
 
 			struct fragOutput {
 				fixed4 color : SV_Target;
 			};
 
-			v2f vert(appdata_base v)
+			v2f vert(appdata v)
 			{
 				v2f o;
-				UNITY_INITIALIZE_OUTPUT(v2f, o);
 				UNITY_SETUP_INSTANCE_ID(v);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-				UNITY_TRANSFER_INSTANCE_ID(v, o);
+				UNITY_INITIALIZE_OUTPUT(v2f, o);
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o)
 				o.pos = UnityObjectToClipPos(v.vertex);
 
 				const float2 cell_size = float2(1.0 / _HDivs, 1.0 / _VDivs);
 				const uint2 coords = uint2(_CellNumber % _HDivs, floor(_CellNumber / _HDivs));
 				const half2 start_coord = cell_size * coords;
-				const half2 pos = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
-				o.uv = start_coord + pos;
+				const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
+				o.uv = start_coord + offset;
 				o.normal = v.normal;
-				UNITY_TRANSFER_LIGHTING(o, o.pos) UNITY_TRANSFER_FOG(o, o.pos);
+				UNITY_TRANSFER_LIGHTING(o, o.pos);
+				UNITY_TRANSFER_FOG(o, o.pos);
 				return o;
 			}
 
@@ -68,8 +76,8 @@ Shader "Bigi/LogoPlane" {
 			{
 				fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-				UNITY_TRANSFER_INSTANCE_ID(i, o);
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+				const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - Epsilon);
 				half4 sound;
 				half soundIntensity;
@@ -99,6 +107,15 @@ Shader "Bigi/LogoPlane" {
 			CGPROGRAM
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
+			#pragma multi_compile_instancing
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_instancing
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
+			#pragma target 3.0
 			ENDCG
 		}
 		Pass {
@@ -110,6 +127,15 @@ Shader "Bigi/LogoPlane" {
 			CGPROGRAM
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
+			#pragma multi_compile_instancing
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_instancing
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
+			#pragma target 3.0
 			ENDCG
 		}
 

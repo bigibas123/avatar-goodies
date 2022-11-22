@@ -36,7 +36,14 @@ Shader "Bigi/AudioLink_fragv7" {
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_instancing
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
+			#pragma target 3.0
 			#include "./Includes/PassDefault.cginc"
 			#include "./Includes/BigiShaderParams.cginc"
 			#include "./Includes/ToonVert.cginc"
@@ -120,6 +127,15 @@ Shader "Bigi/AudioLink_fragv7" {
 			CGPROGRAM
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_instancing
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
+			#pragma target 3.0
+			#pragma target 3.0
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/BigiLightUtils.cginc"
 
@@ -163,6 +179,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_fwdbasealpha
 			#pragma multi_compile_lightpass
 			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
 			#pragma target 3.0
 
 			#include "./Includes/ToonVert.cginc"
@@ -208,7 +225,14 @@ Shader "Bigi/AudioLink_fragv7" {
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_instancing
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
+			#pragma multi_compile_fog
+			#pragma target 3.0
 			#include "./Includes/PassDefault.cginc"
 			#include "./Includes/BigiShaderParams.cginc"
 			#include "./Includes/BigiSoundUtils.cginc"
@@ -282,6 +306,12 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_shadowcaster
 			#pragma multi_compile_instancing
 			#pragma multi_compile_lightpass
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_fog
+			#pragma target 3.0
 			#include "UnityCG.cginc"
 
 			struct v2f {
