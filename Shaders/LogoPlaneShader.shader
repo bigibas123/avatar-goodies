@@ -42,11 +42,18 @@ Shader "Bigi/LogoPlane" {
 				half2 uv : TEXCOORD0; //texture coordinates
 				LIGHTING_COORDS(1, 2) UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
 				UNITY_VERTEX_OUTPUT_STEREO
+				float4 sound: COLOR0;
+				float4 soundIntensity: PSIZE0;
 			};
 
 			struct fragOutput {
 				fixed4 color : SV_Target;
 			};
+
+			uniform half _AudioIntensity;
+			uniform int _ColorChordIndex;
+			uniform half _UseBassIntensity;
+			uniform int _DMXGroup;
 
 			v2f vert(appdata v)
 			{
@@ -62,16 +69,19 @@ Shader "Bigi/LogoPlane" {
 				const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
 				o.uv = start_coord + offset;
 				o.normal = v.normal;
+				if (_AudioIntensity > Epsilon) {
+					o.sound = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
+					//soundIntensity = clamp(RGBToHSV(sound).z, 0.0, 1.0);
+				} else {
+					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
+					o.sound = half4(dmxI.ResultColor, 1.0) * dmxI.Intensity;
+					//soundIntensity = dmxI.Intensity;
+				}
 				UNITY_TRANSFER_LIGHTING(o, o.pos);
 				UNITY_TRANSFER_FOG(o, o.pos);
 				return o;
 			}
-
-			uniform half _AudioIntensity;
-			uniform int _ColorChordIndex;
-			uniform half _UseBassIntensity;
-			uniform int _DMXGroup;
-
+		
 			fragOutput frag(v2f i)
 			{
 				fragOutput o;
@@ -79,19 +89,9 @@ Shader "Bigi/LogoPlane" {
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 				const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - Epsilon);
-				half4 sound;
-				half soundIntensity;
-				if (_AudioIntensity > Epsilon) {
-					sound = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
-					soundIntensity = clamp(RGBToHSV(sound).z, 0.0, 1.0);
-				} else {
-					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-					sound = half4(dmxI.ResultColor, 1.0) * dmxI.Intensity;
-					soundIntensity = dmxI.Intensity;
-				}
 				const fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i));
-				const half intensity = clamp(soundIntensity, 0.0, 1.0);
-				o.color = lerp(normalColor,fixed4(sound.rgb, normalColor.a), clamp(b_sound::Scale(intensity, 1.0), 0.0, 1.0));
+				const half intensity = clamp(i.soundIntensity, 0.0, 1.0);
+				o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), clamp(b_sound::Scale(intensity, 1.0), 0.0, 1.0));
 				//o.color = orig_color;
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
