@@ -4,7 +4,7 @@
 
 #ifndef BIGI_DMXAL_INCLUDES
 #define BIGI_DMXAL_INCLUDES
-#include "AudioLink.cginc"
+#include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 #include "./VRSL-DMXAvatarFunctions.cginc"
 #endif
 
@@ -70,5 +70,7 @@ namespace b_sound
         }
         return ret;
     }
+
+    
 }
 #endif

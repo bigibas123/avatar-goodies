@@ -115,15 +115,7 @@ Shader "Bigi/BS"
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
                 float3 npos = tTocPos(i.grabPos);
                 half4 center = samp(_BackgroundTexture, npos, i.grabPos.w);
-
-                half4 left = sampf(_BackgroundTexture, npos, mult, i.grabPos.w);
-                half4 right = sampc(_BackgroundTexture, npos, mult, i.grabPos.w);
-
-                fixed4 end = fixed4(center.rgb, 1.0);
-                end.r += 0.2;
-                end.g += 0.1;
-                end.b += 0.1;
-
+                half4 end = half4(center.rgb * -1.0 + 1.0,center.a);
                 o.color = end;
                 return o;
             }

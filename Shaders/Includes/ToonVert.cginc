@@ -5,10 +5,8 @@
 #pragma exclude_renderers d3d11
 #define BIGI_TOONVERT_INCLUDED
 
-#include "UnityCG.cginc"
-#include "UnityLightingCommon.cginc"
-#include "AutoLight.cginc"
-#include "./PassDefault.cginc"
+#include <UnityCG.cginc>
+#include <AutoLight.cginc>
 #include "./BigiShaderParams.cginc"
 
 //intermediate

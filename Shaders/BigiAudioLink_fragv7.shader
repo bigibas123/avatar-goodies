@@ -44,8 +44,8 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_shadowcollector
 			#pragma multi_compile_fog
 			#pragma target 3.0
-			#include "./Includes/PassDefault.cginc"
 			#include "./Includes/BigiShaderParams.cginc"
+			#include "./Includes/ColorUtil.cginc"
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/BigiSoundUtils.cginc"
 			#include "./Includes/BigiLightUtils.cginc"
@@ -58,22 +58,18 @@ Shader "Bigi/AudioLink_fragv7" {
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				if (orig_color.a < 1.0) {
 					discard;
-					clip(-1.0);
 				}
-				fixed4 lighting = b_light::GetLighting(
-					i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i), UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv).r
-				);
+				fixed4 lighting = BIGI_GETLIGHT_DEFAULT;
 				o.color = orig_color * lighting;
 				fixed weight = 0.0;
 				int count = 0;
 				fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
 				fixed3 alc = 0.0;
-				if (mask.b > Epsilon) {
+				if (mask.b > UNITY_HALF_MIN) {
 					if (_AudioIntensity > Epsilon) {
 						if (AudioLinkIsAvailable()) {
 							fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
-							half soundIntensity = RGBToHSV(soundColor.rgb).z;
-							half selfWeight = soundIntensity * mask.b;
+							half selfWeight = RGBToHSV(soundColor.rgb).z * mask.b;
 							weight += selfWeight;
 							count++;
 							alc = lerp(alc, soundColor.rgb, selfWeight / weight);
@@ -125,8 +121,8 @@ Shader "Bigi/AudioLink_fragv7" {
 			ZTest LEqual
 			//Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-			#pragma vertex vert alpha
-			#pragma fragment frag alpha
+			#pragma vertex vert
+			#pragma fragment frag
 			#pragma instancing_options assumeuniformscaling
 			#pragma multi_compile_instancing
 			#pragma multi_compile_fwdbase
@@ -134,7 +130,6 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_lightpass
 			#pragma multi_compile_shadowcollector
 			#pragma multi_compile_fog
-			#pragma target 3.0
 			#pragma target 3.0
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/BigiLightUtils.cginc"
@@ -148,9 +143,9 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				if (!(orig_color.a < 1.0)) {
 					discard;
-					clip(-1.0);
 				}
-				o.color = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, SHADOW_ATTENUATION(i));
+				o.color = orig_color * BIGI_GETLIGHT_DEFAULT;
+				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
 			ENDCG
@@ -171,16 +166,15 @@ Shader "Bigi/AudioLink_fragv7" {
 				Comp Equal
 			}
 			CGPROGRAM
-			#pragma vertex vert alpha
-			#pragma fragment frag alpha
-			#pragma instancing_options assumeuniformscaling
-			#pragma multi_compile_instancing
-			#pragma multi_compile_fwdbase
-			#pragma multi_compile_fwdbasealpha
-			#pragma multi_compile_lightpass
-			#pragma multi_compile_shadowcollector
-			#pragma multi_compile_fog
 			#pragma target 3.0
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_fwdadd_fullshadows
+			#pragma multi_compile_lightpass 
+			#pragma multi_compile_shadowcollector 
+			#pragma multi_compile_fog
+			#pragma multi_compile_instancing
 
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/BigiLightUtils.cginc"
@@ -191,18 +185,12 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 
 				UNITY_SETUP_INSTANCE_ID(i);
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				if (orig_color.a < 1.0) {
-					discard;
-					clip(-1.0);
-				}
-				fixed3 lighting = lerp(
-					orig_color.rgb, b_light::GetLighting(
-						i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i), UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv).r
-					),LIGHT_ATTENUATION(i)
-				);
-				o.color = half4(lighting * _AddLightIntensity, 1.0);
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				clip(orig_color.a - 1.0);
+				o.color = half4(BIGI_GETLIGHT_DEFAULT * _AddLightIntensity);
 				//o.color = float4(1.0,1.0,1.0,1.0);
+				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
 			ENDCG
@@ -233,7 +221,6 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_shadowcollector
 			#pragma multi_compile_fog
 			#pragma target 3.0
-			#include "./Includes/PassDefault.cginc"
 			#include "./Includes/BigiShaderParams.cginc"
 			#include "./Includes/BigiSoundUtils.cginc"
 
@@ -272,13 +259,10 @@ Shader "Bigi/AudioLink_fragv7" {
 						);
 					} else {
 						discard;
-						clip(-1.0);
 					}
 				} else {
-					if (_DMXGroup > Epsilon) { o.color = half4(b_sound::GetDMXInfo(_DMXGroup).ResultColor, 1.0); } else {
-						discard;
-						clip(-1.0);
-					}
+					clip(_DMXGroup - 1);
+					o.color = half4(b_sound::GetDMXInfo(_DMXGroup).ResultColor, 1.0);
 				}
 				return o;
 			}
@@ -286,58 +270,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 		}
 
-		//UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
-
-		Pass {
-			Name "ShadowPass"
-			Tags {
-				"LightMode"="ShadowCaster"
-			}
-			Cull Off
-			ZWrite On
-			ZTest LEqual
-			Stencil {
-				Comp Always
-				Pass IncrSat
-			}
-			CGPROGRAM
-			#pragma vertex vert alpha
-			#pragma fragment frag alpha
-			#pragma multi_compile_shadowcaster
-			#pragma multi_compile_instancing
-			#pragma multi_compile_lightpass
-			#pragma instancing_options assumeuniformscaling
-			#pragma multi_compile_fwdbase
-			#pragma multi_compile_fwdbasealpha
-			#pragma multi_compile_lightpass
-			#pragma multi_compile_fog
-			#pragma target 3.0
-			#include "UnityCG.cginc"
-
-			struct v2f {
-				V2F_SHADOW_CASTER;
-				UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
-				//float4 uv : TEXCOORD0;
-			};
-
-			v2f vert(appdata_base v)
-			{
-				v2f o;
-				UNITY_SETUP_INSTANCE_ID(v);
-				UNITY_INITIALIZE_OUTPUT(v2f, o)
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-				UNITY_TRANSFER_INSTANCE_ID(v, o);
-				TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-				//o.uv = v.texcoord;
-				return o;
-			}
-
-			float4 frag(v2f i) : SV_Target
-			{
-				UNITY_SETUP_INSTANCE_ID(i) UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) SHADOW_CASTER_FRAGMENT(i)
-			}
-			ENDCG
-		}
+		UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 
 	}
 }

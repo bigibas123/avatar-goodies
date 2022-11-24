@@ -16,8 +16,7 @@ Shader "Bigi/LogoPlane" {
 		}
 		
 		CGINCLUDE
-			#include "./Includes/PassDefault.cginc"
-
+			#include <UnityCG.cginc>
 			UNITY_DECLARE_TEX2D(_MainTex);
 			float4 _MainTex_ST;
 
@@ -66,10 +65,11 @@ Shader "Bigi/LogoPlane" {
 				const float2 cell_size = float2(1.0 / _HDivs, 1.0 / _VDivs);
 				const uint2 coords = uint2(_CellNumber % _HDivs, floor(_CellNumber / _HDivs));
 				const half2 start_coord = cell_size * coords;
+				
 				const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
 				o.uv = start_coord + offset;
 				o.normal = v.normal;
-				if (_AudioIntensity > Epsilon) {
+				if (_AudioIntensity > UNITY_HALF_MIN) {
 					o.sound = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
 					//soundIntensity = clamp(RGBToHSV(sound).z, 0.0, 1.0);
 				} else {
@@ -88,8 +88,8 @@ Shader "Bigi/LogoPlane" {
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 				const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				clip(orig_color.a - Epsilon);
-				const fixed4 normalColor = orig_color * b_light::GetLighting(i.normal, _WorldSpaceLightPos0, _LightColor0, LIGHT_ATTENUATION(i));
+				clip(orig_color.a - UNITY_HALF_MIN);
+				const fixed4 normalColor = orig_color * BIGI_GETLIGHT_NOAO;
 				const half intensity = clamp(i.soundIntensity, 0.0, 1.0);
 				o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), clamp(b_sound::Scale(intensity, 1.0), 0.0, 1.0));
 				//o.color = orig_color;
