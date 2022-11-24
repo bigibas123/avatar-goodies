@@ -4,7 +4,7 @@
 
 #ifndef BIGI_DMXAL_INCLUDES
 #define BIGI_DMXAL_INCLUDES
-#include "./AudioLink.cginc"
+#include "AudioLink.cginc"
 #include "./VRSL-DMXAvatarFunctions.cginc"
 #endif
 
