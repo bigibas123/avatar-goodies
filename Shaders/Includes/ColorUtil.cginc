@@ -1,6 +1,5 @@
 ﻿#ifndef BIGI_COLOR_UTILS_Included
 #define BIGI_COLOR_UTILS
-#include <UnityCG.cginc>
 
 half3 RGBtoHCV(in half3 RGB)
 {
@@ -8,7 +7,7 @@ half3 RGBtoHCV(in half3 RGB)
     half4 P = (RGB.g < RGB.b) ? half4(RGB.bg, -1.0, 2.0/3.0) : half4(RGB.gb, 0.0, -1.0/3.0);
     half4 Q = (RGB.r < P.x) ? half4(P.xyw, RGB.r) : half4(RGB.r, P.yzx);
     half C = Q.x - min(Q.w, Q.y);
-    half H = abs((Q.w - Q.y) / (6 * C + UNITY_HALF_MIN) + Q.z);
+    half H = abs((Q.w - Q.y) / (6 * C + Epsilon) + Q.z);
     return half3(H, C, Q.x);
 }
 

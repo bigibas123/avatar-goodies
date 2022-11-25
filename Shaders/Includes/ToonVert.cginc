@@ -13,11 +13,13 @@
 struct v2f
 {
     UNITY_POSITION(pos); //float4 pos : SV_POSITION;
+    
     float3 normal : NORMAL;
     half2 uv : TEXCOORD0; //texture coordinates
     UNITY_LIGHTING_COORDS(1, 2)
     UNITY_FOG_COORDS(3)
     float4 screenPos : TEXCOORD4;
+    float3 worldPos: TEXCOORD5;
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 };
@@ -41,8 +43,9 @@ v2f vert(appdata_base v)
     UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     UNITY_TRANSFER_INSTANCE_ID(v, o);
     o.pos = UnityObjectToClipPos(v.vertex);
+    o.worldPos = mul(unity_ObjectToWorld, v.vertex);
     o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-    o.normal = v.normal;
+    o.normal = UnityObjectToWorldNormal(v.normal);
     o.screenPos = ComputeScreenPos(o.pos);
     UNITY_TRANSFER_LIGHTING(o, o.pos)
     //TRANSFER_SHADOW(o)

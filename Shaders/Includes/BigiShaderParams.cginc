@@ -35,7 +35,7 @@ struct fragOutput
 #ifndef BIGI_EPSILON
 #define BIGI_EPSILON
 #include <UnityCG.cginc>
-float Epsilon = UNITY_HALF_MIN;
+float Epsilon = 1e-10;
 #endif
 
 #endif

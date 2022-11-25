@@ -59,13 +59,13 @@ Shader "Bigi/AudioLink_fragv7" {
 				if (orig_color.a < 1.0) {
 					discard;
 				}
-				fixed4 lighting = BIGI_GETLIGHT_DEFAULT;
+				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = orig_color * lighting;
 				fixed weight = 0.0;
 				int count = 0;
 				fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
 				fixed3 alc = 0.0;
-				if (mask.b > UNITY_HALF_MIN) {
+				if (mask.b > Epsilon) {
 					if (_AudioIntensity > Epsilon) {
 						if (AudioLinkIsAvailable()) {
 							fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
@@ -144,7 +144,8 @@ Shader "Bigi/AudioLink_fragv7" {
 				if (!(orig_color.a < 1.0)) {
 					discard;
 				}
-				o.color = orig_color * BIGI_GETLIGHT_DEFAULT;
+				BIGI_GETLIGHT_DEFAULT(lighting);
+				o.color = orig_color * lighting;
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
@@ -188,7 +189,8 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - 1.0);
-				o.color = half4(BIGI_GETLIGHT_DEFAULT * _AddLightIntensity);
+				BIGI_GETLIGHT_DEFAULT(lighting);
+				o.color = half4(lighting * _AddLightIntensity);
 				//o.color = float4(1.0,1.0,1.0,1.0);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
@@ -270,7 +272,57 @@ Shader "Bigi/AudioLink_fragv7" {
 
 		}
 
-		UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
+		//UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 
+		Pass {
+			Name "ShadowPass"
+			Tags {
+				"LightMode"="ShadowCaster"
+			}
+		Cull Off
+			ZWrite On
+			ZTest LEqual
+			Stencil {
+				Comp Always
+				Pass IncrSat
+			}
+			CGPROGRAM
+			#pragma vertex vert alpha
+			#pragma fragment frag alpha
+			#pragma multi_compile_shadowcaster
+			#pragma multi_compile_instancing
+			#pragma multi_compile_lightpass
+			#pragma instancing_options assumeuniformscaling
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fwdbasealpha
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_fog
+			#pragma target 3.0
+			#include "UnityCG.cginc"
+
+			struct v2f {
+				V2F_SHADOW_CASTER;
+				UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
+				//float4 uv : TEXCOORD0;
+			};
+
+			v2f vert(appdata_base v)
+			{
+				v2f o;
+				UNITY_SETUP_INSTANCE_ID(v);
+				UNITY_INITIALIZE_OUTPUT(v2f, o)
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+				UNITY_TRANSFER_INSTANCE_ID(v, o);
+				TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
+				//o.uv = v.texcoord;
+				return o;
+			}
+
+			float4 frag(v2f i) : SV_Target
+			{
+				UNITY_SETUP_INSTANCE_ID(i) UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) SHADOW_CASTER_FRAGMENT(i)
+			}
+			ENDCG
+		}
 	}
 }

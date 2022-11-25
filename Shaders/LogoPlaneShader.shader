@@ -19,13 +19,14 @@ Shader "Bigi/LogoPlane" {
 			#include <UnityCG.cginc>
 			UNITY_DECLARE_TEX2D(_MainTex);
 			float4 _MainTex_ST;
-
+			float Epsilon = 1e-10;
 			uniform uint _VDivs;
 			uniform uint _HDivs;
 			uniform uint _CellNumber;
 
 			#include "./Includes/BigiLightUtils.cginc"
 			#include "./Includes/BigiSoundUtils.cginc"
+			#include "./Includes/ColorUtil.cginc"
 
 			struct appdata {
 				float4 vertex : POSITION;
@@ -40,6 +41,7 @@ Shader "Bigi/LogoPlane" {
 				float3 normal : NORMAL;
 				half2 uv : TEXCOORD0; //texture coordinates
 				LIGHTING_COORDS(1, 2) UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
+				float3 worldPos: TEXCOORD4;
 				UNITY_VERTEX_OUTPUT_STEREO
 				float4 sound: COLOR0;
 				float4 soundIntensity: PSIZE0;
@@ -59,7 +61,7 @@ Shader "Bigi/LogoPlane" {
 				v2f o;
 				UNITY_SETUP_INSTANCE_ID(v);
 				UNITY_INITIALIZE_OUTPUT(v2f, o);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o)
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 				o.pos = UnityObjectToClipPos(v.vertex);
 
 				const float2 cell_size = float2(1.0 / _HDivs, 1.0 / _VDivs);
@@ -69,14 +71,15 @@ Shader "Bigi/LogoPlane" {
 				const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
 				o.uv = start_coord + offset;
 				o.normal = v.normal;
-				if (_AudioIntensity > UNITY_HALF_MIN) {
+				if (_AudioIntensity > Epsilon) {
 					o.sound = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
-					//soundIntensity = clamp(RGBToHSV(sound).z, 0.0, 1.0);
+					o.soundIntensity = clamp(RGBToHSV(o.sound).z, 0.0, 1.0);
 				} else {
 					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
 					o.sound = half4(dmxI.ResultColor, 1.0) * dmxI.Intensity;
-					//soundIntensity = dmxI.Intensity;
+					o.soundIntensity = dmxI.Intensity;
 				}
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 				UNITY_TRANSFER_LIGHTING(o, o.pos);
 				UNITY_TRANSFER_FOG(o, o.pos);
 				return o;
@@ -88,8 +91,9 @@ Shader "Bigi/LogoPlane" {
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 				const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				clip(orig_color.a - UNITY_HALF_MIN);
-				const fixed4 normalColor = orig_color * BIGI_GETLIGHT_NOAO;
+				clip(orig_color.a - Epsilon);
+				BIGI_GETLIGHT_NOAO(lighting);
+				const fixed4 normalColor = orig_color * lighting;
 				const half intensity = clamp(i.soundIntensity, 0.0, 1.0);
 				o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), clamp(b_sound::Scale(intensity, 1.0), 0.0, 1.0));
 				//o.color = orig_color;
