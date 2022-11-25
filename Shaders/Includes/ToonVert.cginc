@@ -15,8 +15,8 @@ struct v2f
     UNITY_POSITION(pos); //float4 pos : SV_POSITION;
     float3 normal : NORMAL;
     half2 uv : TEXCOORD0; //texture coordinates
-    LIGHTING_COORDS(1, 2)
-    UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
+    UNITY_LIGHTING_COORDS(1, 2)
+    UNITY_FOG_COORDS(3)
     float4 screenPos : TEXCOORD4;
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO

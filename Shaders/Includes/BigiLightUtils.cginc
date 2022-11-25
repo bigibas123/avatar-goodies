@@ -29,6 +29,6 @@ namespace b_light
         return GetLighting(normal, 1.0, 1.0);
     }
 }
-#define BIGI_GETLIGHT_DEFAULT b_light::GetLighting(i.normal, LIGHT_ATTENUATION(i), UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv))
-#define BIGI_GETLIGHT_NOAO b_light::GetLighting(i.normal,LIGHT_ATTENUATION(i))
+#define BIGI_GETLIGHT_DEFAULT b_light::GetLighting(i.normal, UNITY_LIGHT_ATTENUATION(i), UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv))
+#define BIGI_GETLIGHT_NOAO b_light::GetLighting(i.normal,UNITY_LIGHT_ATTENUATION(i))
 #endif
