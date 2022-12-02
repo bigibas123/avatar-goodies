@@ -50,61 +50,53 @@ Shader "Bigi/AudioLink_fragv7" {
 			#include "./Includes/BigiSoundUtils.cginc"
 			#include "./Includes/BigiLightUtils.cginc"
 
+			struct BEffectsTracker {
+				float totalWeight;
+				fixed3 totalColor;
+			};
+
+			void doMixProperly(inout BEffectsTracker obj, in fixed3 color, in float weight, in float force)
+			{
+				obj.totalWeight += weight;
+				obj.totalColor = lerp(obj.totalColor, color, (weight * force) / obj.totalWeight);
+			}
+
 			fragOutput frag(v2f i)
 			{
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				if (orig_color.a < 1.0) {
-					discard;
-				}
+				if (orig_color.a < 1.0) { discard; }
 				BIGI_GETLIGHT_DEFAULT(lighting);
-				o.color = orig_color * lighting;
-				fixed weight = 0.0;
-				int count = 0;
+
+				BEffectsTracker mix;
+				mix.totalWeight = 1.0;
+				mix.totalColor = orig_color * lighting;
+				//mix.totalColor = 0.0;
+
 				fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
-				fixed3 alc = 0.0;
-				if (mask.b > Epsilon) {
-					if (_AudioIntensity > Epsilon) {
-						if (AudioLinkIsAvailable()) {
-							fixed3 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
-							half selfWeight = RGBToHSV(soundColor.rgb).z * mask.b;
-							weight += selfWeight;
-							count++;
-							alc = lerp(alc, soundColor.rgb, selfWeight / weight);
-						}
-					} else {
-						b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-						half selfWeight = dmxI.Intensity * mask.b;
-						weight += selfWeight;
-						count++;
-						alc = lerp(alc, dmxI.ResultColor, selfWeight / weight);
+				//Audiolink
+				if (_AudioIntensity > Epsilon) {
+					if (AudioLinkIsAvailable()) {
+						const fixed4 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
+						doMixProperly(mix, soundColor, mask.b * soundColor.a * RGBToHSV(soundColor.rgb).z, 2.0);
 					}
+				} else {
+					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
+					doMixProperly(mix, dmxI.Intensity, dmxI.Intensity * mask.b, 2.0);
 				}
-
-				if (mask.g > Epsilon) {
+				//"Emissions"
+				{
+					doMixProperly(mix, orig_color, saturate((mask.r * _EmissionStrength) - mix.totalWeight), 2.0);
+				}
+				//Screenspace images
+				{
 					float2 tpos = TRANSFORM_TEX((i.screenPos.xy / i.screenPos.w), _Spacey);
-					fixed4 bg = UNITY_SAMPLE_TEX2D(_Spacey, tpos);
-					half selfWeight = mask.g * clamp(lighting, 0.2, 1.0);
-					weight += selfWeight;
-					count++;
-					alc = lerp(alc, bg.rgb, selfWeight / weight);
+					doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, tpos), mask.g, 1.0);
 				}
 
-				if (mask.r > Epsilon) {
-					if (weight < .1) {
-						half selfWeight = mask.r * _EmissionStrength;
-						weight += selfWeight;
-						count++;
-						alc = lerp(alc, orig_color, selfWeight / weight);
-					}
-				}
-
-				if (weight > Epsilon) {
-					o.color = lerp(o.color,fixed4(alc, o.color.a), weight / count);
-					//o.color = fixed4(alc,1.0);
-				}
+				o.color = half4(mix.totalColor, orig_color.a);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
@@ -141,9 +133,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				if (!(orig_color.a < 1.0)) {
-					discard;
-				}
+				if (!(orig_color.a < 1.0)) { discard; }
 				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = orig_color * lighting;
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
@@ -154,6 +144,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 
 		Pass {
+			Name "ForwardAdd"
 			Tags {
 				"LightMode" = "ForwardAdd" "Queue" = "Transparent"
 			}
@@ -172,8 +163,8 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma fragment frag
 			#pragma instancing_options assumeuniformscaling
 			#pragma multi_compile_fwdadd_fullshadows
-			#pragma multi_compile_lightpass 
-			#pragma multi_compile_shadowcollector 
+			#pragma multi_compile_lightpass
+			#pragma multi_compile_shadowcollector
 			#pragma multi_compile_fog
 			#pragma multi_compile_instancing
 
@@ -183,10 +174,9 @@ Shader "Bigi/AudioLink_fragv7" {
 			fragOutput frag(v2f i)
 			{
 				fragOutput o;
-				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-
 				UNITY_SETUP_INSTANCE_ID(i);
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - 1.0);
 				BIGI_GETLIGHT_DEFAULT(lighting);
@@ -252,14 +242,11 @@ Shader "Bigi/AudioLink_fragv7" {
 			fragOutput frag(v2f i)
 			{
 				fragOutput o;
-				UNITY_INITIALIZE_OUTPUT(fragOutput, o);;
+				UNITY_SETUP_INSTANCE_ID(i);
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				if (_AudioIntensity > Epsilon) {
-					if (AudioLinkIsAvailable()) {
-						UNITY_SETUP_INSTANCE_ID(i);
-						UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) o.color = b_sound::GetSoundColor(
-							_ColorChordIndex, _UseBassIntensity, _AudioIntensity
-						);
-					} else {
+					if (AudioLinkIsAvailable()) { o.color = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity); } else {
 						discard;
 					}
 				} else {
@@ -279,7 +266,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			Tags {
 				"LightMode"="ShadowCaster"
 			}
-		Cull Off
+			Cull Off
 			ZWrite On
 			ZTest LEqual
 			Stencil {
