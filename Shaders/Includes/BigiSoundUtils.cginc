@@ -58,7 +58,7 @@ namespace b_sound
     dmx_info GetDMXInfo(const uint group)
     {
         dmx_info ret;
-        if (group >= 1u && group <= 4u)
+        if (group > 0u)
         {
             ret.Intensity = clamp(GetDMXIntensity(group) - 0.5, 0.0, 0.5) * 2.0;
             ret.ResultColor = GetDMXColor(group).rgb * ret.Intensity;

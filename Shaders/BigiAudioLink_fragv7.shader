@@ -84,11 +84,11 @@ Shader "Bigi/AudioLink_fragv7" {
 					}
 				} else {
 					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-					doMixProperly(mix, dmxI.Intensity, dmxI.Intensity * mask.b, 2.0);
+					doMixProperly(mix, dmxI.ResultColor, dmxI.Intensity * mask.b, 2.0);
 				}
 				//"Emissions"
 				{
-					doMixProperly(mix, orig_color, saturate((mask.r * _EmissionStrength) - (mix.totalWeight-1.0)), 2.0);
+					doMixProperly(mix, orig_color, saturate((mask.r * _EmissionStrength) - (mix.totalWeight - 1.0)), 2.0);
 				}
 				//Screenspace images
 				{
