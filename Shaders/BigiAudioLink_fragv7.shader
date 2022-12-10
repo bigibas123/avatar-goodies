@@ -180,7 +180,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - 1.0);
 				BIGI_GETLIGHT_DEFAULT(lighting);
-				o.color = half4(lighting * _AddLightIntensity);
+				o.color = half4(lighting * _AddLightIntensity) * orig_color;
 				//o.color = float4(1.0,1.0,1.0,1.0);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
