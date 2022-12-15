@@ -17,9 +17,6 @@ Shader "Bigi/LogoPlane" {
 		
 		CGINCLUDE
 			#include <UnityCG.cginc>
-			UNITY_DECLARE_TEX2D(_MainTex);
-			float4 _MainTex_ST;
-			float Epsilon = 1e-10;
 			uniform uint _VDivs;
 			uniform uint _HDivs;
 			uniform uint _CellNumber;
@@ -46,16 +43,7 @@ Shader "Bigi/LogoPlane" {
 				float4 sound: COLOR0;
 				float4 soundIntensity: PSIZE0;
 			};
-
-			struct fragOutput {
-				fixed4 color : SV_Target;
-			};
-
-			uniform half _AudioIntensity;
-			uniform int _ColorChordIndex;
-			uniform half _UseBassIntensity;
-			uniform int _DMXGroup;
-
+		
 			v2f vert(appdata v)
 			{
 				v2f o;

@@ -1,5 +1,7 @@
 #ifndef BIGI_V1_SHADERPARAMS
 #define BIGI_V1_SHADERPARAMS
+
+
 #ifndef BIGI_V1_TEXTURES
 #define BIGI_V1_TEXTURES
 
@@ -21,6 +23,7 @@ uniform float _SpaceyScaling;
 uniform half _UseBassIntensity;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
+uniform float _MinAmbient;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

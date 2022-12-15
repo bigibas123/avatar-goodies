@@ -11,6 +11,7 @@ Shader "Bigi/AudioLink_fragv7" {
 		_OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
 		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
+		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
 
 	}
 	SubShader {
@@ -64,7 +65,8 @@ Shader "Bigi/AudioLink_fragv7" {
 			fragOutput frag(v2f i)
 			{
 				UNITY_SETUP_INSTANCE_ID(i);
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fragOutput o;
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+				fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				if (orig_color.a < 1.0) { discard; }
@@ -132,7 +134,8 @@ Shader "Bigi/AudioLink_fragv7" {
 				fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				UNITY_SETUP_INSTANCE_ID(i);
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				if (!(orig_color.a < 1.0)) { discard; }
 				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = orig_color * lighting;

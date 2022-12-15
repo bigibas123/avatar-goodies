@@ -4,12 +4,13 @@
 #include <UnityLightingCommon.cginc>
 #include <AutoLight.cginc>
 #include <UnityCG.cginc>
+#include "./BigiShaderParams.cginc"
 
 namespace b_light
 {
     fixed4 GetLighting(const float3 worldNormal, const half shadowAttenuation, const float4 ambientOcclusion)
     {
-        const half3 ambient = max(ShadeSH9(half4(worldNormal, 1)), half3(0.005, 0.005, 0.005)) * clamp(ambientOcclusion, 0.75, 1.0);
+        const half3 ambient = max(ShadeSH9(half4(worldNormal, 1)), half3(_MinAmbient, _MinAmbient, _MinAmbient)) * clamp(ambientOcclusion, 0.75, 1.0);
         const float nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
         const float lightIntensity = smoothstep(0.0, 0.1, nl * shadowAttenuation);
         const fixed3 diff = lightIntensity * _LightColor0;
