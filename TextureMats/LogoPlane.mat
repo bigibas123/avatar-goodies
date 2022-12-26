@@ -63,7 +63,7 @@ Material:
     - _AudioIntensity: 0.5
     - _BassReactive: 0
     - _BumpScale: 1
-    - _CellNumber: 8
+    - _CellNumber: 0
     - _ColorChord: 0
     - _ColorChordIndex: 1
     - _Cutoff: 0.5
