@@ -1,4 +1,6 @@
 #ifndef BIGI_V1_SHADERPARAMS
+// Upgrade NOTE: excluded shader from DX11 because it uses wrong array syntax (type[size] name)
+#pragma exclude_renderers d3d11
 #define BIGI_V1_SHADERPARAMS
 
 
@@ -24,6 +26,10 @@ uniform half _UseBassIntensity;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;
+/*
+const static uint _DecalCount = 1;
+uniform float _DecalPositionMappings[_DecalCount*4u];
+*/
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

@@ -12,8 +12,9 @@ Shader "Bigi/AudioLink_fragv7" {
 		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
-
+		//_DecalCount ("DecalCount", Int) = 1
 	}
+	CustomEditor "BigiShaderGui"
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
 
