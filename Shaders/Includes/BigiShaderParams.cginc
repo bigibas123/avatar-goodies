@@ -23,20 +23,17 @@ uniform int _ColorChordIndex;
 uniform float _OutlineWidth;
 uniform float _SpaceyScaling;
 uniform half _UseBassIntensity;
+uniform int _Invisibility;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;
-/*
-const static uint _DecalCount = 1;
-uniform float _DecalPositionMappings[_DecalCount*4u];
-*/
+
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT
 #define BIGI_DEFAULT_FRAGOUT
 
-struct fragOutput
-{
+struct fragOutput {
     fixed4 color : SV_Target;
 };
 #endif
@@ -44,7 +41,7 @@ struct fragOutput
 #ifndef BIGI_EPSILON
 #define BIGI_EPSILON
 #include <UnityCG.cginc>
-float Epsilon = 1e-10;
+#define Epsilon UNITY_HALF_MIN
 #endif
 
 #endif

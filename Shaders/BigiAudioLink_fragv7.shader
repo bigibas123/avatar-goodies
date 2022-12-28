@@ -12,9 +12,8 @@ Shader "Bigi/AudioLink_fragv7" {
 		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
-		//_DecalCount ("DecalCount", Int) = 1
+		[Toggle] _Invisibility ("Invisibility", Int) = 0
 	}
-	CustomEditor "BigiShaderGui"
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
 
@@ -65,12 +64,13 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
+				clip(-1 * _Invisibility);
+				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				clip(orig_color.a - 1.0);
+				fragOutput o;
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-				fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				if (orig_color.a < 1.0) { discard; }
 				BIGI_GETLIGHT_DEFAULT(lighting);
 
 				BEffectsTracker mix;
@@ -109,10 +109,16 @@ Shader "Bigi/AudioLink_fragv7" {
 		Pass {
 			Name "TransparentForwardBase"
 			Tags {
-				"RenderType" = "Transparent" "Queue" = "Transparent" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
+				"RenderType" = "TransparentCutout" "Queue" = "AlphaTest" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
+			}
+			Stencil {
+				Ref 1
+				Comp Always
+				WriteMask 1
+				Pass Replace
 			}
 			Cull Back
-			ZWrite On
+			ZWrite Off
 			ZTest LEqual
 			//Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
@@ -132,12 +138,13 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
+				clip(-1 * _Invisibility);
+				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				clip((-1.0 * (orig_color.a - 1.0)) - Epsilon);
 				fragOutput o;
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				if (!(orig_color.a < 1.0)) { discard; }
 				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = orig_color * lighting;
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
@@ -150,7 +157,7 @@ Shader "Bigi/AudioLink_fragv7" {
 		Pass {
 			Name "ForwardAdd"
 			Tags {
-				"LightMode" = "ForwardAdd" "Queue" = "Transparent"
+				"LightMode" = "ForwardAdd" "Queue" = "TransparentCutout"
 			}
 			Cull Back
 			ZWrite Off
@@ -177,12 +184,15 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
+				clip(-1 * _Invisibility);
+				clip(_AddLightIntensity - Epsilon);
+				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				clip(orig_color.a - Epsilon);
 				fragOutput o;
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-				clip(orig_color.a - 1.0);
+				
 				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = half4(lighting * _AddLightIntensity) * orig_color;
 				//o.color = float4(1.0,1.0,1.0,1.0);
@@ -245,6 +255,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
+				clip((-1 * _Invisibility) + _OutlineWidth - Epsilon);
 				fragOutput o;
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
@@ -290,6 +301,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_fog
 			#pragma target 3.0
 			#include "UnityCG.cginc"
+			uniform int _Invisibility;
 
 			struct v2f {
 				V2F_SHADOW_CASTER;
@@ -311,6 +323,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			float4 frag(v2f i) : SV_Target
 			{
+				clip(-1 * _Invisibility);
 				UNITY_SETUP_INSTANCE_ID(i) UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) SHADOW_CASTER_FRAGMENT(i)
 			}
 			ENDCG
