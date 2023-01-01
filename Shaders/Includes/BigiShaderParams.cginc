@@ -1,6 +1,4 @@
 #ifndef BIGI_V1_SHADERPARAMS
-// Upgrade NOTE: excluded shader from DX11 because it uses wrong array syntax (type[size] name)
-#pragma exclude_renderers d3d11
 #define BIGI_V1_SHADERPARAMS
 
 
