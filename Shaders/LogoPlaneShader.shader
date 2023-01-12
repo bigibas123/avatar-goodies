@@ -1,8 +1,7 @@
 Shader "Bigi/LogoPlane" {
 	Properties {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
-		_VDivs ("Vertical Cells", Int) = 2
-		_HDivs ("Horizontal Cells", Int) = 2
+		_GridSize ("Grid Size", Float) = 0
 		_CellNumber ("CellNumber", Int) = 0
 		_AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.5
 		_DMXGroup ("DMX Group", Int) = 2
@@ -17,9 +16,19 @@ Shader "Bigi/LogoPlane" {
 		}
 
 		CGINCLUDE
+		#pragma vertex vert alpha
+		#pragma fragment frag alpha
+		#pragma multi_compile_instancing
+		#pragma instancing_options assumeuniformscaling
+		#pragma multi_compile_instancing
+		#pragma multi_compile_fwdbase
+		#pragma multi_compile_fwdbasealpha
+		#pragma multi_compile_fog
+		#pragma multi_compile __ EXTERNAL_AUDIOLINK
+		#pragma target 3.0
+		
 		#include <UnityCG.cginc>
-		uniform uint _VDivs;
-		uniform uint _HDivs;
+		uniform uint _GridSize;
 		uniform uint _CellNumber;
 
 		#include "./Includes/BigiLightUtils.cginc"
@@ -52,8 +61,8 @@ Shader "Bigi/LogoPlane" {
 			UNITY_TRANSFER_INSTANCE_ID(v, o);
 			o.pos = UnityObjectToClipPos(v.vertex);
 
-			const float2 cell_size = float2(1.0 / _HDivs, 1.0 / _VDivs);
-			const uint2 coords = uint2(_CellNumber % _HDivs, floor(_CellNumber / _HDivs));
+			const float2 cell_size = float2(1.0 / _GridSize, 1.0 / _GridSize);
+			const uint2 coords = uint2(_CellNumber % _GridSize, floor(_CellNumber / _GridSize));
 			const half2 start_coord = cell_size * coords;
 
 			const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
@@ -96,18 +105,6 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-			#pragma vertex vert alpha
-			#pragma fragment frag alpha
-			#pragma multi_compile_instancing
-			#pragma instancing_options assumeuniformscaling
-			#pragma multi_compile_instancing
-			#pragma multi_compile_fwdbase
-			#pragma multi_compile_fwdbasealpha
-			#pragma multi_compile_lightpass
-			#pragma multi_compile_shadowcollector
-			#pragma multi_compile_fog
-			#pragma multi_compile __ EXTERNAL_AUDIOLINK
-			#pragma target 3.0
 			ENDCG
 		}
 		Pass {
@@ -117,18 +114,6 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-			#pragma vertex vert alpha
-			#pragma fragment frag alpha
-			#pragma multi_compile_instancing
-			#pragma instancing_options assumeuniformscaling
-			#pragma multi_compile_instancing
-			#pragma multi_compile_fwdbase
-			#pragma multi_compile_fwdbasealpha
-			#pragma multi_compile_lightpass
-			#pragma multi_compile_shadowcollector
-			#pragma multi_compile_fog
-			#pragma multi_compile __ EXTERNAL_AUDIOLINK
-			#pragma target 3.0
 			ENDCG
 		}
 
