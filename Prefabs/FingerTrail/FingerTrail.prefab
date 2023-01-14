@@ -156,7 +156,6 @@ MonoBehaviour:
     - id: 0
     - id: 1
     - id: 2
-    - id: 3
   somethingIsBroken: 0
   references:
     version: 1
@@ -167,8 +166,8 @@ MonoBehaviour:
         name: Shader/FingerTrails/On
         state:
           actions:
-          - id: 4
-        saved: 0
+          - id: 3
+        saved: 1
         slider: 0
         securityEnabled: 0
         defaultOn: 0
@@ -184,7 +183,7 @@ MonoBehaviour:
         name: Shader/FingerTrails/Audiolink_Intensity
         state:
           actions:
-          - id: 5
+          - id: 4
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -198,27 +197,10 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Shader/FingerTrails/CC
-        state:
-          actions:
-          - id: 6
-        saved: 1
-        slider: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-    00000003:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
         name: Shader/FingerTrails/Bass_Intensity
         state:
           actions:
-          - id: 7
+          - id: 5
         saved: 1
         slider: 0
         securityEnabled: 0
@@ -228,19 +210,15 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
-    00000004:
+    00000003:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 8219374938026449059}
-    00000005:
+    00000004:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip: {fileID: 7400000, guid: a2339647c1293c44893f273b81cc3961, type: 2}
-    00000006:
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        clip: {fileID: 7400000, guid: 3b82239972419d64691448a2ad738bad, type: 2}
-    00000007:
+    00000005:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip: {fileID: 7400000, guid: ac39e7846f6c7f64cb27a16ba25caff0, type: 2}

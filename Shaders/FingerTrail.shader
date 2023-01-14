@@ -1,14 +1,13 @@
 ﻿Shader "Bigi/FingerTrail" {
 	Properties {
 		_AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
-		_ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
 		_DMXGroup ("DMX Group", Int) = 2
 		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
 	}
 
 	Category {
 		Tags {
-			"Queue" = "Overlay" "IgnoreProjector"="True" "RenderType"="Overlay"
+			"Queue" = "Overlay" "IgnoreProjector"="True" "RenderType"="Transparent+2"
 		}
 		Blend SrcAlpha One
 		ColorMask RGB
@@ -47,7 +46,7 @@
 					//o.projPos = ComputeScreenPos (o.pos);
 					//COMPUTE_EYEDEPTH(o.projPos.z);
 					o.color = v.color;
-					UNITY_TRANSFER_FOG(o, o.vertex);
+					UNITY_TRANSFER_FOG(o, o.pos);
 					return o;
 				}
 
@@ -57,11 +56,14 @@
 
 					if (_AudioIntensity > Epsilon) {
 						if (AudioLinkIsAvailable()) {
-							 col = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
+							const half ccI = i.color.r * 3.0f + 1.0f;
+							const half4 c1 = b_sound::GetSoundColor(ccI, _UseBassIntensity, _AudioIntensity);
+							const half4 c2 = b_sound::GetSoundColor(ccI + 1, _UseBassIntensity, _AudioIntensity);
+							col = lerp(c1, c2, frac(ccI));
 						}
 					} else {
 						const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-						col = half4(dmxI.ResultColor,dmxI.Intensity);
+						col = half4(dmxI.ResultColor, dmxI.Intensity);
 					}
 
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0)); // fog towards black due to our blend mode
