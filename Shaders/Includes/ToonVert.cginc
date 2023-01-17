@@ -46,7 +46,7 @@ v2f vert(appdata_base v)
     o.worldPos = mul(unity_ObjectToWorld, v.vertex);
     o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
     o.normal = UnityObjectToWorldNormal(v.normal);
-    o.staticTexturePos = float4(o.worldPos,1.0);//ComputeScreenPos(o.pos)
+    o.staticTexturePos = ComputeScreenPos(o.pos);
     UNITY_TRANSFER_LIGHTING(o, o.pos)
     //TRANSFER_SHADOW(o)
     UNITY_TRANSFER_FOG(o, o.pos);
