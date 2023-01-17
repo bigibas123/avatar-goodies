@@ -19,7 +19,7 @@ struct v2f
     UNITY_POSITION(pos);//float4 pos : SV_POSITION;
     half2 uv : TEXCOORD0; //texture coordinates
     SHADOW_COORDS(1) // put shadows data into TEXCOORD1
-    float4 screenPos : TEXCOORD2;
+    float4 staticTexturePos : TEXCOORD2;
     fixed4 diff : COLOR0; //diffusion shadow color/intensity
     fixed3 ambient : COLOR1; //ambient shadow color/intensity
     UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -51,7 +51,7 @@ v2f vert (appdata v)
     UNITY_TRANSFER_INSTANCE_ID(v, o);
     o.pos = UnityObjectToClipPos(v.vertex);
     o.uv = v.uv;
-    o.screenPos = ComputeScreenPos(o.pos);
+    o.staticTexturePos = ComputeScreenPos(o.pos);
     half3 worldNormal = UnityObjectToWorldNormal(v.normal);
     half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
     o.diff = nl * _LightColor0;

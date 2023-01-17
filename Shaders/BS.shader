@@ -45,7 +45,7 @@ Shader "Bigi/BS"
                 UNITY_POSITION(pos); //float4 pos : SV_POSITION;
                 half2 uv : TEXCOORD0; //texture coordinates
                 float4 grabPos : TEXCOORD1;
-                float4 screenPos : TEXCOORD2;
+                float4 staticTexturePos : TEXCOORD2;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
                 UNITY_VERTEX_OUTPUT_STEREO
             };
@@ -60,7 +60,7 @@ Shader "Bigi/BS"
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = v.texcoord;
                 o.grabPos = ComputeGrabScreenPos(o.pos);
-                o.screenPos = ComputeScreenPos(o.pos);
+                o.staticTexturePos = ComputeScreenPos(o.pos);
                 return o;
             }
 

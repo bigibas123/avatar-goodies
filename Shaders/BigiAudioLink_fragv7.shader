@@ -95,7 +95,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				}
 				//Screenspace images
 				{
-					float2 tpos = TRANSFORM_TEX((i.screenPos.xy / i.screenPos.w), _Spacey);
+					float2 tpos = TRANSFORM_TEX((i.staticTexturePos.xy / i.staticTexturePos.w), _Spacey);
 					doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, tpos), mask.g, 1.0);
 				}
 
