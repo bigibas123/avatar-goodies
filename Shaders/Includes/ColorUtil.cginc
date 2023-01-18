@@ -1,5 +1,10 @@
-﻿#ifndef BIGI_COLOR_UTILS_Included
+﻿#ifndef BIGI_COLOR_UTILS
 #define BIGI_COLOR_UTILS
+#ifndef BIGI_EPSILON
+#define BIGI_EPSILON
+#include <UnityCG.cginc>
+#define Epsilon UNITY_HALF_MIN
+#endif
 
 half3 RGBtoHCV(in half3 RGB)
 {

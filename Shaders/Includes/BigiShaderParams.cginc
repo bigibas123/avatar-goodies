@@ -15,12 +15,18 @@ float4 _Spacey_ST;
 
 #ifndef BIGI_V1_UNIFORMS
 #define BIGI_V1_UNIFORMS
-uniform int _DMXGroup;
+
+//Audiolink stuffs
 uniform half _AudioIntensity;
 uniform int _ColorChordIndex;
-uniform float _OutlineWidth;
-uniform float _SpaceyScaling;
 uniform half _UseBassIntensity;
+uniform half _ALSoundHue;
+//VRSL Stuffs
+uniform int _DMXGroup;
+//Both
+uniform float _OutlineWidth;
+//Other
+uniform float _SpaceyScaling;
 uniform int _Invisibility;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;

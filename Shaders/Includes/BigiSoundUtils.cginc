@@ -11,6 +11,7 @@
 #endif
 #include "./VRSL-DMXAvatarFunctions.cginc"
 #endif
+#include "./ColorUtil.cginc"
 
 namespace b_sound
 {
@@ -18,6 +19,22 @@ namespace b_sound
 
     half4 Scale(const half4 color, const half factor) { return pow(color, 0.3) * GetScaleFactor(factor); }
 
+    half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor, half cc0Hue)
+    {
+        uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
+        half4 ret;
+        if (colorChordIndex == 0u) {
+            half3 color = HSVToRGB(half3(cc0Hue,1.0,1.0));
+            float sound = Scale(AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1)),factor).r;
+            ret = half4(sound * color,1.0);
+        } else if (colorChordIndex <= 4u) {
+            const uint2 sCord = ALPASS_THEME_COLOR0 + uint2(clamp(colorChordIndex - 1, 0, 3), 0);
+            float mult = Scale(1.0 - bassReactive, factor) + (Scale((AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1))), factor) * bassReactive);
+            ret = AudioLinkData(sCord) * float4(mult, mult, mult, 1.0);
+        } else { ret = half4(0, 0, 0, 1); }
+        return clamp(ret, 0, 1);
+    }
+    
     half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor)
     {
         uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);

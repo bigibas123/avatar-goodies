@@ -20,9 +20,9 @@ namespace b_light
     fixed4 GetLighting(const float3 normal, const half shadowAttenuation) { return GetLighting(normal, shadowAttenuation, 1.0); }
 }
 
-#define BIGI_GETLIGHT_DEFAULT(outname) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-fixed4 outname = b_light::GetLighting(i.normal, shadowAtt, UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv))
+#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting(i.normal, shadowAtt, UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv))
 
-#define BIGI_GETLIGHT_NOAO(outname) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-fixed4 outname = b_light::GetLighting(i.normal,shadowAtt)
+#define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt)
 #endif

@@ -13,6 +13,7 @@ Shader "Bigi/AudioLink_fragv7" {
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
 		[Toggle] _Invisibility ("Invisibility", Int) = 0
+		_ALSoundHue ("Audiolink Sound hue", Range (0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -82,7 +83,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				//Audiolink
 				if (_AudioIntensity > Epsilon) {
 					if (AudioLinkIsAvailable()) {
-						const fixed4 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity);
+						const fixed4 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity, _ALSoundHue);
 						doMixProperly(mix, soundColor, mask.b * soundColor.a * RGBToHSV(soundColor.rgb).z, 2.0);
 					}
 				} else {
@@ -192,7 +193,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-				
+
 				BIGI_GETLIGHT_DEFAULT(lighting);
 				o.color = half4(lighting * _AddLightIntensity) * orig_color;
 				//o.color = float4(1.0,1.0,1.0,1.0);
@@ -261,9 +262,9 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 				if (_AudioIntensity > Epsilon) {
-					if (AudioLinkIsAvailable()) { o.color = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity); } else {
-						discard;
-					}
+					if (AudioLinkIsAvailable()) {
+						o.color = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity, _ALSoundHue);
+					} else { discard; }
 				} else {
 					clip(_DMXGroup - 1);
 					o.color = half4(b_sound::GetDMXInfo(_DMXGroup).ResultColor, 1.0);
