@@ -34,6 +34,7 @@
 
 				struct v2f {
 					float4 pos : SV_POSITION;
+					float4 worldPos: TEXCOORD0;
 					fixed4 color : COLOR;
 					UNITY_FOG_COORDS(1) UNITY_VERTEX_OUTPUT_STEREO };
 
@@ -46,21 +47,23 @@
 					//o.projPos = ComputeScreenPos (o.pos);
 					//COMPUTE_EYEDEPTH(o.projPos.z);
 					o.color = v.color;
+					o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 					UNITY_TRANSFER_FOG(o, o.pos);
 					return o;
 				}
 
 				half4 frag(v2f i) : SV_Target
 				{
-					half4 col = 0.0;
+					half4 col;
 
 					if (_AudioIntensity > Epsilon) {
 						if (AudioLinkIsAvailable()) {
-							const half ccI = i.color.r * 3.0f + 1.0f;
-							const half4 c1 = b_sound::GetSoundColor(ccI, _UseBassIntensity, _AudioIntensity);
-							const half4 c2 = b_sound::GetSoundColor(ccI + 1, _UseBassIntensity, _AudioIntensity);
-							col = lerp(c1, c2, frac(ccI));
-						}
+							const float soundTime = b_sound::GetTime();
+							const half themeColorIndex = (((i.color.r + soundTime) * 3.0f) % 3.0f) + 1.0f;
+							const half4 c1 = b_sound::GetSoundColor(themeColorIndex, _UseBassIntensity, _AudioIntensity);
+							const half4 c2 = b_sound::GetSoundColor(themeColorIndex + 1, _UseBassIntensity, _AudioIntensity);
+							col = lerp(c1, c2, frac(themeColorIndex));
+						} else { col = half4(HSVToRGB(half3(i.color.r, 1.0, 1.0)), 1.0); }
 					} else {
 						const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
 						col = half4(dmxI.ResultColor, dmxI.Intensity);
