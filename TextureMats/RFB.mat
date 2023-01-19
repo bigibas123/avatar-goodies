@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PalletA:
-        m_Texture: {fileID: 2800000, guid: 0f92ea809ed05ee439d312ca44c304a7, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PalletB:
@@ -81,7 +81,7 @@ Material:
     - _ALEnable: 0
     - _ALThreshold: 1
     - _AudioIntensity: 0.001
-    - _AutoHue: 0
+    - _AutoHue: 0.1
     - _BlackoutStrength: 0
     - _BlackoutStrength_ALEnable: 0
     - _BumpScale: 1
@@ -112,35 +112,35 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineGamma: 2
+    - _OutlineGamma: 2.5
     - _OutlineGamma_ALEnable: 0
     - _OutlinePixelation: 32
     - _OutlinePixelation_ALEnable: 0
-    - _OutlineSilhouette: 1
-    - _OutlineStrength: 0
-    - _OutlineStrength_ALEnable: 0
+    - _OutlineSilhouette: 0
+    - _OutlineStrength: 1
+    - _OutlineStrength_ALEnable: 1
     - _OutlineWidth: 0.5
     - _PalletLerp: 0
     - _PalletLerp_ALEnable: 0
-    - _Palletise: 0.328
+    - _Palletise: 0
     - _Palletise_ALEnable: 0
     - _Parallax: 0.02
     - _Pixelation: 32
     - _Pixelation_ALEnable: 0
     - _Quantise: 8
     - _Quantise_ALEnable: 0
-    - _RGBSplitDist: 0
+    - _RGBSplitDist: 0.1
     - _RGBSplitDist_ALEnable: 0
-    - _Saturation: 0.5
+    - _Saturation: 1
     - _Saturation_ALEnable: 0
     - _SecondaryBlackoutStrength: 0
     - _SecondaryBlackoutStrength_ALEnable: 0
     - _SeparationMult: 1
     - _SeparationMult_ALEnable: 0
-    - _Sigma: 0
+    - _Sigma: 5
     - _Sigma_ALEnable: 0
     - _SmoothnessTextureChannel: 0
-    - _SobelOffsetMultiplier: 1
+    - _SobelOffsetMultiplier: 5
     - _SobelOffsetMultiplier_ALEnable: 0
     - _SpaceyScaling: 5
     - _SpecularHighlights: 1
@@ -153,4 +153,4 @@ Material:
     - _BlackoutColour: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColour: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColour: {r: 0, g: 1, b: 0, a: 1}
