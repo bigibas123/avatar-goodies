@@ -24,9 +24,9 @@ namespace b_sound
         uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
         half4 ret;
         if (colorChordIndex == 0u) {
-            const half3 color = HSVToRGB(half3(cc0Hue,1.0,1.0));
-            const float sound = Scale(AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1)),factor).r;
-            ret = half4(sound * color,1.0);
+            const half3 color = HSVToRGB(half3(cc0Hue, 1.0, 1.0));
+            const float sound = Scale(AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1)), factor).r;
+            ret = half4(((bassReactive * sound) + (1.0 - bassReactive)) * color, 1.0);
         } else if (colorChordIndex <= 4u) {
             const uint2 sCord = ALPASS_THEME_COLOR0 + uint2(clamp(colorChordIndex - 1, 0, 3), 0);
             float mult = Scale(1.0 - bassReactive, factor) + (Scale((AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1))), factor) * bassReactive);
@@ -34,7 +34,7 @@ namespace b_sound
         } else { ret = half4(0, 0, 0, 1); }
         return clamp(ret, 0, 1);
     }
-    
+
     half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor)
     {
         uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
@@ -72,10 +72,7 @@ namespace b_sound
         return ret;
     }
 
-    
-    float GetTime()
-    {
-        return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f;
-    }
+
+    float GetTime() { return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f; }
 }
 #endif

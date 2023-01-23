@@ -44,8 +44,6 @@
 					UNITY_SETUP_INSTANCE_ID(v);
 					UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 					o.pos = UnityObjectToClipPos(v.vertex);
-					//o.projPos = ComputeScreenPos (o.pos);
-					//COMPUTE_EYEDEPTH(o.projPos.z);
 					o.color = v.color;
 					o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 					UNITY_TRANSFER_FOG(o, o.pos);
@@ -59,9 +57,9 @@
 					if (_AudioIntensity > Epsilon) {
 						if (AudioLinkIsAvailable()) {
 							const float soundTime = b_sound::GetTime();
-							const half themeColorIndex = (((i.color.r + soundTime) * 3.0f) % 3.0f) + 1.0f;
-							const half4 c1 = b_sound::GetSoundColor(themeColorIndex, _UseBassIntensity, _AudioIntensity);
-							const half4 c2 = b_sound::GetSoundColor(themeColorIndex + 1, _UseBassIntensity, _AudioIntensity);
+							const half themeColorIndex = (((i.color.r + soundTime) * 3.0f) % 3.0f);
+							const half4 c1 = b_sound::GetSoundColor(themeColorIndex + 1, _UseBassIntensity, _AudioIntensity);
+							const half4 c2 = b_sound::GetSoundColor(((themeColorIndex + 1) % 3) + 1, _UseBassIntensity, _AudioIntensity);
 							col = lerp(c1, c2, frac(themeColorIndex));
 						} else { col = half4(HSVToRGB(half3(i.color.r, 1.0, 1.0)), 1.0); }
 					} else {
