@@ -1,0 +1,9 @@
+﻿#pragma target 3.0
+#pragma vertex vert
+#pragma fragment frag
+#pragma instancing_options assumeuniformscaling
+#pragma multi_compile_fwdadd_fullshadows
+#pragma multi_compile_lightpass 
+#pragma multi_compile_shadowcollector 
+#pragma multi_compile_fog
+#pragma multi_compile_instancing
