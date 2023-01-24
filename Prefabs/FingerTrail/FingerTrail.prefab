@@ -170,7 +170,7 @@ MonoBehaviour:
         saved: 1
         slider: 0
         securityEnabled: 0
-        defaultOn: 0
+        defaultOn: 1
         includeInRest: 0
         exclusiveOffState: 0
         enableExclusiveTag: 0
