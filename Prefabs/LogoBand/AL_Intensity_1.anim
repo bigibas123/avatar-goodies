@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Intensity_1
+  m_Name: AL_Intensity_1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -32,7 +32,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._AudioIntensity
+    attribute: material._AL_General_Intensity
     path: LP_1
     classID: 23
     script: {fileID: 0}
@@ -46,7 +46,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 4039595912
-      attribute: 2344907760
+      attribute: 2183139654
       script: {fileID: 0}
       typeID: 23
       customType: 22
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._AudioIntensity
+    attribute: material._AL_General_Intensity
     path: LP_1
     classID: 23
     script: {fileID: 0}

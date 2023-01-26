@@ -1,19 +1,29 @@
 Shader "Bigi/AudioLink_fragv7" {
 	Properties {
+
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_Spacey ("Spacey Texture", 2D) = "black" {}
 		_EmissionStrength ("Emission strength", Range(0.0,1.0)) = 1.0
 		[NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
 		[NoScaleOffset] _AOMap ("Ambient occlusion map", 2D) = "white" {}
-		_AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
-		_ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 0
-		_DMXGroup ("DMX Group", Int) = 2
-		_OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.5
-		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
+
+		_OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
-		[Toggle] _Invisibility ("Invisibility", Int) = 0
-		_ALSoundHue ("Audiolink Sound hue", Range (0.0,1.0)) = 0.0
+
+		[Header(DMX)]
+		_DMX_Weight("Weight", Range(0.0,1.0)) = 0.0
+		_DMX_Group ("DMX Group (1-4)", int) = 1
+
+		[Header(Audiolink world theme colors)]
+		_AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 0.0
+		_AL_ThemeIndex("Theme index (0-3)", int) = 0
+		_AL_TC_BassReactive("Bassreactivity", Range(0.0,1.0)) = 0.0
+
+		[Header(Audiolink Hue slider colors)]
+		_AL_Hue_Weight("Weight", Range(0.0,1.0)) = 0.0
+		_AL_Hue("Hue", Range(0.0,1.0)) = 0.0
+		_AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -47,10 +57,9 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_fog
 			#pragma target 3.0
 			#include "./Includes/BigiShaderParams.cginc"
-			#include "./Includes/ColorUtil.cginc"
 			#include "./Includes/ToonVert.cginc"
-			#include "./Includes/BigiSoundUtils.cginc"
-			#include "./Includes/BigiLightUtils.cginc"
+			#include "./Includes/LightUtilsDefines.cginc"
+			#include "./Includes/SoundUtilsDefines.cginc"
 
 			struct BEffectsTracker {
 				float totalWeight;
@@ -65,7 +74,6 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
-				clip(-1 * _Invisibility);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - 1.0);
 				fragOutput o;
@@ -81,14 +89,9 @@ Shader "Bigi/AudioLink_fragv7" {
 
 				fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
 				//Audiolink
-				if (_AudioIntensity > Epsilon) {
-					if (AudioLinkIsAvailable()) {
-						const fixed4 soundColor = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity, _ALSoundHue);
-						doMixProperly(mix, soundColor, mask.b * soundColor.a * RGBToHSV(soundColor.rgb).z, 2.0);
-					}
-				} else {
-					const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-					doMixProperly(mix, dmxI.ResultColor, dmxI.Intensity * mask.b, 2.0);
+				{
+					GET_SOUND_COLOR(soundC);
+					doMixProperly(mix, soundC, mask.b, 1.0);
 				}
 				//"Emissions"
 				{
@@ -134,12 +137,11 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_fog
 			#pragma target 3.0
 			#include "./Includes/ToonVert.cginc"
-			#include "./Includes/BigiLightUtils.cginc"
+			#include "./Includes/LightUtilsDefines.cginc"
 
 
 			fragOutput frag(v2f i)
 			{
-				clip(-1 * _Invisibility);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip((-1.0 * (orig_color.a - 1.0)) - Epsilon);
 				fragOutput o;
@@ -181,11 +183,10 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_instancing
 
 			#include "./Includes/ToonVert.cginc"
-			#include "./Includes/BigiLightUtils.cginc"
+			#include "./Includes/LightUtilsDefines.cginc"
 
 			fragOutput frag(v2f i)
 			{
-				clip(-1 * _Invisibility);
 				clip(_AddLightIntensity - Epsilon);
 				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
 				clip(orig_color.a - Epsilon);
@@ -228,8 +229,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma multi_compile_shadowcollector
 			#pragma multi_compile_fog
 			#pragma target 3.0
-			#include "./Includes/BigiShaderParams.cginc"
-			#include "./Includes/BigiSoundUtils.cginc"
+			#include "./Includes/SoundUtilsDefines.cginc"
 
 
 			struct appdata {
@@ -256,19 +256,13 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			fragOutput frag(v2f i)
 			{
-				clip((-1 * _Invisibility) + _OutlineWidth - Epsilon);
+				clip(_OutlineWidth - Epsilon);
 				fragOutput o;
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
-				if (_AudioIntensity > Epsilon) {
-					if (AudioLinkIsAvailable()) {
-						o.color = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity, _ALSoundHue);
-					} else { discard; }
-				} else {
-					clip(_DMXGroup - 1);
-					o.color = half4(b_sound::GetDMXInfo(_DMXGroup).ResultColor, 1.0);
-				}
+				GET_SOUND_COLOR(scol);
+				o.color = scol;
 				return o;
 			}
 			ENDCG
