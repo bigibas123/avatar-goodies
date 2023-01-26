@@ -54,17 +54,15 @@
 				{
 					half4 col;
 
-					if (_AudioIntensity > Epsilon) {
-						if (AudioLinkIsAvailable()) {
-							const float soundTime = b_sound::GetTime();
-							const half themeColorIndex = (((i.color.r + soundTime) * 3.0f) % 3.0f);
-							const half4 c1 = b_sound::GetSoundColor(themeColorIndex + 1, _UseBassIntensity, _AudioIntensity);
-							const half4 c2 = b_sound::GetSoundColor(((themeColorIndex + 1) % 3) + 1, _UseBassIntensity, _AudioIntensity);
-							col = lerp(c1, c2, frac(themeColorIndex));
-						} else { col = half4(HSVToRGB(half3(i.color.r, 1.0, 1.0)), 1.0); }
+					if (AudioLinkIsAvailable()) {
+						const float soundTime = b_sound::GetTime();
+						const half themeColorIndex = (((i.color.r + soundTime) * 3.0f) % 3.0f);
+						const half4 c1 = b_sound::GetThemeColor(themeColorIndex);
+						const half4 c2 = b_sound::GetThemeColor((themeColorIndex + 1) % 3);
+						col = lerp(c1, c2, frac(themeColorIndex));
 					} else {
-						const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-						col = half4(dmxI.ResultColor, dmxI.Intensity);
+						const float cords = ((_Time.y % 1.0) + (i.color.r)) % 1.0;
+						col = half4(HSVToRGB(half3(cords, 1.0, 1.0)), 1.0);
 					}
 
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0));

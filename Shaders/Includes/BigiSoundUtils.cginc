@@ -9,6 +9,7 @@
 #else
 #include "./Includes/AudioLink_0.3.1.cginc"
 #endif
+#include <UnityCG.cginc>
 #include "./VRSL-DMXAvatarFunctions.cginc"
 #endif
 #include "./ColorUtil.cginc"
@@ -19,59 +20,69 @@ namespace b_sound
 
     half4 Scale(const half4 color, const half factor) { return pow(color, 0.3) * GetScaleFactor(factor); }
 
-    half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor, half cc0Hue)
-    {
-        uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
-        half4 ret;
-        if (colorChordIndex == 0u) {
-            const half3 color = HSVToRGB(half3(cc0Hue, 1.0, 1.0));
-            const float sound = Scale((AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1)))/2.0, factor).r;
-            ret = half4(((bassReactive * sound) + (1.0 - bassReactive)) * color, 1.0);
-        } else if (colorChordIndex <= 4u) {
-            const uint2 sCord = ALPASS_THEME_COLOR0 + uint2(clamp(colorChordIndex - 1, 0, 3), 0);
-            float mult = Scale(1.0 - bassReactive, factor) + (Scale((AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1))), factor) * bassReactive);
-            ret = AudioLinkData(sCord) * float4(mult, mult, mult, 1.0);
-        } else { ret = half4(0, 0, 0, 1); }
-        return clamp(ret, 0, 1);
-    }
+    struct ALSettings {
+        float DMX_Weight;
+        float AL_Theme_Weight;
+        float AL_Hue_Weight;
 
-    half4 GetSoundColor(const uint colorChordIndex, const half bassReactive, const half factor)
-    {
-        uint2 fal = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
-        half4 ret;
-        if (colorChordIndex == 0u) {
-            ret = Scale(
-                half4(
-                    AudioLinkData(fal+uint2(0,3)).r, (AudioLinkData(fal+uint2(0,1)).r / 2.0) + (AudioLinkData(fal+uint2(0,2)).r / 2.0),
-                    AudioLinkData(fal+uint2(0,0)).r, 1.0
-                ), factor
-            );
-        } else if (colorChordIndex <= 4u) {
-            const uint2 sCord = ALPASS_THEME_COLOR0 + uint2(clamp(colorChordIndex - 1, 0, 3), 0);
-            float mult = Scale(1.0 - bassReactive, factor) + (Scale((AudioLinkData(fal) + AudioLinkData(fal+uint2(0,1))), factor) * bassReactive);
-            ret = AudioLinkData(sCord) * float4(mult, mult, mult, 1.0);
-        } else { ret = half4(0, 0, 0, 1); }
-        return clamp(ret, 0, 1);
-    }
+        uint AL_ThemeIndex; // Audiolink index (0-3)
+        uint DMX_Group; // DMX group for VRSL (mostly 2, 1-4)
+        half AL_Hue; // HSV Hue for a stable bassreactive color
 
-    struct dmx_info {
-        half Intensity;
-        half3 ResultColor;
+        half AL_Hue_BassReactive; //bool for bass reactivity of the AL_Hue
+        half AL_TC_BassReactive; //bool for bass reactivity of the AL_Theme
     };
 
-    dmx_info GetDMXInfo(const uint group)
+    struct MixRatio {
+        float totalWeight;
+        half3 totalColor;
+    };
+
+    void doMixProperly(inout MixRatio obj, in const half3 color, in const float weight)
     {
-        dmx_info ret;
-        if (group > 0u) {
-            ret.Intensity = clamp(GetDMXIntensity(group) - 0.5, 0.0, 0.5) * 2.0;
-            ret.ResultColor = GetDMXColor(group).rgb * ret.Intensity;
-        } else {
-            ret.Intensity = 0.0;
-            ret.ResultColor = 0.0;
-        }
-        return ret;
+        obj.totalWeight += weight;
+        obj.totalColor = lerp(obj.totalColor, color, weight / (obj.totalWeight + Epsilon));
     }
 
+    half4 GetDMXOrALColor(in const ALSettings conf)
+    {
+        MixRatio mix;
+        mix.totalColor = 0;
+        mix.totalWeight = 0;
+        //DMX
+        {
+            if (conf.DMX_Weight > Epsilon) {
+                const float intensity = clamp(GetDMXIntensity(conf.DMX_Group) - 0.5, 0.0, 0.5) * 2.0;
+                const float3 color = GetDMXColor(conf.DMX_Group).rgb;
+                doMixProperly(mix, color, intensity * conf.DMX_Weight);
+            }
+        }
+        const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
+        const float bassIntensity = AudioLinkData(cord).r;
+        //AL Theme
+        {
+            if (conf.AL_Theme_Weight > Epsilon) {
+                const uint2 tcord = ALPASS_THEME_COLOR0 + uint2(conf.AL_ThemeIndex, 0);
+                float4 color = AudioLinkData(tcord);
+                const float soundIntensity = (bassIntensity * conf.AL_TC_BassReactive) + (1.0 - conf.AL_TC_BassReactive);
+                doMixProperly(mix, color.rgb, color.a * conf.AL_Theme_Weight * soundIntensity);
+            }
+        }
+        //HueSlider
+        {
+            if (conf.AL_Hue_Weight > Epsilon) {
+                const float soundIntensity = (bassIntensity * conf.AL_Hue_BassReactive) + (1.0 - conf.AL_Hue_BassReactive);
+                const float3 color = HSVToRGB(conf.AL_Hue, 1.0, 1.0);
+                doMixProperly(mix, color, soundIntensity * conf.AL_Hue_Weight);
+            }
+        }
+        return half4(mix.totalColor, mix.totalWeight / (conf.DMX_Weight + conf.AL_Hue_Weight + conf.AL_Theme_Weight + Epsilon));
+    }
+
+    half4 GetThemeColor(const uint ccindex)
+    {
+        return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccindex, 0));
+    }
 
     float GetTime() { return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f; }
 }

@@ -4,7 +4,7 @@
 
 #ifndef BIGI_V1_TEXTURES
 #define BIGI_V1_TEXTURES
-
+#include <HLSLSupport.cginc>
 UNITY_DECLARE_TEX2D(_MainTex);
 float4 _MainTex_ST;
 UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
@@ -16,18 +16,20 @@ float4 _Spacey_ST;
 #ifndef BIGI_V1_UNIFORMS
 #define BIGI_V1_UNIFORMS
 
-//Audiolink stuffs
-uniform half _AudioIntensity;
-uniform int _ColorChordIndex;
-uniform half _UseBassIntensity;
-uniform half _ALSoundHue;
-//VRSL Stuffs
-uniform int _DMXGroup;
+uniform float _DMX_Weight;
+uniform float _AL_Theme_Weight;
+uniform float _AL_Hue_Weight;
+
+uniform uint _AL_ThemeIndex;
+uniform uint _DMX_Group;
+uniform half _AL_Hue;
+
+uniform half _AL_Hue_BassReactive;
+uniform half _AL_TC_BassReactive;
+
 //Both
 uniform float _OutlineWidth;
 //Other
-uniform float _SpaceyScaling;
-uniform int _Invisibility;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;

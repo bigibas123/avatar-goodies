@@ -64,6 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _ALSoundHue: 0
+    - _AL_General_Intensity: 0
+    - _AL_Hue: 0
+    - _AL_Hue_BassReactive: 0
+    - _AL_ThemeIndex: 0
     - _AudioIntensity: 0
     - _BassReactive: 0
     - _BumpScale: 1
@@ -72,6 +77,7 @@ Material:
     - _ColorChordIndex: 0
     - _Cutoff: 0.5
     - _DMXGroup: 2
+    - _DMX_Group: 2
     - _DetailNormalMapScale: 1
     - _Divs: 8
     - _DstBlend: 10

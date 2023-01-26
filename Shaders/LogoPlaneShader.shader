@@ -2,11 +2,9 @@ Shader "Bigi/LogoPlane" {
 	Properties {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_CellNumber ("CellNumber", Int) = 0
-		_AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.5
-		_DMXGroup ("DMX Group", Int) = 2
-		_ColorChordIndex ("ColorChord Index (0=Old behaviour, 1-4 color chords) (0-4)", Int) = 1
-		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
-		_ALSoundHue("Non-cc hue",Range(0.0,1.0)) = 0.0
+		_DMX_Group ("DMX Group (1-4)", int) = 2
+		_AL_ThemeIndex("Theme index (0-3)", int) = 0
+		_AL_General_Intensity("Audiolink/DMX Intensity",Range(0.0,1.0)) = 0.0
 		[Toggle(EXTERNAL_AUDIOLINK)] _EXTAUDIOLINK("Use external audiolink instead of the local file",Float) = 0.0
 	}
 	SubShader {
@@ -31,10 +29,10 @@ Shader "Bigi/LogoPlane" {
 		#include <UnityCG.cginc>
 		const static float2 cell_size = float2(1.0 / GRID_SIZE, 1.0 / GRID_SIZE);
 		uniform uint _CellNumber;
+		uniform float _AL_General_Intensity;
 
-		#include "./Includes/BigiLightUtils.cginc"
-		#include "./Includes/BigiSoundUtils.cginc"
-		#include "./Includes/ColorUtil.cginc"
+		#include "./Includes/LightUtilsDefines.cginc"
+		#include "./Includes/SoundUtilsDefines.cginc"
 
 		struct appdata {
 			float4 vertex : POSITION;
@@ -70,14 +68,14 @@ Shader "Bigi/LogoPlane" {
 			const half2 offset = TRANSFORM_TEX(v.texcoord, _MainTex) * cell_size;
 			o.uv = start_coord + offset;
 			o.normal = UnityObjectToWorldNormal(v.normal);
-			if (_AudioIntensity > Epsilon) {
-				o.sound = b_sound::GetSoundColor(_ColorChordIndex, _UseBassIntensity, _AudioIntensity,_ALSoundHue);
-				o.soundIntensity = clamp(RGBToHSV(o.sound).z, 0.0, 1.0);
-			} else {
-				const b_sound::dmx_info dmxI = b_sound::GetDMXInfo(_DMXGroup);
-				o.sound = half4(dmxI.ResultColor, 1.0) * dmxI.Intensity;
-				o.soundIntensity = dmxI.Intensity;
-			}
+			
+			GET_SOUND_SETTINGS(set);
+			set.DMX_Weight = _AL_General_Intensity;
+			set.AL_Theme_Weight = _AL_General_Intensity;
+			
+			GET_SOUND_COLOR_CALL(set,scol);
+			o.sound = half4(scol.rgb,1.0);
+			o.soundIntensity = scol.a;
 			o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 			UNITY_TRANSFER_LIGHTING(o, o.pos);
 			UNITY_TRANSFER_FOG(o, o.pos);
@@ -92,8 +90,7 @@ Shader "Bigi/LogoPlane" {
 			clip(orig_color.a - Epsilon);
 			BIGI_GETLIGHT_NOAO(lighting);
 			const fixed4 normalColor = orig_color * lighting;
-			const half intensity = clamp(i.soundIntensity, 0.0, 1.0);
-			o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), clamp(b_sound::Scale(intensity, 1.0), 0.0, 1.0));;
+			o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), i.soundIntensity);
 			//o.color = orig_color;
 			UNITY_APPLY_FOG(i.fogCoord, o.color);
 			return o;

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CC_4
+  m_Name: CC_3
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -32,7 +32,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._ColorChordIndex
+    attribute: material._AL_ThemeIndex
     path: LP_1
     classID: 23
     script: {fileID: 0}
@@ -46,7 +46,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 4039595912
-      attribute: 2281286496
+      attribute: 2224503444
       script: {fileID: 0}
       typeID: 23
       customType: 22
@@ -78,7 +78,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._ColorChordIndex
+    attribute: material._AL_ThemeIndex
     path: LP_1
     classID: 23
     script: {fileID: 0}

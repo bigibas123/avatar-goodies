@@ -171,7 +171,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/ColorCord
+        name: Props/LogoBand/ColorChord
         state:
           actions:
           - id: 6
@@ -188,7 +188,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/Hue
+        name: Props/LogoBand/AL Intensity
         state:
           actions:
           - id: 7
@@ -212,8 +212,8 @@ MonoBehaviour:
     00000006:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: 57dcf57a32b48ca479bd5abf536b3187, type: 2}
+        clip: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
     00000007:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: ea9a3039c8b8b86429e65974d4fa05ef, type: 2}
+        clip: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
