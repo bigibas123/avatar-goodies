@@ -3,7 +3,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_Spacey ("Spacey Texture", 2D) = "black" {}
-		_EmissionStrength ("Emission strength", Range(0.0,1.0)) = 1.0
+		_EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
 		[NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
 		[NoScaleOffset] _AOMap ("Ambient occlusion map", 2D) = "white" {}
 
@@ -91,11 +91,11 @@ Shader "Bigi/AudioLink_fragv7" {
 				//Audiolink
 				{
 					GET_SOUND_COLOR(soundC);
-					doMixProperly(mix, soundC, mask.b, 1.0);
+					doMixProperly(mix, soundC, mask.b * RGBtoHCV(soundC).z, 1.0);
 				}
 				//"Emissions"
 				{
-					doMixProperly(mix, orig_color, saturate((mask.r * _EmissionStrength) - (mix.totalWeight - 1.0)), 2.0);
+					doMixProperly(mix, orig_color, mask.r * _EmissionStrength - ((mix.totalWeight - 1.0) * _EmissionStrength), 1.0);
 				}
 				//Screenspace images
 				{
