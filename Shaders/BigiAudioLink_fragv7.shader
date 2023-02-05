@@ -35,7 +35,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			Tags {
 				"RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"
 			}
-			Cull Back
+			Cull Off
 			ZWrite On
 			ZTest LEqual
 			Blend One OneMinusSrcAlpha
@@ -121,7 +121,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				WriteMask 1
 				Pass Replace
 			}
-			Cull Back
+			Cull Off
 			ZWrite Off
 			ZTest LEqual
 			//Blend SrcAlpha OneMinusSrcAlpha

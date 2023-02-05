@@ -137,7 +137,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/Off
+        name: Props/LogoBand/On\Off
         state:
           actions:
           - id: 4
@@ -150,6 +150,24 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
+        enableIcon: 0
+        icon: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        simpleOutTransition: 1
+        defaultSliderValue: 1
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -167,6 +185,24 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
+        enableIcon: 0
+        icon: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        simpleOutTransition: 1
+        defaultSliderValue: 1
     00000002:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -184,6 +220,24 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
+        enableIcon: 0
+        icon: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        simpleOutTransition: 1
+        defaultSliderValue: 1
     00000003:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -201,6 +255,24 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
+        enableIcon: 0
+        icon: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        simpleOutTransition: 1
+        defaultSliderValue: 1
     00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:

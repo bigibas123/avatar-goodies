@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FurBallMat
+  m_Shader: {fileID: 4800000, guid: fece619811077234d84ddd878e3f02fe, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurGroomingMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurShapeMap:
+        m_Texture: {fileID: 2800000, guid: a2057c949ae9c3f46a3b9be57238e8e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairMap:
+        m_Texture: {fileID: 2800000, guid: f692803a78419914490225dad9b3bbfa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MarkingsMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Matcap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MatcapMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UtilitySourceMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UtilityTargetMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ActivatorCycles: 10
+    - _ActivatorHormoneRadius: 3
+    - _AlbedoEmission: 0
+    - _AnisotropicGroup: 0
+    - _BodyExpansion: 1
+    - _BodyShrinkOffset: 0
+    - _BumpScale: 1
+    - _CameraProximityTouch: 0.5
+    - _CellStretch: 0
+    - _ConfirmPipeline: 0
+    - _Contrast: 10
+    - _Cos: 1
+    - _Cutoff: 0.5
+    - _DebuggingGroup: 0
+    - _DebuggingLog: 0
+    - _DeepFurOcclusionStrength: 0.35
+    - _DetailNormalMapScale: 1
+    - _Direction: 0
+    - _DstBlend: 0
+    - _DynamicBodySizeActive: -1
+    - _DynamicsGroup: 0
+    - _EmissionMapStrength: 1
+    - _EnableWind: 0
+    - _ExtraLighting: 0
+    - _ExtraLightingEnable: 1
+    - _ExtraLightingGroup: 0
+    - _ExtraLightingMode: 0
+    - _ExtraLightingRim: 1
+    - _FallbackLightAngle: -25
+    - _FallbackLightDirection: 45
+    - _FallbackLightEnable: 0
+    - _FallbackLightStrength: 0.25
+    - _FurAnisoDepth: 0.5
+    - _FurAnisoReflectAngle: 1
+    - _FurAnisoReflectGloss: 0.5
+    - _FurAnisoRefractAngle: 6
+    - _FurAnisoRefractGloss: 0.5
+    - _FurAnisotropicEnable: 1
+    - _FurAnisotropicReflect: 0.5
+    - _FurAnisotropicRefract: 0.5
+    - _FurCombCompression: 0.35
+    - _FurCombStrength: 0.35
+    - _FurContactStrength: 1
+    - _FurDebugCombing: 0
+    - _FurDebugDensity: 0
+    - _FurDebugDepth: 0
+    - _FurDebugDistance: 0
+    - _FurDebugLength: 0
+    - _FurDebugMipMap: 0
+    - _FurDebugVertDist: 0
+    - _FurGravitySlider: 0.35
+    - _FurLengthMultiplier: 1
+    - _FurLightingGroup: 0
+    - _FurMarkingsActive: 0
+    - _FurMinHeight: 0
+    - _FurShadowOffset: 0.25
+    - _FurShapeGroup: 1
+    - _FurShapeMapHash: -1.7869577e+9
+    - _FurShellSpacing: 1
+    - _FurShellSpacingActual: 0
+    - _GenFineHairMaxColourShift: 1
+    - _GenFineHairMaxHeight: 1
+    - _GenFineHairMaxHighlight: 0
+    - _GenFineHairMinColourShift: -1
+    - _GenFineHairMinHeight: 0.7
+    - _GenFineHairMinHighlight: 0
+    - _GenFineHairs: 10000
+    - _GenFineHairsTaper: 0
+    - _GenGuardHairMaxColourShift: 1
+    - _GenGuardHairMaxHeight: 1
+    - _GenGuardHairMaxHighlight: 0
+    - _GenGuardHairMinColourShift: -1
+    - _GenGuardHairMinHeight: 0.7
+    - _GenGuardHairMinHighlight: 0
+    - _GenGuardHairs: 75
+    - _GenGuardHairsTaper: 1
+    - _GenMediumHairMaxColourShift: 1
+    - _GenMediumHairMaxHeight: 1
+    - _GenMediumHairMaxHighlight: 0
+    - _GenMediumHairMinColourShift: -1
+    - _GenMediumHairMinHeight: 0.7
+    - _GenMediumHairMinHighlight: 0
+    - _GenMediumHairs: 250
+    - _GenMediumHairsTaper: 0
+    - _Generate: 0
+    - _GenerateFurGroup: 0
+    - _GenerateHairGroup: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HairClipping: 0
+    - _HairColourShift: 0.01
+    - _HairCurlXTwists: 3
+    - _HairCurlXWidth: 0.5
+    - _HairCurlXYOffset: 45
+    - _HairCurlYTwists: 3
+    - _HairCurlYWidth: 0.5
+    - _HairCurls: 0
+    - _HairCurlsActive: 0
+    - _HairCurlsGroup: 0
+    - _HairCurlsLockXY: 1
+    - _HairDensity: 2.61
+    - _HairDensityThreshold: 0.8352941
+    - _HairHighlights: 0.5
+    - _HairMapCutoff: 1
+    - _HairMapHash: -1.03982496e+9
+    - _HairStiffness: 0
+    - _HairsGroup: 1
+    - _InhibitorHormoneAdditionalRadius: 3
+    - _InhibitorStrength: 0.3
+    - _InitialDensity: 0.5
+    - _LightPenetrationDepth: 0.1
+    - _LightWraparound: 1
+    - _LightingGroup: 0
+    - _MainMapsGroup: 0
+    - _MarkingsContrast: 1
+    - _MarkingsDensity: 3.85
+    - _MarkingsGroup: 0
+    - _MarkingsHeight: 0.15
+    - _MarkingsMapHash: 0
+    - _MarkingsMapNegativeCutoff: 0
+    - _MarkingsMapPositiveCutoff: 0
+    - _MarkingsRotation: 0
+    - _MarkingsVisibility: 0.3
+    - _MatcapAdd: 0
+    - _MatcapEmission: 0
+    - _MatcapEnable: 0
+    - _MatcapFurMask: 0
+    - _MatcapGroup: 0
+    - _MatcapReplace: 0
+    - _MatcapSpecular: 1
+    - _MatcapTextureChannel: 0
+    - _MaxBrightness: 10
+    - _MaxLayers: 40
+    - _MaxLayersLite: 20
+    - _Metallic: 0
+    - _MinBrightness: -1
+    - _Mode: 0
+    - _MovementGroup: 0
+    - _MovementStrength: 1
+    - _MutationRate: 0.25
+    - _OcclusionGroup: 0
+    - _OcclusionStrength: 1
+    - _OverrideDefaultMipMap: 4
+    - _OverrideDistanceBias: 0
+    - _OverrideMaxDistance: 0
+    - _OverrideScale: 1
+    - _PBSSkin: 0.1
+    - _PBSSkinGroup: 0
+    - _Parallax: 0.02
+    - _ProximityOcclusion: 0.5
+    - _ProximityOcclusionRange: 0.2
+    - _Quality2DCamera: 3
+    - _QualityEditor: 3
+    - _QualityGroup: 0
+    - _QualityScreenshot: 5
+    - _QualityVRCamera: 3
+    - _QualityVRChat2D: 1
+    - _QualityVRChatVR: 1
+    - _RenderDistance: 1
+    - _RenderPipeline: 1
+    - _RenderQuality: 1
+    - _ScaleCalibration: 0.1
+    - _ScanRadiusX: 0
+    - _ScanRadiusY: 0
+    - _SelectedUV: 0
+    - _Sin: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SubsurfaceScattering: 0.5
+    - _ToonBrightness: 0
+    - _ToonColoursGroup: 0
+    - _ToonHue: 0
+    - _ToonHueBGR: 0
+    - _ToonHueBRG: 0
+    - _ToonHueGBR: 0
+    - _ToonHueGRB: 0
+    - _ToonHueRBG: 0
+    - _ToonHueRGB: 1
+    - _ToonLighting: 0
+    - _ToonLightingGroup: 0
+    - _ToonLightingHighLevel: 0.7
+    - _ToonLightingHighSoftEdge: 0.175
+    - _ToonLightingShadowLevel: 0.1
+    - _ToonLightingShadowSoftEdge: 0.45
+    - _ToonPostEffectsGroup: 0
+    - _ToonShading: 0
+    - _ToonShadingGroup: 0
+    - _ToonWhiten: 0
+    - _UVSec: 0
+    - _UltraQuality: 0
+    - _UtilitiesGroup: 0
+    - _UtilityFunction: 0
+    - _UtilityInvert: 0
+    - _UtilityMaskThreshold: 0.01
+    - _UtilityMaskType: 0
+    - _UtilityNewResolution: 2
+    - _UtilityReScale: 0.75
+    - _UtilitySourceChannel: 0
+    - _UtilitySourceMask: 2
+    - _UtilityTargetChannel: 0
+    - _VRChatCameraMode: -1
+    - _VelocityX: 0
+    - _VelocityY: 0
+    - _VelocityZ: 0
+    - _WindAngle: -10
+    - _WindDirection: 90
+    - _WindGroup: 0
+    - _WindGustsStrength: 2.5
+    - _WindSpeed: 0.35
+    - _WindTurbulenceStrength: 1.7
+    - _WorldLightGroup: 0
+    - _WorldLightReColourStrength: 0
+    - _XMultiplier: 0
+    - _YMultiplier: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColour: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Colour: {r: -1, g: -1, b: -1, a: -1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColour: {r: -1, g: -1, b: -1, a: -1}
+    - _ExtraLightingColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FallbackLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MarkingsColour: {r: 1, g: 1, b: 1, a: 1}
+    - _MatcapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PigmentColour: {r: 0, g: 0, b: 0, a: 1}
+    - _ToonColour1: {r: 1, g: 1, b: 1, a: 1}
+    - _ToonColour2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ToonColour3: {r: 0, g: 0, b: 0, a: 1}
+    - _ToonColour4: {r: 1, g: 0, b: 0, a: 1}
+    - _ToonColour5: {r: 1, g: 1, b: 0, a: 1}
+    - _ToonColour6: {r: 0, g: 1, b: 0, a: 1}
+    - _ToonColour7: {r: 0, g: 1, b: 1, a: 1}
+    - _ToonColour8: {r: 0, g: 0, b: 1, a: 1}
+    - _ToonColour9: {r: 1, g: 0, b: 1, a: 1}
+    - _ToonLightingHigh: {r: 1, g: 1, b: 1, a: 1}
+    - _ToonLightingMid: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+    - _ToonLightingShadow: {r: 0.05, g: 0.05, b: 0.125, a: 1}
+    - _TransitionalColour: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _WindDirectionActual: {r: 0.9848078, g: 0.17364816, b: -0.00000004703179, a: 0}
+    - _WorldLightReColour: {r: 1, g: 1, b: 1, a: 1}
