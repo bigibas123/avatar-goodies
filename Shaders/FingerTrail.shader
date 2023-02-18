@@ -1,8 +1,7 @@
 ﻿Shader "Bigi/FingerTrail" {
 	Properties {
-		_AudioIntensity ("AudioLink Intensity (0.5 in normal)", Range(0.0,1.0)) = 0.001
-		_DMXGroup ("DMX Group", Int) = 2
-		[MaterialToggle] _UseBassIntensity ("Use Lower Tone Intensity", Range(0.0,1.0) ) = 0.0
+		_Brightness ("Brightness", Range(0.0,1.0)) = 0.001
+		_Hue("NonALHue", Range(0.0,1.0)) = 0.0
 	}
 
 	Category {
@@ -25,7 +24,8 @@
 
 				#include <UnityCG.cginc>
 				#include "Includes/BigiSoundUtils.cginc"
-				#include "Includes/BigiShaderParams.cginc"
+				float _Brightness;
+				float _Hue;
 
 				struct appdata_t {
 					float4 vertex : POSITION;
@@ -60,13 +60,10 @@
 						const half4 c1 = b_sound::GetThemeColor(themeColorIndex);
 						const half4 c2 = b_sound::GetThemeColor((themeColorIndex + 1) % 3);
 						col = lerp(c1, c2, frac(themeColorIndex));
-					} else {
-						const float cords = ((_Time.y % 1.0) + (i.color.r)) % 1.0;
-						col = half4(HSVToRGB(half3(cords, 1.0, 1.0)), 1.0);
-					}
+					} else { col = half4(HSVToRGB(half3(_Hue, 1.0, 1.0)), 1.0); }
 
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0));
-					return col;
+					return half4(col.rgb * _Brightness, col.a);
 				}
 				ENDCG
 			}
