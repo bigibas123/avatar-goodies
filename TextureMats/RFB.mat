@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RFB
-  m_Shader: {fileID: 4800000, guid: 54cfc75141df52745950a9cb7d780e87, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2488f1ba03aa7fb45b87a5eeeb13b885, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
