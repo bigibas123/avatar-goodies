@@ -56,7 +56,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AL_Theme_Weight: 0.001
     - _AudioIntensity: 0
+    - _Brightness: 0
     - _BumpScale: 1
     - _ColorChordIndex: 0
     - _Cutoff: 0.5
@@ -66,6 +68,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Hue: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
