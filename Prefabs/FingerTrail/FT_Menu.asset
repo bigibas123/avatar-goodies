@@ -23,6 +23,16 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
+  - name: Pen Hold
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: PenMode
+    value: 2
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
   - name: Hue
     icon: {fileID: 0}
     type: 203

@@ -15,7 +15,7 @@ MonoBehaviour:
   parameters:
   - name: PenMode
     valueType: 2
-    saved: 1
+    saved: 0
     defaultValue: 0
   - name: Hue
     valueType: 1

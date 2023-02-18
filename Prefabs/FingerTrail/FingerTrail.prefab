@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8222188990354410435}
   - component: {fileID: 8305598768241021507}
   - component: {fileID: 1611550947250992499}
+  - component: {fileID: 2991701280335995284}
   m_Layer: 0
   m_Name: FingerTrail
   m_TagString: Untagged
@@ -225,3 +226,22 @@ MonoBehaviour:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 8219374938026449059}
+--- !u!95 &2991701280335995284
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8219374938026449059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7f29376f6a0c7a4a8f73be9a5103f88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
