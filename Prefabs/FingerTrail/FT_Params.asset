@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - name: PenMode
-    valueType: 2
+    valueType: 0
     saved: 0
     defaultValue: 0
   - name: Hue
