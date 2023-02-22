@@ -162,7 +162,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Shader/Fingertrail/On
+        name: Fingertrail/On
         state:
           actions:
           - id: 2
@@ -203,7 +203,7 @@ MonoBehaviour:
           ResetMePlease: 0
         menus:
         - menu: {fileID: 11400000, guid: 1f37a060fb33cf843b08ed7b932256cd, type: 2}
-          prefix: Shader/Fingertrail
+          prefix: Fingertrail
           ResetMePlease: 0
         prms:
         - parameters: {fileID: 11400000, guid: 078b2a65d10f59943a1aa23196ed02ed, type: 2}
