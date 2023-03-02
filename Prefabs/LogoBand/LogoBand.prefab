@@ -130,6 +130,7 @@ MonoBehaviour:
     - id: 1
     - id: 2
     - id: 3
+    - id: 4
   somethingIsBroken: 0
   references:
     version: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
         name: Props/LogoBand/On\Off
         state:
           actions:
-          - id: 4
+          - id: 5
         saved: 1
         slider: 0
         securityEnabled: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
         name: Props/LogoBand/Logo
         state:
           actions:
-          - id: 5
+          - id: 6
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -210,7 +211,7 @@ MonoBehaviour:
         name: Props/LogoBand/ColorChord
         state:
           actions:
-          - id: 6
+          - id: 7
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -245,7 +246,7 @@ MonoBehaviour:
         name: Props/LogoBand/AL Intensity
         state:
           actions:
-          - id: 7
+          - id: 8
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -274,18 +275,26 @@ MonoBehaviour:
         simpleOutTransition: 1
         defaultSliderValue: 1
     00000004:
+      type: {class: ObjectState, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        states:
+        - obj: {fileID: 7055592349295351436}
+          action: 1
+          ResetMePlease: 0
+    00000005:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 7055592349295351436}
-    00000005:
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        clip: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
     00000006:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
+        clip: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
     00000007:
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        clip: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
+    00000008:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
