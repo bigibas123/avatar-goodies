@@ -24,6 +24,9 @@ Shader "Bigi/AudioLink_fragv7" {
 		_AL_Hue_Weight("Weight", Range(0.0,1.0)) = 0.0
 		_AL_Hue("Hue", Range(0.0,1.0)) = 0.0
 		_AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.0
+		
+		[Header(Effects)]
+		_MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -60,6 +63,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/LightUtilsDefines.cginc"
 			#include "./Includes/SoundUtilsDefines.cginc"
+			#include "./Includes/BigiEffects.cginc"
 
 			struct BEffectsTracker {
 				float totalWeight;
@@ -104,6 +108,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				}
 
 				o.color = half4(mix.totalColor, orig_color.a);
+				o.color = b_effects::Monochromize(o.color,_MonoChrome);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}

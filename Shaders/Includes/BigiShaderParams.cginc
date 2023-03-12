@@ -33,6 +33,8 @@ uniform float _OutlineWidth;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;
+//Effects
+uniform float _MonoChrome;
 
 #endif
 
