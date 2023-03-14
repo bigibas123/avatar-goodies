@@ -10,7 +10,7 @@ Shader "Bigi/ALTest" {
 		Pass {
 			Name "OpaqueForwardBase"
 			Tags {
-				"RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"
+				"RenderType" = "TransparentCutout" "Queue" = "Geometry" "VRCFallback"="None" "LightMode" = "ForwardBase"
 			}
 			Cull Off
 			ZWrite On
@@ -47,16 +47,22 @@ Shader "Bigi/ALTest" {
 				squarepos.y = i.uv.y % 0.5f * 2.0f;
 
 				if (i.uv.x < 0.5 && i.uv.y < 0.5) {
-					float2 gridlocf = squarepos * float2(32, 4);
+					float2 gridlocf = squarepos * float2(18, 6);
 					uint2 gridloc = gridlocf;
-					int character = AudioLinkGetGlobalStringChar(gridloc.y, gridloc.x);
 
 					float2 softness_uv = gridlocf * float2(4, 6);
 					float softness = 4. / (pow(length(float2(ddx(softness_uv.x), ddy(softness_uv.y))), 0.5)) - 1.;
 
 					float2 charUV = float2(4, 6) - fmod(gridlocf, 1.0) * float2(4.0, 6.0);
+					if (gridloc.y < 1) {
+						int character = AudioLinkGetMasterNameChar(gridloc.x);
 
-					o.color = PrintChar(character, charUV, softness, 0);
+						o.color = PrintChar(character, charUV, softness, 0);
+					} else if (gridloc.y < 5) {
+						float time = AudioLinkGetChronoTime(0, gridloc.y - 1);
+						o.color = PrintNumberOnLine(time, charUV, softness, gridloc.x, 13, 4, false, 0);
+					}
+					o.color.a = 1.0;
 				} else if (i.uv.x > 0.5 && i.uv.y < 0.5) {
 					float2 gridlocf = squarepos * float2(4, 32);
 					uint band = gridlocf.x;
@@ -64,10 +70,15 @@ Shader "Bigi/ALTest" {
 					float sound;
 					if (gridlocf.y < 0.0) { sound = 1.0; } else { sound = AudioLinkLerp(ALPASS_AUDIOLINK + (gridlocf.yx)).r; }
 
-					float3 bandColor = band < 1 ? float3(1.0, 0, 0) : band < 2 ? float3(0, 1, 0) : band < 3 ? float3(0, 0, 1) : float3(1, 1, 0);
+					float3 bandColor = band < 1 ? float3(1, 0, 0) : band < 2 ? float3(1, 1, 0) : band < 3 ? float3(0, 1, 0) : float3(0, 0, 1);
 					o.color = float4(bandColor * sound, 1.0);
-				} else { o.color.rg = squarepos; }
-
+					o.color.a = 1.0;
+				} else {
+					squarepos.y = squarepos.y - 0.5;
+					half3 al = AudioLinkLerp(ALPASS_AUTOCORRELATOR + float2((abs(1. - i.uv.x * 2.)) * AUDIOLINK_WIDTH, 0)).rgb;
+					half a = smoothstep(0.02, 0.0, abs(al.r - squarepos.y));
+					o.color = half4(a, a, a, 1.0);
+				}
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
