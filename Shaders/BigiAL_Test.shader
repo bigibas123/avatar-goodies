@@ -4,11 +4,14 @@ Shader "Bigi/ALTest" {
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
+		Tags {
+			"PreviewType" = "Plane"
+		}
 
 		LOD 100
 
 		Pass {
-			Name "OpaqueForwardBase"
+			Name "ForwardBase"
 			Tags {
 				"RenderType" = "TransparentCutout" "Queue" = "Geometry" "VRCFallback"="None" "LightMode" = "ForwardBase"
 			}
@@ -72,12 +75,15 @@ Shader "Bigi/ALTest" {
 
 					float3 bandColor = band < 1 ? float3(1, 0, 0) : band < 2 ? float3(1, 1, 0) : band < 3 ? float3(0, 1, 0) : float3(0, 0, 1);
 					o.color = float4(bandColor * sound, 1.0);
-					o.color.a = 1.0;
 				} else {
-					squarepos.y = squarepos.y - 0.5;
+					squarepos.y -= 0.5;
 					half3 al = AudioLinkLerp(ALPASS_AUTOCORRELATOR + float2((abs(1. - i.uv.x * 2.)) * AUDIOLINK_WIDTH, 0)).rgb;
-					half a = smoothstep(0.02, 0.0, abs(al.r - squarepos.y));
-					o.color = half4(a, a, a, 1.0);
+					o.color = half4(
+						smoothstep(0.02, 0.0, abs(((al.r * 0.25) - squarepos.y))),
+						smoothstep(0.02, 0.0, abs(((al.g * 0.25) - squarepos.y))),
+						smoothstep(0.02, 0.0, abs(((al.b * 0.25) - squarepos.y))),
+						1.0
+					);
 				}
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
