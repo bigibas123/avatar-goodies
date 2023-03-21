@@ -60,7 +60,7 @@ namespace b_sound
         const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
         const float bassIntensity = AudioLinkData(cord).r;
         //AL Theme
-        {
+        {//TODO Auto-Select of Theme id based on hsV
             if (conf.AL_Theme_Weight > Epsilon) {
                 const uint2 tcord = ALPASS_THEME_COLOR0 + uint2(conf.AL_ThemeIndex, 0);
                 float4 color = AudioLinkData(tcord);

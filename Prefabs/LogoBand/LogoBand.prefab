@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrcfSerVersion: 7
+  version: 2
   config:
     features:
     - id: 0
@@ -152,7 +152,10 @@ MonoBehaviour:
         exclusiveTag: 
         resetPhysbones: []
         enableIcon: 0
-        icon: {fileID: 0}
+        icon:
+          fileID: 0
+          guid: 
+          obj: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -187,7 +190,10 @@ MonoBehaviour:
         exclusiveTag: 
         resetPhysbones: []
         enableIcon: 0
-        icon: {fileID: 0}
+        icon:
+          fileID: 0
+          guid: 
+          obj: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -222,7 +228,10 @@ MonoBehaviour:
         exclusiveTag: 
         resetPhysbones: []
         enableIcon: 0
-        icon: {fileID: 0}
+        icon:
+          fileID: 0
+          guid: 
+          obj: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -257,7 +266,10 @@ MonoBehaviour:
         exclusiveTag: 
         resetPhysbones: []
         enableIcon: 0
-        icon: {fileID: 0}
+        icon:
+          fileID: 0
+          guid: 
+          obj: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -289,12 +301,21 @@ MonoBehaviour:
     00000006:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
+        clip:
+          fileID: 7400000
+          guid: 54920ee277d127c45ac1d602de0ce9c2
+          obj: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
     00000007:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
+        clip:
+          fileID: 7400000
+          guid: 862838eefa1e7704b86998562d29cff8
+          obj: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
     00000008:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        clip: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
+        clip:
+          fileID: 7400000
+          guid: 7dcbf512d3a20b645a830767f37302da
+          obj: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
