@@ -107,8 +107,7 @@ Shader "Bigi/AudioLink_fragv7" {
 					doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, tpos), mask.g, 1.0);
 				}
 
-				o.color = half4(mix.totalColor, orig_color.a);
-				o.color = b_effects::Monochromize(o.color,_MonoChrome);
+				o.color = b_effects::Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
@@ -143,6 +142,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#pragma target 3.0
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/LightUtilsDefines.cginc"
+			#include "./Includes/BigiEffects.cginc"
 
 
 			fragOutput frag(v2f i)
@@ -154,7 +154,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_SETUP_INSTANCE_ID(i);
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				BIGI_GETLIGHT_DEFAULT(lighting);
-				o.color = orig_color * lighting;
+				o.color = b_effects::Monochromize(orig_color * lighting, _MonoChrome);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
 			}
@@ -189,6 +189,7 @@ Shader "Bigi/AudioLink_fragv7" {
 
 			#include "./Includes/ToonVert.cginc"
 			#include "./Includes/LightUtilsDefines.cginc"
+			#include "./Includes/BigiEffects.cginc"
 
 			fragOutput frag(v2f i)
 			{
@@ -201,7 +202,7 @@ Shader "Bigi/AudioLink_fragv7" {
 				UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 
 				BIGI_GETLIGHT_DEFAULT(lighting);
-				o.color = half4(lighting * _AddLightIntensity) * orig_color;
+				o.color = b_effects::Monochromize(half4(lighting * _AddLightIntensity) * orig_color, _MonoChrome);
 				//o.color = float4(1.0,1.0,1.0,1.0);
 				UNITY_APPLY_FOG(i.fogCoord, o.color);
 				return o;
