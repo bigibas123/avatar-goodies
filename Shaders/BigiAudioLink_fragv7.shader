@@ -14,7 +14,9 @@ Shader "Bigi/AudioLink_fragv7" {
 		[Header(DMX)]
 		_DMX_Weight("Weight", Range(0.0,1.0)) = 0.0
 		_DMX_Group ("DMX Group (1-4)", int) = 1
-
+		
+		[Header(Audiolink)]
+		[Toggle(EXTERNAL_AUDIOLINK_ON)] _BigiExternalAudiolinkEnable("Enable external audiolink", Float) = 0.0
 		[Header(Audiolink world theme colors)]
 		_AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 0.0
 		_AL_ThemeIndex("Theme index (0-3)", int) = 0

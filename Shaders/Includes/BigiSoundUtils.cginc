@@ -7,7 +7,7 @@
 #ifdef EXTERNAL_AUDIOLINK_ON
 #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 #else
-#include "./Includes/AudioLink_0.3.1.cginc"
+#include "./Includes/AudioLink_0.3.2.cginc"
 #endif
 #include <UnityCG.cginc>
 #include "./VRSL-DMXAvatarFunctions.cginc"
