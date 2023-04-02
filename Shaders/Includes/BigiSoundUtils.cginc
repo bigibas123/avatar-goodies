@@ -2,7 +2,7 @@
 #define BIGI_SOUND_UTILS_INCLUDE
 
 
-#ifndef BIGI_DMXAL_INCLUDES
+#ifndef BIGI_DMXAL_INCLUDESW
     #define BIGI_DMXAL_INCLUDES
     #ifdef EXTERNAL_AUDIOLINK_ON
         #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
