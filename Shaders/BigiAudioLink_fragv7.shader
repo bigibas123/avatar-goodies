@@ -12,6 +12,7 @@ Shader "Bigi/AudioLink_fragv7" {
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
 
 		[Header(DMX)]
+		[Toggle(EXTERNAL_VRSL_ON)] _BigiExternalVRSLEnable("Enable external VRSL", Float) = 0.0
 		_DMX_Weight("Weight", Range(0.0,1.0)) = 0.0
 		_DMX_Group ("DMX Group (1-4)", int) = 1
 		

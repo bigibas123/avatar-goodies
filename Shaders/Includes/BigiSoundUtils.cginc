@@ -3,16 +3,20 @@
 
 
 #ifndef BIGI_DMXAL_INCLUDES
-#define BIGI_DMXAL_INCLUDES
-#ifdef EXTERNAL_AUDIOLINK_ON
-#include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
-#else
-#include "./Includes/AudioLink_0.3.2.cginc"
+    #define BIGI_DMXAL_INCLUDES
+    #ifdef EXTERNAL_AUDIOLINK_ON
+        #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
+    #else
+        #include "./Includes/AudioLink_0.3.2.cginc"
+    #endif
+        #include <UnityCG.cginc>
+    #ifndef EXTERNAL_VRSL_ON
+        #include "Assets/VRSL Addons/VRSL-AvatarCarePackage/VRSLDMX.cginc"
+    #else
+        #include "./VRSLDMX.cginc"
+    #endif
+    #include "./ColorUtil.cginc"
 #endif
-#include <UnityCG.cginc>
-#include "./VRSL-DMXAvatarFunctions.cginc"
-#endif
-#include "./ColorUtil.cginc"
 
 namespace b_sound
 {
@@ -49,6 +53,8 @@ namespace b_sound
         MixRatio mix;
         mix.totalColor = 0;
         mix.totalWeight = 0;
+        /*
+        //TODO Fix at next orionfest
         //DMX
         {
             if (conf.DMX_Weight > Epsilon) {
@@ -57,6 +63,7 @@ namespace b_sound
                 doMixProperly(mix, color, intensity * conf.DMX_Weight);
             }
         }
+        */
         const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
         const float bassIntensity = AudioLinkData(cord).r;
         //AL Theme
@@ -79,10 +86,7 @@ namespace b_sound
         return half4(mix.totalColor, mix.totalWeight / (conf.DMX_Weight + conf.AL_Hue_Weight + conf.AL_Theme_Weight + Epsilon));
     }
 
-    half4 GetThemeColor(const uint ccindex)
-    {
-        return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccindex, 0));
-    }
+    half4 GetThemeColor(const uint ccindex) { return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccindex, 0)); }
 
     float GetTime() { return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f; }
 }
