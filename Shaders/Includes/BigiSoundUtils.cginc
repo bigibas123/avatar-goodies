@@ -3,34 +3,28 @@
 
 
 #ifndef BIGI_DMXAL_INCLUDESW
-    #define BIGI_DMXAL_INCLUDES
-    #ifdef EXTERNAL_AUDIOLINK_ON
-        #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
-    #else
-        #include "./Includes/AudioLink_0.3.2.cginc"
-    #endif
-        #include <UnityCG.cginc>
-    #ifndef EXTERNAL_VRSL_ON
-        #include "Assets/VRSL Addons/VRSL-AvatarCarePackage/VRSLDMX.cginc"
-    #else
-        #include "./VRSLDMX.cginc"
-    #endif
-    #include "./ColorUtil.cginc"
+#define BIGI_DMXAL_INCLUDES
+#include <UnityCG.cginc>
+#include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
+#include "./ColorUtil.cginc"
 #endif
 
 namespace b_sound
 {
-    half GetScaleFactor(const half factor) { return factor * 2.0; }
+    half GetScaleFactor(const half factor)
+    {
+        return factor * 2.0;
+    }
 
-    half4 Scale(const half4 color, const half factor) { return pow(color, 0.3) * GetScaleFactor(factor); }
+    half4 Scale(const half4 color, const half factor)
+    {
+        return pow(color, 0.3) * GetScaleFactor(factor);
+    }
 
     struct ALSettings {
-        float DMX_Weight;
         float AL_Theme_Weight;
         float AL_Hue_Weight;
-
-        uint AL_ThemeIndex; // Audiolink index (0-3)
-        uint DMX_Group; // DMX group for VRSL (mostly 2, 1-4)
+        
         half AL_Hue; // HSV Hue for a stable bassreactive color
 
         half AL_Hue_BassReactive; //bool for bass reactivity of the AL_Hue
@@ -53,26 +47,33 @@ namespace b_sound
         MixRatio mix;
         mix.totalColor = 0;
         mix.totalWeight = 0;
-        /*
-        //TODO Fix at next orionfest
-        //DMX
-        {
-            if (conf.DMX_Weight > Epsilon) {
-                const float intensity = clamp(GetDMXIntensity(conf.DMX_Group) - 0.5, 0.0, 0.5) * 2.0;
-                const float3 color = GetDMXColor(conf.DMX_Group).rgb;
-                doMixProperly(mix, color, intensity * conf.DMX_Weight);
-            }
-        }
-        */
         const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
         const float bassIntensity = AudioLinkData(cord).r;
         //AL Theme
-        {//TODO Auto-Select of Theme id based on hsV
+        {
             if (conf.AL_Theme_Weight > Epsilon) {
-                const uint2 tcord = ALPASS_THEME_COLOR0 + uint2(conf.AL_ThemeIndex, 0);
-                float4 color = AudioLinkData(tcord);
+                float4 color1 = AudioLinkData(ALPASS_THEME_COLOR0);
+                float4 color2 = AudioLinkData(ALPASS_THEME_COLOR1);
+                float4 color3 = AudioLinkData(ALPASS_THEME_COLOR2);
+                float4 color4 = AudioLinkData(ALPASS_THEME_COLOR3);
+                float4 intensities = float4(RGBToHSV(color1).z, RGBToHSV(color2).z, RGBToHSV(color3).z, RGBToHSV(color4).z);
+
+                float4 finalColor;
+                if (intensities.w > 0.1) {
+                    finalColor = color4;
+                } else if (intensities.z > 0.1) {
+                    finalColor = color3;
+                } else if (intensities.y > 0.1) {
+                    finalColor = color2;
+                } else if (intensities.x > 0.1) {
+                    finalColor = color1;
+                } else {
+                    finalColor = float4(0, 0, 0, 0);
+                }
+
                 const float soundIntensity = (bassIntensity * conf.AL_TC_BassReactive) + (1.0 - conf.AL_TC_BassReactive);
-                doMixProperly(mix, color.rgb, color.a * conf.AL_Theme_Weight * soundIntensity);
+                
+                doMixProperly(mix, finalColor.rgb, finalColor.a * conf.AL_Theme_Weight * soundIntensity);
             }
         }
         //HueSlider
@@ -83,11 +84,17 @@ namespace b_sound
                 doMixProperly(mix, color, soundIntensity * conf.AL_Hue_Weight);
             }
         }
-        return half4(mix.totalColor, mix.totalWeight / (conf.DMX_Weight + conf.AL_Hue_Weight + conf.AL_Theme_Weight + Epsilon));
+        return half4(mix.totalColor, mix.totalWeight / (conf.AL_Hue_Weight + conf.AL_Theme_Weight + Epsilon));
     }
 
-    half4 GetThemeColor(const uint ccindex) { return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccindex, 0)); }
+    half4 GetThemeColor(const uint ccindex)
+    {
+        return AudioLinkData(ALPASS_THEME_COLOR0 + uint2(ccindex, 0));
+    }
 
-    float GetTime() { return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f; }
+    float GetTime()
+    {
+        return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f;
+    }
 }
 #endif

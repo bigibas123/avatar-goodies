@@ -1,6 +1,7 @@
 ﻿#ifndef BIGI_LIGHTUTILS_DEFINES
 #define BIGI_LIGHTUTILS_DEFINES
 
+#include "./BigiShaderParams.cginc"
 #include "./BigiLightUtils.cginc"
 
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \

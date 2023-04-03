@@ -2,10 +2,7 @@ Shader "Bigi/LogoPlane" {
 	Properties {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_CellNumber ("CellNumber", Int) = 0
-		_DMX_Group ("DMX Group (1-4)", int) = 2
-		_AL_ThemeIndex("Theme index (0-3)", int) = 0
-		_AL_General_Intensity("Audiolink/DMX Intensity",Range(0.0,1.0)) = 0.0
-		[Toggle(EXTERNAL_AUDIOLINK)] _EXTAUDIOLINK("Use external audiolink instead of the local file",Float) = 0.0
+		_AL_General_Intensity("Audiolink Intensity",Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -70,7 +67,6 @@ Shader "Bigi/LogoPlane" {
 			o.normal = UnityObjectToWorldNormal(v.normal);
 			
 			GET_SOUND_SETTINGS(set);
-			set.DMX_Weight = _AL_General_Intensity;
 			set.AL_Theme_Weight = _AL_General_Intensity;
 			
 			GET_SOUND_COLOR_CALL(set,scol);

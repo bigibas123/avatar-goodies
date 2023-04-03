@@ -130,7 +130,6 @@ MonoBehaviour:
     - id: 1
     - id: 2
     - id: 3
-    - id: 4
   somethingIsBroken: 0
   references:
     version: 1
@@ -138,10 +137,10 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/On\Off
+        name: Props/LogoBand/Off
         state:
           actions:
-          - id: 5
+          - id: 4
         saved: 1
         slider: 0
         securityEnabled: 0
@@ -179,7 +178,7 @@ MonoBehaviour:
         name: Props/LogoBand/Logo
         state:
           actions:
-          - id: 6
+          - id: 5
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -214,10 +213,10 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/ColorChord
+        name: Props/LogoBand/AL Intensity
         state:
           actions:
-          - id: 7
+          - id: 6
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -249,44 +248,6 @@ MonoBehaviour:
         simpleOutTransition: 1
         defaultSliderValue: 1
     00000003:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        name: Props/LogoBand/AL Intensity
-        state:
-          actions:
-          - id: 8
-        saved: 1
-        slider: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        enableIcon: 0
-        icon:
-          fileID: 0
-          guid: 
-          obj: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        simpleOutTransition: 1
-        defaultSliderValue: 1
-    00000004:
       type: {class: ObjectState, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
@@ -294,25 +255,18 @@ MonoBehaviour:
         - obj: {fileID: 7055592349295351436}
           action: 1
           ResetMePlease: 0
-    00000005:
+    00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 7055592349295351436}
-    00000006:
+    00000005:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip:
           fileID: 7400000
           guid: 54920ee277d127c45ac1d602de0ce9c2
           obj: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
-    00000007:
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        clip:
-          fileID: 7400000
-          guid: 862838eefa1e7704b86998562d29cff8
-          obj: {fileID: 7400000, guid: 862838eefa1e7704b86998562d29cff8, type: 2}
-    00000008:
+    00000006:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip:

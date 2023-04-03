@@ -20,7 +20,6 @@ uniform float _DMX_Weight;
 uniform float _AL_Theme_Weight;
 uniform float _AL_Hue_Weight;
 
-uniform uint _AL_ThemeIndex;
 uniform uint _DMX_Group;
 uniform half _AL_Hue;
 

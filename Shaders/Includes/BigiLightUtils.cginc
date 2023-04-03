@@ -4,7 +4,7 @@
 #include <UnityLightingCommon.cginc>
 #include <AutoLight.cginc>
 #include <UnityCG.cginc>
-#include "./BigiShaderParams.cginc"
+
 
 namespace b_light
 {
