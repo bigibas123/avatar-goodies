@@ -11,6 +11,12 @@ UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
 UNITY_DECLARE_TEX2D_NOSAMPLER(_AOMap);
 UNITY_DECLARE_TEX2D(_Spacey);
 float4 _Spacey_ST;
+
+#ifdef DECALS_ENABLED
+UNITY_DECLARE_TEX2D(_DecalTex);
+float4 _DecalTex_ST;
+#endif
+
 #endif
 
 #ifndef BIGI_V1_UNIFORMS
