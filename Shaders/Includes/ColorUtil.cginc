@@ -1,8 +1,8 @@
 ﻿#ifndef BIGI_COLOR_UTILS
 #define BIGI_COLOR_UTILS
+#include <UnityCG.cginc>
 #ifndef BIGI_EPSILON
 #define BIGI_EPSILON
-#include <UnityCG.cginc>
 #define Epsilon UNITY_HALF_MIN
 #endif
 
