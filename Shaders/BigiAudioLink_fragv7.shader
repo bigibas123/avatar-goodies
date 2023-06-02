@@ -22,6 +22,7 @@ Shader "Bigi/AudioLink_fragv7" {
 		
 		[Header(Effects)]
 		_MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
+		_Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -59,6 +60,7 @@ Shader "Bigi/AudioLink_fragv7" {
 			#include "./Includes/LightUtilsDefines.cginc"
 			#include "./Includes/SoundUtilsDefines.cginc"
 			#include "./Includes/BigiEffects.cginc"
+			#include "Assets/lygia/generative/voronoi.hlsl"
 
 			struct BEffectsTracker {
 				float totalWeight;
@@ -100,6 +102,15 @@ Shader "Bigi/AudioLink_fragv7" {
 				{
 					float2 tpos = TRANSFORM_TEX((i.staticTexturePos.xy / i.staticTexturePos.w), _Spacey);
 					doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, tpos), mask.g, 1.0);
+				}
+
+				//Voronoi
+				{
+					if(_Voronoi > Epsilon) {
+						float3 voronoiOutput = voronoi(i.uv * 10.0, b_sound::GetTimeRaw());
+						float3 endColor = HSVToRGB(half3((voronoiOutput.x + voronoiOutput.y) / 2.0f, 1.0, 1.0));
+						doMixProperly(mix,endColor * lighting,_Voronoi,2.0);
+					}
 				}
 
 				o.color = b_effects::Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);

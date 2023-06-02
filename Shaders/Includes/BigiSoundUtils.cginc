@@ -96,5 +96,10 @@ namespace b_sound
     {
         return AudioLinkGetChronoTime(0, 0) % 2.0f / 2.0f;
     }
+
+    float GetTimeRaw()
+    {
+        return AudioLinkGetChronoTime(0, 0);
+    }
 }
 #endif

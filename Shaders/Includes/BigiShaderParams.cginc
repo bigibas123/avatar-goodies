@@ -38,9 +38,15 @@ uniform float _OutlineWidth;
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;
+
+
+#endif
+
+#ifndef BIGI_V2_UNIFORMS
+#define BIGI_V2_UNIFORMS
 //Effects
 uniform float _MonoChrome;
-
+uniform float _Voronoi;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT
