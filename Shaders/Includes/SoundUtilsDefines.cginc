@@ -20,6 +20,6 @@ set.AL_Hue_Weight = _AL_Hue_Weight; \
 set.AL_Hue = _AL_Hue; \
 set.AL_Hue_BassReactive = _AL_Hue_BassReactive; \
 set.AL_TC_BassReactive = _AL_TC_BassReactive; \
-half4 outName = b_sound::GetDMXOrALColor(set);
+const half4 outName = b_sound::GetDMXOrALColor(set);
 
 #endif
