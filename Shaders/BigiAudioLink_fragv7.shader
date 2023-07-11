@@ -25,6 +25,10 @@ Shader "Bigi/AudioLink_fragv7"
         [Header(Effects)]
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
+        
+        [Header(Effects)]
+        _OtherTextures ("Other textures", 2DArray) = "" {}
+        
     }
     SubShader
     {
