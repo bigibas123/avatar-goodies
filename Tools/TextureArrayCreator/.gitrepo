@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://gist.github.com/8953d2f38195c9c15ced7ff4e9c632ef.git
+	branch = master
+	commit = 9e4a0f3f1c6848676cb5f09924922e1536bb4422
+	parent = 626e22d4af2920b6b60a4d683ba4a242b8ca45ec
+	method = merge
+	cmdver = 0.4.6
