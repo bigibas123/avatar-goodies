@@ -44,7 +44,7 @@ v2f vert(appdata_base v)
     UNITY_TRANSFER_INSTANCE_ID(v, o);
     o.pos = UnityObjectToClipPos(v.vertex);
     o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-    o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+    o.uv = DO_TRANSFORM(v.texcoord);
     o.normal = UnityObjectToWorldNormal(v.normal);
     o.staticTexturePos = ComputeScreenPos(o.pos);
     UNITY_TRANSFER_LIGHTING(o, o.pos)

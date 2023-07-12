@@ -5,17 +5,32 @@
 #ifndef BIGI_V1_TEXTURES
 #define BIGI_V1_TEXTURES
 #include <HLSLSupport.cginc>
-UNITY_DECLARE_TEX2D(_MainTex);
-float4 _MainTex_ST;
+
+#ifndef MULTI_TEXTURE
+    UNITY_DECLARE_TEX2D(_MainTex);
+    float4 _MainTex_ST;
+    #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2D(_MainTex, uv)
+    #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, uv)
+
+    #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTex);
+
+#else
+    UNITY_DECLARE_TEX2DARRAY(_MainTexArray);
+    float4 _MainTexArray_ST;
+    uniform int _OtherTextureId;
+    #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2DARRAY(_MainTexArray, float3(uv,_OtherTextureId))
+    #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTexArray, uv)
+
+    #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTexArray);
+
+#endif
+
+
 UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
 UNITY_DECLARE_TEX2D_NOSAMPLER(_AOMap);
 UNITY_DECLARE_TEX2D(_Spacey);
 float4 _Spacey_ST;
 
-#ifdef DECALS_ENABLED
-UNITY_DECLARE_TEX2D(_DecalTex);
-float4 _DecalTex_ST;
-#endif
 
 #endif
 

@@ -1,4 +1,4 @@
-Shader "Bigi/AudioLink_fragv7"
+Shader "Bigi/AudioLink_frag"
 {
     Properties
     {
@@ -27,7 +27,9 @@ Shader "Bigi/AudioLink_fragv7"
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
         
         [Header(Effects)]
-        _OtherTextures ("Other textures", 2DArray) = "" {}
+        [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
+        _MainTexArray ("Other textures", 2DArray) = "" {}
+        _OtherTextureId ("Other texture Id", Int) = 0
         
     }
     SubShader
@@ -38,7 +40,7 @@ Shader "Bigi/AudioLink_fragv7"
 
         Pass
         {
-            Name "ForwardBase"
+            Name "OpaqueForwardBase"
             Tags
             {
                 "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"
@@ -64,6 +66,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
+            #pragma multi_compile __ MULTI_TEXTURE
             #pragma target 3.0
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
@@ -73,14 +76,70 @@ Shader "Bigi/AudioLink_fragv7"
 
             fragOutput frag(v2f i)
             {
+                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                clip(orig_color.a - 1.0);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 BIGI_GETLIGHT_DEFAULT(lighting);
                 
-                const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-                const fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
+                
+                const fixed4 mask = GET_MASK_COLOR(i.uv);
+                o.color = b_effects::apply_effects(i, mask, orig_color, lighting);
+
+                UNITY_APPLY_FOG(i.fogCoord, o.color);
+                return o;
+            }
+            ENDCG
+        }
+        
+        Pass
+        {
+            Name "TransparentForwardBase"
+            Tags {
+                "RenderType" = "TransparentCutout" "Queue" = "AlphaTest" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
+            }
+            Cull Off
+            ZWrite On
+            ZTest LEqual
+            Blend One OneMinusSrcAlpha
+            Stencil
+            {
+                Ref 2
+                Comp Always
+                WriteMask 2
+                Pass Replace
+            }
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma instancing_options assumeuniformscaling
+            #pragma multi_compile_instancing
+            #pragma multi_compile_fwdbase
+            #pragma multi_compile_fwdbasealpha
+            #pragma multi_compile_lightpass
+            #pragma multi_compile_shadowcollector
+            #pragma multi_compile_fog
+            #pragma multi_compile __ MULTI_TEXTURE
+            #pragma target 3.0
+            #include "./Includes/BigiShaderParams.cginc"
+            #include "./Includes/ToonVert.cginc"
+            #include "./Includes/LightUtilsDefines.cginc"
+
+            #include "./Includes/BigiEffects.cginc"
+
+            fragOutput frag(v2f i)
+            {
+                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                clip((-1.0 * (orig_color.a - 1.0)) - Epsilon);
+                fragOutput o;
+                UNITY_SETUP_INSTANCE_ID(i);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
+                BIGI_GETLIGHT_DEFAULT(lighting);
+
+                const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i, mask, orig_color, lighting);
 
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
@@ -102,9 +161,10 @@ Shader "Bigi/AudioLink_fragv7"
             Blend One One
             Stencil
             {
-                Ref 1
-                ReadMask 1
-                Comp Equal
+                Ref 4
+                Comp Always
+                WriteMask 4
+                Pass Replace
             }
             CGPROGRAM
             #pragma target 3.0
@@ -116,6 +176,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile_instancing
+            #pragma multi_compile __ MULTI_TEXTURE
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -131,8 +192,9 @@ Shader "Bigi/AudioLink_fragv7"
                 UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 BIGI_GETLIGHT_DEFAULT(lighting);
                 
-                const fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
-                const fixed4 mask = UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, i.uv);
+                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                
+                const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i, mask, orig_color, lighting * _AddLightIntensity);
                 
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
@@ -156,6 +218,7 @@ Shader "Bigi/AudioLink_fragv7"
             {
                 Ref 0
                 ReadMask 7
+                WriteMask 0
                 Comp GEqual
             }
             CGPROGRAM
@@ -168,6 +231,7 @@ Shader "Bigi/AudioLink_fragv7"
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
+            #pragma multi_compile __ MULTI_TEXTURE
             #pragma target 3.0
             #include "./Includes/SoundUtilsDefines.cginc"
 
