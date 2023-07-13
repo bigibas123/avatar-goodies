@@ -3,30 +3,29 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
-namespace tk.dingemans.bigibas123.unity
+namespace Characters.Common.Editor.Tools.TextureArrayCreator
 {
-
     [CreateAssetMenu(fileName = "Texture Array Container", menuName = "Bigi/Texture Array Container", order = 3)]
     public class TextureArrayContainer : ScriptableObject
     {
         [SerializeField] public List<Texture2D> textures;
         [SerializeField] public TextureCreationFlags flags;
 
-        private int width => textures[0]?.width ?? 0;
-        private int height => textures[0]?.height ?? 0;
+        public int width => textures[0]?.width ?? 0;
+        public int height => textures[0]?.height ?? 0;
 
-        private int mipCount => textures[0]?.mipmapCount ?? 0;
-        private FilterMode filterMode => textures[0]?.filterMode ?? FilterMode.Bilinear;
-        private TextureWrapMode wrapMode => textures[0]?.wrapMode ?? TextureWrapMode.Repeat;
-        private int depth => textures.Count;
+        public int mipCount => textures[0]?.mipmapCount ?? 0;
+        public FilterMode filterMode => textures[0]?.filterMode ?? FilterMode.Bilinear;
+        public TextureWrapMode wrapMode => textures[0]?.wrapMode ?? TextureWrapMode.Repeat;
+        public int depth => textures.Count;
 
-        private GraphicsFormat graphicsFormat => textures[0]?.graphicsFormat ?? GraphicsFormat.None;
+        public GraphicsFormat graphicsFormat => textures[0]?.graphicsFormat ?? GraphicsFormat.None;
 
         public override string ToString()
         {
             return base.ToString() + AssetDatabase.GetAssetPath(MonoScript.FromScriptableObject(this));
         }
-        private Texture2DArray ToArray()
+        public Texture2DArray ToArray()
         {
             if (depth <= 0)
             {
@@ -61,8 +60,8 @@ namespace tk.dingemans.bigibas123.unity
 
                     for (int mipMapLevel = 0; mipMapLevel < array.mipmapCount; mipMapLevel++)
                     {
-                        array.SetPixelData(tex.GetRawTextureData<ulong>(),mipMapLevel,texIdx);
-                        
+                        array.SetPixelData(tex.GetRawTextureData<ulong>(), mipMapLevel, texIdx);
+
                         //array.SetPixels(tex.GetPixels(mipMapLevel), texIdx, mipMapLevel);
                     }
                 }
@@ -88,33 +87,5 @@ namespace tk.dingemans.bigibas123.unity
             }
             return array;
         }
-
-        private static IEnumerable<T> FindAssetsByType<T>() where T : UnityEngine.Object
-        {
-            string[] guids = AssetDatabase.FindAssets($"t:{typeof(T)}");
-            foreach (string t in guids)
-            {
-                string assetPath = AssetDatabase.GUIDToAssetPath(t);
-                var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
-                if (asset != null)
-                {
-                    yield return asset;
-                }
-            }
-        }
-
-        [MenuItem("Tools/Convert all TextureArrays")]
-        private static void Open()
-        {
-            foreach (var texContainer in FindAssetsByType<TextureArrayContainer>())
-            {
-                string path = AssetDatabase.GetAssetPath(texContainer);
-                string fixedPath = path.Replace(".asset", "TC.asset");
-                var arr = texContainer.ToArray();
-                AssetDatabase.CreateAsset(arr, fixedPath);
-                Debug.Log("Saved asset to " + fixedPath);
-            }
-        }
-
     }
 }
