@@ -32,7 +32,7 @@ namespace b_effects
         return HSVToRGB(half3((voronoiOutput.x + voronoiOutput.y) / 2.0f, 1.0, 1.0));
     }
 
-    fixed4 apply_effects(in v2f i, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting)
+    fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting, in float4 staticTexturePos)
     {
         BEffectsTracker mix;
         mix.totalWeight = 1.0;
@@ -48,7 +48,7 @@ namespace b_effects
         }
         //Screenspace images
         {
-            const half2 screen_texture_pos = TRANSFORM_TEX((i.staticTexturePos.xy / i.staticTexturePos.w), _Spacey);
+            const half2 screen_texture_pos = TRANSFORM_TEX((staticTexturePos.xy / staticTexturePos.w), _Spacey);
             doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, screen_texture_pos), mask.g, 1.0);
         }
 
@@ -56,7 +56,7 @@ namespace b_effects
         {
             if (_Voronoi > Epsilon)
             {
-                doMixProperly(mix, get_voronoi(i.uv) * lighting, _Voronoi, 2.0);
+                doMixProperly(mix, get_voronoi(uv) * lighting, _Voronoi, 2.0);
             }
         }
         return Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);
