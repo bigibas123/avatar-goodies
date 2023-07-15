@@ -2,7 +2,7 @@
 #define BIGI_EFFECTS_INCLUDE
 #include <HLSLSupport.cginc>
 #include "./ColorUtil.cginc"
-#include "./Includes/SoundUtilsDefines.cginc"
+#include "./SoundUtilsDefines.cginc"
 #include "Assets/lygia/generative/voronoi.hlsl"
 
 namespace b_effects

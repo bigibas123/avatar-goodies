@@ -31,10 +31,20 @@ struct fragOutput {
 };
 #endif
 
+#ifndef BIGI_DEFAULT_APPDATA
+#define BIGI_DEFAULT_APPDATA
+struct appdata {
+    float4 vertex : POSITION;
+    float3 normal : NORMAL;
+    float4 texcoord : TEXCOORD0;
+    UNITY_VERTEX_INPUT_INSTANCE_ID
+};
+#endif
+
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
 
-v2f vert(appdata_base v)
+v2f vert(appdata v)
 
 {
     v2f o;
