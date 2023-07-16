@@ -25,12 +25,12 @@ Shader "Bigi/AudioLink_frag"
         [Header(Effects)]
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
-        
+
         [Header(Effects)]
         [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
         _MainTexArray ("Other textures", 2DArray) = "" {}
         _OtherTextureId ("Other texture Id", Int) = 0
-        
+
     }
     SubShader
     {
@@ -81,23 +81,22 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 BIGI_GETLIGHT_DEFAULT(lighting);
-                
-                
+
+
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
-
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
             ENDCG
         }
-        
+
         Pass
         {
             Name "TransparentForwardBase"
-            Tags {
+            Tags
+            {
                 "RenderType" = "TransparentCutout" "Queue" = "AlphaTest" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
             }
             Cull Off
@@ -125,6 +124,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma target 3.0
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
+            #undef VERTEXLIGHT_ON
             #include "./Includes/LightUtilsDefines.cginc"
 
             #include "./Includes/BigiEffects.cginc"
@@ -136,12 +136,11 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
+
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
-
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
@@ -189,14 +188,12 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 BIGI_GETLIGHT_DEFAULT(lighting);
-                
+
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
-                
+
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting * _AddLightIntensity, i.staticTexturePos);
-                
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
@@ -250,7 +247,6 @@ Shader "Bigi/AudioLink_frag"
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_OUTPUT(v2f, o)
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
@@ -264,7 +260,6 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                UNITY_INITIALIZE_OUTPUT(fragOutput, o);
                 GET_SOUND_COLOR(scol);
                 o.color = scol;
                 return o;
@@ -315,7 +310,6 @@ Shader "Bigi/AudioLink_frag"
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_OUTPUT(v2f, o)
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)

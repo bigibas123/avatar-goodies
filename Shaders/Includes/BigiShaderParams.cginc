@@ -11,6 +11,7 @@
     float4 _MainTex_ST;
     #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2D(_MainTex, uv)
     #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, uv)
+    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, uv)
 
     #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTex);
 
@@ -20,6 +21,7 @@
     uniform int _OtherTextureId;
     #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2DARRAY(_MainTexArray, float3(uv,_OtherTextureId))
     #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTexArray, uv)
+    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTexArray, uv)
 
     #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTexArray);
 

@@ -42,8 +42,10 @@ Shader "Bigi/LogoPlane" {
 			UNITY_POSITION(pos); //float4 pos : SV_POSITION;
 			float3 normal : NORMAL;
 			half2 uv : TEXCOORD0; //texture coordinates
-			LIGHTING_COORDS(1, 2) UNITY_FOG_COORDS(3) //put for info into TEXCOORD2
-			float3 worldPos: TEXCOORD4;
+			UNITY_LIGHTING_COORDS(1, 2)
+			UNITY_FOG_COORDS(3)
+			float3 vertexLighting : TEXCOORD4;
+			float3 worldPos: TEXCOORD6;
 			float4 sound: COLOR0;
 			float4 soundIntensity: PSIZE0;
 			UNITY_VERTEX_INPUT_INSTANCE_ID

@@ -3,17 +3,14 @@
 
 #include "./BigiShaderParams.cginc"
 #include "./BigiLightUtils.cginc"
+#include <AutoLight.cginc>
 
-#ifndef MULTI_TEXTURE
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-const fixed4 outName = b_light::GetLighting(i.normal, shadowAtt, UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, i.uv))
-#else
-#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-const fixed4 outName = b_light::GetLighting(i.normal, shadowAtt, UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTexArray, i.uv))
-#endif
+const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting,GET_AO(i.uv))
+
 
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt)
+const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting)
 
 
 #endif
