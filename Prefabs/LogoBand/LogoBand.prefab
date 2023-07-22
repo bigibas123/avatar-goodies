@@ -137,14 +137,14 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        name: Props/LogoBand/Off
+        name: Props/LogoBand/On
         state:
           actions:
           - id: 4
         saved: 1
         slider: 0
         securityEnabled: 0
-        defaultOn: 1
+        defaultOn: 0
         includeInRest: 0
         exclusiveOffState: 0
         enableExclusiveTag: 0
@@ -171,6 +171,9 @@ MonoBehaviour:
           actions: []
         simpleOutTransition: 1
         defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -209,6 +212,9 @@ MonoBehaviour:
           actions: []
         simpleOutTransition: 1
         defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
     00000002:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -247,13 +253,16 @@ MonoBehaviour:
           actions: []
         simpleOutTransition: 1
         defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
     00000003:
       type: {class: ObjectState, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
         states:
         - obj: {fileID: 7055592349295351436}
-          action: 1
+          action: 0
           ResetMePlease: 0
     00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
