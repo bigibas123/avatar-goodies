@@ -8,6 +8,7 @@ Shader "Bigi/AudioLink_frag"
         _EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
         [NoScaleOffset] _AOMap ("Ambient occlusion map", 2D) = "white" {}
+        [NoScaleOffset] _NormalMap("Normal Map", 2D) = "bump" {}
 
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
@@ -57,6 +58,7 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
+            #pragma target 3.0
             #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
@@ -67,10 +69,11 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile __ MULTI_TEXTURE
-            #pragma target 3.0
+
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
+            #include "./Includes/NormalUtils.cginc"
 
             #include "./Includes/BigiEffects.cginc"
 
@@ -81,6 +84,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                
+                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
 
@@ -111,6 +117,7 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
+            #pragma target 3.0
             #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
@@ -121,12 +128,12 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile __ MULTI_TEXTURE
-            #pragma target 3.0
+
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
             #undef VERTEXLIGHT_ON
             #include "./Includes/LightUtilsDefines.cginc"
-
+            #include "./Includes/NormalUtils.cginc"
             #include "./Includes/BigiEffects.cginc"
 
             fragOutput frag(v2f i)
@@ -137,6 +144,8 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
+                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
@@ -180,6 +189,7 @@ Shader "Bigi/AudioLink_frag"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/BigiEffects.cginc"
+            #include "./Includes/NormalUtils.cginc"
 
             fragOutput frag(v2f i)
             {
@@ -188,6 +198,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                
+                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
@@ -219,6 +232,7 @@ Shader "Bigi/AudioLink_frag"
                 Comp GEqual
             }
             CGPROGRAM
+            #pragma target 3.0
             #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
@@ -229,7 +243,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile __ MULTI_TEXTURE
-            #pragma target 3.0
+
             #include "./Includes/SoundUtilsDefines.cginc"
 
 
@@ -286,6 +300,7 @@ Shader "Bigi/AudioLink_frag"
                 Pass IncrSat
             }
             CGPROGRAM
+            #pragma target 3.0
             #pragma vertex vert alpha
             #pragma fragment frag alpha
             #pragma multi_compile_shadowcaster
@@ -296,7 +311,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_fwdbasealpha
             #pragma multi_compile_lightpass
             #pragma multi_compile_fog
-            #pragma target 3.0
+
             #include "UnityCG.cginc"
             uniform int _Invisibility;
 

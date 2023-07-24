@@ -1,8 +1,4 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
 #ifndef BIGI_TOONVERT_INCLUDED
-// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members normal)
-#pragma exclude_renderers d3d11
 #define BIGI_TOONVERT_INCLUDED
 
 
@@ -16,12 +12,12 @@ struct fragOutput {
     fixed4 color : SV_Target;
 };
 #endif
-
 #ifndef BIGI_DEFAULT_APPDATA
 #define BIGI_DEFAULT_APPDATA
 struct appdata {
     float4 vertex : POSITION;
     float3 normal : NORMAL;
+    float4 tangent : TANGENT;
     float4 texcoord : TEXCOORD0;
     UNITY_VERTEX_INPUT_INSTANCE_ID
 };
@@ -31,13 +27,15 @@ struct appdata {
 struct v2f {
     UNITY_POSITION(pos); //float4 pos : SV_POSITION;
 
-    float3 normal : NORMAL;
+    float3 normal : NORMAL; //(World) Normal
     half2 uv : TEXCOORD0; //texture coordinates
     UNITY_LIGHTING_COORDS(1, 2)
     UNITY_FOG_COORDS(3)
     float3 vertexLighting : TEXCOORD4;
     float4 staticTexturePos : TEXCOORD5;
     float3 worldPos: TEXCOORD6;
+    float3 tangent : TEXCOORD7; // vect in left direction of texture coordinates
+    float3 bitangent : TEXCOORD8; // vect in up direction of texture coordinates
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 };
@@ -86,6 +84,10 @@ v2f vert(appdata v)
     }
     #endif
     
+    o.tangent = UnityObjectToWorldDir(v.tangent);
+    
+    float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
+    o.bitangent = cross(o.normal, o.tangent) * tangentSign;
 
     return o;
 }
