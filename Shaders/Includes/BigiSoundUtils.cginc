@@ -56,16 +56,16 @@ namespace b_sound
                 float4 color2 = AudioLinkData(ALPASS_THEME_COLOR1);
                 float4 color3 = AudioLinkData(ALPASS_THEME_COLOR2);
                 float4 color4 = AudioLinkData(ALPASS_THEME_COLOR3);
-                float4 intensities = float4(RGBToHSV(color1).z, RGBToHSV(color2).z, RGBToHSV(color3).z, RGBToHSV(color4).z);
+                float4 intensities = float4(RGBToHSV(color1.rgb * color1.a).z, RGBToHSV(color2.rgb * color2.a).z, RGBToHSV(color3.rgb * color3.a).z, RGBToHSV(color4.rgb * color4.a).z);
 
                 float4 finalColor;
-                if (intensities.w > 0.1) {
+                if (intensities.w > Epsilon) {
                     finalColor = color4;
-                } else if (intensities.z > 0.1) {
+                } else if (intensities.z > Epsilon) {
                     finalColor = color3;
-                } else if (intensities.y > 0.1) {
+                } else if (intensities.y > Epsilon) {
                     finalColor = color2;
-                } else if (intensities.x > 0.1) {
+                } else if (intensities.x > Epsilon) {
                     finalColor = color1;
                 } else {
                     finalColor = float4(0, 0, 0, 0);
@@ -73,7 +73,7 @@ namespace b_sound
 
                 const float soundIntensity = (bassIntensity * conf.AL_TC_BassReactive) + (1.0 - conf.AL_TC_BassReactive);
                 
-                doMixProperly(mix, finalColor.rgb, finalColor.a * conf.AL_Theme_Weight * soundIntensity);
+                doMixProperly(mix, finalColor.rgb, soundIntensity * conf.AL_Theme_Weight);
             }
         }
         //HueSlider

@@ -275,7 +275,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 GET_SOUND_COLOR(scol);
-                o.color = scol;
+                o.color = half4(scol.rgb * scol.a,smoothstep(0.0,0.05,scol.a));
                 return o;
             }
             ENDCG

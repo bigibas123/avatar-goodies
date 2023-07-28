@@ -36,15 +36,15 @@ namespace b_effects
     {
         BEffectsTracker mix;
         mix.totalWeight = 1.0;
-        mix.totalColor = orig_color * lighting;
+        mix.totalColor = orig_color.rgb * lighting.rgb;
         //AudioLink
         {
             GET_SOUND_COLOR(soundC);
-            doMixProperly(mix, soundC, mask.b * RGBtoHCV(soundC).z, 1.0);
+            doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 2.0);
         }
         //"Emissions"
         {
-            doMixProperly(mix, orig_color, mask.r * _EmissionStrength - ((mix.totalWeight - 1.0) * _EmissionStrength), 1.0);
+            doMixProperly(mix, orig_color.rgb * _EmissionStrength, mask.r * _EmissionStrength, 1.0);
         }
         //Screenspace images
         {
