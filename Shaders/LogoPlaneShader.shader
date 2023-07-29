@@ -20,7 +20,6 @@ Shader "Bigi/LogoPlane" {
 		#pragma multi_compile_fwdbase
 		#pragma multi_compile_fwdbasealpha
 		#pragma multi_compile_fog
-		#pragma multi_compile __ EXTERNAL_AUDIOLINK
 		#pragma target 3.0
 		
 		#include <UnityCG.cginc>
@@ -47,7 +46,6 @@ Shader "Bigi/LogoPlane" {
 			float3 vertexLighting : TEXCOORD4;
 			float3 worldPos: TEXCOORD6;
 			float4 sound: COLOR0;
-			float4 soundIntensity: PSIZE0;
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 			UNITY_VERTEX_OUTPUT_STEREO
 		};
@@ -70,10 +68,10 @@ Shader "Bigi/LogoPlane" {
 			
 			GET_SOUND_SETTINGS(set);
 			set.AL_Theme_Weight = _AL_General_Intensity;
+			set.AL_TC_BassReactive = 1.0;
 			
 			GET_SOUND_COLOR_CALL(set,scol);
-			o.sound = half4(scol.rgb,1.0);
-			o.soundIntensity = scol.a;
+			o.sound = half4(scol);
 			o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 			UNITY_TRANSFER_LIGHTING(o, o.pos);
 			UNITY_TRANSFER_FOG(o, o.pos);
@@ -88,7 +86,7 @@ Shader "Bigi/LogoPlane" {
 			clip(orig_color.a - Epsilon);
 			BIGI_GETLIGHT_NOAO(lighting);
 			const fixed4 normalColor = orig_color * lighting;
-			o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), i.soundIntensity);
+			o.color = lerp(normalColor,fixed4(i.sound.rgb, normalColor.a), i.sound.a);
 			//o.color = orig_color;
 			UNITY_APPLY_FOG(i.fogCoord, o.color);
 			return o;
