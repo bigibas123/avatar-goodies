@@ -272,7 +272,7 @@ Shader "Bigi/AudioLink_frag"
 
             fragOutput frag(v2f i)
             {
-                //clip(_OutlineWidth - Epsilon);
+                clip(_OutlineWidth - Epsilon);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
@@ -316,7 +316,6 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
-            uniform int _Invisibility;
 
             struct v2f {
                 V2F_SHADOW_CASTER;
@@ -337,7 +336,6 @@ Shader "Bigi/AudioLink_frag"
 
             float4 frag(v2f i) : SV_Target
             {
-                clip(-1 * _Invisibility);
                 UNITY_SETUP_INSTANCE_ID(i) UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) SHADOW_CASTER_FRAGMENT(i)
             }
             ENDCG
