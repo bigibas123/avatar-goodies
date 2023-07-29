@@ -49,6 +49,7 @@ namespace b_sound
         mix.totalWeight = 0;
         const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
         const float bassIntensity = AudioLinkData(cord).r;
+        const float soundIntensity = clamp(lerp(1.0,bassIntensity,conf.AL_TC_BassReactive),0.0,1.0);
         //AL Theme
         {
             if (conf.AL_Theme_Weight > Epsilon) {
@@ -70,8 +71,6 @@ namespace b_sound
                 } else {
                     finalColor = float4(0, 0, 0, 0);
                 }
-
-                const float soundIntensity = (bassIntensity * conf.AL_TC_BassReactive) + (1.0 - conf.AL_TC_BassReactive);
                 
                 doMixProperly(mix, finalColor.rgb, soundIntensity * conf.AL_Theme_Weight);
             }
@@ -79,7 +78,6 @@ namespace b_sound
         //HueSlider
         {
             if (conf.AL_Hue_Weight > Epsilon) {
-                const float soundIntensity = (bassIntensity * conf.AL_Hue_BassReactive) + (1.0 - conf.AL_Hue_BassReactive);
                 const float3 color = HSVToRGB(conf.AL_Hue, 1.0, 1.0);
                 doMixProperly(mix, color, soundIntensity * conf.AL_Hue_Weight);
             }

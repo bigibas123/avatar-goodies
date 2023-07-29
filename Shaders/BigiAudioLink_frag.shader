@@ -84,7 +84,7 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                
+
                 i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
@@ -145,7 +145,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
                 i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
-                
+
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
@@ -198,9 +198,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                
+
                 i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
-                
+
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
@@ -219,11 +219,12 @@ Shader "Bigi/AudioLink_frag"
             Name "Outline"
             Tags
             {
-                "RenderType" = "TransparentCutout" "Queue" = "Transparent+-1"
+                "RenderType" = "TransparentCutout" "Queue" = "AlphaTest"
             }
             Cull Off
             ZWrite On
             ZTest LEqual
+            AlphaToMask On
             Stencil
             {
                 Ref 0
@@ -265,17 +266,19 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
                 o.pos = UnityObjectToClipPos(v.vertex + offset);
+                o.pos = lerp(0.0,o.pos,smoothstep(0.0,Epsilon,_OutlineWidth));
                 return o;
             }
 
             fragOutput frag(v2f i)
             {
-                clip(_OutlineWidth - Epsilon);
+                //clip(_OutlineWidth - Epsilon);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 GET_SOUND_COLOR(scol);
-                o.color = half4(scol.rgb * scol.a,smoothstep(0.0,0.05,scol.a));
+                o.color = half4(scol.rgb * scol.a, smoothstep(0.0, 0.05, scol.a));
+                clip(o.color.a - Epsilon);
                 return o;
             }
             ENDCG
