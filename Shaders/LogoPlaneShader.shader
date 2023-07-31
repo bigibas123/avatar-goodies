@@ -3,6 +3,7 @@ Shader "Bigi/LogoPlane" {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_CellNumber ("CellNumber", Int) = 0
 		_AL_General_Intensity("Audiolink Intensity",Range(0.0,1.0)) = 0.0
+		_MinAmbient ("Minimum ambient light value", Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha

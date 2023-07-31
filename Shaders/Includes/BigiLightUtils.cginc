@@ -7,11 +7,17 @@
 
 namespace b_light
 {
-    fixed4 GetLighting(const float3 worldNormal, const half shadowAttenuation, const float3 vertex, const float4 ambientOcclusion)
+    fixed4 GetLighting(
+        const float3 worldNormal,
+        const half shadowAttenuation,
+        const float3 vertex,
+        const float minAmbient,
+        const float4 ambientOcclusion
+    )
     {
         const half3 ambient = max(
                 ShadeSH9(half4(worldNormal, 1)),
-                half3(_MinAmbient, _MinAmbient, _MinAmbient)
+                half3(minAmbient, minAmbient, minAmbient)
             )
             *
             clamp(ambientOcclusion, 0.75, 1.0);
@@ -24,9 +30,9 @@ namespace b_light
         return fixed4(diff + ambient + vertexStepped, 1.0);
     }
 
-    fixed4 GetLighting(const float3 normal, const half shadowAttenuation, const float3 vertex)
+    fixed4 GetLighting(const float3 normal, const half shadowAttenuation, const float3 vertex, const float minAmbient)
     {
-        return GetLighting(normal, shadowAttenuation, vertex, 1.0);
+        return GetLighting(normal, shadowAttenuation, vertex, minAmbient, 1.0);
     }
 }
 

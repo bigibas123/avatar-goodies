@@ -6,11 +6,11 @@
 #include <AutoLight.cginc>
 
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting,GET_AO(i.uv))
+const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting,_MinAmbient,GET_AO(i.uv))
 
 
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
-const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting)
+const fixed4 outName = b_light::GetLighting(i.normal,shadowAtt,i.vertexLighting,_MinAmbient)
 
 
 #endif
