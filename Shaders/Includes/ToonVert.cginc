@@ -86,7 +86,7 @@ v2f vert(appdata v)
     
     o.tangent = UnityObjectToWorldDir(v.tangent);
     
-    float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
+    const float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
     o.bitangent = cross(o.normal, o.tangent) * tangentSign;
 
     return o;
