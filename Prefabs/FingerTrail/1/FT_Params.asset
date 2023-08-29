@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: FT_Params
   m_EditorClassIdentifier: 
   parameters:
-  - name: PenMode
-    valueType: 0
+  - name: PenOn
+    valueType: 2
     saved: 0
     defaultValue: 0
+    networkSynced: 1
+  - name: HoldOn
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
   - name: Hue
     valueType: 1
     saved: 1
     defaultValue: 0
+    networkSynced: 1
   - name: Brightness
     valueType: 1
     saved: 1
     defaultValue: 0
+    networkSynced: 1
