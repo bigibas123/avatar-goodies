@@ -67,6 +67,7 @@ uniform float _MinAmbient;
 //Effects
 uniform float _MonoChrome;
 uniform float _Voronoi;
+uniform float _LightDiffuseness;
 #endif
 
 #ifndef BIGI_DEFAULT_FRAGOUT

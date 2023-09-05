@@ -17,7 +17,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     type: 102
     parameter:
-      name: PenMode
+      name: PenOn
     value: 1
     style: 0
     subMenu: {fileID: 0}
@@ -27,7 +27,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     type: 102
     parameter:
-      name: PenMode
+      name: HoldOn
     value: 2
     style: 0
     subMenu: {fileID: 0}

@@ -26,11 +26,13 @@ Shader "Bigi/AudioLink_frag"
         [Header(Effects)]
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
+        _LightDiffuseness ("Shadow Diffuseness",Range(0.0,1.0)) = 0.1
 
-        [Header(Effects)]
+        [Header(Multi Texture)]
         [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
         _MainTexArray ("Other textures", 2DArray) = "" {}
         _OtherTextureId ("Other texture Id", Int) = 0
+
 
     }
     SubShader
