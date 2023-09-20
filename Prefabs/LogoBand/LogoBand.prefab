@@ -152,9 +152,10 @@ MonoBehaviour:
         resetPhysbones: []
         enableIcon: 0
         icon:
+          version: 1
           fileID: 0
           guid: 
-          obj: {fileID: 0}
+          id: 
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -193,9 +194,10 @@ MonoBehaviour:
         resetPhysbones: []
         enableIcon: 0
         icon:
+          version: 1
           fileID: 0
           guid: 
-          obj: {fileID: 0}
+          id: 
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -234,9 +236,10 @@ MonoBehaviour:
         resetPhysbones: []
         enableIcon: 0
         icon:
+          version: 1
           fileID: 0
           guid: 
-          obj: {fileID: 0}
+          id: 
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -263,7 +266,7 @@ MonoBehaviour:
         states:
         - obj: {fileID: 7055592349295351436}
           action: 0
-          ResetMePlease: 0
+          ResetMePlease2: 0
     00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -272,13 +275,15 @@ MonoBehaviour:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip:
+          version: 1
           fileID: 7400000
           guid: 54920ee277d127c45ac1d602de0ce9c2
-          obj: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
+          id: 54920ee277d127c45ac1d602de0ce9c2|Assets/Characters/Common/Prefabs/LogoBand/Logo_64.anim
     00000006:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         clip:
+          version: 1
           fileID: 7400000
           guid: 7dcbf512d3a20b645a830767f37302da
-          obj: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
+          id: 7dcbf512d3a20b645a830767f37302da|Assets/Characters/Common/Prefabs/LogoBand/AL_Intensity_1.anim

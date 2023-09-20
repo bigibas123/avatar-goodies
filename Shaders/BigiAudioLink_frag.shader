@@ -70,7 +70,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
@@ -129,7 +129,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
@@ -186,7 +186,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile_instancing
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -245,7 +245,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
 
             #include "./Includes/SoundUtilsDefines.cginc"
 
