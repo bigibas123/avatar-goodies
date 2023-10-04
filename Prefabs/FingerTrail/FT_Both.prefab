@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4444688383980908565}
   - component: {fileID: 7100793332111573945}
+  - component: {fileID: 534713364089590014}
   m_Layer: 0
   m_Name: FT_Both
   m_TagString: Untagged
@@ -78,6 +79,7 @@ MonoBehaviour:
           fileID: 0
           guid: 
           id: 
+          objRef: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -106,7 +108,8 @@ MonoBehaviour:
             version: 1
             fileID: 9100000
             guid: 3da3bef8b55fa1b47a9ca5096309c5a2
-            id: f3765b85e9dac0d4d81651788bf4b413|Assets/Characters/Common/Prefabs/FingerTrail/2/FT_Both.controller
+            id: f3765b85e9dac0d4d81651788bf4b413|Assets/Characters/Common/Prefabs/FingerTrail/FT_Both.controller
+            objRef: {fileID: 9100000, guid: f3765b85e9dac0d4d81651788bf4b413, type: 2}
           type: 5
           ResetMePlease2: 0
         menus:
@@ -114,7 +117,8 @@ MonoBehaviour:
             version: 1
             fileID: 11400000
             guid: 1f37a060fb33cf843b08ed7b932256cd
-            id: 1f37a060fb33cf843b08ed7b932256cd|Assets/Characters/Common/Prefabs/FingerTrail/1/FT_Menu.asset
+            id: 1f37a060fb33cf843b08ed7b932256cd|Assets/Characters/Common/Prefabs/FingerTrail/FT_Menu.asset
+            objRef: {fileID: 11400000, guid: 1f37a060fb33cf843b08ed7b932256cd, type: 2}
           prefix: Fingertrail
           ResetMePlease2: 0
         prms:
@@ -122,7 +126,8 @@ MonoBehaviour:
             version: 1
             fileID: 11400000
             guid: 078b2a65d10f59943a1aa23196ed02ed
-            id: 078b2a65d10f59943a1aa23196ed02ed|Assets/Characters/Common/Prefabs/FingerTrail/1/FT_Params.asset
+            id: 078b2a65d10f59943a1aa23196ed02ed|Assets/Characters/Common/Prefabs/FingerTrail/FT_Params.asset
+            objRef: {fileID: 11400000, guid: 078b2a65d10f59943a1aa23196ed02ed, type: 2}
           ResetMePlease2: 0
         globalParams: []
         allNonsyncedAreGlobal: 0
@@ -138,16 +143,19 @@ MonoBehaviour:
           fileID: 0
           guid: 
           id: :0
+          objRef: {fileID: 0}
         menu:
           version: 1
           fileID: 0
           guid: 
           id: :0
+          objRef: {fileID: 0}
         parameters:
           version: 1
           fileID: 0
           guid: 
           id: :0
+          objRef: {fileID: 0}
         submenu: 
         removePrefixes: []
         addPrefix: 
@@ -170,6 +178,24 @@ MonoBehaviour:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 6045609771325465426}
+--- !u!114 &534713364089590014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1427037861, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchedFromSDKPipeline: 0
+  completedSDKPipeline: 0
+  blueprintId: 
+  contentType: 0
+  assetBundleUnityVersion: 
+  fallbackStatus: 0
 --- !u!1 &6045609771325465426
 GameObject:
   m_ObjectHideFlags: 0
