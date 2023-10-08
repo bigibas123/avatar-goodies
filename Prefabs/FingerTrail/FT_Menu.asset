@@ -28,7 +28,7 @@ MonoBehaviour:
     type: 102
     parameter:
       name: HoldOn
-    value: 2
+    value: 1
     style: 0
     subMenu: {fileID: 0}
     subParameters: []
