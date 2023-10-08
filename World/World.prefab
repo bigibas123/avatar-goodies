@@ -302,13 +302,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554317476522903275}
-  m_LocalRotation: {x: 0.10495134, y: -0.8947107, z: 0.29371205, w: 0.31970474}
-  m_LocalPosition: {x: 1.711, y: 2.492, z: 1.398}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.652, z: 1.266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2554317477900899593}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 21.655, y: 317.841, z: 6.2580004}
+  m_LocalEulerAnglesHint: {x: 36.348003, y: -140.67401, z: 0}
 --- !u!20 &2554317476522903273
 Camera:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -333,16 +333,16 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 2
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 0.6550834
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: abbe9332cbff4a143812d98775e04a72, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1

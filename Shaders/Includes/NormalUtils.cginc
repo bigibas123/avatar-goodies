@@ -5,12 +5,12 @@
 
 namespace b_normalutils
 {
-    float3 recalc_normals(const in float3 standardNormal, const in float4 normalMap, const in float3 tangent, const in float3 biTangent)
+    float3 recalculate_normals(const in float3 standard_normal, const in float4 normal_map, const in float3 tangent, const in float3 bi_tangent)
     {
-        float3x3 TBN = float3x3(normalize(tangent), normalize(biTangent), normalize(standardNormal));
+        float3x3 TBN = float3x3(normalize(tangent), normalize(bi_tangent), normalize(standard_normal));
         TBN = transpose(TBN);
-        float3 worldnormal = mul(TBN, UnpackNormal(normalMap));
-        return worldnormal;
+        float3 world_normal = mul(TBN, UnpackNormal(normal_map));
+        return world_normal;
     }
 }
 

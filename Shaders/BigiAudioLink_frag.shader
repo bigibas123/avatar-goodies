@@ -87,7 +87,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
-                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
@@ -146,7 +146,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
-                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
@@ -201,7 +201,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
-                i.normal = b_normalutils::recalc_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 

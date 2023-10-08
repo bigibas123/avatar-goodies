@@ -3,7 +3,7 @@
 #include <HLSLSupport.cginc>
 #include "./ColorUtil.cginc"
 #include "./SoundUtilsDefines.cginc"
-#include "../../../Assets/lygia/generative/voronoi.hlsl"
+#include <Assets/lygia/generative/voronoi.hlsl>
 
 namespace b_effects
 {
