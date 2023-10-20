@@ -62,7 +62,9 @@ v2f vert(appdata v)
     UNITY_TRANSFER_LIGHTING(o, o.pos)
     UNITY_TRANSFER_FOG(o, o.pos);
     o.staticTexturePos = ComputeScreenPos(o.pos);
-    o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+    //TODO make this object space relative or something?
+    
+    o.worldPos = UnityObjectToWorldDir(v.vertex);
    
     o.vertexLighting = float3(0.0, 0.0, 0.0);
     #ifdef VERTEXLIGHT_ON

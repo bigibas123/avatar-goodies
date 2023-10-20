@@ -39,8 +39,8 @@ float4 _Spacey_ST;
 
 #endif
 
-#ifndef BIGI_V1_UNIFORMS
-#define BIGI_V1_UNIFORMS
+#ifndef BIGI_UNIFORMS
+#define BIGI_UNIFORMS
 
 uniform float _DMX_Weight;
 uniform float _AL_Theme_Weight;
@@ -59,11 +59,6 @@ uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _MinAmbient;
 
-
-#endif
-
-#ifndef BIGI_V2_UNIFORMS
-#define BIGI_V2_UNIFORMS
 //Effects
 uniform float _MonoChrome;
 uniform float _Voronoi;
