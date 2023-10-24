@@ -11,8 +11,8 @@
     float4 _MainTex_ST;
     #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2D(_MainTex, uv)
     #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTex, uv)
-    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTex, uv)
-    #define GET_NORMAL(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_NormalMap, _MainTex, uv)
+    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_OcclusionMap, _MainTex, uv)
+    #define GET_NORMAL(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_BumpMap, _MainTex, uv)
 
     #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTex);
 
@@ -22,8 +22,8 @@
     uniform int _OtherTextureId;
     #define GET_TEX_COLOR(uv) UNITY_SAMPLE_TEX2DARRAY(_MainTexArray, float3(uv,_OtherTextureId))
     #define GET_MASK_COLOR(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_Mask, _MainTexArray, uv)
-    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_AOMap, _MainTexArray, uv)
-    #define GET_NORMAL(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_NormalMap, _MainTexArray, uv)
+    #define GET_AO(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_OcclusionMap, _MainTexArray, uv)
+    #define GET_NORMAL(uv) UNITY_SAMPLE_TEX2D_SAMPLER(_BumpMap, _MainTexArray, uv)
 
     #define DO_TRANSFORM(tc) TRANSFORM_TEX(v.texcoord, _MainTexArray);
 
@@ -31,8 +31,8 @@
 
 
 UNITY_DECLARE_TEX2D_NOSAMPLER(_Mask);
-UNITY_DECLARE_TEX2D_NOSAMPLER(_AOMap);
-UNITY_DECLARE_TEX2D_NOSAMPLER(_NormalMap);
+UNITY_DECLARE_TEX2D_NOSAMPLER(_OcclusionMap);
+UNITY_DECLARE_TEX2D_NOSAMPLER(_BumpMap);
 UNITY_DECLARE_TEX2D(_Spacey);
 float4 _Spacey_ST;
 

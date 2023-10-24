@@ -7,21 +7,21 @@ Shader "Bigi/AudioLink_frag"
         _Spacey ("Spacey Texture", 2D) = "black" {}
         _EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
-        [NoScaleOffset] _AOMap ("Ambient occlusion map", 2D) = "white" {}
-        [NoScaleOffset] _NormalMap("Normal Map", 2D) = "bump" {}
+        [NoScaleOffset] _OcclusionMap ("Ambient occlusion map", 2D) = "white" {}
+        [NoScaleOffset] _BumpMap("Normal Map", 2D) = "bump" {}
 
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
-        _AddLightIntensity ("Additive lighting intensity", Range(0.0,1.0)) = 0.1
+        _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
 
         [Header(Audiolink world theme colors)]
-        _AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 0.0
-        _AL_TC_BassReactive("Bassreactivity", Range(0.0,1.0)) = 0.0
+        _AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 1.0
+        _AL_TC_BassReactive("Bassreactivity", Range(0.0,1.0)) = 0.75
 
         [Header(Audiolink Hue slider colors)]
         _AL_Hue_Weight("Weight", Range(0.0,1.0)) = 0.0
         _AL_Hue("Hue", Range(0.0,1.0)) = 0.0
-        _AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.0
+        _AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.75
 
         [Header(Effects)]
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
@@ -38,15 +38,18 @@ Shader "Bigi/AudioLink_frag"
     SubShader
     {
         Blend SrcAlpha OneMinusSrcAlpha
+        Tags
+        {
+            "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback" = "ToonCutout"
+        }
 
         LOD 100
-
         Pass
         {
             Name "OpaqueForwardBase"
             Tags
             {
-                "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback"="ToonCutout" "LightMode" = "ForwardBase"
+                "LightMode" = "ForwardBase"
             }
             Cull Off
             ZWrite On
@@ -105,12 +108,12 @@ Shader "Bigi/AudioLink_frag"
             Name "TransparentForwardBase"
             Tags
             {
-                "RenderType" = "TransparentCutout" "Queue" = "AlphaTest" "LightMode" = "ForwardBase" "VRCFallback"="ToonCutout"
+                "RenderType" = "Transparent" "Queue" = "Transparent"
             }
             Cull Off
-            ZWrite On
+            ZWrite Off
             ZTest LEqual
-            Blend One OneMinusSrcAlpha
+            Blend SrcAlpha OneMinusSrcAlpha
             Stencil
             {
                 Ref 2
@@ -153,6 +156,7 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
+
                 return o;
             }
             ENDCG
@@ -163,9 +167,9 @@ Shader "Bigi/AudioLink_frag"
             Name "ForwardAdd"
             Tags
             {
-                "LightMode" = "ForwardAdd" "Queue" = "TransparentCutout"
+                "LightMode" = "ForwardAdd"
             }
-            Cull Back
+            Cull Off
             ZWrite Off
             ZTest LEqual
             Blend One One
@@ -210,6 +214,7 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting * _AddLightIntensity, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
+                o.color.a = orig_color.a * _AddLightIntensity;
                 return o;
             }
             ENDCG
@@ -268,7 +273,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
                 o.pos = UnityObjectToClipPos(v.vertex + offset);
-                o.pos = lerp(0.0,o.pos,smoothstep(0.0,Epsilon,_OutlineWidth));
+                o.pos = lerp(0.0, o.pos, smoothstep(0.0,Epsilon, _OutlineWidth));
                 return o;
             }
 
@@ -291,55 +296,23 @@ Shader "Bigi/AudioLink_frag"
 
         Pass
         {
-            Name "ShadowPass"
+            Name "ShadowCaster"
             Tags
             {
-                "LightMode"="ShadowCaster"
+                "LightMode" = "ShadowCaster"
             }
-            Cull Off
-            ZWrite On
-            ZTest LEqual
-            Stencil
-            {
-                Comp Always
-                Pass IncrSat
-            }
+
+            ZWrite On ZTest LEqual
+
             CGPROGRAM
-            #pragma target 3.0
-            #pragma vertex vert alpha
-            #pragma fragment frag alpha
+            #pragma target 2.0
+
             #pragma multi_compile_shadowcaster
-            #pragma multi_compile_instancing
-            #pragma multi_compile_lightpass
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_fwdbase
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #pragma vertex vertShadowCaster
+            #pragma fragment fragShadowCaster
 
-            struct v2f {
-                V2F_SHADOW_CASTER;
-                UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
-                //float4 uv : TEXCOORD0;
-            };
-
-            v2f vert(appdata_base v)
-            {
-                v2f o;
-                UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-                UNITY_TRANSFER_INSTANCE_ID(v, o);
-                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-                //o.uv = v.texcoord;
-                return o;
-            }
-
-            float4 frag(v2f i) : SV_Target
-            {
-                UNITY_SETUP_INSTANCE_ID(i) UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i) SHADOW_CASTER_FRAGMENT(i)
-            }
+            #include "UnityStandardShadow.cginc"
             ENDCG
         }
     }

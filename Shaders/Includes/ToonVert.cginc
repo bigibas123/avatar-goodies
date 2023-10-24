@@ -48,8 +48,8 @@ v2f vert(appdata v)
 {
     v2f o;
     UNITY_SETUP_INSTANCE_ID(v);
-    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     UNITY_TRANSFER_INSTANCE_ID(v, o);
+    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     o.pos = UnityObjectToClipPos(v.vertex);
     o.normal = UnityObjectToWorldNormal(v.normal);
     o.uv = DO_TRANSFORM(v.texcoord)

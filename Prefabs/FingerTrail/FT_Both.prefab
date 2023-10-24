@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4444688383980908565}
   - component: {fileID: 7100793332111573945}
-  - component: {fileID: 4124749657550158336}
+  - component: {fileID: 365494594162558599}
   m_Layer: 0
   m_Name: FT_Both
   m_TagString: Untagged
@@ -181,25 +181,60 @@ MonoBehaviour:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         obj: {fileID: 6045609771325465426}
---- !u!95 &4124749657550158336
-Animator:
-  serializedVersion: 3
+--- !u!114 &365494594162558599
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5313632208832924751}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3765b85e9dac0d4d81651788bf4b413, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  config:
+    features:
+    - id: 0
+    - id: 1
+  somethingIsBroken: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 5
+        linkMode: 4
+        propBone: {fileID: 6045609771331090632}
+        boneOnAvatar: 29
+        bonePathOnAvatar: 
+        keepBoneOffsets2: 0
+        removeBoneSuffix: 
+        physbonesOnAvatarBones: 0
+        fallbackBones: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+    00000001:
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 5
+        linkMode: 4
+        propBone: {fileID: 6045609771325465426}
+        boneOnAvatar: 44
+        bonePathOnAvatar: 
+        keepBoneOffsets2: 0
+        removeBoneSuffix: 
+        physbonesOnAvatarBones: 0
+        fallbackBones: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
 --- !u!1 &6045609771325465426
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +245,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6047299288820576306}
   - component: {fileID: 5959438682267134386}
-  - component: {fileID: 2447504066241936382}
   m_Layer: 0
   m_Name: FingerTrail_R
   m_TagString: Untagged
@@ -338,32 +372,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 0
---- !u!1773428102 &2447504066241936382
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6045609771325465426}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!1 &6045609771331090632
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +382,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6047299288813448104}
   - component: {fileID: 5959438682278392360}
-  - component: {fileID: 2447504066230706280}
   m_Layer: 0
   m_Name: FingerTrail_L
   m_TagString: Untagged
@@ -502,29 +509,3 @@ TrailRenderer:
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 0
---- !u!1773428102 &2447504066230706280
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6045609771331090632}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1

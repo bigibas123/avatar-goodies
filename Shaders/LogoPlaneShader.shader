@@ -3,7 +3,6 @@ Shader "Bigi/LogoPlane" {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
 		_CellNumber ("CellNumber", Int) = 0
 		_AL_General_Intensity("Audiolink Intensity",Range(0.0,1.0)) = 0.0
-		_MinAmbient ("Minimum ambient light value", Range(0.0,1.0)) = 0.0
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -51,6 +50,30 @@ Shader "Bigi/LogoPlane" {
 			UNITY_VERTEX_OUTPUT_STEREO
 		};
 
+		float3 getVertexLight(float3 normal, float3 worldPos)
+		{
+			float3 vertexLighting = float3(0.0, 0.0, 0.0);
+			#ifdef VERTEXLIGHT_ON
+			for (int index = 0; index < 4; index++)
+			{
+			    float4 lightPosition = float4(
+			        unity_4LightPosX0[index],
+			        unity_4LightPosY0[index],
+			        unity_4LightPosZ0[index], 1.0
+			    );
+
+			    const float3 vertexToLightSource = lightPosition.xyz - worldPos.xyz;    
+			    const float3 lightDirection = normalize(vertexToLightSource);
+			    const float squaredDistance = dot(vertexToLightSource, vertexToLightSource);
+			    float attenuation = 1.0 / (1.0 + unity_4LightAtten0[index] * squaredDistance);
+			    float3 diffuseReflection = attenuation * unity_LightColor[index].rgb * max(0.0, dot(normal, lightDirection));
+
+			    vertexLighting = vertexLighting + diffuseReflection;
+			}
+			#endif
+			return vertexLighting;
+		}
+		
 		v2f vert(appdata v)
 		{
 			v2f o;
@@ -76,6 +99,27 @@ Shader "Bigi/LogoPlane" {
 			o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 			UNITY_TRANSFER_LIGHTING(o, o.pos);
 			UNITY_TRANSFER_FOG(o, o.pos);
+			
+			o.vertexLighting = getVertexLight(o.normal,o.worldPos);
+			#ifdef VERTEXLIGHT_ON
+			for (int index = 0; index < 4; index++)
+			{
+			    float4 lightPosition = float4(
+			        unity_4LightPosX0[index],
+			        unity_4LightPosY0[index],
+			        unity_4LightPosZ0[index], 1.0
+			    );
+
+			    const float3 vertexToLightSource = lightPosition.xyz - o.worldPos.xyz;    
+			    const float3 lightDirection = normalize(vertexToLightSource);
+			    const float squaredDistance = dot(vertexToLightSource, vertexToLightSource);
+			    float attenuation = 1.0 / (1.0 + unity_4LightAtten0[index] * squaredDistance);
+			    float3 diffuseReflection = attenuation * unity_LightColor[index].rgb * max(0.0, dot(o.normal, lightDirection));
+
+			    o.vertexLighting = o.vertexLighting + diffuseReflection;
+			}
+			#endif
+			
 			return o;
 		}
 
@@ -92,6 +136,7 @@ Shader "Bigi/LogoPlane" {
 			UNITY_APPLY_FOG(i.fogCoord, o.color);
 			return o;
 		}
+		
 		ENDCG
 
 		Pass {
@@ -110,6 +155,33 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
+			ENDCG
+		}
+
+		Pass {
+			Name "TransparentForwardAddBack"
+			Tags {
+				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
+			}
+			Cull Front
+			ZWrite Off
+			ZTest LEqual
+			Blend One One
+			CGPROGRAM
+			#define B_LP_SHADER_FUNCS
+			ENDCG
+		}
+		Pass {
+			Name "TransparentForwardAddFront"
+			Tags {
+				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
+			}
+			Cull Back
+			ZWrite Off
+			ZTest LEqual
+			Blend One One
+			CGPROGRAM
+			#define B_LP_SHADER_FUNCS
 			ENDCG
 		}
 
