@@ -43,6 +43,8 @@ struct v2f {
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
 
+#include "./BigiLightUtils.cginc"
+
 v2f vert(appdata v)
 
 {
@@ -68,22 +70,9 @@ v2f vert(appdata v)
    
     o.vertexLighting = float3(0.0, 0.0, 0.0);
     #ifdef VERTEXLIGHT_ON
-    for (int index = 0; index < 4; index++)
-    {
-        float4 lightPosition = float4(
-            unity_4LightPosX0[index],
-            unity_4LightPosY0[index],
-            unity_4LightPosZ0[index], 1.0
-        );
-
-        const float3 vertexToLightSource = lightPosition.xyz - o.worldPos.xyz;    
-        const float3 lightDirection = normalize(vertexToLightSource);
-        const float squaredDistance = dot(vertexToLightSource, vertexToLightSource);
-        float attenuation = 1.0 / (1.0 + unity_4LightAtten0[index] * squaredDistance);
-        float3 diffuseReflection = attenuation * unity_LightColor[index].rgb * max(0.0, dot(o.normal, lightDirection));
-
-        o.vertexLighting = o.vertexLighting + diffuseReflection;
-    }
+    o.vertexLighting = b_light::ProcessVertexLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0,
+                unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb,
+                unity_4LightAtten0, o.worldPos, o.normal,_LightDiffuseness) * _AddLightIntensity;
     #endif
     
     o.tangent = UnityObjectToWorldDir(v.tangent);

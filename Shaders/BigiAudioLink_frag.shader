@@ -212,9 +212,9 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting * _AddLightIntensity, i.staticTexturePos);
+                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
-                o.color.a = orig_color.a * _AddLightIntensity;
+                o.color = o.color * _AddLightIntensity;
                 return o;
             }
             ENDCG

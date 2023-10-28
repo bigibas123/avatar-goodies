@@ -41,9 +41,10 @@ namespace b_effects
 
     fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting, in float4 staticTexturePos)
     {
+        const float3 fixedLighting = lighting.rgb * lighting.a;
         BEffectsTracker mix;
         mix.totalWeight = 1.0;
-        mix.totalColor = orig_color.rgb * lighting.rgb;
+        mix.totalColor = orig_color.rgb * fixedLighting;
         //AudioLink
         {
             GET_SOUND_COLOR(soundC);
@@ -63,7 +64,7 @@ namespace b_effects
         {
             if (_Voronoi > Epsilon)
             {
-                doMixProperly(mix, get_voronoi(uv) * lighting, _Voronoi, 2.0);
+                doMixProperly(mix, get_voronoi(uv) * fixedLighting, _Voronoi, 2.0);
             }
         }
         return Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);
