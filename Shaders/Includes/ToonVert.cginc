@@ -42,8 +42,9 @@ struct v2f {
 
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
-
+#ifdef VERTEXLIGHT_ON
 #include "./BigiLightUtils.cginc"
+#endif
 
 v2f vert(appdata v)
 

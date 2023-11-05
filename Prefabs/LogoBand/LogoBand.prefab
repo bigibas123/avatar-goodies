@@ -129,7 +129,6 @@ MonoBehaviour:
     - id: 0
     - id: 1
     - id: 2
-    - id: 3
   somethingIsBroken: 0
   references:
     version: 1
@@ -140,7 +139,7 @@ MonoBehaviour:
         name: Props/LogoBand/On
         state:
           actions:
-          - id: 4
+          - id: 3
         saved: 1
         slider: 0
         securityEnabled: 0
@@ -183,7 +182,7 @@ MonoBehaviour:
         name: Props/LogoBand/Logo
         state:
           actions:
-          - id: 5
+          - id: 4
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -226,7 +225,7 @@ MonoBehaviour:
         name: Props/LogoBand/AL Intensity
         state:
           actions:
-          - id: 6
+          - id: 5
         saved: 1
         slider: 1
         securityEnabled: 0
@@ -263,29 +262,25 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
     00000003:
-      type: {class: ObjectState, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        states:
-        - obj: {fileID: 7055592349295351436}
-          action: 0
-          ResetMePlease2: 0
-    00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
+        version: 1
         obj: {fileID: 7055592349295351436}
-    00000005:
+        mode: 0
+    00000004:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
+        version: 0
         clip:
           version: 1
           fileID: 7400000
           guid: 54920ee277d127c45ac1d602de0ce9c2
           id: 54920ee277d127c45ac1d602de0ce9c2|Assets/Characters/Common/Prefabs/LogoBand/Logo_64.anim
           objRef: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
-    00000006:
+    00000005:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
+        version: 0
         clip:
           version: 1
           fileID: 7400000

@@ -185,6 +185,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
+            #pragma multi_compile_fwdadd
             #pragma multi_compile_fwdadd_fullshadows
             #pragma multi_compile_lightpass
             #pragma multi_compile_shadowcollector
