@@ -1,39 +1,17 @@
-Shader "Bigi/AudioLink_frag"
+Shader "Bigi/Rounding"
 {
     Properties
     {
 
         [MainTexture] _MainTex ("Texture", 2D) = "black" {}
-        _Spacey ("Spacey Texture", 2D) = "black" {}
-        _EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
-        [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
         [NoScaleOffset] _OcclusionMap ("Ambient occlusion map", 2D) = "white" {}
         [NoScaleOffset] _BumpMap("Normal Map", 2D) = "bump" {}
-
-        _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
+        
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
-
-        [Header(Audiolink world theme colors)]
-        _AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 1.0
-        _AL_TC_BassReactive("Bassreactivity", Range(0.0,1.0)) = 0.75
-
-        [Header(Audiolink Hue slider colors)]
-        _AL_Hue_Weight("Weight", Range(0.0,1.0)) = 0.0
-        _AL_Hue("Hue", Range(0.0,1.0)) = 0.0
-        _AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.75
-
-        [Header(Effects)]
-        _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
-        _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
         _LightDiffuseness ("Shadow Diffuseness",Range(0.0,1.0)) = 0.1
-
-        [Header(Multi Texture)]
-        [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
-        _MainTexArray ("Other textures", 2DArray) = "" {}
-        _OtherTextureId ("Other texture Id", Int) = 0
-
-
+        
+        _RoundFactor ("Round factor Higher is more precise", Range(0.0,1000.0)) = 100.0
     }
     SubShader
     {
@@ -42,6 +20,18 @@ Shader "Bigi/AudioLink_frag"
         {
             "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback" = "ToonCutout"
         }
+        
+        CGINCLUDE
+        #include "./Includes/ToonVert.cginc"
+        float _RoundFactor;
+            v2f vert(appdata v)
+            {
+                v2f ret = bigi_toon_vert(v);
+                ret.pos.x = round(ret.pos.x * _RoundFactor) / _RoundFactor;
+                ret.pos.y = round(ret.pos.y * _RoundFactor) / _RoundFactor;
+                return ret;
+            }
+        ENDCG
 
         LOD 100
         Pass
@@ -64,7 +54,7 @@ Shader "Bigi/AudioLink_frag"
             }
             CGPROGRAM
             #pragma target 3.0
-            #pragma vertex bigi_toon_vert
+            #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
@@ -93,10 +83,7 @@ Shader "Bigi/AudioLink_frag"
                 i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
-
-
-                const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                o.color = orig_color * lighting
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
@@ -123,7 +110,7 @@ Shader "Bigi/AudioLink_frag"
             }
             CGPROGRAM
             #pragma target 3.0
-            #pragma vertex bigi_toon_vert
+            #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
@@ -140,7 +127,8 @@ Shader "Bigi/AudioLink_frag"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/NormalUtils.cginc"
             #include "./Includes/BigiEffects.cginc"
-
+            
+            
             fragOutput frag(v2f i)
             {
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
@@ -152,9 +140,8 @@ Shader "Bigi/AudioLink_frag"
                 i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
-
-                const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                
+                o.color = orig_color * lighting;
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
 
                 return o;
@@ -182,7 +169,7 @@ Shader "Bigi/AudioLink_frag"
             }
             CGPROGRAM
             #pragma target 3.0
-            #pragma vertex bigi_toon_vert
+            #pragma vertex vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_fwdadd
@@ -213,84 +200,12 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                o.color = orig_color*lighting;
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 o.color = o.color * _AddLightIntensity;
                 return o;
             }
             ENDCG
-        }
-
-
-        Pass
-        {
-            Name "Outline"
-            Tags
-            {
-                "RenderType" = "TransparentCutout" "Queue" = "AlphaTest"
-            }
-            Cull Off
-            ZWrite On
-            ZTest LEqual
-            AlphaToMask On
-            Stencil
-            {
-                Ref 0
-                ReadMask 7
-                WriteMask 0
-                Comp GEqual
-            }
-            CGPROGRAM
-            #pragma target 3.0
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbase
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            #pragma multi_compile_shadowcollector
-            #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
-
-            #include "./Includes/SoundUtilsDefines.cginc"
-
-
-            struct appdata {
-                float4 vertex : POSITION;
-                float3 normal : NORMAL;
-                UNITY_VERTEX_INPUT_INSTANCE_ID };
-
-            //intermediate
-            struct v2f {
-                UNITY_POSITION(pos); //float4 pos : SV_POSITION;
-                UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO };
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-                UNITY_TRANSFER_INSTANCE_ID(v, o);
-                float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
-                o.pos = UnityObjectToClipPos(v.vertex + offset);
-                o.pos = lerp(0.0, o.pos, smoothstep(0.0,Epsilon, _OutlineWidth));
-                return o;
-            }
-
-            fragOutput frag(v2f i)
-            {
-                clip(_OutlineWidth - Epsilon);
-                fragOutput o;
-                UNITY_SETUP_INSTANCE_ID(i);
-                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                GET_SOUND_COLOR(scol);
-                o.color = half4(scol.rgb * scol.a, smoothstep(0.0, 0.05, scol.a));
-                clip(o.color.a - Epsilon);
-                return o;
-            }
-            ENDCG
-
         }
 
         //UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"

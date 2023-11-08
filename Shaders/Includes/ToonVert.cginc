@@ -46,7 +46,7 @@ struct v2f {
 #include "./BigiLightUtils.cginc"
 #endif
 
-v2f vert(appdata v)
+v2f bigi_toon_vert(appdata v)
 
 {
     v2f o;
