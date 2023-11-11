@@ -208,15 +208,15 @@ MonoBehaviour:
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 5
-        linkMode: 4
+        linkMode: 3
         propBone: {fileID: 6045609771331090632}
         boneOnAvatar: 29
         bonePathOnAvatar: 
-        keepBoneOffsets2: 0
+        keepBoneOffsets2: 2
         removeBoneSuffix: 
         fallbackBones: 
         skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
+        scalingFactorPowersOf10Only: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -225,15 +225,15 @@ MonoBehaviour:
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 5
-        linkMode: 4
+        linkMode: 3
         propBone: {fileID: 6045609771325465426}
         boneOnAvatar: 44
         bonePathOnAvatar: 
-        keepBoneOffsets2: 0
+        keepBoneOffsets2: 2
         removeBoneSuffix: 
         fallbackBones: 
         skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
+        scalingFactorPowersOf10Only: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
