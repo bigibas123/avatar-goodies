@@ -42,9 +42,8 @@ struct v2f {
 
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
-#ifdef VERTEXLIGHT_ON
+
 #include "./BigiLightUtils.cginc"
-#endif
 
 v2f bigi_toon_vert(appdata v)
 
@@ -68,13 +67,12 @@ v2f bigi_toon_vert(appdata v)
     //TODO make this object space relative or something?
     
     o.worldPos = UnityObjectToWorldDir(v.vertex);
-   
-    o.vertexLighting = float3(0.0, 0.0, 0.0);
-    #ifdef VERTEXLIGHT_ON
+
     o.vertexLighting = b_light::ProcessVertexLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0,
                 unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb,
                 unity_4LightAtten0, o.worldPos, o.normal,_LightDiffuseness) * _AddLightIntensity;
-    #endif
+    
+    
     
     o.tangent = UnityObjectToWorldDir(v.tangent);
     

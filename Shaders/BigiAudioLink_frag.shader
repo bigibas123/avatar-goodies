@@ -297,23 +297,122 @@ Shader "Bigi/AudioLink_frag"
 
         Pass
         {
-            Name "ShadowCaster"
+            Name "ShadowPass"
             Tags
             {
-                "LightMode" = "ShadowCaster"
+                "LightMode"="ShadowCaster"
+            }
+            Cull Off
+            ZWrite On
+            ZTest LEqual
+            Stencil
+            {
+                Comp Always
+                Pass IncrSat
+            }
+            CGPROGRAM
+            #pragma target 3.0
+            #pragma vertex vert alpha
+            #pragma fragment frag alpha
+            #pragma multi_compile_shadowcaster
+            #pragma multi_compile_instancing
+            #pragma multi_compile_lightpass
+            #pragma instancing_options assumeuniformscaling
+            #pragma multi_compile_fwdbase
+            #pragma multi_compile_fwdbasealpha
+            #pragma multi_compile_lightpass
+            #pragma multi_compile_fog
+
+            #include "UnityCG.cginc"
+            #include "UnityStandardShadow.cginc"
+
+            struct v2f {
+                V2F_SHADOW_CASTER;
+                UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
+                #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
+                    float2 tex : TEXCOORD1;
+
+                    #if defined(_PARALLAXMAP)
+                        half3 viewDirForParallax : TEXCOORD2;
+                    #endif
+                #endif
+                //float4 uv : TEXCOORD0;
+            };
+
+            v2f vert(appdata_base v)
+            {
+                v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
+                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
+                
+                #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
+                    o.tex = TRANSFORM_TEX(v.uv0, _MainTex);
+
+                    #ifdef _PARALLAXMAP
+                        TANGENT_SPACE_ROTATION;
+                        o.viewDirForParallax = mul (rotation, ObjSpaceViewDir(v.vertex));
+                    #endif
+                #endif
+                
+                //o.uv = v.texcoord;
+                return o;
             }
 
-            ZWrite On ZTest LEqual
+            float4 frag(v2f i) : SV_Target
+            {
+                UNITY_SETUP_INSTANCE_ID(i)
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 
-            CGPROGRAM
-            #pragma target 2.0
+                #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
+                    #if defined(_PARALLAXMAP) && (SHADER_TARGET >= 30)
+                        half3 viewDirForParallax = normalize(i.viewDirForParallax);
+                        fixed h = tex2D (_ParallaxMap, i.tex.xy).g;
+                        half2 offset = ParallaxOffset1Step (h, _Parallax, viewDirForParallax);
+                        i.tex.xy += offset;
+                    #endif
 
-            #pragma multi_compile_shadowcaster
+                    #if defined(_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A)
+                        half alpha = _Color.a;
+                    #else
+                        half alpha = tex2D(_MainTex, i.tex.xy).a * _Color.a;
+                    #endif
+                    #if defined(_ALPHATEST_ON)
+                        clip (alpha - _Cutoff);
+                    #endif
+                    #if defined(_ALPHABLEND_ON) || defined(_ALPHAPREMULTIPLY_ON)
+                        #if defined(_ALPHAPREMULTIPLY_ON)
+                            half outModifiedAlpha;
+                            PreMultiplyAlpha(half3(0, 0, 0), alpha, SHADOW_ONEMINUSREFLECTIVITY(i.tex), outModifiedAlpha);
+                            alpha = outModifiedAlpha;
+                        #endif
+                        #if defined(UNITY_STANDARD_USE_DITHER_MASK)
+                            // Use dither mask for alpha blended shadows, based on pixel position xy
+                            // and alpha level. Our dither texture is 4x4x16.
+                            #ifdef LOD_FADE_CROSSFADE
+                                #define _LOD_FADE_ON_ALPHA
+                                alpha *= unity_LODFade.y;
+                            #endif
+                            half alphaRef = tex3D(_DitherMaskLOD, float3(vpos.xy*0.25,alpha*0.9375)).a;
+                            clip (alphaRef - 0.01);
+                        #else
+                            clip (alpha - _Cutoff);
+                        #endif
+                    #endif
+                #endif // #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
 
-            #pragma vertex vertShadowCaster
-            #pragma fragment fragShadowCaster
+                #ifdef LOD_FADE_CROSSFADE
+                    #ifdef _LOD_FADE_ON_ALPHA
+                        #undef _LOD_FADE_ON_ALPHA
+                    #else
+                        UnityApplyDitherCrossFade(vpos.xy);
+                    #endif
+                #endif
 
-            #include "UnityStandardShadow.cginc"
+
+                SHADOW_CASTER_FRAGMENT(i)
+            }
             ENDCG
         }
     }

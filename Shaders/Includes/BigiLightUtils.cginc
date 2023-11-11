@@ -2,23 +2,44 @@
 #define BIGI_LIGHT_UTILS_INCLUDE
 
 #include <UnityCG.cginc>
+#include <UnityStandardConfig.cginc>
+#include <UnityStandardUtils.cginc>
 
 
 namespace b_light
 {
+    // A macro instead of a function because this works on more types without having to overload it a bunch of times
+    // ReSharper disable once CppInconsistentNaming
     # define doStep(val) smoothstep(0.0, lightDiffuseness, val)
 
     half3 GetAmbient(
+        const in float4 worldLightPos,
         const in float3 worldNormal,
         const in float minAmbient,
-        const in float4 ambientOcclusion
+        const in float4 ambientOcclusion,
+        const in float3 vertexAmbient
     )
     {
-        return max(
-                ShadeSH9(half4(worldNormal, 1)),
-                half3(minAmbient, minAmbient, minAmbient)
-            ) *
-            clamp(ambientOcclusion, 0.75, 1.0);
+        half3 ret = 0;
+
+        #if UNITY_SHOULD_SAMPLE_SH
+        ret = ShadeSHPerPixel(worldNormal, vertexAmbient, worldLightPos);
+        #endif
+
+        #if defined(LIGHTMAP_ON)
+        half4 bakedColorTex = UNITY_SAMPLE_TEX2D(unity_Lightmap, data.lightmapUV.xy);
+        half3 bakedColor = DecodeLightmap(bakedColorTex);
+        
+        #ifdef DIRLIGHTMAP_COMBINED
+        fixed4 bakedDirTex = UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd, unity_Lightmap, data.lightmapUV.xy);
+        ret += DecodeDirectionalLightmap(bakedColor, bakedDirTex, normalWorld);
+        #else // not directional lightmap
+        ret += bakedColor;
+        #endif
+        #endif
+
+        
+        return max(ret,minAmbient) * clamp(ambientOcclusion, 0.75, 1.0);
     }
 
     fixed3 GetWorldLightIntensity(
@@ -43,7 +64,7 @@ namespace b_light
         const in float lightDiffuseness
     )
     {
-        const half3 ambient = GetAmbient(worldNormal, minAmbient, ambientOcclusion);
+        const half3 ambient = GetAmbient(worldLightPos, worldNormal, minAmbient, ambientOcclusion, vertex);
 
         const float nl = max(0, dot(worldNormal, worldLightPos.xyz));
 
@@ -55,7 +76,7 @@ namespace b_light
     }
 
     //Unity.cginc Shade4PointLights 
-    float3 ProcessVertexLights(
+    float3 bigi_Shade4PointLights(
         float4 lightPosX, float4 lightPosY, float4 lightPosZ,
         float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
         float4 lightAttenSq,
@@ -92,6 +113,32 @@ namespace b_light
         col += lightColor2 * diff.z;
         col += lightColor3 * diff.w;
         return col;
+    }
+
+    float3 ProcessVertexLights(
+        float4 lightPosX, float4 lightPosY, float4 lightPosZ,
+        float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
+        float4 lightAttenSq,
+        float3 pos, float3 normal, in const float lightDiffuseness
+    )
+    {
+        float3 ret = 0;
+        #ifndef LIGHTMAP_ON
+        #if UNITY_SHOULD_SAMPLE_SH && !UNITY_SAMPLE_FULL_SH_PER_PIXEL
+        ret = 0;
+        
+        #ifdef VERTEXLIGHT_ON
+        ret += bigi_Shade4PointLights (
+            lightPosX, lightPosY, lightPosZ,
+            lightColor0, lightColor1, lightColor2, lightColor3,
+            lightAttenSq, pos, normal, lightDiffuseness);
+        #endif
+        
+        ret = ShadeSHPerVertex (normal, ret);
+        #endif
+
+        #endif
+        return ret;
     }
 
     fixed4 GetLighting(

@@ -20,7 +20,7 @@ Shader "Bigi/ALTest" {
 			ZTest LEqual
 			Blend One OneMinusSrcAlpha
 			CGPROGRAM
-			#pragma vertex vert
+			#pragma vertex bigi_toon_vert
 			#pragma fragment frag
 			#pragma instancing_options assumeuniformscaling
 			#pragma multi_compile_instancing
@@ -108,7 +108,7 @@ Shader "Bigi/ALTest" {
 			}
 			CGPROGRAM
 			#pragma target 3.0
-			#pragma vertex vert
+			#pragma vertex bigi_toon_vert
 			#pragma fragment frag
 			#pragma instancing_options assumeuniformscaling
 			#pragma multi_compile_fwdadd_fullshadows

@@ -1,6 +1,8 @@
 #ifndef BIGI_V1_SHADERPARAMS
 #define BIGI_V1_SHADERPARAMS
 
+#include <UnityShaderVariables.cginc>
+
 
 #ifndef BIGI_V1_TEXTURES
 #define BIGI_V1_TEXTURES

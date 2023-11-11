@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 6910186883770073186}
   - component: {fileID: 2492696560952038078}
   m_Layer: 0
-  m_Name: World Constraint
+  m_Name: AL_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,11 @@ MonoBehaviour:
         resetPhysbones: []
         enableIcon: 0
         icon:
+          version: 1
           fileID: 0
           guid: 
-          obj: {fileID: 0}
+          id: 
+          objRef: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -177,6 +179,9 @@ MonoBehaviour:
           actions: []
         simpleOutTransition: 1
         defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -196,9 +201,11 @@ MonoBehaviour:
         resetPhysbones: []
         enableIcon: 0
         icon:
+          version: 1
           fileID: 0
           guid: 
-          obj: {fileID: 0}
+          id: 
+          objRef: {fileID: 0}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
@@ -215,25 +222,38 @@ MonoBehaviour:
           actions: []
         simpleOutTransition: 1
         defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
     00000002:
-      type: {class: ObjectState, ns: VF.Model.Feature, asm: VRCFury}
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        states:
-        - obj: {fileID: 3964161563439977837}
-          action: 0
-          ResetMePlease: 0
+        action:
+          actions:
+          - id: 5
     00000003:
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
+        version: 0
         clip:
+          version: 1
           fileID: 7400000
           guid: 13d47db27eccef34abff071005cd83a8
-          obj: {fileID: 7400000, guid: 13d47db27eccef34abff071005cd83a8, type: 2}
+          id: 13d47db27eccef34abff071005cd83a8|Assets/Characters/Common/Prefabs/AL_Plane/WorldLock.anim
+          objRef: {fileID: 7400000, guid: 13d47db27eccef34abff071005cd83a8, type: 2}
     00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
+        version: 1
         obj: {fileID: 3964161563439977837}
+        mode: 2
+    00000005:
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        obj: {fileID: 3964161563439977837}
+        mode: 1
 --- !u!1 &3964161563439977837
 GameObject:
   m_ObjectHideFlags: 0
