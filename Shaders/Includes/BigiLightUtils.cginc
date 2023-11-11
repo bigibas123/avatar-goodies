@@ -1,7 +1,6 @@
 #ifndef BIGI_LIGHT_UTILS_INCLUDE
 #define BIGI_LIGHT_UTILS_INCLUDE
 
-#include <UnityLightingCommon.cginc>
 #include <UnityCG.cginc>
 
 
