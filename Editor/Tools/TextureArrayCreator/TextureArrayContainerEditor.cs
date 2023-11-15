@@ -10,9 +10,9 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+            var tac = serializedObject.targetObject as TextureArrayContainer;
             if (GUILayout.Button("Generate"))
             {
-                var tac = serializedObject.targetObject as TextureArrayContainer;
                 string path = AssetDatabase.GetAssetPath(tac);
                 string fixedPath = path.Replace(".asset", "TC.asset");
                 if (tac != null)
@@ -23,9 +23,15 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
                 }
                 else
                 {
-                    Debug.LogError("Tac is null:"+this);
+                    Debug.LogError("Tac is null:" + this);
                 }
             }
+            GUILayout.Label("Width: " + tac.Width);
+            GUILayout.Label("Height: "+ tac.Height);
+            GUILayout.Label("Depth: " + tac.Depth);
+            GUILayout.Label("Mipmaps: "+ tac.MipCount);
+            GUILayout.Label("Format: "+ tac.graphicsFormat);
+           
         }
         private static IEnumerable<T> FindAssetsByType<T>() where T : UnityEngine.Object
         {

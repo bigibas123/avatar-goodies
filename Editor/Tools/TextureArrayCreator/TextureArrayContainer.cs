@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
@@ -8,18 +10,19 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
     [CreateAssetMenu(fileName = "Texture Array Container", menuName = "Bigi/Texture Array Container", order = 3)]
     public class TextureArrayContainer : ScriptableObject
     {
+        [SerializeField] public FilterMode filterMode;
+        [SerializeField] public TextureWrapMode wrapMode;
         [SerializeField] public List<Texture2D> textures;
         [SerializeField] public TextureCreationFlags flags;
 
-        public int width => textures[0]?.width ?? 0;
-        public int height => textures[0]?.height ?? 0;
+        public int Width => (textures[0] != null ? textures[0]?.width : null) ?? 0;
+        public int Height => (textures[0] != null ? textures[0]?.height : null) ?? 0;
+        public int Depth => textures?.Count(p => { return p != null;}) ?? 0;
 
-        public int mipCount => textures[0]?.mipmapCount ?? 0;
-        public FilterMode filterMode => textures[0]?.filterMode ?? FilterMode.Bilinear;
-        public TextureWrapMode wrapMode => textures[0]?.wrapMode ?? TextureWrapMode.Repeat;
-        public int depth => textures.Count;
-
-        public GraphicsFormat graphicsFormat => textures[0]?.graphicsFormat ?? GraphicsFormat.None;
+        public int MipCount => (textures[0] != null ? textures[0]?.mipmapCount : null) ?? 0;
+        
+        public GraphicsFormat graphicsFormat => (textures[0] != null ? textures[0]?.graphicsFormat : null) ?? GraphicsFormat.None;
+        
 
         public override string ToString()
         {
@@ -27,22 +30,28 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
         }
         public Texture2DArray ToArray()
         {
-            if (depth <= 0)
+            if (Depth <= 0)
             {
                 Debug.LogError("Attempted generation of empty TextureArray: " + this);
                 return null;
             }
-            Texture2DArray array = new Texture2DArray(width, height, depth, graphicsFormat, flags, mipCount)
+            if (!SystemInfo.IsFormatSupported(graphicsFormat,FormatUsage.Sample))
+            {
+                Debug.LogError("Attempted generation of TextureArray with wrong graphicsFormat, please use a different one: " + this);
+                return null;
+            }
+            Texture2DArray array = new Texture2DArray(Width, Height, Depth, graphicsFormat, flags, MipCount)
             {
                 filterMode = filterMode,
                 wrapMode = wrapMode,
             };
 
             TextureImporterSettings[] oldSettings = new TextureImporterSettings[textures.Count];
-
+            int curTexNumber = 0;
             for (int texIdx = 0; texIdx < textures.Count; texIdx++)
             {
                 var tex = textures[texIdx];
+                if (tex == null) {continue;}
 
                 if (tex.width == array.width && tex.height == array.height)
                 {
@@ -54,13 +63,14 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
                         importer.ReadTextureSettings(oldSettings[texIdx]);
                         Debug.Log("Setting isReadable to true for: " + path);
                         importer.isReadable = true;
+                        importer.maxTextureSize = Math.Max(Width,Height);
                         EditorUtility.SetDirty(importer);
                         importer.SaveAndReimport();
                     }
 
                     for (int mipMapLevel = 0; mipMapLevel < array.mipmapCount; mipMapLevel++)
                     {
-                        array.SetPixelData(tex.GetRawTextureData<ulong>(), mipMapLevel, texIdx);
+                        array.SetPixelData(tex.GetRawTextureData<ulong>(), mipMapLevel, curTexNumber++);
 
                         //array.SetPixels(tex.GetPixels(mipMapLevel), texIdx, mipMapLevel);
                     }
