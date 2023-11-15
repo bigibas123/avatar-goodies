@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63232efd02427d04187518f16b9c8aa0, type: 3}
+  m_Name: LogoPlane
+  m_EditorClassIdentifier: 
+  filterMode: 0
+  wrapMode: 0
+  textures:
+  - {fileID: 2800000, guid: e42ac5cff7823f84aa487232f36c7a1f, type: 3}
+  - {fileID: 2800000, guid: 788ce6fe6f252c94583fbba80c5e96b5, type: 3}
+  - {fileID: 2800000, guid: aa61349a77f32df4f8b7bfeae3df4fb6, type: 3}
+  - {fileID: 2800000, guid: 9508fcc33f8e9f24e90f39dbefa8abc9, type: 3}
+  - {fileID: 2800000, guid: 727e1d6804f429842bf49a645b5e48a2, type: 3}
+  - {fileID: 2800000, guid: f4031ef6532027a4b828f7a4a238251a, type: 3}
+  - {fileID: 2800000, guid: 88267f6eada3dab469aacbbe8e7870a2, type: 3}
+  - {fileID: 2800000, guid: 50971d2b0bac41d4a8609199976181c2, type: 3}
+  - {fileID: 2800000, guid: f4df03d62e407f74f87224a95dff1fa4, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  flags: 0
