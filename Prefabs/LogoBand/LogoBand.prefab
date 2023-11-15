@@ -231,7 +231,7 @@ MonoBehaviour:
         saved: 1
         slider: 1
         securityEnabled: 0
-        defaultOn: 0
+        defaultOn: 1
         includeInRest: 0
         exclusiveOffState: 0
         enableExclusiveTag: 0
@@ -271,22 +271,18 @@ MonoBehaviour:
         obj: {fileID: 7055592349295351436}
         mode: 0
     00000004:
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
-        clip:
-          version: 1
-          fileID: 7400000
-          guid: 54920ee277d127c45ac1d602de0ce9c2
-          id: 54920ee277d127c45ac1d602de0ce9c2|Assets/Characters/Common/Prefabs/LogoBand/Logo_64.anim
-          objRef: {fileID: 7400000, guid: 54920ee277d127c45ac1d602de0ce9c2, type: 2}
+        renderer: {fileID: 6886875990288510156}
+        affectAllMeshes: 0
+        propertyName: _CellNumber
+        value: 64
     00000005:
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
-        clip:
-          version: 1
-          fileID: 7400000
-          guid: 7dcbf512d3a20b645a830767f37302da
-          id: 7dcbf512d3a20b645a830767f37302da|Assets/Characters/Common/Prefabs/LogoBand/AL_Intensity_1.anim
-          objRef: {fileID: 7400000, guid: 7dcbf512d3a20b645a830767f37302da, type: 2}
+        renderer: {fileID: 6886875990288510156}
+        affectAllMeshes: 0
+        propertyName: _AL_General_Intensity
+        value: 1
