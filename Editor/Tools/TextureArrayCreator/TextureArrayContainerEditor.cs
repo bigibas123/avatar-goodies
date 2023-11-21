@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 
 namespace Characters.Common.Editor.Tools.TextureArrayCreator
 {
@@ -13,13 +14,17 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
             var tac = serializedObject.targetObject as TextureArrayContainer;
             if (GUILayout.Button("Generate"))
             {
-                string path = AssetDatabase.GetAssetPath(tac);
-                string fixedPath = path.Replace(".asset", "TC.asset");
                 if (tac != null)
                 {
-                    var arr = tac.ToArray();
-                    AssetDatabase.CreateAsset(arr, fixedPath);
-                    Debug.Log("Saved asset to " + fixedPath);
+                    try
+                    {
+                        AssetDatabase.DisallowAutoRefresh();
+                        tac.SaveToFile();
+                    }
+                    finally
+                    {
+                        AssetDatabase.AllowAutoRefresh();
+                    }
                 }
                 else
                 {
@@ -30,7 +35,7 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
             GUILayout.Label("Height: "+ tac.Height);
             GUILayout.Label("Depth: " + tac.Depth);
             GUILayout.Label("Mipmaps: "+ tac.MipCount);
-            GUILayout.Label("Format: "+ tac.graphicsFormat);
+            GUILayout.Label("Format: "+ tac.GraphicsFormat);
            
         }
         private static IEnumerable<T> FindAssetsByType<T>() where T : UnityEngine.Object
@@ -52,13 +57,17 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
         [MenuItem("Tools/Convert all TextureArrays")]
         private static void ConvertAll()
         {
-            foreach (var texContainer in FindAssetsByType<TextureArrayContainer>())
+            try
             {
-                string path = AssetDatabase.GetAssetPath(texContainer);
-                string fixedPath = path.Replace(".asset", "TC.asset");
-                var arr = texContainer.ToArray();
-                AssetDatabase.CreateAsset(arr, fixedPath);
-                Debug.Log("Saved asset to " + fixedPath);
+                AssetDatabase.DisallowAutoRefresh();
+                foreach (var texContainer in FindAssetsByType<TextureArrayContainer>())
+                {
+                    texContainer.SaveToFile();
+                }
+            }
+            finally
+            {
+                AssetDatabase.AllowAutoRefresh();
             }
         }
     }
