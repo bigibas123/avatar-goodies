@@ -58,7 +58,7 @@ MonoBehaviour:
     00000000:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 0
+        version: 1
         name: Fingertrail/On
         state:
           actions:
@@ -73,6 +73,7 @@ MonoBehaviour:
         enableExclusiveTag: 0
         exclusiveTag: 
         resetPhysbones: []
+        hasExitTime: 0
         enableIcon: 0
         icon:
           version: 1
@@ -90,10 +91,14 @@ MonoBehaviour:
           actions: []
         transitionStateOut:
           actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
         localTransitionStateOut:
           actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
         simpleOutTransition: 1
         defaultSliderValue: 1
         useGlobalParam: 0
@@ -170,18 +175,24 @@ MonoBehaviour:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
+        desktopActive: 0
+        androidActive: 0
         obj: {fileID: 6045609771331090632}
         mode: 0
     00000004:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
+        desktopActive: 0
+        androidActive: 0
         obj: {fileID: 6045609771325465426}
         mode: 0
     00000005:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
+        desktopActive: 0
+        androidActive: 0
         obj: {fileID: 5313632208832924751}
         mode: 0
 --- !u!114 &365494594162558599

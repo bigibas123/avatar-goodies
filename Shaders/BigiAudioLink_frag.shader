@@ -49,6 +49,7 @@ Shader "Bigi/AudioLink_frag"
             Name "OpaqueForwardBase"
             Tags
             {
+                "RenderType" = "AlphaTest"
                 "LightMode" = "ForwardBase"
             }
             Cull Off
@@ -108,7 +109,8 @@ Shader "Bigi/AudioLink_frag"
             Name "TransparentForwardBase"
             Tags
             {
-                "RenderType" = "Transparent" "Queue" = "Transparent"
+                "RenderType" = "Transparent"
+                "Queue" = "Transparent"
             }
             Cull Off
             ZWrite Off
@@ -227,7 +229,8 @@ Shader "Bigi/AudioLink_frag"
             Name "Outline"
             Tags
             {
-                "RenderType" = "TransparentCutout" "Queue" = "AlphaTest"
+                "Queue" = "Overlay"
+                "RenderType" = "TransparentCutout"
             }
             Cull Off
             ZWrite On

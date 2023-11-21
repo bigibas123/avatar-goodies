@@ -39,6 +39,11 @@ namespace b_effects
         return HSVToRGB(half3((voronoiOutput.x + voronoiOutput.y) / 2.0f, 1.0, 1.0));
     }
 
+    // float3 get_quantize()
+    // {
+    //     return float3(0,0,0);
+    // }
+
     fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting, in float4 staticTexturePos)
     {
         const float3 fixedLighting = lighting.rgb * lighting.a;
@@ -67,6 +72,14 @@ namespace b_effects
                 doMixProperly(mix, get_voronoi(uv) * fixedLighting, _Voronoi, 2.0);
             }
         }
+
+        // //Quantize
+        // {
+        //     if(0 > Epsilon)
+        //     {
+        //         
+        //     }
+        // }
         return Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);
     }
 }

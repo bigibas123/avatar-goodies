@@ -5,7 +5,7 @@
 
 
 
-#define GET_SOUND_SETTINGS(outName) b_sound::ALSettings set; \
+#define GET_SOUND_SETTINGS(set) b_sound::ALSettings set; \
 set.AL_Theme_Weight = _AL_Theme_Weight; \
 set.AL_Hue_Weight = _AL_Hue_Weight; \
 set.AL_Hue = _AL_Hue; \

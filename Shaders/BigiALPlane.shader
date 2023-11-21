@@ -33,9 +33,7 @@ Shader "Bigi/ALTest" {
 			#define EXTERNAL_AUDIOLINK_ON
 			#include "./Includes/BigiShaderParams.cginc"
 			#include "./Includes/ToonVert.cginc"
-			#include "./Includes/LightUtilsDefines.cginc"
-			#include "./Includes/SoundUtilsDefines.cginc"
-			#include "./Includes/BigiEffects.cginc"
+			#include "./Includes/BigiSoundUtils.cginc"
 			#include "Packages/com.llealloo.audiolink/Runtime/Shaders/SmoothPixelFont.cginc"
 
 			fragOutput frag(v2f i)
