@@ -12,7 +12,7 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap:
     AllLockedGUIDS: bb4a62029615fec4a8680062291c782d
@@ -991,7 +991,7 @@ Material:
     - _Metallic: 0
     - _MetallicMaskUV: 0
     - _MetallicTintMapUV: 0
-    - _MinAmbient: 0
+    - _MinAmbient: 1
     - _Mirror: 0
     - _MirrorTextureUV: 0
     - _Mode: 3

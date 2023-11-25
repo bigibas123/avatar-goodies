@@ -72,9 +72,9 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_fwdbase
             #pragma multi_compile_fwdbasealpha
             #pragma multi_compile_lightpass
-            #pragma multi_compile_shadowcollector
+            //#pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local __ MULTI_TEXTURE
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
@@ -132,13 +132,13 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_fwdbase
             #pragma multi_compile_fwdbasealpha
             #pragma multi_compile_lightpass
-            #pragma multi_compile_shadowcollector
+            //#pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local __ MULTI_TEXTURE
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
-            #undef VERTEXLIGHT_ON
+            //#undef VERTEXLIGHT_ON
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/NormalUtils.cginc"
             #include "./Includes/BigiEffects.cginc"
@@ -190,10 +190,10 @@ Shader "Bigi/AudioLink_frag"
             #pragma multi_compile_fwdadd
             #pragma multi_compile_fwdadd_fullshadows
             #pragma multi_compile_lightpass
-            #pragma multi_compile_shadowcollector
+            //#pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
             #pragma multi_compile_instancing
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local __ MULTI_TEXTURE
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -249,12 +249,8 @@ Shader "Bigi/AudioLink_frag"
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbase
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma multi_compile_local __ MULTI_TEXTURE
+            #pragma shader_feature_local __ MULTI_TEXTURE
 
             #include "./Includes/SoundUtilsDefines.cginc"
 

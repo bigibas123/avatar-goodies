@@ -2,8 +2,11 @@
 #define BIGI_LIGHT_UTILS_INCLUDE
 
 #include <UnityCG.cginc>
-#include <UnityStandardConfig.cginc>
-#include <UnityStandardUtils.cginc>
+
+#ifndef BIGI_EPSILON
+#define BIGI_EPSILON
+#define Epsilon UNITY_HALF_MIN
+#endif
 
 
 namespace b_light
@@ -13,53 +16,18 @@ namespace b_light
     # define doStep(val) smoothstep(0.0, lightDiffuseness, val)
 
     half3 GetAmbient(
-        const in float4 worldLightPos,
-        const in float3 worldNormal,
-        const in float minAmbient,
-        const in float4 ambientOcclusion,
-        #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-        const float4 lightmapUV,
-        #endif
-        const in float3 vertexAmbient
+        in const float3 worldNormal,
+        in const float minAmbient,
+        in const float4 ambientOcclusion
     )
     {
         half3 ret = 0;
 
         #if UNITY_SHOULD_SAMPLE_SH
-        ret = ShadeSHPerPixel(worldNormal, vertexAmbient, worldLightPos);
+        ret += ShadeSH9(half4(worldNormal, 1));
         #endif
 
-        #if defined(LIGHTMAP_ON)
-        half4 bakedColorTex = UNITY_SAMPLE_TEX2D(unity_Lightmap, lightmapUV.xy);
-        half3 bakedColor = DecodeLightmap(bakedColorTex);
-
-        #if defined(DYNAMICLIGHTMAP_ON)
-        float3 dynamicLightDiffuse = DecodeRealtimeLightmap(
-            UNITY_SAMPLE_TEX2D(unity_DynamicLightmap, lightmapUV.zw)
-        );
-        #if defined(DIRLIGHTMAP_COMBINED)
-        float4 dynamicLightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(
-            unity_DynamicDirectionality, unity_DynamicLightmap,
-            lightmapUV.zw
-        );
-        ret += DecodeDirectionalLightmap(
-            dynamicLightDiffuse, dynamicLightmapDirection, worldNormal
-        );
-        #else
-        ret += dynamicLightDiffuse;
-        #endif
-        #endif
-        
-        #ifdef DIRLIGHTMAP_COMBINED
-        fixed4 bakedDirTex = UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd, unity_Lightmap, lightmapUV.xy);
-        ret += DecodeDirectionalLightmap(bakedColor, bakedDirTex, worldNormal);
-        #else
-        ret += bakedColor;
-        #endif
-        #endif
-
-
-        return max(ret, minAmbient) * clamp(ambientOcclusion, 0.75, 1.0);
+        return (minAmbient < Epsilon ? ret : max(ret, half3(minAmbient, minAmbient, minAmbient))) * clamp(ambientOcclusion, 0.75, 1.0);
     }
 
     fixed3 GetWorldLightIntensity(
@@ -79,23 +47,15 @@ namespace b_light
         const in half shadowAttenuation,
         const in half4 lightColor,
         const in float3 vertex,
-        #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-        const float4 lightmapUV,
-        #endif
         const in float minAmbient,
         const in float4 ambientOcclusion,
         const in float lightDiffuseness
     )
     {
         const half3 ambient = GetAmbient(
-            worldLightPos,
             worldNormal,
             minAmbient,
-            ambientOcclusion,
-            #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-            lightmapUV,
-            #endif
-            vertex
+            ambientOcclusion
         );
         const half3 ambientStepped = doStep(ambient);
 
@@ -106,8 +66,8 @@ namespace b_light
         const fixed3 vertexStepped =
             vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
         const fixed3 diff = lightIntensity * lightColor;
-
-        return fixed4(diff + ambientStepped + vertexStepped, 1.0);
+        const fixed4 total = fixed4(diff + ambientStepped + vertexStepped, 1.0);
+        return clamp(total,-1.0,1.0);
     }
 
     //Unity.cginc Shade4PointLights 
@@ -158,21 +118,14 @@ namespace b_light
     )
     {
         float3 ret = 0;
-        #ifndef LIGHTMAP_ON
-        #if UNITY_SHOULD_SAMPLE_SH && !UNITY_SAMPLE_FULL_SH_PER_PIXEL
-        ret = 0;
-        
+
         #ifdef VERTEXLIGHT_ON
         ret += bigi_Shade4PointLights (
             lightPosX, lightPosY, lightPosZ,
             lightColor0, lightColor1, lightColor2, lightColor3,
             lightAttenSq, pos, normal, lightDiffuseness);
         #endif
-        
-        ret = ShadeSHPerVertex (normal, ret);
-        #endif
 
-        #endif
         return ret;
     }
 
@@ -182,9 +135,6 @@ namespace b_light
         const half shadowAttenuation,
         const half4 lightColor,
         const float3 vertex,
-        #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-        const float4 lightmapUV,
-        #endif
         const float minAmbient,
         const float lightDiffuseness
     )
@@ -192,9 +142,6 @@ namespace b_light
         return GetLighting(
             worldLightPos, normal, shadowAttenuation, lightColor,
             vertex,
-            #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-            lightmapUV,
-            #endif
             minAmbient,
             1.0, lightDiffuseness
         );

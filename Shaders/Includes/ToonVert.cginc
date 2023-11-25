@@ -41,9 +41,6 @@ struct v2f {
     float3 worldPos: TEXCOORD6;
     float3 tangent : TEXCOORD7; // vect in left direction of texture coordinates
     float3 bitangent : TEXCOORD8; // vect in up direction of texture coordinates
-    #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-    float4 lightmapUV : TEXCOORD9;
-    #endif
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 };
@@ -56,7 +53,6 @@ struct v2f {
 #include "./BigiShaderParams.cginc"
 
 v2f bigi_toon_vert(appdata v)
-
 {
     v2f o;
     UNITY_SETUP_INSTANCE_ID(v);
@@ -70,22 +66,13 @@ v2f bigi_toon_vert(appdata v)
     o._ShadowCoord = 0;
     #endif
 
-    #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
-    o.lightmapUV.xyzw = 0.0;
-    #if defined(LIGHTMAP_ON)
-        o.lightmapUV.xy = v.uv1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
-    #endif
-
-    #ifdef DYNAMICLIGHTMAP_ON
-        o.lightmapUV.zw = v.uv2.xy * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
-    #endif
-    #endif
 
     UNITY_TRANSFER_SHADOW(o, o.pos)
     UNITY_TRANSFER_LIGHTING(o, o.pos)
     UNITY_TRANSFER_FOG(o, o.pos);
     o.staticTexturePos = ComputeScreenPos(o.pos);
     //TODO make this object space relative or something?
+    // Update: Orels has a shader that I can checkout: https://shaders.orels.sh/docs/ui/layered-parallax
 
     o.worldPos = UnityObjectToWorldDir(v.vertex);
 

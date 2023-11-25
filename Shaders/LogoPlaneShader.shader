@@ -3,6 +3,7 @@ Shader "Bigi/LogoPlane" {
 		_MainTexArray ("Texture", 2DArray) = "black" {}
 		_OtherTextureId ("CellNumber", Int) = 0
 		_AL_General_Intensity("Audiolink Intensity",Range(0.0,1.0)) = 0.0
+		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.01
 	}
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -34,7 +35,6 @@ Shader "Bigi/LogoPlane" {
 
 		v2f vert(appdata v)
 		{
-			_MinAmbient = 0.01;
 			_LightDiffuseness = 1.0;
 			return bigi_toon_vert(v);
 		}
@@ -47,7 +47,6 @@ Shader "Bigi/LogoPlane" {
 			const fixed4 orig_color = GET_TEX_COLOR(i.uv);
 			clip(orig_color.a - Epsilon);
 			
-			_MinAmbient = 0.01;
 			_LightDiffuseness = 1.0;
 			BIGI_GETLIGHT_NOAO(lighting);
 			
@@ -80,6 +79,20 @@ Shader "Bigi/LogoPlane" {
 			CGPROGRAM
 			ENDCG
 		}
+
+		Pass {
+			Name "TransparentForwardAddBack"
+			Tags {
+				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
+			}
+			Cull Front
+			ZWrite Off
+			ZTest LEqual
+			Blend One One
+			CGPROGRAM
+			ENDCG
+		}
+
 		Pass {
 			Name "TransparentForwardBaseFront"
 			Cull Back
@@ -90,30 +103,19 @@ Shader "Bigi/LogoPlane" {
 			ENDCG
 		}
 
-//		Pass {
-//			Name "TransparentForwardAddBack"
-//			Tags {
-//				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
-//			}
-//			Cull Front
-//			ZWrite Off
-//			ZTest LEqual
-//			Blend One One
-//			CGPROGRAM
-//			ENDCG
-//		}
-//		Pass {
-//			Name "TransparentForwardAddFront"
-//			Tags {
-//				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
-//			}
-//			Cull Back
-//			ZWrite Off
-//			ZTest LEqual
-//			Blend One One
-//			CGPROGRAM
-//			ENDCG
-//		}
+		
+		Pass {
+			Name "TransparentForwardAddFront"
+			Tags {
+				"RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector" = "True" "LightMode" = "ForwardAdd" "VRCFallback"="Hidden"
+			}
+			Cull Back
+			ZWrite Off
+			ZTest LEqual
+			Blend One One
+			CGPROGRAM
+			ENDCG
+		}
 
 	}
 }

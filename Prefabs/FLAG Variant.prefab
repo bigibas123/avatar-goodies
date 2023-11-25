@@ -23,13 +23,15 @@ MonoBehaviour:
     00000000:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/Flag/On
         state:
           actions:
           - id: 2
+          ResetMePlease2: 0
         saved: 0
         slider: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -50,34 +52,42 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/Flag/Logo
         state:
           actions:
           - id: 3
+          ResetMePlease2: 0
         saved: 1
         slider: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -98,24 +108,30 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000002:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -504,6 +520,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 830eeba7ecd601d478e2e8d43fa40eb1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 830eeba7ecd601d478e2e8d43fa40eb1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 830eeba7ecd601d478e2e8d43fa40eb1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 830eeba7ecd601d478e2e8d43fa40eb1,
         type: 3}
