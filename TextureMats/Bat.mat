@@ -13,8 +13,8 @@ Material:
     POI_VERTEXLIGHT_ON VIGNETTE_MASKED _LIGHTINGMODE_FLAT _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI
     _STOCHASTICMODE_DELIOT_HEITZ
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -1618,6 +1618,7 @@ Material:
     - _LightDataDetailShadowGlobalMaskR: 0
     - _LightDataShadowMaskGlobalMaskBlendTypeR: 2
     - _LightDataShadowMaskGlobalMaskR: 0
+    - _LightDiffuseness: 0.1
     - _LightDirection_MaskOn: 0
     - _LightDirection_MaskOn2: 0
     - _LightingAOMapsUV: 0
