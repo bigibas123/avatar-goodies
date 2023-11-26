@@ -135,13 +135,15 @@ MonoBehaviour:
     00000000:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/LogoBand/On
         state:
           actions:
           - id: 3
+          ResetMePlease2: 0
         saved: 1
         slider: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -162,34 +164,42 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/LogoBand/Logo
         state:
           actions:
           - id: 4
+          ResetMePlease2: 0
         saved: 1
         slider: 1
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -210,34 +220,42 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000002:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/LogoBand/AL Intensity
         state:
           actions:
           - id: 5
+          ResetMePlease2: 0
         saved: 1
         slider: 1
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 1
         includeInRest: 0
@@ -258,17 +276,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -276,6 +299,7 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000003:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -293,7 +317,9 @@ MonoBehaviour:
         renderer: {fileID: 6886875990288510156}
         affectAllMeshes: 0
         propertyName: _OtherTextureId
-        value: 24
+        value: 27
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000005:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -304,3 +330,5 @@ MonoBehaviour:
         affectAllMeshes: 0
         propertyName: _AL_General_Intensity
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,308 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6851791809888766452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5985990716632171686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - id: 0
-    - id: 1
-  somethingIsBroken: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Props/Flag/On
-        state:
-          actions:
-          - id: 2
-          ResetMePlease2: 0
-        saved: 0
-        slider: 0
-        sliderInactiveAtZero: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    00000001:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Props/Flag/Logo
-        state:
-          actions:
-          - id: 3
-          ResetMePlease2: 0
-        saved: 1
-        slider: 0
-        sliderInactiveAtZero: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    00000002:
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 5985990716632171686}
-        mode: 0
-    00000003:
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 2602050844633520336}
-        affectAllMeshes: 0
-        propertyName: _OtherTextureId
-        value: 1
---- !u!114 &171809830231450429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6515218351869219986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1661641543, guid: 2a2c05204084d904aa4945ccff20d8e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foldout_transforms: 1
-  foldout_forces: 1
-  foldout_collision: 1
-  foldout_stretchsquish: 1
-  foldout_limits: 1
-  foldout_grabpose: 1
-  foldout_options: 1
-  foldout_gizmos: 1
-  version: 1
-  integrationType: 1
-  rootTransform: {fileID: 1440678354352669034}
-  ignoreTransforms:
-  - {fileID: 6354558096093070015}
-  endpointPosition: {x: 0, y: 0.267825, z: 0}
-  multiChildType: 0
-  pull: 0.01
-  pullCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spring: 0
-  springCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  stiffness: 0.333
-  stiffnessCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  gravity: 0
-  gravityCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  gravityFalloff: 0
-  gravityFalloffCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  immobileType: 0
-  immobile: 0.333
-  immobileCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  allowCollision: 0
-  collisionFilter:
-    allowSelf: 1
-    allowOthers: 1
-  radius: 0
-  radiusCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  colliders: []
-  limitType: 2
-  maxAngleX: 180
-  maxAngleXCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxAngleZ: 45
-  maxAngleZCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  limitRotation: {x: 0, y: -90, z: 0}
-  limitRotationXCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  limitRotationYCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  limitRotationZCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  allowGrabbing: 0
-  grabFilter:
-    allowSelf: 1
-    allowOthers: 1
-  allowPosing: 0
-  poseFilter:
-    allowSelf: 1
-    allowOthers: 1
-  snapToHand: 0
-  grabMovement: 1
-  maxStretch: 0
-  maxStretchCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxSquish: 0
-  maxSquishCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  stretchMotion: 0
-  stretchMotionCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  isAnimated: 0
-  resetWhenDisabled: 1
-  parameter: 
-  showGizmos: 1
-  boneOpacity: 0.5
-  limitOpacity: 0.5
 --- !u!114 &2343857070682262489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +151,311 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   limitRotation: {x: 0, y: 0, z: 0}
+  limitRotationXCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  limitRotationYCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  limitRotationZCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  allowGrabbing: 0
+  grabFilter:
+    allowSelf: 1
+    allowOthers: 1
+  allowPosing: 0
+  poseFilter:
+    allowSelf: 1
+    allowOthers: 1
+  snapToHand: 0
+  grabMovement: 1
+  maxStretch: 0
+  maxStretchCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSquish: 0
+  maxSquishCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stretchMotion: 0
+  stretchMotionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isAnimated: 0
+  resetWhenDisabled: 1
+  parameter: 
+  showGizmos: 1
+  boneOpacity: 0.5
+  limitOpacity: 0.5
+--- !u!114 &6851791809888766452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985990716632171686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  config:
+    features:
+    - id: 0
+    - id: 1
+  somethingIsBroken: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/Flag/On
+        state:
+          actions:
+          - id: 2
+          ResetMePlease2: 0
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 1
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    00000001:
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/Flag/Logo
+        state:
+          actions:
+          - id: 3
+          ResetMePlease2: 0
+        saved: 1
+        slider: 0
+        sliderInactiveAtZero: 1
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    00000002:
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 5985990716632171686}
+        mode: 0
+    00000003:
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 2602050844633520336}
+        affectAllMeshes: 0
+        propertyName: _OtherTextureId
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &171809830231450429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515218351869219986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1661641543, guid: 2a2c05204084d904aa4945ccff20d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foldout_transforms: 1
+  foldout_forces: 1
+  foldout_collision: 1
+  foldout_stretchsquish: 1
+  foldout_limits: 1
+  foldout_grabpose: 1
+  foldout_options: 1
+  foldout_gizmos: 1
+  version: 1
+  integrationType: 1
+  rootTransform: {fileID: 1440678354352669034}
+  ignoreTransforms:
+  - {fileID: 6354558096093070015}
+  endpointPosition: {x: 0, y: 0.267825, z: 0}
+  multiChildType: 0
+  pull: 0.01
+  pullCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spring: 0
+  springCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stiffness: 0.333
+  stiffnessCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  gravity: 0
+  gravityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  gravityFalloff: 0
+  gravityFalloffCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  immobileType: 0
+  immobile: 0.333
+  immobileCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  allowCollision: 0
+  collisionFilter:
+    allowSelf: 1
+    allowOthers: 1
+  radius: 0
+  radiusCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  colliders: []
+  limitType: 2
+  maxAngleX: 180
+  maxAngleXCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxAngleZ: 45
+  maxAngleZCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  limitRotation: {x: 0, y: -90, z: 0}
   limitRotationXCurve:
     serializedVersion: 2
     m_Curve: []

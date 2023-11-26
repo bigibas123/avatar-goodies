@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3316082899878869953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7013750800068416538}
+  m_Layer: 0
+  m_Name: FingerTrail_L_Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7013750800068416538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316082899878869953}
+  m_LocalRotation: {x: -0.48864064, y: 0.5050234, z: 0.50502235, w: 0.50113285}
+  m_LocalPosition: {x: -0.5504891, y: 0.98044634, z: 0.016931653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6047299288813448104}
+  m_Father: {fileID: 4444688383980908565}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5313632208832924751
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,9 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444688383980908565}
+  - component: {fileID: 4940743800736401243}
   - component: {fileID: 7100793332111573945}
   - component: {fileID: 365494594162558599}
-  - component: {fileID: 4940743800736401243}
   m_Layer: 0
   m_Name: FT_Both
   m_TagString: Untagged
@@ -30,11 +61,193 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6047299288813448104}
-  - {fileID: 6047299288820576306}
+  - {fileID: 8024959485866338529}
+  - {fileID: 7013750800068416538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4940743800736401243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  config:
+    features:
+    - id: 0
+    - id: 1
+  somethingIsBroken: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Fingertrail/Brightness
+        state:
+          actions:
+          - id: 2
+          - id: 3
+          ResetMePlease2: 0
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    00000001:
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Fingertrail/Hue
+        state:
+          actions:
+          - id: 4
+          - id: 5
+          ResetMePlease2: 0
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    00000002:
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682278392360}
+        affectAllMeshes: 0
+        propertyName: _Brightness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    00000003:
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682267134386}
+        affectAllMeshes: 0
+        propertyName: _Brightness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    00000004:
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682278392360}
+        affectAllMeshes: 0
+        propertyName: _Hue
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    00000005:
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682267134386}
+        affectAllMeshes: 0
+        propertyName: _Hue
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &7100793332111573945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,12 +272,13 @@ MonoBehaviour:
     00000000:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Fingertrail/On
         state:
           actions:
           - id: 3
           - id: 4
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -88,17 +302,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -106,6 +325,7 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000001:
       type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -174,6 +394,7 @@ MonoBehaviour:
         action:
           actions:
           - id: 5
+          ResetMePlease2: 0
     00000003:
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -223,7 +444,7 @@ MonoBehaviour:
       data:
         version: 5
         linkMode: 3
-        propBone: {fileID: 6045609771331090632}
+        propBone: {fileID: 3316082899878869953}
         boneOnAvatar: 29
         bonePathOnAvatar: 
         keepBoneOffsets2: 2
@@ -240,7 +461,7 @@ MonoBehaviour:
       data:
         version: 5
         linkMode: 3
-        propBone: {fileID: 6045609771325465426}
+        propBone: {fileID: 9193611560606458347}
         boneOnAvatar: 44
         bonePathOnAvatar: 
         keepBoneOffsets2: 2
@@ -252,175 +473,6 @@ MonoBehaviour:
         useBoneMerging: 0
         keepBoneOffsets: 0
         physbonesOnAvatarBones: 0
---- !u!114 &4940743800736401243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5313632208832924751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - id: 0
-    - id: 1
-  somethingIsBroken: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 2
-        name: Fingertrail/Brightness
-        state:
-          actions:
-          - id: 2
-          - id: 3
-          - id: 4
-        saved: 0
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-    00000001:
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 2
-        name: Fingertrail/Hue
-        state:
-          actions:
-          - id: 5
-          - id: 6
-        saved: 0
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-    00000002:
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682278392360}
-        affectAllMeshes: 0
-        propertyName: _Brightness
-        value: 1
-    00000003:
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682267134386}
-        affectAllMeshes: 0
-        propertyName: _Brightness
-        value: 1
-    00000004:
-      type: {class: ShaderInventoryAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        slot: 1
-    00000005:
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682278392360}
-        affectAllMeshes: 0
-        propertyName: _Hue
-        value: 1
-    00000006:
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682267134386}
-        affectAllMeshes: 0
-        propertyName: _Hue
-        value: 1
 --- !u!1 &6045609771325465426
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,12 +497,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045609771325465426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4444688383980908565}
-  m_RootOrder: 1
+  m_Father: {fileID: 8024959485866338529}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -88.98001, y: -45.585003, z: -45.576004}
 --- !u!96 &5959438682267134386
 TrailRenderer:
@@ -582,11 +634,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045609771331090632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4444688383980908565}
+  m_Father: {fileID: 7013750800068416538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &5959438682278392360
@@ -695,3 +747,34 @@ TrailRenderer:
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!1 &9193611560606458347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8024959485866338529}
+  m_Layer: 0
+  m_Name: FingerTrail_R_Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8024959485866338529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193611560606458347}
+  m_LocalRotation: {x: -0.4886467, y: -0.50502217, z: -0.50502133, w: 0.50112927}
+  m_LocalPosition: {x: 0.55048907, y: 0.9804462, z: 0.016931593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6047299288820576306}
+  m_Father: {fileID: 4444688383980908565}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

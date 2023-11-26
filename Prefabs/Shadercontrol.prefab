@@ -65,11 +65,12 @@ MonoBehaviour:
     00000000:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/ShadowDiffuseness
         state:
           actions:
           - id: 13
+          ResetMePlease2: 0
         saved: 1
         slider: 1
         sliderInactiveAtZero: 0
@@ -93,19 +94,24 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions:
           - id: 14
+          ResetMePlease2: 0
         transitionStateOut:
           actions:
           - id: 15
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -113,14 +119,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000001:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/Effects/Voronoi
         state:
           actions:
           - id: 16
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -144,17 +152,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -162,14 +175,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000002:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/Effects/Monochrome
         state:
           actions:
           - id: 17
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -193,17 +208,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -211,14 +231,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000003:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/Emission
         state:
           actions:
           - id: 18
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -242,17 +264,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -260,14 +287,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000004:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/MinAmbient
         state:
           actions:
           - id: 19
+          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -291,17 +320,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -309,14 +343,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000005:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Lighting/AddLightStrenght
         state:
           actions:
           - id: 20
+          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -340,17 +376,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -358,14 +399,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000006:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/TextureId
         state:
           actions:
           - id: 21
+          ResetMePlease2: 0
         saved: 1
         slider: 1
         sliderInactiveAtZero: 0
@@ -389,17 +432,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -407,14 +455,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000007:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Outline
         state:
           actions:
           - id: 22
+          ResetMePlease2: 0
         saved: 1
         slider: 1
         sliderInactiveAtZero: 0
@@ -438,17 +488,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -456,14 +511,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000008:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Theme/Weight
         state:
           actions:
           - id: 23
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -487,17 +544,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -505,14 +567,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     00000009:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Theme/Bass
         state:
           actions:
           - id: 24
+          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -536,17 +600,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -554,14 +623,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     0000000A:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Hue/Weight
         state:
           actions:
           - id: 25
+          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -585,17 +656,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -603,14 +679,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     0000000B:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Hue/Bass
         state:
           actions:
           - id: 26
+          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -634,17 +712,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -652,14 +735,16 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     0000000C:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 2
+        version: 3
         name: Shader/Audiolink/Hue/Hue
         state:
           actions:
           - id: 27
+          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -683,17 +768,22 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -701,6 +791,7 @@ MonoBehaviour:
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
+        invertRestLogic: 0
     0000000D:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -711,6 +802,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _LightDiffuseness
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     0000000E:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -721,6 +814,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _LightDiffuseness
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     0000000F:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -731,6 +826,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _LightDiffuseness
         value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000010:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -741,6 +838,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _Voronoi
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000011:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -751,6 +850,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _MonoChrome
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000012:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -761,6 +862,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _EmissionStrength
         value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000013:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -771,6 +874,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _MinAmbient
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000014:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -781,6 +886,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AddLightIntensity
         value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000015:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -791,6 +898,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _OtherTextureId
         value: 16
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000016:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -801,6 +910,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _OutlineWidth
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000017:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -811,6 +922,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000018:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -821,6 +934,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     00000019:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -831,6 +946,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AL_Hue_Weight
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     0000001A:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -841,6 +958,8 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AL_Hue_BassReactive
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
     0000001B:
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -851,3 +970,5 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _AL_Hue
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
