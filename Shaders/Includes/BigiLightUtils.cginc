@@ -18,7 +18,8 @@ namespace b_light
     half3 GetAmbient(
         in const float3 worldNormal,
         in const float minAmbient,
-        in const float4 ambientOcclusion
+        in const float4 ambientOcclusion,
+        in const float lightDiffuseness
     )
     {
         half3 ret = 0;
@@ -26,7 +27,7 @@ namespace b_light
         #if UNITY_SHOULD_SAMPLE_SH
         ret += ShadeSH9(half4(worldNormal, 1));
         #endif
-
+        ret = doStep(ret);
         return (minAmbient < Epsilon ? ret : max(ret, half3(minAmbient, minAmbient, minAmbient))) * clamp(ambientOcclusion, 0.75, 1.0);
     }
 
@@ -55,9 +56,10 @@ namespace b_light
         const half3 ambient = GetAmbient(
             worldNormal,
             minAmbient,
-            ambientOcclusion
+            ambientOcclusion,
+            lightDiffuseness
         );
-        const half3 ambientStepped = doStep(ambient);
+        const half3 ambientStepped = ambient;
 
 
         const float nl = max(0, dot(worldNormal, worldLightPos.xyz));
@@ -67,7 +69,7 @@ namespace b_light
             vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
         const fixed3 diff = lightIntensity * lightColor;
         const fixed4 total = fixed4(diff + ambientStepped + vertexStepped, 1.0);
-        return clamp(total,-1.0,1.0);
+        return clamp(total, -1.0, 1.0);
     }
 
     //Unity.cginc Shade4PointLights 

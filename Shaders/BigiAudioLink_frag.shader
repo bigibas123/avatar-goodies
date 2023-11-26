@@ -49,6 +49,7 @@ Shader "Bigi/AudioLink_frag"
             Name "OpaqueForwardBase"
             Tags
             {
+                "Queue" = "AlphaTest"
                 "RenderType" = "AlphaTest"
                 "LightMode" = "ForwardBase"
             }
