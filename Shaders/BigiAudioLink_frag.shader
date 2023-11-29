@@ -10,7 +10,8 @@ Shader "Bigi/AudioLink_frag"
         [NoScaleOffset] _OcclusionMap ("Ambient occlusion map", 2D) = "white" {}
         [NoScaleOffset] _BumpMap("Normal Map", 2D) = "bump" {}
 
-        _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
+        [Header(Lighting)]
+        _LightDiffuseness ("Shadow Diffuseness",Range(0.0,1.0)) = 0.1
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
         _VertLightIntensity ("Vertex lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
@@ -27,7 +28,7 @@ Shader "Bigi/AudioLink_frag"
         [Header(Effects)]
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
-        _LightDiffuseness ("Shadow Diffuseness",Range(0.0,1.0)) = 0.1
+        _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
 
         [Header(Multi Texture)]
         [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
