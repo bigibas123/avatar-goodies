@@ -23,7 +23,8 @@
 				#pragma multi_compile_fog
 
 				#include <UnityCG.cginc>
-				#include "Includes/BigiSoundUtils.cginc"
+				#include "./Includes/ColorUtil.cginc"
+				#include "./Includes/BigiSoundUtils.cginc"
 				float _Brightness;
 				float _Hue;
 
