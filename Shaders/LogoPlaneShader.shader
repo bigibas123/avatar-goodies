@@ -33,21 +33,29 @@ Shader "Bigi/LogoPlane" {
 		#include "./Includes/LightUtilsDefines.cginc"
 		#include "./Includes/SoundUtilsDefines.cginc"
 
-		v2f vert(appdata v)
+		void setLightVars()
 		{
 			_LightDiffuseness = 1.0;
+			_AddLightIntensity = 1.0;
+			_VertLightIntensity = 1.0;
+		}
+		
+		v2f vert(appdata v)
+		{
+			setLightVars();
 			return bigi_toon_vert(v);
 		}
 
 		fragOutput frag(v2f i)
 		{
+			setLightVars();
 			fragOutput o;
 			UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 			UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 			const fixed4 orig_color = GET_TEX_COLOR(i.uv);
 			clip(orig_color.a - Epsilon);
 			
-			_LightDiffuseness = 1.0;
+			
 			BIGI_GETLIGHT_NOAO(lighting);
 			
 			const fixed4 normalColor = orig_color * lighting;

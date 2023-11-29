@@ -20,7 +20,7 @@ struct appdata {
     float4 tangent : TANGENT;
     float4 texcoord : TEXCOORD0;
     float4 color : COLOR;
-    float2 uv1 : TEXCOORD1;
+    float2 uv1 : TEXCOORD1; //Lightmap Uvs
     float2 uv2 : TEXCOORD2;
     float2 uv3 : TEXCOORD3;
     uint vertexId : SV_VertexID;
@@ -36,11 +36,18 @@ struct v2f {
     half2 uv : TEXCOORD0; //texture coordinates
     UNITY_LIGHTING_COORDS(1, 2)
     UNITY_FOG_COORDS(3)
-    float3 vertexLighting : TEXCOORD4;
-    float4 staticTexturePos : TEXCOORD5;
-    float3 worldPos: TEXCOORD6;
-    float3 tangent : TEXCOORD7; // vect in left direction of texture coordinates
-    float3 bitangent : TEXCOORD8; // vect in up direction of texture coordinates
+    float4 staticTexturePos : TEXCOORD4;
+    float3 worldPos: TEXCOORD5;
+    float3 tangent : TEXCOORD6; // vect in left direction of texture coordinates
+    float3 bitangent : TEXCOORD7; // vect in up direction of texture coordinates
+    #if defined(VERTEXLIGHT_ON) && defined(LIGHTMAP_ON)
+    float3 vertexLighting : TEXCOORD8;
+    float2 lightmapUV : TEXCOORD9;
+    #elif defined(LIGHTMAP_ON)
+    float2 lightmapUV : TEXCOORD8;
+    #elif defined(VERTEXLIGHT_ON)
+    float3 vertexLighting : TEXCOORD8;
+    #endif
     UNITY_VERTEX_INPUT_INSTANCE_ID
     UNITY_VERTEX_OUTPUT_STEREO
 };
@@ -67,8 +74,8 @@ v2f bigi_toon_vert(appdata v)
     #endif
 
 
-    UNITY_TRANSFER_SHADOW(o, o.pos)
-    UNITY_TRANSFER_LIGHTING(o, o.pos)
+    UNITY_TRANSFER_SHADOW(o, v.uv1)
+    UNITY_TRANSFER_LIGHTING(o, v.uv1)
     UNITY_TRANSFER_FOG(o, o.pos);
     o.staticTexturePos = ComputeScreenPos(o.pos);
     //TODO make this object space relative or something?
@@ -76,11 +83,17 @@ v2f bigi_toon_vert(appdata v)
 
     o.worldPos = UnityObjectToWorldDir(v.vertex);
 
+    #if defined(LIGHTMAP_ON)
+    o.lightmapUV = v.uv1 * unity_LightmapST.xy + unity_LightmapST.zw;
+    #endif
+
+    #if defined(VERTEXLIGHT_ON)
     o.vertexLighting = b_light::ProcessVertexLights(
         unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0,
         unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb,
         unity_4LightAtten0, o.worldPos, o.normal, _LightDiffuseness
-    ) * _AddLightIntensity;
+    ) * _VertLightIntensity;
+    #endif
 
     o.tangent = UnityObjectToWorldDir(v.tangent);
 

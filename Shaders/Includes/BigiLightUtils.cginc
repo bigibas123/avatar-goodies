@@ -19,14 +19,35 @@ namespace b_light
         in const float3 worldNormal,
         in const float minAmbient,
         in const float4 ambientOcclusion,
+        #ifdef LIGHTMAP_ON
+        in const float2 lightmapUv,
+        #endif
         in const float lightDiffuseness
     )
     {
         half3 ret = 0;
 
-        #if UNITY_SHOULD_SAMPLE_SH
-        ret += ShadeSH9(half4(worldNormal, 1));
+
+        #ifdef LIGHTMAP_ON
+
+        ret += DecodeLightmap(
+                    UNITY_SAMPLE_TEX2D(unity_Lightmap, lightmapUv)
+                    );
+        
+        #if defined(DIRLIGHTMAP_COMBINED)
+        float4 lightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(
+                    unity_LightmapInd, unity_Lightmap, lightmapUv
+                );
+            ret = DecodeDirectionalLightmap(
+                ret, lightmapDirection, worldNormal
+            );
         #endif
+        #endif
+
+        #if UNITY_SHOULD_SAMPLE_SH
+            ret += max(0,ShadeSH9(half4(worldNormal, 1)));
+        #endif
+
         ret = doStep(ret);
         return (minAmbient < Epsilon ? ret : max(ret, half3(minAmbient, minAmbient, minAmbient))) * clamp(ambientOcclusion, 0.75, 1.0);
     }
@@ -42,12 +63,42 @@ namespace b_light
         return lightIntensity;
     }
 
+    half fade_shadow(
+        in const float3 worldNormal,
+        #ifdef LIGHTMAP_ON
+        in const float2 lightmapUv,
+        #endif
+        in half attenuation
+    )
+    {
+        #if HANDLE_SHADOWS_BLENDING_IN_GI
+        float viewZ = dot(_WorldSpaceCameraPos - worldNormal, UNITY_MATRIX_V[2].xyz);
+        float shadowFadeDistance = UnityComputeShadowFadeDistance(worldNormal, viewZ);
+        float shadowFade = UnityComputeShadowFade(shadowFadeDistance);
+        #ifdef LIGHTMAP_ON
+        float bakedAttenuation = UnitySampleBakedOcclusion(lightmapUv,worldNormal);
+        #else
+        float bakedAttenuation = 0;
+        #endif
+
+        attenuation = UnityMixRealtimeAndBakedShadows(
+            attenuation, bakedAttenuation, shadowFade
+        );
+        #endif
+        return attenuation;
+    }
+
     fixed4 GetLighting(
         const in float4 worldLightPos,
         const in float3 worldNormal,
         const in half shadowAttenuation,
         const in half4 lightColor,
+        #ifdef VERTEXLIGHT_ON
         const in float3 vertex,
+        #endif
+        #ifdef LIGHTMAP_ON
+        const in float2 lightmapUv,
+        #endif
         const in float minAmbient,
         const in float4 ambientOcclusion,
         const in float lightDiffuseness
@@ -57,6 +108,9 @@ namespace b_light
             worldNormal,
             minAmbient,
             ambientOcclusion,
+            #if defined(LIGHTMAP_ON)
+            lightmapUv,
+            #endif
             lightDiffuseness
         );
         const half3 ambientStepped = ambient;
@@ -64,11 +118,27 @@ namespace b_light
 
         const float nl = max(0, dot(worldNormal, worldLightPos.xyz));
 
-        const float lightIntensity = doStep(nl * shadowAttenuation);
-        const fixed3 vertexStepped =
-            vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
+        const float fadedAttenuation = fade_shadow(
+            worldNormal,
+            #ifdef LIGHTMAP_ON
+            lightmapUv,
+            #endif
+            shadowAttenuation
+        );
+
+        const float lightIntensity = doStep(nl * fadedAttenuation);
+        #ifdef VERTEXLIGHT_ON
+        const fixed3 vertexStepped = vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
+        #endif
         const fixed3 diff = lightIntensity * lightColor;
-        const fixed4 total = fixed4(diff + ambientStepped + vertexStepped, 1.0);
+        const fixed4 total = fixed4(
+            diff
+            + ambientStepped
+            #ifdef VERTEXLIGHT_ON
+            + vertexStepped
+            #endif
+            , 1.0
+        );
         return clamp(total, -1.0, 1.0);
     }
 
@@ -129,24 +199,6 @@ namespace b_light
         #endif
 
         return ret;
-    }
-
-    fixed4 GetLighting(
-        const in float4 worldLightPos,
-        const float3 normal,
-        const half shadowAttenuation,
-        const half4 lightColor,
-        const float3 vertex,
-        const float minAmbient,
-        const float lightDiffuseness
-    )
-    {
-        return GetLighting(
-            worldLightPos, normal, shadowAttenuation, lightColor,
-            vertex,
-            minAmbient,
-            1.0, lightDiffuseness
-        );
     }
 }
 

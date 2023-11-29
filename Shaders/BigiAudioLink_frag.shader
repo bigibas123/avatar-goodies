@@ -12,6 +12,7 @@ Shader "Bigi/AudioLink_frag"
 
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
+        _VertLightIntensity ("Vertex lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
 
         [Header(Audiolink world theme colors)]
@@ -35,6 +36,8 @@ Shader "Bigi/AudioLink_frag"
 
 
     }
+    
+    CustomEditor "Characters.Common.Editor.Tools.BigiShaderEditor.BigiShaderEditor"
     SubShader
     {
         Blend SrcAlpha OneMinusSrcAlpha
@@ -70,12 +73,13 @@ Shader "Bigi/AudioLink_frag"
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbase
             #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            //#pragma multi_compile_shadowcollector
+            #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma shader_feature_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
+            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
+
+
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
@@ -130,16 +134,14 @@ Shader "Bigi/AudioLink_frag"
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbase
             #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            //#pragma multi_compile_shadowcollector
+            #pragma multi_compile_shadowcollector
             #pragma multi_compile_fog
-            #pragma shader_feature_local __ MULTI_TEXTURE
+            #pragma shader_feature_local MULTI_TEXTURE
+            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
-            //#undef VERTEXLIGHT_ON
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/NormalUtils.cginc"
             #include "./Includes/BigiEffects.cginc"
@@ -159,7 +161,6 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
-
                 return o;
             }
             ENDCG
@@ -175,7 +176,7 @@ Shader "Bigi/AudioLink_frag"
             Cull Off
             ZWrite Off
             ZTest LEqual
-            Blend One One
+            Blend SrcAlpha One
             Stencil
             {
                 Ref 4
@@ -188,13 +189,14 @@ Shader "Bigi/AudioLink_frag"
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
             #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_fwdadd
-            #pragma multi_compile_fwdadd_fullshadows
-            #pragma multi_compile_lightpass
-            //#pragma multi_compile_shadowcollector
-            #pragma multi_compile_fog
             #pragma multi_compile_instancing
-            #pragma shader_feature_local __ MULTI_TEXTURE
+            #pragma multi_compile_fwdadd_fullshadows
+            #pragma multi_compile_shadowcollector
+            #pragma multi_compile_fog
+            #pragma shader_feature_local MULTI_TEXTURE
+            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
+
+
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -251,7 +253,6 @@ Shader "Bigi/AudioLink_frag"
             #pragma instancing_options assumeuniformscaling
             #pragma multi_compile_instancing
             #pragma multi_compile_fog
-            #pragma shader_feature_local __ MULTI_TEXTURE
 
             #include "./Includes/SoundUtilsDefines.cginc"
 
@@ -291,6 +292,80 @@ Shader "Bigi/AudioLink_frag"
             }
             ENDCG
 
+        }
+        Pass
+        {
+            Name "META"
+            Tags
+            {
+                "LightMode" = "Meta"
+            }
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 2.0
+            #include "UnityCG.cginc"
+            #include "UnityMetaPass.cginc"
+            #include "./Includes/BigiEffects.cginc"
+            #include "./Includes/BigiShaderTextures.cginc"
+            #include "./Includes/BigiShaderParams.cginc"
+            
+            struct v2f {
+                UNITY_POSITION(pos);
+                float2 uv : TEXCOORD0;
+                float2 uvIllum : TEXCOORD1;
+                #ifdef EDITOR_VISUALIZATION
+                float2 vizUV : TEXCOORD2;
+                float4 lightCoord : TEXCOORD3;
+                #endif
+                UNITY_VERTEX_OUTPUT_STEREO
+            };
+
+            float4 _Illum_ST;
+
+            v2f vert(appdata_full v)
+            {
+                v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                o.pos = UnityMetaVertexPosition(v.vertex, v.texcoord1.xy, v.texcoord2.xy, unity_LightmapST, unity_DynamicLightmapST);
+                o.uv = DO_TRANSFORM(v.texcoord);
+                o.uvIllum = TRANSFORM_TEX(v.texcoord, _Illum);
+                #ifdef EDITOR_VISUALIZATION
+                    o.vizUV = 0;
+                    o.lightCoord = 0;
+                    if (unity_VisualizationMode == EDITORVIZ_TEXTURE)
+                        o.vizUV = UnityMetaVizUV(unity_EditorViz_UVIndex, v.texcoord.xy, v.texcoord1.xy, v.texcoord2.xy, unity_EditorViz_Texture_ST);
+                    else if (unity_VisualizationMode == EDITORVIZ_SHOWLIGHTMASK)
+                    {
+                        o.vizUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
+                        o.lightCoord = mul(unity_EditorViz_WorldToLight, mul(unity_ObjectToWorld, float4(v.vertex.xyz, 1)));
+                    }
+                #endif
+                return o;
+            }
+            
+            sampler2D _Illum;
+            
+            half4 frag(v2f i) : SV_Target
+            {
+                UnityMetaInput metaIN;
+                UNITY_INITIALIZE_OUTPUT(UnityMetaInput, metaIN);
+
+                fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                fixed4 mask_color = GET_MASK_COLOR(i.uv);
+                
+                
+                metaIN.Albedo = orig_color.rgb;
+                metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength) * tex2D(_Illum, i.uvIllum).a;
+                #if defined(EDITOR_VISUALIZATION)
+                    metaIN.VizUV = i.vizUV;
+                    metaIN.LightCoord = i.lightCoord;
+                #endif
+
+                return UnityMetaFragment(metaIN);
+            }
+            ENDCG
         }
 
         //UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
@@ -332,9 +407,9 @@ Shader "Bigi/AudioLink_frag"
                 #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
                     float2 tex : TEXCOORD1;
 
-                    #if defined(_PARALLAXMAP)
+                #if defined(_PARALLAXMAP)
                         half3 viewDirForParallax : TEXCOORD2;
-                    #endif
+                #endif
                 #endif
                 //float4 uv : TEXCOORD0;
             };
@@ -346,16 +421,16 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-                
+
                 #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
                     o.tex = TRANSFORM_TEX(v.uv0, _MainTex);
 
-                    #ifdef _PARALLAXMAP
+                #ifdef _PARALLAXMAP
                         TANGENT_SPACE_ROTATION;
                         o.viewDirForParallax = mul (rotation, ObjSpaceViewDir(v.vertex));
-                    #endif
                 #endif
-                
+                #endif
+
                 //o.uv = v.texcoord;
                 return o;
             }
@@ -366,48 +441,48 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 
                 #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
-                    #if defined(_PARALLAXMAP) && (SHADER_TARGET >= 30)
+                #if defined(_PARALLAXMAP) && (SHADER_TARGET >= 30)
                         half3 viewDirForParallax = normalize(i.viewDirForParallax);
                         fixed h = tex2D (_ParallaxMap, i.tex.xy).g;
                         half2 offset = ParallaxOffset1Step (h, _Parallax, viewDirForParallax);
                         i.tex.xy += offset;
-                    #endif
+                #endif
 
-                    #if defined(_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A)
+                #if defined(_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A)
                         half alpha = _Color.a;
-                    #else
+                #else
                         half alpha = tex2D(_MainTex, i.tex.xy).a * _Color.a;
-                    #endif
-                    #if defined(_ALPHATEST_ON)
+                #endif
+                #if defined(_ALPHATEST_ON)
                         clip (alpha - _Cutoff);
-                    #endif
-                    #if defined(_ALPHABLEND_ON) || defined(_ALPHAPREMULTIPLY_ON)
-                        #if defined(_ALPHAPREMULTIPLY_ON)
+                #endif
+                #if defined(_ALPHABLEND_ON) || defined(_ALPHAPREMULTIPLY_ON)
+                #if defined(_ALPHAPREMULTIPLY_ON)
                             half outModifiedAlpha;
                             PreMultiplyAlpha(half3(0, 0, 0), alpha, SHADOW_ONEMINUSREFLECTIVITY(i.tex), outModifiedAlpha);
                             alpha = outModifiedAlpha;
-                        #endif
-                        #if defined(UNITY_STANDARD_USE_DITHER_MASK)
-                            // Use dither mask for alpha blended shadows, based on pixel position xy
-                            // and alpha level. Our dither texture is 4x4x16.
-                            #ifdef LOD_FADE_CROSSFADE
+                #endif
+                #if defined(UNITY_STANDARD_USE_DITHER_MASK)
+                // Use dither mask for alpha blended shadows, based on pixel position xy
+                // and alpha level. Our dither texture is 4x4x16.
+                #ifdef LOD_FADE_CROSSFADE
                                 #define _LOD_FADE_ON_ALPHA
                                 alpha *= unity_LODFade.y;
-                            #endif
+                #endif
                             half alphaRef = tex3D(_DitherMaskLOD, float3(vpos.xy*0.25,alpha*0.9375)).a;
                             clip (alphaRef - 0.01);
-                        #else
+                #else
                             clip (alpha - _Cutoff);
-                        #endif
-                    #endif
+                #endif
+                #endif
                 #endif // #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
 
                 #ifdef LOD_FADE_CROSSFADE
-                    #ifdef _LOD_FADE_ON_ALPHA
+                #ifdef _LOD_FADE_ON_ALPHA
                         #undef _LOD_FADE_ON_ALPHA
-                    #else
+                #else
                         UnityApplyDitherCrossFade(vpos.xy);
-                    #endif
+                #endif
                 #endif
 
 

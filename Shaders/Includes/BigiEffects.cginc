@@ -19,18 +19,16 @@ namespace b_effects
         fixed3 totalColor;
     };
 
-    void doMixProperly(inout BEffectsTracker obj, in fixed3 color, in float weight, in float force)
+    void doMixProperly(inout BEffectsTracker obj, in const fixed3 color, in const float weight, in const float force)
     {
         obj.totalWeight += weight;
         obj.totalColor = lerp(obj.totalColor, color, (weight * force) / obj.totalWeight);
     }
 
-    fixed4 Monochromize(fixed4 input, float enabled)
+    fixed3 Monochromize(half3 input,float alpha)
     {
-        half colorValue = RGBToHSV(input.rgb * input.a).z;
-        //colorValue = smoothstep(0.4,0.6,colorValue);
-        fixed4 ret = fixed4(colorValue, colorValue, colorValue, input.a);
-        return lerp(input, ret, enabled);
+        half colorValue = RGBToHSV(input.rgb * alpha).z;
+        return fixed3(colorValue, colorValue, colorValue);
     }
 
     float3 get_voronoi(in half2 uv)
@@ -44,6 +42,23 @@ namespace b_effects
     //     return float3(0,0,0);
     // }
 
+    half3 get_meta_emissions(in const half3 orig_color,
+        in const fixed4 mask,
+        in const float emission_strength
+    )
+    {
+        BEffectsTracker mix;
+        mix.totalColor = 0.0;
+        mix.totalWeight = 0.0;
+
+        doMixProperly(mix,orig_color.rgb * emission_strength * max(1.0,emission_strength),mask.r,1.0);
+        
+        GET_SOUND_COLOR(soundC);
+        doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 1.0);
+        
+        return  mix.totalColor;
+    }
+    
     fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting, in float4 staticTexturePos)
     {
         const float3 fixedLighting = lighting.rgb * lighting.a;
@@ -53,11 +68,11 @@ namespace b_effects
         //AudioLink
         {
             GET_SOUND_COLOR(soundC);
-            doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 2.0);
+            doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 1.0);
         }
         //"Emissions"
         {
-            doMixProperly(mix, orig_color.rgb * _EmissionStrength, mask.r * _EmissionStrength, 1.0);
+            doMixProperly(mix, orig_color.rgb * (max(1.0,_EmissionStrength) * max(1.0,_EmissionStrength)), mask.r * _EmissionStrength, 1.0);
         }
         //Screenspace images
         {
@@ -69,7 +84,15 @@ namespace b_effects
         {
             if (_Voronoi > Epsilon)
             {
-                doMixProperly(mix, get_voronoi(uv) * fixedLighting, _Voronoi, 2.0);
+                doMixProperly(mix, get_voronoi(uv) * fixedLighting, _Voronoi, mix.totalWeight + _Voronoi);
+            }
+        }
+
+        //Monochrome
+        {
+            if (_MonoChrome > Epsilon)
+            {
+                doMixProperly(mix, Monochromize(mix.totalColor,orig_color.a), _MonoChrome, mix.totalWeight + _MonoChrome);
             }
         }
 
@@ -80,7 +103,7 @@ namespace b_effects
         //         
         //     }
         // }
-        return Monochromize(half4(mix.totalColor, orig_color.a), _MonoChrome);
+        return half4(mix.totalColor,orig_color.a);
     }
 }
 
