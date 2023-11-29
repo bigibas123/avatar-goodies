@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316082899878869953}
-  m_LocalRotation: {x: -0.48864064, y: 0.5050234, z: 0.50502235, w: 0.50113285}
-  m_LocalPosition: {x: -0.5504891, y: 0.98044634, z: 0.016931653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6047299288813448104}
@@ -138,7 +138,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0
+        defaultSliderValue: 1
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -364,7 +364,15 @@ MonoBehaviour:
         useSecurityForToggle: 0
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
-        rewriteBindings: []
+        rewriteBindings:
+        - from: FingerTrail_R
+          to: FingerTrail_R_Parent/FingerTrail_R
+          delete: 0
+          ResetMePlease2: 0
+        - from: FingerTrail_L
+          to: FingerTrail_L_Parent/FingerTrail_L
+          delete: 0
+          ResetMePlease2: 0
         allowMissingAssets: 0
         controller:
           version: 1
@@ -498,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045609771325465426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8024959485866338529}
@@ -609,7 +617,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
-  m_Emitting: 0
+  m_Emitting: 1
 --- !u!1 &6045609771331090632
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045609771331090632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7013750800068416538}
@@ -746,7 +754,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
-  m_Emitting: 0
+  m_Emitting: 1
 --- !u!1 &9193611560606458347
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,8 +778,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9193611560606458347}
-  m_LocalRotation: {x: -0.4886467, y: -0.50502217, z: -0.50502133, w: 0.50112927}
-  m_LocalPosition: {x: 0.55048907, y: 0.9804462, z: 0.016931593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6047299288820576306}
