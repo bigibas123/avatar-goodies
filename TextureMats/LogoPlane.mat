@@ -25,6 +25,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AL_General_Intensity: 0
-    - _MinAmbient: 0.01
+    - _MinAmbient: 0.668
     - _OtherTextureId: 0
     m_Colors: []

@@ -25,8 +25,8 @@
 				#include <UnityCG.cginc>
 				#include "./Includes/ColorUtil.cginc"
 				#include "./Includes/BigiSoundUtils.cginc"
-				float _Brightness;
-				float _Hue;
+				uniform float _Brightness;
+				uniform float _Hue;
 
 				struct appdata_t {
 					float4 vertex : POSITION;

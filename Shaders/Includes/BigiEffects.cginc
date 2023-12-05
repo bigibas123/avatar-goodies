@@ -14,7 +14,8 @@
 
 namespace b_effects
 {
-    struct BEffectsTracker {
+    struct BEffectsTracker
+    {
         float totalWeight;
         fixed3 totalColor;
     };
@@ -25,7 +26,7 @@ namespace b_effects
         obj.totalColor = lerp(obj.totalColor, color, (weight * force) / obj.totalWeight);
     }
 
-    fixed3 Monochromize(half3 input,float alpha)
+    fixed3 Monochromize(half3 input, float alpha)
     {
         half colorValue = RGBToHSV(input.rgb * alpha).z;
         return fixed3(colorValue, colorValue, colorValue);
@@ -43,23 +44,24 @@ namespace b_effects
     // }
 
     half3 get_meta_emissions(in const half3 orig_color,
-        in const fixed4 mask,
-        in const float emission_strength
+                             in const fixed4 mask,
+                             in const float emission_strength
     )
     {
         BEffectsTracker mix;
         mix.totalColor = 0.0;
         mix.totalWeight = 0.0;
 
-        doMixProperly(mix,orig_color.rgb * emission_strength * max(1.0,emission_strength),mask.r,1.0);
-        
+        doMixProperly(mix, orig_color.rgb * emission_strength * max(1.0, emission_strength), mask.r, 1.0);
+
         GET_SOUND_COLOR(soundC);
-        doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 1.0);
-        
-        return  mix.totalColor;
+        doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, mix.totalWeight + 1.0);
+
+        return mix.totalColor;
     }
-    
-    fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting, in float4 staticTexturePos)
+
+    fixed4 apply_effects(in half2 uv, in fixed4 mask, in fixed4 orig_color, in fixed4 lighting,
+                         in float4 staticTexturePos)
     {
         const float3 fixedLighting = lighting.rgb * lighting.a;
         BEffectsTracker mix;
@@ -68,11 +70,12 @@ namespace b_effects
         //AudioLink
         {
             GET_SOUND_COLOR(soundC);
-            doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 1.0);
+            doMixProperly(mix, soundC.rgb, mask.b * RGBtoHCV(soundC).z * soundC.a, 2.0);
         }
         //"Emissions"
         {
-            doMixProperly(mix, orig_color.rgb * (max(1.0,_EmissionStrength) * max(1.0,_EmissionStrength)), mask.r * _EmissionStrength, 1.0);
+            doMixProperly(mix, orig_color.rgb * (max(1.0, _EmissionStrength) * max(1.0, _EmissionStrength)),
+                          mask.r * _EmissionStrength, 1.0);
         }
         //Screenspace images
         {
@@ -92,18 +95,19 @@ namespace b_effects
         {
             if (_MonoChrome > Epsilon)
             {
-                doMixProperly(mix, Monochromize(mix.totalColor,orig_color.a), _MonoChrome, mix.totalWeight + _MonoChrome);
+                doMixProperly(mix, Monochromize(mix.totalColor, orig_color.a), _MonoChrome,
+                              mix.totalWeight + _MonoChrome);
             }
         }
 
-        // //Quantize
+        // //Quantize?
         // {
         //     if(0 > Epsilon)
         //     {
         //         
         //     }
         // }
-        return half4(mix.totalColor,orig_color.a);
+        return half4(mix.totalColor, orig_color.a);
     }
 }
 

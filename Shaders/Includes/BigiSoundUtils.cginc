@@ -12,15 +12,6 @@
 
 namespace b_sound
 {
-    half GetScaleFactor(const half factor)
-    {
-        return factor * 2.0;
-    }
-
-    half4 Scale(const half4 color, const half factor)
-    {
-        return pow(color, 0.3) * GetScaleFactor(factor);
-    }
 
     struct ALSettings {
         float AL_Theme_Weight;
@@ -48,7 +39,7 @@ namespace b_sound
         MixRatio mix;
         mix.totalColor = 0;
         mix.totalWeight = 0;
-        const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(15, 0);
+        const uint2 cord = ALPASS_FILTEREDAUDIOLINK + uint2(5, 0);
         const float bassIntensity = AudioLinkData(cord).r;
         //AL Theme
         {

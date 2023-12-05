@@ -21,5 +21,5 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _Brightness: 0
-    - _Hue: 1
+    - _Hue: 0
     m_Colors: []

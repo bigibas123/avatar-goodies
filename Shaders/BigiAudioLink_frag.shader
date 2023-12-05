@@ -266,7 +266,9 @@ Shader "Bigi/AudioLink_frag"
             //intermediate
             struct v2f {
                 UNITY_POSITION(pos); //float4 pos : SV_POSITION;
-                UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO };
+                half4 soundColor: COLOR0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
+            };
 
             v2f vert(appdata v)
             {
@@ -274,20 +276,26 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
-                float3 offset = v.normal.xyz * (_OutlineWidth * 0.01);
+                
+                GET_SOUND_COLOR(scol);
+                o.soundColor = scol;
+                
+                float3 offset = v.normal.xyz * (_OutlineWidth * 0.01) * smoothstep(0.0, 0.5, scol.a);
+                
                 o.pos = UnityObjectToClipPos(v.vertex + offset);
                 o.pos = lerp(0.0, o.pos, smoothstep(0.0,Epsilon, _OutlineWidth));
+                
                 return o;
             }
 
             fragOutput frag(v2f i)
             {
                 clip(_OutlineWidth - Epsilon);
+                clip(i.soundColor.a - Epsilon);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                GET_SOUND_COLOR(scol);
-                o.color = half4(scol.rgb * scol.a, smoothstep(0.0, 0.05, scol.a));
+                o.color = half4(i.soundColor.rgb * i.soundColor.a, smoothstep(0.0, 0.05, i.soundColor.a));
                 clip(o.color.a - Epsilon);
                 return o;
             }
@@ -319,6 +327,7 @@ Shader "Bigi/AudioLink_frag"
                 float2 vizUV : TEXCOORD2;
                 float4 lightCoord : TEXCOORD3;
                 #endif
+                float4 staticTexturePos : TEXCOORD4;
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
@@ -343,6 +352,7 @@ Shader "Bigi/AudioLink_frag"
                         o.lightCoord = mul(unity_EditorViz_WorldToLight, mul(unity_ObjectToWorld, float4(v.vertex.xyz, 1)));
                     }
                 #endif
+                o.staticTexturePos = ComputeScreenPos(o.pos);
                 return o;
             }
             
@@ -357,8 +367,9 @@ Shader "Bigi/AudioLink_frag"
                 fixed4 mask_color = GET_MASK_COLOR(i.uv);
                 
                 
-                metaIN.Albedo = orig_color.rgb;
-                metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength) * tex2D(_Illum, i.uvIllum).a;
+                metaIN.Albedo = b_effects::apply_effects(i.uv,mask_color,orig_color,half4(1.0,1.0,1.0,1.0),i.staticTexturePos).rgb;
+                metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength);
+                
                 #if defined(EDITOR_VISUALIZATION)
                     metaIN.VizUV = i.vizUV;
                     metaIN.LightCoord = i.lightCoord;

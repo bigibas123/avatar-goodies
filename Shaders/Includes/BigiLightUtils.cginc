@@ -13,7 +13,7 @@ namespace b_light
 {
     // A macro instead of a function because this works on more types without having to overload it a bunch of times
     // ReSharper disable once CppInconsistentNaming
-    # define doStep(val) smoothstep(0.0, lightDiffuseness, val)
+    # define doStep(val) smoothstep(0.0, lightDiffuseness, val) // Maybe change to slidable window with configurable width. Currently you just mostly get darker
 
     half3 GetAmbient(
         in const float3 worldNormal,

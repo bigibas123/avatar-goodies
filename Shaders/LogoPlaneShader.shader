@@ -21,6 +21,7 @@ Shader "Bigi/LogoPlane" {
 		#pragma multi_compile_fwdbase
 		#pragma multi_compile_fwdbasealpha
 		#pragma multi_compile_fog
+		#pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
 		#pragma target 3.0
 
 		#define MULTI_TEXTURE

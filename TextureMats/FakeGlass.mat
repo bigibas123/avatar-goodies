@@ -10,7 +10,7 @@ Material:
   m_Name: FakeGlass
   m_Shader: {fileID: 4800000, guid: 516031fbe3ff3114a8e14d1649519109, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
@@ -19,10 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AOMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 65139a2bdb5f1684b92fba1f3457a364, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexArray:
@@ -69,44 +65,39 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Spacey:
         m_Texture: {fileID: 2800000, guid: 1615447c7542cee45a4363ec136984e4, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _ALSoundHue: 0
     - _AL_Hue: 0
     - _AL_Hue_BassReactive: 0.75
     - _AL_Hue_Weight: 0
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
-    - _AddLightIntensity: 0.1
-    - _AudioIntensity: 0.001
+    - _AddLightIntensity: 1
     - _BumpScale: 1
-    - _ColorChordIndex: 0
     - _Cutoff: 0.5
-    - _DMXGroup: 2
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionStrength: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Invisibility: 0
-    - _LightDiffuseness: 0.1
+    - _LightDiffuseness: 1
     - _Metallic: 0
     - _MinAmbient: 0.005
     - _Mode: 0
-    - _MonoChrome: 0
+    - _MonoChrome: 0.1
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
-    - _OutlineWidth: 0.5
+    - _OutlineWidth: 0
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseBassIntensity: 0
-    - _Voronoi: 0
+    - _VertLightIntensity: 1
+    - _Voronoi: 0.1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
