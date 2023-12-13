@@ -78,11 +78,9 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-			#ifndef LIL_APP_POSITION
+
 			#include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
-			#else
-			#include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
-			#endif
+
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
 			ENDCG
@@ -98,11 +96,9 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend One One
 			CGPROGRAM
-			#ifndef LIL_APP_POSITION
+
 			#include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
-			#else
-			#include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardAdd.cginc"
-			#endif
+
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
 			ENDCG
@@ -115,11 +111,8 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-			#ifndef LIL_APP_POSITION
 			#include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
-			#else
-			#include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
-			#endif
+
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
 			ENDCG
@@ -136,11 +129,9 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend One One
 			CGPROGRAM
-			#ifndef LIL_APP_POSITION
+
 			#include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
-			#else
-			#include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardAdd.cginc"
-			#endif
+
 			#pragma vertex vert alpha
 			#pragma fragment frag alpha
 			ENDCG
@@ -152,11 +143,9 @@ Shader "Bigi/LogoPlane" {
 				"LightMode" = "Meta"
 			}
 			CGPROGRAM
-			#ifndef LIL_APP_POSITION
+
 			#include_with_pragmas "./Includes/Pragmas/Meta.cginc"
-			#else
-			#include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Meta.cginc"
-			#endif
+
 			#pragma vertex vertm alpha
 			#pragma fragment fragm alpha
 			#include "UnityCG.cginc"

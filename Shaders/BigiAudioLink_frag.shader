@@ -72,11 +72,7 @@ Shader "Bigi/AudioLink_frag"
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
 
-            #ifndef LIL_APP_POSITION //Temp workaround for VRCFury SPS patcher (https://github.com/VRCFury/VRCFury/issues/202)
             #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
-            #endif
             
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -127,11 +123,8 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
-            #ifndef LIL_APP_POSITION
+
             #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
-            #endif
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
@@ -179,11 +172,8 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
-            #ifndef LIL_APP_POSITION
+
             #include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardAdd.cginc"
-            #endif
 
 
             #include "./Includes/ToonVert.cginc"
@@ -237,11 +227,9 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #ifndef LIL_APP_POSITION
+
             #include_with_pragmas "./Includes/Pragmas/Global.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Global.cginc"
-            #endif
+
 
             #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/SoundUtilsDefines.cginc"
@@ -301,11 +289,9 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #ifndef LIL_APP_POSITION
+
             #include_with_pragmas "./Includes/Pragmas/Global.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Global.cginc"
-            #endif
+
             #include "UnityCG.cginc"
             #include "UnityMetaPass.cginc"
             #include "./Includes/BigiEffects.cginc"
@@ -393,11 +379,8 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-           #ifndef LIL_APP_POSITION
+
             #include_with_pragmas "./Includes/Pragmas/Meta.cginc"
-            #else
-            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Meta.cginc"
-            #endif
 
             #include "UnityCG.cginc"
             #include "UnityStandardShadow.cginc"
