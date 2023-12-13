@@ -1,143 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1277323720558854797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035598738333202242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - id: 0
-    - id: 1
-  somethingIsBroken: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 4
-        controllers:
-        - controller:
-            version: 1
-            fileID: 0
-            guid: 
-            id: 79998d7a88d1ef646b394ce928c57b29|Assets/ThatFatKidsStuff/Shareable
-              halo/Halo FX.controller
-            objRef: {fileID: 9100000, guid: 79998d7a88d1ef646b394ce928c57b29, type: 2}
-          type: 5
-          ResetMePlease2: 0
-        menus:
-        - menu:
-            version: 1
-            fileID: 0
-            guid: 
-            id: 2ab635bbae24c744ab713e859edb148a|Assets/ThatFatKidsStuff/Shareable
-              halo/Halo Menu.asset
-            objRef: {fileID: 11400000, guid: 2ab635bbae24c744ab713e859edb148a, type: 2}
-          prefix: Props
-          ResetMePlease2: 0
-        prms:
-        - parameters:
-            version: 1
-            fileID: 0
-            guid: 
-            id: 2c9c13c7c81550041b86c8bfd51f0d50|Assets/ThatFatKidsStuff/Shareable
-              halo/Halo Parameters.asset
-            objRef: {fileID: 11400000, guid: 2c9c13c7c81550041b86c8bfd51f0d50, type: 2}
-          ResetMePlease2: 0
-        smoothedPrms: []
-        globalParams: []
-        allNonsyncedAreGlobal: 0
-        ignoreSaved: 0
-        toggleParam: 
-        useSecurityForToggle: 0
-        rootObjOverride: {fileID: 0}
-        rootBindingsApplyToAvatar: 0
-        rewriteBindings:
-        - from: Shareable halo system/
-          to: 
-          delete: 0
-          ResetMePlease2: 0
-        allowMissingAssets: 0
-        controller:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        menu:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        parameters:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        submenu: 
-        removePrefixes: []
-        addPrefix: 
-    00000001:
-      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        action:
-          actions:
-          - id: 2
-          ResetMePlease2: 0
-    00000002:
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 4731783234094539270}
-        mode: 1
---- !u!114 &6390287973324034439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6650505296883285313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - id: 0
-  somethingIsBroken: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: ShowInFirstPerson, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
 --- !u!1001 &291787275533726779
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2652015759181688026, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652015759181688026, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746859438438677450, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: radius
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 3327102408178516857, guid: d5d01414093d10147beca2e9f9039855,
         type: 3}
       propertyPath: m_Name
       value: Shareable halo system Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602973493998159935, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602973493998159935, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.008000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696908301461984969, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696908301461984969, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007999999
       objectReference: {fileID: 0}
     - target: {fileID: 4770577430594765761, guid: d5d01414093d10147beca2e9f9039855,
         type: 3}
@@ -214,8 +123,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8439408253737569210, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439408253737569210, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4770577430594765761, guid: d5d01414093d10147beca2e9f9039855, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3327102408178516857, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1277323720558854797}
+    - targetCorrespondingSourceObject: {fileID: 6361323134036887930, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6390287973324034439}
   m_SourcePrefab: {fileID: 100100000, guid: d5d01414093d10147beca2e9f9039855, type: 3}
 --- !u!1 &3035598738333202242 stripped
 GameObject:
@@ -223,6 +153,111 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 291787275533726779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1277323720558854797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035598738333202242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  config:
+    features:
+    - rid: 0
+    - rid: 1
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 0
+      type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 4
+        controllers:
+        - controller:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 79998d7a88d1ef646b394ce928c57b29|Assets/ThatFatKidsStuff/Shareable
+              halo/Halo FX.controller
+            objRef: {fileID: 9100000, guid: 79998d7a88d1ef646b394ce928c57b29, type: 2}
+          type: 5
+          ResetMePlease2: 0
+        menus:
+        - menu:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 2ab635bbae24c744ab713e859edb148a|Assets/ThatFatKidsStuff/Shareable
+              halo/Halo Menu.asset
+            objRef: {fileID: 11400000, guid: 2ab635bbae24c744ab713e859edb148a, type: 2}
+          prefix: Props
+          ResetMePlease2: 0
+        prms:
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 2c9c13c7c81550041b86c8bfd51f0d50|Assets/ThatFatKidsStuff/Shareable
+              halo/Halo Parameters.asset
+            objRef: {fileID: 11400000, guid: 2c9c13c7c81550041b86c8bfd51f0d50, type: 2}
+          ResetMePlease2: 0
+        smoothedPrms: []
+        globalParams: []
+        allNonsyncedAreGlobal: 0
+        ignoreSaved: 0
+        toggleParam: 
+        useSecurityForToggle: 0
+        rootObjOverride: {fileID: 0}
+        rootBindingsApplyToAvatar: 0
+        rewriteBindings:
+        - from: Shareable halo system/
+          to: 
+          delete: 0
+          ResetMePlease2: 0
+        allowMissingAssets: 0
+        controller:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        menu:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        parameters:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        submenu: 
+        removePrefixes: []
+        addPrefix: 
+    - rid: 1
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 2
+          ResetMePlease2: 0
+    - rid: 2
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 4731783234094539270}
+        mode: 1
 --- !u!1 &4731783234094539270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5018708950110967357, guid: d5d01414093d10147beca2e9f9039855,
@@ -235,3 +270,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 291787275533726779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6390287973324034439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6650505296883285313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  config:
+    features:
+    - rid: 0
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 0
+      type: {class: ShowInFirstPerson, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0

@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8973435600509765204
 Transform:
@@ -25,12 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6726587440868228952}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7683615337275116598}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &3442028561154676635
 MeshFilter:
@@ -51,10 +52,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -66,10 +69,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 7683615337275116598}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
+  m_ReceiveGI: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
+  m_ImportantGI: 1
   m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
@@ -79,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7055592349295351436
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,13 +107,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7055592349295351436}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8973435600509765204}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5492813851144746374
 MonoBehaviour:
@@ -126,20 +131,21 @@ MonoBehaviour:
   version: 2
   config:
     features:
-    - id: 0
-    - id: 1
-    - id: 2
+    - rid: 0
+    - rid: 1
+    - rid: 2
   somethingIsBroken: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/On
         state:
           actions:
-          - id: 3
+          - rid: 3
           ResetMePlease2: 0
         saved: 1
         slider: 0
@@ -188,14 +194,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000001:
+    - rid: 1
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/Logo
         state:
           actions:
-          - id: 4
+          - rid: 4
           ResetMePlease2: 0
         saved: 1
         slider: 1
@@ -244,14 +250,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000002:
+    - rid: 2
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/AL Intensity
         state:
           actions:
-          - id: 5
+          - rid: 5
           ResetMePlease2: 0
         saved: 1
         slider: 1
@@ -300,7 +306,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000003:
+    - rid: 3
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -308,7 +314,7 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 7055592349295351436}
         mode: 0
-    00000004:
+    - rid: 4
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -317,10 +323,10 @@ MonoBehaviour:
         renderer: {fileID: 6886875990288510156}
         affectAllMeshes: 0
         propertyName: _OtherTextureId
-        value: 27
+        value: 24
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000005:
+    - rid: 5
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
