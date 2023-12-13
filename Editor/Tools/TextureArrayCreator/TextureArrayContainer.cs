@@ -180,18 +180,40 @@ namespace Characters.Common.Editor.Tools.TextureArrayCreator
         {
             string path = AssetDatabase.GetAssetPath(this);
             string destPath = path.Replace(".asset", "TC.asset");
-            string tmpPath = path.Replace(".asset", "_TC.asset.tmp");
+            //string tmpPath = path.Replace(".asset", "_TC.tmp.asset");
             var arr = ToArray();
             if (!(arr is null) && arr != null)
             {
-                Debug.Log("Created array: " + arr);
-                AssetDatabase.CreateAsset(arr, tmpPath);
-                FileUtil.ReplaceFile(tmpPath, destPath);
-                FileUtil.DeleteFileOrDirectory(tmpPath);
-                AssetDatabase.DeleteAsset(tmpPath);
+                var deps = GetDependants(destPath);
+                Debug.Log($"Created array: {arr}");
+                AssetDatabase.CreateAsset(arr, destPath);
+                //FileUtil.ReplaceFile(tmpPath, destPath);
+                //FileUtil.DeleteFileOrDirectory(tmpPath);
+                //AssetDatabase.DeleteAsset(tmpPath);
                 EditorUtility.SetDirty(arr);
-                Debug.Log("Replaced asset at " + destPath);
+                AssetDatabase.ImportAsset(destPath);
+                Debug.Log($"Replaced asset at {destPath}");
+                foreach (var p in deps)
+                {
+                    Debug.Log($"Re importing asset at: {p}");
+                    AssetDatabase.ImportAsset(p,ImportAssetOptions.ForceUpdate | ImportAssetOptions.ImportRecursive);
+                }
             }
+        }
+
+        private string[] GetDependants(string us)
+        {
+            List<string> result = new List<string>();
+            string[] allAssets = AssetDatabase.GetAllAssetPaths();
+            foreach (var asset in allAssets)
+            {
+                if(AssetDatabase.GetDependencies(asset,false).Contains(us))
+                {
+                  result.Add(asset);
+                }
+            }
+            
+            return result.ToArray();
         }
     }
 }

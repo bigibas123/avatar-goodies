@@ -11,8 +11,15 @@ namespace Characters.Common.Editor.Tools.BigiShaderEditor
 
             base.OnGUI (materialEditor, properties);
             EditorGUI.indentLevel++;
+            EditorGUI.BeginChangeCheck();
             bool emissionEnabled = materialEditor.EmissionEnabledProperty();
             materialEditor.LightmapEmissionFlagsProperty(0,emissionEnabled,true);
+            if (EditorGUI.EndChangeCheck()) {
+                foreach (Material m in materialEditor.targets) {
+                    m.globalIlluminationFlags &=
+                        ~MaterialGlobalIlluminationFlags.EmissiveIsBlack;
+                }
+            }
             EditorGUI.indentLevel--;
 
         }
