@@ -77,11 +77,13 @@ namespace b_effects
             doMixProperly(mix, orig_color.rgb * (max(1.0, _EmissionStrength) * max(1.0, _EmissionStrength)),
                           mask.r * _EmissionStrength, 1.0);
         }
+        #ifdef OTHER_BIGI_TEXTURES
         //Screenspace images
         {
             const half2 screen_texture_pos = TRANSFORM_TEX((staticTexturePos.xy / staticTexturePos.w), _Spacey);
             doMixProperly(mix,UNITY_SAMPLE_TEX2D(_Spacey, screen_texture_pos), mask.g, 1.0);
         }
+        #endif
 
         //Voronoi
         {

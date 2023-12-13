@@ -69,20 +69,15 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
-            #pragma target 3.0
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_shadowcollector
-            #pragma multi_compile_fog
-            #pragma shader_feature_local MULTI_TEXTURE
-            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
 
-
-
-            #include "./Includes/BigiShaderParams.cginc"
+            #ifndef LIL_APP_POSITION //Temp workaround for VRCFury SPS patcher (https://github.com/VRCFury/VRCFury/issues/202)
+            #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
+            #endif
+            
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/NormalUtils.cginc"
@@ -130,18 +125,14 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
-            #pragma target 3.0
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_shadowcollector
-            #pragma multi_compile_fog
-            #pragma shader_feature_local MULTI_TEXTURE
-            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
+            #ifndef LIL_APP_POSITION
+            #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardBase.cginc"
+            #endif
 
-            #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/NormalUtils.cginc"
@@ -186,17 +177,13 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
-            #pragma target 3.0
             #pragma vertex bigi_toon_vert
             #pragma fragment frag
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fwdadd_fullshadows
-            #pragma multi_compile_shadowcollector
-            #pragma multi_compile_fog
-            #pragma shader_feature_local MULTI_TEXTURE
-            #pragma shader_feature VERTEXLIGHT_ON //UNITY!!!!!!! https://forum.unity.com/threads/vertexlight_on-always-undefined-in-fragment-shader.284781/
-
+            #ifndef LIL_APP_POSITION
+            #include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/ForwardAdd.cginc"
+            #endif
 
 
             #include "./Includes/ToonVert.cginc"
@@ -248,13 +235,15 @@ Shader "Bigi/AudioLink_frag"
                 Comp GEqual
             }
             CGPROGRAM
-            #pragma target 3.0
             #pragma vertex vert
             #pragma fragment frag
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_instancing
-            #pragma multi_compile_fog
+            #ifndef LIL_APP_POSITION
+            #include_with_pragmas "./Includes/Pragmas/Global.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Global.cginc"
+            #endif
 
+            #include "./Includes/BigiShaderParams.cginc"
             #include "./Includes/SoundUtilsDefines.cginc"
 
 
@@ -312,7 +301,11 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma target 2.0
+            #ifndef LIL_APP_POSITION
+            #include_with_pragmas "./Includes/Pragmas/Global.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Global.cginc"
+            #endif
             #include "UnityCG.cginc"
             #include "UnityMetaPass.cginc"
             #include "./Includes/BigiEffects.cginc"
@@ -368,7 +361,7 @@ Shader "Bigi/AudioLink_frag"
                 
                 
                 metaIN.Albedo = b_effects::apply_effects(i.uv,mask_color,orig_color,half4(1.0,1.0,1.0,1.0),i.staticTexturePos).rgb;
-                metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength);
+                metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength) * 5.0;
                 
                 #if defined(EDITOR_VISUALIZATION)
                     metaIN.VizUV = i.vizUV;
@@ -398,17 +391,13 @@ Shader "Bigi/AudioLink_frag"
                 Pass IncrSat
             }
             CGPROGRAM
-            #pragma target 3.0
             #pragma vertex vert alpha
             #pragma fragment frag alpha
-            #pragma multi_compile_shadowcaster
-            #pragma multi_compile_instancing
-            #pragma multi_compile_lightpass
-            #pragma instancing_options assumeuniformscaling
-            #pragma multi_compile_fwdbase
-            #pragma multi_compile_fwdbasealpha
-            #pragma multi_compile_lightpass
-            #pragma multi_compile_fog
+           #ifndef LIL_APP_POSITION
+            #include_with_pragmas "./Includes/Pragmas/Meta.cginc"
+            #else
+            #include_with_pragmas "Assets/Characters/Common/Shaders/Includes/Pragmas/Meta.cginc"
+            #endif
 
             #include "UnityCG.cginc"
             #include "UnityStandardShadow.cginc"

@@ -1,5 +1,4 @@
-#ifndef BIGI_V1_TEXTURES
-#define BIGI_V1_TEXTURES
+#pragma once
 #include <HLSLSupport.cginc>
 
 #ifndef MULTI_TEXTURE
@@ -33,7 +32,4 @@ UNITY_DECLARE_TEX2D_NOSAMPLER(_OcclusionMap);
 UNITY_DECLARE_TEX2D_NOSAMPLER(_BumpMap);
 UNITY_DECLARE_TEX2D(_Spacey);
 float4 _Spacey_ST;
-#endif
-
-
 #endif

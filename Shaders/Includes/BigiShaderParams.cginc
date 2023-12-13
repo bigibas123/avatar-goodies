@@ -1,5 +1,4 @@
-#ifndef BIGI_V1_SHADERPARAMS
-#define BIGI_V1_SHADERPARAMS
+#pragma once
 
 #include "./BigiShaderTextures.cginc"
 
@@ -7,6 +6,9 @@
 
 #ifndef BIGI_UNIFORMS
 #define BIGI_UNIFORMS
+
+#ifndef BIGI_UNIFORMS_DMXAL
+#define BIGI_UNIFORMS_DMXAL
 
 uniform float _DMX_Weight;
 uniform float _AL_Theme_Weight;
@@ -20,6 +22,12 @@ uniform half _AL_TC_BassReactive;
 
 //Both
 uniform float _OutlineWidth;
+
+#endif
+
+
+#ifndef BIGI_UNIFORMS_LIGHTING
+#define BIGI_UNIFORMS_LIGHTING
 //Other
 uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
@@ -30,7 +38,9 @@ uniform float _MinAmbient;
 uniform float _MonoChrome;
 uniform float _Voronoi;
 uniform float _LightDiffuseness;
+
 #endif
+
 
 #ifndef BIGI_DEFAULT_FRAGOUT
 #define BIGI_DEFAULT_FRAGOUT
@@ -42,8 +52,7 @@ struct fragOutput {
 };
 #endif
 
-#ifndef BIGI_EPSILON
-#define BIGI_EPSILON
+#ifndef Epsilon
 #include <UnityCG.cginc>
 #define Epsilon UNITY_HALF_MIN
 #endif

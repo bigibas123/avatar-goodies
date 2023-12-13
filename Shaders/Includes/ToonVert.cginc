@@ -1,6 +1,4 @@
-#ifndef BIGI_TOONVERT_INCLUDED
-
-#define BIGI_TOONVERT_INCLUDED
+#pragma once
 
 
 #include <UnityCG.cginc>
@@ -14,7 +12,9 @@ struct fragOutput {
 #endif
 #ifndef BIGI_DEFAULT_APPDATA
 #define BIGI_DEFAULT_APPDATA
-struct appdata {
+
+struct appdata
+{
     float4 vertex : POSITION;
     float3 normal : NORMAL;
     float4 tangent : TANGENT;
@@ -29,7 +29,8 @@ struct appdata {
 #endif
 
 //intermediate
-struct v2f {
+struct v2f
+{
     UNITY_POSITION(pos); //float4 pos : SV_POSITION;
 
     float3 normal : NORMAL; //(World) Normal
@@ -54,8 +55,9 @@ struct v2f {
 
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
-
-#include "./BigiLightUtils.cginc"
+#ifdef VERTEXLIGHT_ON
+#include "./LightUtilsDefines.cginc"
+#endif
 #include "./BigiShaderTextures.cginc"
 #include "./BigiShaderParams.cginc"
 
@@ -88,11 +90,8 @@ v2f bigi_toon_vert(appdata v)
     #endif
 
     #if defined(VERTEXLIGHT_ON)
-    o.vertexLighting = b_light::ProcessVertexLights(
-        unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0,
-        unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb,
-        unity_4LightAtten0, o.worldPos, o.normal, _LightDiffuseness
-    ) * _VertLightIntensity;
+    BIGI_GETLIGHT_VERTEX(vlight);
+    o.vertexLighting = vlight;
     #endif
 
     o.tangent = UnityObjectToWorldDir(v.tangent);
@@ -102,6 +101,4 @@ v2f bigi_toon_vert(appdata v)
 
     return o;
 }
-#endif
-
 #endif

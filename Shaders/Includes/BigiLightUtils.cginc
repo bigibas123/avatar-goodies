@@ -1,10 +1,8 @@
-#ifndef BIGI_LIGHT_UTILS_INCLUDE
-#define BIGI_LIGHT_UTILS_INCLUDE
+#pragma once
 
 #include <UnityCG.cginc>
 
-#ifndef BIGI_EPSILON
-#define BIGI_EPSILON
+#ifndef Epsilon
 #define Epsilon UNITY_HALF_MIN
 #endif
 
@@ -202,4 +200,3 @@ namespace b_light
     }
 }
 
-#endif

@@ -1,5 +1,4 @@
-﻿#ifndef BIGI_LIGHTUTILS_DEFINES
-#define BIGI_LIGHTUTILS_DEFINES
+﻿#pragma once
 
 #include "./BigiShaderParams.cginc"
 #include "./BigiLightUtils.cginc"
@@ -28,7 +27,7 @@ i.normal, \
 shadowAtt, \
 _LightColor0, \
 i.vertexLighting, \
-i.lightmapUV \
+i.lightmapUV, \
 _MinAmbient, \
 1.0, \
 _LightDiffuseness \
@@ -110,7 +109,18 @@ _MinAmbient, \
 _LightDiffuseness \
 )
 
-
 #endif
+
+#ifdef VERTEXLIGHT_ON
+
+#define BIGI_GETLIGHT_VERTEX(outName) \
+const float3 outName = b_light::ProcessVertexLights( \
+    unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, \
+    unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb, \
+    unity_4LightAtten0, o.worldPos, o.normal, _LightDiffuseness \
+) * _VertLightIntensity
+
+#else
+#define BIGI_GETLIGHT_VERTEX(outName) const float3 outName = 0
 
 #endif

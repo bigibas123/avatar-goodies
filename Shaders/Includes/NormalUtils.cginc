@@ -1,5 +1,4 @@
-﻿#ifndef BIGI_NORMALUTILS
-#define BIGI_NORMALUTILS
+﻿#pragma once
 
 #include <UnityCG.cginc>
 
@@ -14,4 +13,3 @@ namespace b_normalutils
     }
 }
 
-#endif
