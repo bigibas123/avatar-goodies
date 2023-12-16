@@ -489,7 +489,7 @@ Material:
     - _1st_ShadeMapUV: 0
     - _2ndShadeMapMask_Inverse: 0
     - _2nd_ShadeMapUV: 0
-    - _AL_General_Intensity: 0
+    - _AL_General_Intensity: 0.25
     - _AL_Hue: 0
     - _AL_Hue_BassReactive: 0
     - _AL_Hue_Weight: 0
