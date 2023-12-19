@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:bigibas123/bigishader.git
 	branch = main
-	commit = ba222c4ad5eabbc0f0f6a024f0c1659ba10caab3
+	commit = 072984396221fb70f0923ff9cc7d118c00da92e2
 	method = merge
 	cmdver = 0.4.6
-	parent = b6d607e17651d34f953b6f73fbd9f1509b72e366
+	parent = a7e55f7de6c99c4310cd1bc1055b6c92c41dc2ed
