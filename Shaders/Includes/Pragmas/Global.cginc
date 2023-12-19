@@ -8,3 +8,4 @@
 #pragma multi_compile_fog
 
 #pragma shader_feature_local MULTI_TEXTURE
+#pragma shader_feature_local DO_ALPHA_PLS

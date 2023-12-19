@@ -2,8 +2,8 @@ Shader "Bigi/AudioLink_frag"
 {
     Properties
     {
-
         [MainTexture] _MainTex ("Texture", 2D) = "black" {}
+        [Toggle(DO_ALPHA_PLS)] _UsesAlpha("Is transparent", Float) = 1
         _Spacey ("Spacey Texture", 2D) = "black" {}
         _EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
@@ -83,7 +83,9 @@ Shader "Bigi/AudioLink_frag"
             fragOutput frag(v2f i)
             {
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
-                clip(orig_color.a - 1.0);
+                #ifdef DO_ALPHA_PLS
+                clip(orig_color.a - (1.0-Epsilon));
+                #endif
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
@@ -121,7 +123,7 @@ Shader "Bigi/AudioLink_frag"
                 Pass Replace
             }
             CGPROGRAM
-            #pragma vertex bigi_toon_vert
+            #pragma vertex vert
             #pragma fragment frag
 
             #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
@@ -131,10 +133,22 @@ Shader "Bigi/AudioLink_frag"
             #include "./Includes/NormalUtils.cginc"
             #include "./Includes/BigiEffects.cginc"
 
+            v2f vert(appdata v)
+            {
+                #ifdef DO_ALPHA_PLS
+                return bigi_toon_vert(v);
+                #else
+                v2f o;
+                UNITY_INITIALIZE_OUTPUT(v2f,o);
+                return o;
+                #endif 
+            }
+
             fragOutput frag(v2f i)
             {
+                #ifdef DO_ALPHA_PLS
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);
-                clip((-1.0 * (orig_color.a - 1.0)) - Epsilon);
+                clip((orig_color.a - (1.0-Epsilon)) * -1.0);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
@@ -147,6 +161,11 @@ Shader "Bigi/AudioLink_frag"
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
+                #else
+                fragOutput o;
+                UNITY_INITIALIZE_OUTPUT(fragOutput,o);
+                return o;
+                #endif
             }
             ENDCG
         }
