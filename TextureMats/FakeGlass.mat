@@ -101,6 +101,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UsesAlpha: 0
+    - _UsesNormalMap: 0
     - _VertLightIntensity: 1
     - _Voronoi: 0.1
     - _ZWrite: 1

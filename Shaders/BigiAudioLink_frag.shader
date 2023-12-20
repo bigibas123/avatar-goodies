@@ -8,6 +8,7 @@ Shader "Bigi/AudioLink_frag"
         _EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
         [NoScaleOffset] _Mask ("Mask", 2D) = "black" {}
         [NoScaleOffset] _OcclusionMap ("Ambient occlusion map", 2D) = "white" {}
+        [Toggle(NORMAL_MAPPING)] _UsesNormalMap("Enable normal map", Float) = 1
         [NoScaleOffset] _BumpMap("Normal Map", 2D) = "bump" {}
 
         [Header(Lighting)]
@@ -76,7 +77,9 @@ Shader "Bigi/AudioLink_frag"
             
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
+            #ifdef NORMAL_MAPPING
             #include "./Includes/NormalUtils.cginc"
+            #endif
 
             #include "./Includes/BigiEffects.cginc"
 
@@ -89,8 +92,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-
+                #ifdef NORMAL_MAPPING
                 i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                #endif
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
@@ -130,7 +134,9 @@ Shader "Bigi/AudioLink_frag"
 
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
+            #ifdef NORMAL_MAPPING
             #include "./Includes/NormalUtils.cginc"
+            #endif
             #include "./Includes/BigiEffects.cginc"
 
             v2f vert(appdata v)
@@ -152,8 +158,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-
+                #ifdef NORMAL_MAPPING
                 i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                #endif
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
@@ -207,9 +214,9 @@ Shader "Bigi/AudioLink_frag"
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-
+                #ifdef NORMAL_MAPPING
                 i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
-
+                #endif
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
                 const fixed4 orig_color = GET_TEX_COLOR(i.uv);

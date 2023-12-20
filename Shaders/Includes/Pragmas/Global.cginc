@@ -10,4 +10,5 @@
 
 #pragma shader_feature_local MULTI_TEXTURE
 #pragma shader_feature_local DO_ALPHA_PLS
+#pragma shader_feature_local NORMAL_MAPPING
 #endif

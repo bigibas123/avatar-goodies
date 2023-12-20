@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 516031fbe3ff3114a8e14d1649519109, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - DO_ALPHA_PLS
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -116,7 +115,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UsesAlpha: 1
+    - _UsesAlpha: 0
+    - _UsesNormalMap: 0
     - _VertLightIntensity: 1
     - _Voronoi: 0
     - _ZWrite: 1
