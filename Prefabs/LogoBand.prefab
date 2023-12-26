@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.658.0
   config:
     features:
     - rid: 0
@@ -254,13 +256,13 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
-        name: Props/LogoBand/AL Intensity
+        name: Props/LogoBand/AL
         state:
           actions:
           - rid: 5
           ResetMePlease2: 0
         saved: 1
-        slider: 1
+        slider: 0
         sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 1

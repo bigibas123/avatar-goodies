@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276534898185953680}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4411230118681861165
 MonoBehaviour:
@@ -44,33 +45,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.658.0
   config:
     features:
-    - id: 0
-    - id: 1
-    - id: 2
-    - id: 3
-    - id: 4
-    - id: 5
-    - id: 6
-    - id: 7
-    - id: 8
-    - id: 9
-    - id: 10
-    - id: 11
-    - id: 12
-    - id: 13
+    - rid: 0
+    - rid: 1
+    - rid: 2
+    - rid: 3
+    - rid: 4
+    - rid: 5
+    - rid: 6
+    - rid: 7
+    - rid: 8
+    - rid: 9
+    - rid: 10
+    - rid: 11
+    - rid: 12
+    - rid: 13
   somethingIsBroken: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/ShadowDiffuseness
         state:
           actions:
-          - id: 14
+          - rid: 14
           ResetMePlease2: 0
         saved: 1
         slider: 1
@@ -99,11 +103,11 @@ MonoBehaviour:
         hasTransition: 0
         transitionStateIn:
           actions:
-          - id: 15
+          - rid: 15
           ResetMePlease2: 0
         transitionStateOut:
           actions:
-          - id: 16
+          - rid: 16
           ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
@@ -121,14 +125,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000001:
+    - rid: 1
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/Effects/Voronoi
         state:
           actions:
-          - id: 17
+          - rid: 17
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -177,14 +181,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000002:
+    - rid: 2
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/Effects/Monochrome
         state:
           actions:
-          - id: 18
+          - rid: 18
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -233,14 +237,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000003:
+    - rid: 3
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/Emission
         state:
           actions:
-          - id: 19
+          - rid: 19
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -289,14 +293,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000004:
+    - rid: 4
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/MinAmbient
         state:
           actions:
-          - id: 20
+          - rid: 20
           ResetMePlease2: 0
         saved: 0
         slider: 1
@@ -345,14 +349,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000005:
+    - rid: 5
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/AddLightStrenght
         state:
           actions:
-          - id: 21
+          - rid: 21
           ResetMePlease2: 0
         saved: 0
         slider: 1
@@ -401,14 +405,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000006:
+    - rid: 6
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Lighting/VertexLightStrenght
         state:
           actions:
-          - id: 22
+          - rid: 22
           ResetMePlease2: 0
         saved: 0
         slider: 1
@@ -457,14 +461,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000007:
+    - rid: 7
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/TextureId
         state:
           actions:
-          - id: 23
+          - rid: 23
           ResetMePlease2: 0
         saved: 1
         slider: 1
@@ -513,17 +517,17 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000008:
+    - rid: 8
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Outline
         state:
           actions:
-          - id: 24
+          - rid: 24
           ResetMePlease2: 0
         saved: 1
-        slider: 1
+        slider: 0
         sliderInactiveAtZero: 0
         securityEnabled: 0
         defaultOn: 0
@@ -569,14 +573,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    00000009:
+    - rid: 9
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Theme/Weight
         state:
           actions:
-          - id: 25
+          - rid: 25
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -625,17 +629,17 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    0000000A:
+    - rid: 10
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Theme/Bass
         state:
           actions:
-          - id: 26
+          - rid: 26
           ResetMePlease2: 0
         saved: 0
-        slider: 1
+        slider: 0
         sliderInactiveAtZero: 0
         securityEnabled: 0
         defaultOn: 1
@@ -681,14 +685,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    0000000B:
+    - rid: 11
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Hue/Weight
         state:
           actions:
-          - id: 27
+          - rid: 27
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -737,17 +741,17 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    0000000C:
+    - rid: 12
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Hue/Bass
         state:
           actions:
-          - id: 28
+          - rid: 28
           ResetMePlease2: 0
         saved: 0
-        slider: 1
+        slider: 0
         sliderInactiveAtZero: 0
         securityEnabled: 0
         defaultOn: 0
@@ -793,14 +797,14 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    0000000D:
+    - rid: 13
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Shader/Audiolink/Hue/Hue
         state:
           actions:
-          - id: 29
+          - rid: 29
           ResetMePlease2: 0
         saved: 0
         slider: 1
@@ -849,7 +853,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    0000000E:
+    - rid: 14
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -861,7 +865,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    0000000F:
+    - rid: 15
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -873,7 +877,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000010:
+    - rid: 16
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -885,7 +889,7 @@ MonoBehaviour:
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000011:
+    - rid: 17
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -897,7 +901,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000012:
+    - rid: 18
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -909,7 +913,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000013:
+    - rid: 19
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -921,7 +925,7 @@ MonoBehaviour:
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000014:
+    - rid: 20
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -933,7 +937,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000015:
+    - rid: 21
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -945,7 +949,7 @@ MonoBehaviour:
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000016:
+    - rid: 22
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -957,7 +961,7 @@ MonoBehaviour:
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000017:
+    - rid: 23
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -969,7 +973,7 @@ MonoBehaviour:
         value: 16
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000018:
+    - rid: 24
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -981,7 +985,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    00000019:
+    - rid: 25
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -993,7 +997,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    0000001A:
+    - rid: 26
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -1002,10 +1006,10 @@ MonoBehaviour:
         renderer: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
-        value: 1
+        value: 0.75
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    0000001B:
+    - rid: 27
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -1017,7 +1021,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    0000001C:
+    - rid: 28
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -1026,10 +1030,10 @@ MonoBehaviour:
         renderer: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Hue_BassReactive
-        value: 1
+        value: 0.75
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    0000001D:
+    - rid: 29
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
