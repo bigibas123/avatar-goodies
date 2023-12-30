@@ -169,6 +169,7 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
                 #else
+                discard;
                 fragOutput o;
                 UNITY_INITIALIZE_OUTPUT(fragOutput,o);
                 return o;
