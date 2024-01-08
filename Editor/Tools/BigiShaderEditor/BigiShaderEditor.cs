@@ -68,6 +68,7 @@ namespace Characters.Common.Editor.Tools.BigiShaderEditor
 				{
 					m.globalIlluminationFlags &=
 						~MaterialGlobalIlluminationFlags.EmissiveIsBlack;
+					m.globalIlluminationFlags |= MaterialGlobalIlluminationFlags.RealtimeEmissive;
 				}
 			}
 
