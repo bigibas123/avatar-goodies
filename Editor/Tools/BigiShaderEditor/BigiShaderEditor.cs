@@ -58,7 +58,9 @@ namespace Characters.Common.Editor.Tools.BigiShaderEditor
 			base.OnGUI(materialEditor, properties);
 			EditorGUI.indentLevel++;
 			EditorGUI.BeginChangeCheck();
+
 			bool emissionEnabled = materialEditor.EmissionEnabledProperty();
+			materialEditor.LightmapEmissionProperty(0);
 			materialEditor.LightmapEmissionFlagsProperty(0, emissionEnabled, true);
 			if (EditorGUI.EndChangeCheck())
 			{

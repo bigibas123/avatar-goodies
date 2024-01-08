@@ -121,7 +121,7 @@ Shader "Bigi/ALTest" {
 			fragOutput frag(v2f i)
 			{
 				clip(_AddLightIntensity - Epsilon);
-				fixed4 orig_color = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
+				fixed4 orig_color = GET_TEX_COLOR(i.uv);
 				clip(orig_color.a - Epsilon);
 				fragOutput o;
 				UNITY_SETUP_INSTANCE_ID(i);

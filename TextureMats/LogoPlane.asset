@@ -39,4 +39,4 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1583084db6ae4724fa743a57034c6560, type: 3}
   - {fileID: 2800000, guid: c0f06509c4771984ab873ebc78b6847c, type: 3}
   - {fileID: 2800000, guid: 3558cc9c5841f7a4f9774a9bde7c7b8e, type: 3}
-  flags: 0
+  flags: 1028

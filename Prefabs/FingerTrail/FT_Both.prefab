@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.658.0
+  vrcfuryVersion: 1.682.0
   config:
     features:
     - rid: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.658.0
+  vrcfuryVersion: 1.682.0
   config:
     features:
     - rid: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.658.0
+  vrcfuryVersion: 1.682.0
   config:
     features:
     - rid: 0

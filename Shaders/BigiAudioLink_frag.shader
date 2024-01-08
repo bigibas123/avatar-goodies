@@ -30,6 +30,7 @@ Shader "Bigi/AudioLink_frag"
         _MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0
         _Voronoi("Voronoi", Range(0.0,1.0)) = 0.0
         _OutlineWidth ("Outline Width", Range(0.0,1.0)) = 0.0
+        _Rounding ("Rounding Factor", Range(0.0,0.05)) = 0.0
 
         [Header(Multi Texture)]
         [Toggle(MULTI_TEXTURE)] _MultiTexture("Use multi texture", Float) = 0
@@ -85,7 +86,7 @@ Shader "Bigi/AudioLink_frag"
 
             fragOutput frag(v2f i)
             {
-                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
                 #ifdef DO_ALPHA_PLS
                 clip(orig_color.a - (1.0-Epsilon));
                 #endif
@@ -153,7 +154,7 @@ Shader "Bigi/AudioLink_frag"
             fragOutput frag(v2f i)
             {
                 #ifdef DO_ALPHA_PLS
-                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
                 clip((orig_color.a - (1.0-Epsilon)) * -1.0);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
@@ -206,7 +207,9 @@ Shader "Bigi/AudioLink_frag"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/BigiEffects.cginc"
+            #ifdef NORMAL_MAPPING
             #include "./Includes/NormalUtils.cginc"
+            #endif
 
             fragOutput frag(v2f i)
             {
@@ -220,7 +223,7 @@ Shader "Bigi/AudioLink_frag"
                 #endif
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
-                const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
 
                 const fixed4 mask = GET_MASK_COLOR(i.uv);
                 o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
@@ -408,10 +411,17 @@ Shader "Bigi/AudioLink_frag"
             #pragma fragment frag alpha
 
             #include_with_pragmas "./Includes/Pragmas/Meta.cginc"
+            
+            #include "./Includes/BigiShaderParams.cginc"
+            #include <UnityCG.cginc>
 
-            #include "UnityCG.cginc"
-            #include "UnityStandardShadow.cginc"
-
+            struct appdata {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 texcoord : TEXCOORD0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+            };
+            
             struct v2f {
                 V2F_SHADOW_CASTER;
                 UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
@@ -425,7 +435,7 @@ Shader "Bigi/AudioLink_frag"
                 //float4 uv : TEXCOORD0;
             };
 
-            v2f vert(appdata_base v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
@@ -434,14 +444,23 @@ Shader "Bigi/AudioLink_frag"
                 TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
 
                 #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
-                    o.tex = TRANSFORM_TEX(v.uv0, _MainTex);
+                    o.tex = DO_TRANSFORM(v.uv0);
 
                 #ifdef _PARALLAXMAP
                         TANGENT_SPACE_ROTATION;
                         o.viewDirForParallax = mul (rotation, ObjSpaceViewDir(v.vertex));
                 #endif
                 #endif
-
+                if (_Rounding > Epsilon)
+                {
+                    float4 snapToPixel = o.pos;
+                    float gridSize = 1.0 / (_Rounding + Epsilon);
+                    float4 vt = snapToPixel;
+                    vt.xyz = snapToPixel.xyz / snapToPixel.w;
+                    vt.xy = floor(gridSize * vt.xy) / gridSize;
+                    vt.xyz *= snapToPixel.w;
+                    o.pos = vt;
+                }
                 //o.uv = v.texcoord;
                 return o;
             }
@@ -451,29 +470,9 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i)
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
 
-                #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
-                #if defined(_PARALLAXMAP) && (SHADER_TARGET >= 30)
-                        half3 viewDirForParallax = normalize(i.viewDirForParallax);
-                        fixed h = tex2D (_ParallaxMap, i.tex.xy).g;
-                        half2 offset = ParallaxOffset1Step (h, _Parallax, viewDirForParallax);
-                        i.tex.xy += offset;
-                #endif
-
-                #if defined(_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A)
-                        half alpha = _Color.a;
-                #else
-                        half alpha = tex2D(_MainTex, i.tex.xy).a * _Color.a;
-                #endif
-                #if defined(_ALPHATEST_ON)
-                        clip (alpha - _Cutoff);
-                #endif
-                #if defined(_ALPHABLEND_ON) || defined(_ALPHAPREMULTIPLY_ON)
-                #if defined(_ALPHAPREMULTIPLY_ON)
-                            half outModifiedAlpha;
-                            PreMultiplyAlpha(half3(0, 0, 0), alpha, SHADOW_ONEMINUSREFLECTIVITY(i.tex), outModifiedAlpha);
-                            alpha = outModifiedAlpha;
-                #endif
-                #if defined(UNITY_STANDARD_USE_DITHER_MASK)
+                #ifdef UNITY_STANDARD_USE_SHADOW_UVS
+                     half alpha = GET_TEX_COLOR(i.tex.y).a;
+                #ifdef UNITY_STANDARD_USE_DITHER_MASK
                 // Use dither mask for alpha blended shadows, based on pixel position xy
                 // and alpha level. Our dither texture is 4x4x16.
                 #ifdef LOD_FADE_CROSSFADE
@@ -483,10 +482,10 @@ Shader "Bigi/AudioLink_frag"
                             half alphaRef = tex3D(_DitherMaskLOD, float3(vpos.xy*0.25,alpha*0.9375)).a;
                             clip (alphaRef - 0.01);
                 #else
-                            clip (alpha - _Cutoff);
+                            clip (alpha - );
                 #endif
                 #endif
-                #endif // #if defined(UNITY_STANDARD_USE_SHADOW_UVS)
+                //#if defined(UNITY_STANDARD_USE_SHADOW_UVS)
 
                 #ifdef LOD_FADE_CROSSFADE
                 #ifdef _LOD_FADE_ON_ALPHA

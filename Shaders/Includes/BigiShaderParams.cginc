@@ -39,6 +39,8 @@ uniform float _MonoChrome;
 uniform float _Voronoi;
 uniform float _LightDiffuseness;
 
+uniform float _Rounding; 
+
 #endif
 
 

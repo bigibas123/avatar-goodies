@@ -5,11 +5,107 @@
 #include <AutoLight.cginc>
 #include <UnityLightingCommon.cginc>
 
-#if defined(LIGHTMAP_ON) && defined(VERTEXLIGHT_ON)
+#if defined(LIGHTMAP_ON) && defined(VERTEXLIGHT_ON) && defined(DYNAMICLIGHTMAP_ON)
 
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.vertexLighting, \
+i.lightmapUV, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+GET_AO(i.uv), \
+_LightDiffuseness \
+)
+
+#define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.vertexLighting, \
+i.lightmapUV, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+1.0, \
+_LightDiffuseness \
+)
+
+
+#elif defined(LIGHTMAP_ON) && defined(DYNAMICLIGHTMAP_ON)
+
+#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.lightmapUV, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+GET_AO(i.uv), \
+_LightDiffuseness \
+)
+
+#define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.lightmapUV, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+1.0, \
+_LightDiffuseness \
+)
+
+
+#elif defined(VERTEXLIGHT_ON) && defined(DYNAMICLIGHTMAP_ON)
+
+#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.vertexLighting, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+GET_AO(i.uv), \
+_LightDiffuseness \
+)
+
+#define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.vertexLighting, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+1.0, \
+_LightDiffuseness \
+)
+
+
+#elif defined(LIGHTMAP_ON) && defined(VERTEXLIGHT_ON)
+
+#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
@@ -23,6 +119,7 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
@@ -38,6 +135,7 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
@@ -50,10 +148,11 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
-i.lightmapUV \
+i.lightmapUV, \
 _MinAmbient, \
 1.0, \
 _LightDiffuseness \
@@ -64,6 +163,7 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
@@ -76,10 +176,39 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
 i.vertexLighting, \
+_MinAmbient, \
+1.0, \
+_LightDiffuseness \
+)
+
+#elif defined(DYNAMICLIGHTMAP_ON)
+
+#define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.dynamicLightmapUV, \
+_MinAmbient, \
+GET_AO(i.uv), \
+_LightDiffuseness \
+)
+
+#define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
+const fixed4 outName = b_light::GetLighting( \
+_WorldSpaceLightPos0, \
+i.worldPos, \
+i.normal, \
+shadowAtt, \
+_LightColor0, \
+i.dynamicLightmapUV, \
 _MinAmbient, \
 1.0, \
 _LightDiffuseness \
@@ -90,6 +219,7 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_DEFAULT(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
@@ -101,6 +231,7 @@ _LightDiffuseness \
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
 const fixed4 outName = b_light::GetLighting( \
 _WorldSpaceLightPos0, \
+i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
