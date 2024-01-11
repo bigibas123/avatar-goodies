@@ -37,7 +37,8 @@ Shader "Bigi/LogoPlane" {
 
 		void setLightVars()
 		{
-			_LightDiffuseness = 1.0;
+			_LightSmoothness = 1.0;
+			_LightThreshold = 0.0;
 			_AddLightIntensity = 1.0;
 			_VertLightIntensity = 1.0;
 		}

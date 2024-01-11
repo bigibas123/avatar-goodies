@@ -15,27 +15,25 @@ namespace b_light
 {
 	// A macro instead of a function because this works on more types without having to overload it a bunch of times
 	// ReSharper disable once CppInconsistentNaming
-	# define doStep(val) smoothstep(0.0, lightDiffuseness, val) // Maybe change to slidable window with configurable width. Currently you just mostly get darker
-
+	# define doStep(val) smoothstep(lightthreshold, lightsmoothness+lightthreshold, val)
 
 
 	half3 GetAmbient(
 		in const float3 worldPos,
 		in const float3 worldNormal,
 		in const float minAmbient,
-		in const float4 ambientOcclusion,
+		in const float4 ambientOcclusion
 		#ifdef LIGHTMAP_ON
-        in const float2 lightmapUv,
+        ,in const float2 lightmapUv
 		#endif
-        #ifdef DYNAMICLIGHTMAP_ON
-        in const float2 dynamicLightmapUV,
-        #endif
-		in const float lightDiffuseness
+		#ifdef DYNAMICLIGHTMAP_ON
+        ,in const float2 dynamicLightmapUV
+		#endif
 	)
 	{
 		half3 ret = 0;
-
-
+		#ifdef LIGHTPROBE_SH
+		#endif
 		#ifdef LIGHTMAP_ON
 
         ret += DecodeLightmap(
@@ -46,7 +44,7 @@ namespace b_light
         float4 lightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(
                     unity_LightmapInd, unity_Lightmap, lightmapUv
                 );
-            ret = DecodeDirectionalLightmap(
+            ret += DecodeDirectionalLightmap(
                 ret, lightmapDirection, worldNormal
             );
 		#endif
@@ -70,7 +68,7 @@ namespace b_light
         ret += dynamicLightDiffuse;
 		#endif
 		#endif
-		
+
 
 		#if defined(UNITY_SHOULD_SAMPLE_SH) || (!defined(LIGHTMAP_ON) && !defined(DYNAMICLIGHTMAP_ON))
 		#if UNITY_LIGHT_PROBE_PROXY_VOLUME
@@ -79,22 +77,21 @@ namespace b_light
 						float4(worldNormal, 1), worldPos
 					);
 			probeLight = max(0, probeLight);
-			#if defined(UNITY_COLORSPACE_GAMMA)
+		#if defined(UNITY_COLORSPACE_GAMMA)
 			ret += LinearToGammaSpace(probeLight);
-			#else
+		#else
 				ret += probeLight;
-			#endif
+		#endif
 		}
 		else {
 			ret +=
 				max(0, ShadeSH9(float4(worldNormal, 1)));
 		}
-		#else
+		#endif
+		#endif
+		#if defined(UNITY_SAMPLE_FULL_SH_PER_PIXEL)
 		ret += max(0, ShadeSH9(half4(worldNormal, 1)));
 		#endif
-		#endif
-
-		ret = doStep(ret);
 		if (ret.r > minAmbient || ret.g > minAmbient || ret.b > minAmbient)
 		{
 			return ret * clamp(ambientOcclusion, 0.75, 1.0);
@@ -108,7 +105,7 @@ namespace b_light
 
 	fixed3 GetWorldLightIntensity(
 		const in half shadowAttenuation,
-		const in float4 worldLightPos,
+		const in float3 worldLightPos,
 		const in float3 worldNormal
 	)
 	{
@@ -126,9 +123,6 @@ namespace b_light
 	)
 	{
 		#if defined(HANDLE_SHADOWS_BLENDING_IN_GI) || defined(ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS)
-		#if ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS
-        attenuation = SHADOW_ATTENUATION(i);
-		#endif
         float viewZ = dot(_WorldSpaceCameraPos - worldNormal, UNITY_MATRIX_V[2].xyz);
         float shadowFadeDistance = UnityComputeShadowFadeDistance(worldNormal, viewZ);
         float shadowFade = UnityComputeShadowFade(shadowFadeDistance);
@@ -145,8 +139,8 @@ namespace b_light
 	}
 
 	fixed4 GetLighting(
-		const in float4 worldLightPos,
-		const in float3 worldPos, 
+		const in float3 worldLightPos,
+		const in float3 worldPos,
 		const in float3 worldNormal,
 		const in half shadowAttenuation,
 		const in half4 lightColor,
@@ -156,31 +150,30 @@ namespace b_light
 		#ifdef LIGHTMAP_ON
         const in float2 lightmapUv,
 		#endif
-        #ifdef DYNAMICLIGHTMAP_ON
+		#ifdef DYNAMICLIGHTMAP_ON
 		const in float2 dynamicLightmapUV,
 		#endif
 		const in float minAmbient,
 		const in float4 ambientOcclusion,
-		const in float lightDiffuseness
+		const in float lightsmoothness,
+		const in float lightthreshold
 	)
 	{
-		const half3 ambient = GetAmbient(
+		const half3 ambient =
+			GetAmbient(
 			worldPos,
 			worldNormal,
 			minAmbient,
-			ambientOcclusion,
+			ambientOcclusion
 			#ifdef LIGHTMAP_ON
-            lightmapUv,
+            ,lightmapUv
 			#endif
-            #ifdef DYNAMICLIGHTMAP_ON
-            dynamicLightmapUV,
-            #endif
-			lightDiffuseness
+			#ifdef DYNAMICLIGHTMAP_ON
+            ,dynamicLightmapUV
+			#endif
 		);
-		const half3 ambientStepped = ambient;
-
-
-		const float nl = max(0, dot(worldNormal, worldLightPos.xyz));
+		const half3 ambientStepped = doStep(ambient);
+		
 
 		const float fadedAttenuation = fade_shadow(
 			worldNormal,
@@ -190,7 +183,7 @@ namespace b_light
 			shadowAttenuation
 		);
 
-		const float lightIntensity = doStep(nl * fadedAttenuation);
+		const float lightIntensity = doStep(GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal));
 		#ifdef VERTEXLIGHT_ON
         const fixed3 vertexStepped = vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
 		#endif
@@ -211,7 +204,8 @@ namespace b_light
 		float4 lightPosX, float4 lightPosY, float4 lightPosZ,
 		float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
 		float4 lightAttenSq,
-		float3 pos, float3 normal, in const float lightDiffuseness
+		float3 pos, float3 normal, const in float lightsmoothness,
+		const in float lightthreshold
 	)
 	{
 		// to light vectors
@@ -250,7 +244,8 @@ namespace b_light
 		float4 lightPosX, float4 lightPosY, float4 lightPosZ,
 		float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
 		float4 lightAttenSq,
-		float3 pos, float3 normal, in const float lightDiffuseness
+		float3 pos, float3 normal,
+		const in float lightsmoothness, const in float lightthreshold
 	)
 	{
 		float3 ret = 0;
@@ -259,7 +254,7 @@ namespace b_light
         ret += bigi_Shade4PointLights (
             lightPosX, lightPosY, lightPosZ,
             lightColor0, lightColor1, lightColor2, lightColor3,
-            lightAttenSq, pos, normal, lightDiffuseness);
+            lightAttenSq, pos, normal, lightsmoothness, lightthreshold);
 		#endif
 
 		return ret;

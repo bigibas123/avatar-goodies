@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 778328994621869660}
   - component: {fileID: 4411230118681861165}
+  - component: {fileID: 6011725134196189023}
+  - component: {fileID: 6301140463057545292}
+  - component: {fileID: 5646717477193549562}
+  - component: {fileID: 5229387925134415259}
+  - component: {fileID: 8064919233826847878}
   m_Layer: 0
   m_Name: Shadercontrol
   m_TagString: Untagged
@@ -46,198 +51,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.682.0
+  vrcfuryVersion: 1.692.0
   config:
     features:
-    - rid: 0
-    - rid: 1
-    - rid: 8182467278938046554
-    - rid: 2
     - rid: 3
-    - rid: 4
     - rid: 5
     - rid: 6
-    - rid: 7
-    - rid: 8
-    - rid: 9
-    - rid: 10
-    - rid: 11
-    - rid: 12
-    - rid: 13
   somethingIsBroken: 0
   references:
     version: 2
     RefIds:
-    - rid: 0
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/ShadowDiffuseness
-        state:
-          actions:
-          - rid: 14
-          ResetMePlease2: 0
-        saved: 1
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 1
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions:
-          - rid: 15
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions:
-          - rid: 16
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0.1
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 1
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/Effects/Voronoi
-        state:
-          actions:
-          - rid: 17
-          ResetMePlease2: 0
-        saved: 0
-        slider: 0
-        sliderInactiveAtZero: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 2
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/Effects/Monochrome
-        state:
-          actions:
-          - rid: 18
-          ResetMePlease2: 0
-        saved: 0
-        slider: 0
-        sliderInactiveAtZero: 1
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
     - rid: 3
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -290,62 +113,6 @@ MonoBehaviour:
         localTransitionTimeOut: 0
         simpleOutTransition: 1
         defaultSliderValue: 1
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 4
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/MinAmbient
-        state:
-          actions:
-          - rid: 20
-          ResetMePlease2: 0
-        saved: 0
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 1
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0.05
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -462,18 +229,82 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 7
+    - rid: 19
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _EmissionStrength
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 21
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AddLightIntensity
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 22
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _VertLightIntensity
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6011725134196189023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.692.0
+  config:
+    features:
+    - rid: 1
+    - rid: 8
+    - rid: 9
+    - rid: 10
+    - rid: 11
+    - rid: 12
+    - rid: 13
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
-        name: Shader/TextureId
+        name: Shader/Lighting/Effects/Voronoi
         state:
           actions:
-          - rid: 23
+          - rid: 17
           ResetMePlease2: 0
-        saved: 1
-        slider: 1
-        sliderInactiveAtZero: 0
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -854,42 +685,6 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 14
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _LightDiffuseness
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 15
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _LightDiffuseness
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 16
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _LightDiffuseness
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 17
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -900,78 +695,6 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _Voronoi
         value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 18
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _MonoChrome
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 19
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _EmissionStrength
-        value: 2
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 20
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _MinAmbient
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 21
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _AddLightIntensity
-        value: 2
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 22
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _VertLightIntensity
-        value: 2
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 23
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _OtherTextureId
-        value: 16
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 24
@@ -1046,6 +769,118 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6301140463057545292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.692.0
+  config:
+    features:
+    - rid: 7
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 7
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/TextureId
+        state:
+          actions:
+          - rid: 23
+          ResetMePlease2: 0
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 23
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _OtherTextureId
+        value: 16
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5646717477193549562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.692.0
+  config:
+    features:
+    - rid: 8182467278938046554
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
     - rid: 8182467278938046554
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -1112,5 +947,349 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _Rounding
         value: 0.05
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5229387925134415259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.692.0
+  config:
+    features:
+    - rid: 2
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/Effects/Monochrome
+        state:
+          actions:
+          - rid: 18
+          ResetMePlease2: 0
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 1
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 18
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _MonoChrome
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8064919233826847878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.692.0
+  config:
+    features:
+    - rid: 0
+    - rid: 2726590071093854360
+    - rid: 4
+  somethingIsBroken: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 0
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/ShadowSmooth
+        state:
+          actions:
+          - rid: 14
+          ResetMePlease2: 0
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 1
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions:
+          - rid: 15
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions:
+          - rid: 16
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0.1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 4
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/MinAmbient
+        state:
+          actions:
+          - rid: 20
+          ResetMePlease2: 0
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 1
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0.05
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 14
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightSmoothness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 15
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightDiffuseness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 16
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightDiffuseness
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 20
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _MinAmbient
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 2726590071093854360
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/ShadowThreshold
+        state:
+          actions:
+          - rid: 2726590071093854361
+          ResetMePlease2: 0
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+          ResetMePlease2: 0
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        transitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionStateOut:
+          actions: []
+          ResetMePlease2: 0
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 2726590071093854361
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightThreshold
+        value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}

@@ -37,7 +37,8 @@ uniform float _MinAmbient;
 //Effects
 uniform float _MonoChrome;
 uniform float _Voronoi;
-uniform float _LightDiffuseness;
+uniform float _LightSmoothness;
+uniform float _LightThreshold;
 
 uniform float _Rounding; 
 

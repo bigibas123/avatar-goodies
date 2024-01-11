@@ -12,7 +12,8 @@ Shader "Bigi/AudioLink_frag"
         [NoScaleOffset] _BumpMap("Normal Map", 2D) = "bump" {}
 
         [Header(Lighting)]
-        _LightDiffuseness ("Shadow Diffuseness",Range(0.0,1.0)) = 0.1
+        _LightSmoothness ("Shadow smoothness",Range(0.0,1.0)) = 1.0
+        _LightThreshold ("Shadow Start point", Range(0.0,1.0)) = 0.0
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
         _VertLightIntensity ("Vertex lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005

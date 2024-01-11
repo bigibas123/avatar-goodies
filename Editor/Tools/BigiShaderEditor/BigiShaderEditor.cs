@@ -150,11 +150,12 @@ namespace Characters.Common.Editor.Tools.BigiShaderEditor
 					return true;
 
 
+#pragma warning disable CS0618 // Type or member is obsolete
 				case GraphicsFormat.DepthAuto:
 				case GraphicsFormat.ShadowAuto:
 				case GraphicsFormat.VideoAuto:
 					return false;
-
+#pragma warning restore CS0618 // Type or member is obsolete
 				case GraphicsFormat.None:
 				case GraphicsFormat.R8_SRGB:
 				case GraphicsFormat.R8G8_SRGB:

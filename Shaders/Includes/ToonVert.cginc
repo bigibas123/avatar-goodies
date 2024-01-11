@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 #pragma once
 
 
@@ -46,10 +44,10 @@ struct v2f
 	float3 worldPos: TEXCOORD5;
 	float3 tangent : TEXCOORD6; // vect in left direction of texture coordinates
 	float3 bitangent : TEXCOORD7; // vect in up direction of texture coordinates
-	#ifdef VERTEXLIGHT_ON
+	#if defined(VERTEXLIGHT_ON)
     float3 vertexLighting : TEXCOORD8;
 	#endif
-	#ifdef LIGHTMAP_ON
+	#if defined(LIGHTMAP_ON) || defined(ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS)
 	float2 lightmapUV : TEXCOORD9;
 	#endif
 	#if defined(DYNAMICLIGHTMAP_ON)
