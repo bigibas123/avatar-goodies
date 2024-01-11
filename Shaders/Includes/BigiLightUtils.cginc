@@ -185,7 +185,7 @@ namespace b_light
 
 		const float lightIntensity = doStep(GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal));
 		#ifdef VERTEXLIGHT_ON
-        const fixed3 vertexStepped = vertex; // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
+        const fixed3 vertexStepped = doStep(vertex); // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
 		#endif
 		const fixed3 diff = lightIntensity * lightColor;
 		const fixed4 total = fixed4(
@@ -204,8 +204,7 @@ namespace b_light
 		float4 lightPosX, float4 lightPosY, float4 lightPosZ,
 		float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
 		float4 lightAttenSq,
-		float3 pos, float3 normal, const in float lightsmoothness,
-		const in float lightthreshold
+		float3 pos, float3 normal
 	)
 	{
 		// to light vectors
@@ -230,7 +229,7 @@ namespace b_light
 		ndotl = max(float4(0, 0, 0, 0), ndotl * corr);
 		// attenuation
 		float4 atten = 1.0 / (1.0 + lengthSq * lightAttenSq);
-		float4 diff = doStep(ndotl * atten);
+		float4 diff = ndotl * atten;
 		// final color
 		float3 col = 0;
 		col += lightColor0 * diff.x;
@@ -244,8 +243,7 @@ namespace b_light
 		float4 lightPosX, float4 lightPosY, float4 lightPosZ,
 		float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3,
 		float4 lightAttenSq,
-		float3 pos, float3 normal,
-		const in float lightsmoothness, const in float lightthreshold
+		float3 pos, float3 normal
 	)
 	{
 		float3 ret = 0;
@@ -254,7 +252,7 @@ namespace b_light
         ret += bigi_Shade4PointLights (
             lightPosX, lightPosY, lightPosZ,
             lightColor0, lightColor1, lightColor2, lightColor3,
-            lightAttenSq, pos, normal, lightsmoothness, lightthreshold);
+            lightAttenSq, pos, normal);
 		#endif
 
 		return ret;

@@ -4,8 +4,6 @@
 #include <UnityCG.cginc>
 #include <AutoLight.cginc>
 #include "./LightUtilsDefines.cginc"
-#include "./BigiShaderTextures.cginc"
-#include "./BigiShaderParams.cginc"
 
 #ifndef BIGI_DEFAULT_FRAGOUT
 #define BIGI_DEFAULT_FRAGOUT

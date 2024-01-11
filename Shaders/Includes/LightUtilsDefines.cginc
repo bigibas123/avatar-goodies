@@ -80,7 +80,7 @@ _LightThreshold \
 const float3 outName = b_light::ProcessVertexLights( \
     unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0, \
     unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb, \
-    unity_4LightAtten0, o.worldPos, o.normal, _LightSmoothness, _LightThreshold \
+    unity_4LightAtten0, o.worldPos, o.normal \
 ) * _VertLightIntensity
 
 #else
