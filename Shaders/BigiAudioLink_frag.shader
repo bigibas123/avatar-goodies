@@ -131,7 +131,7 @@ Shader "Bigi/AudioLink_frag"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #pragma multi_compile_fwdbasealpha
             #include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
 
             #include "./Includes/ToonVert.cginc"
