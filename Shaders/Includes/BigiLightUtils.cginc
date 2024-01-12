@@ -2,6 +2,7 @@
 
 #include <UnityCG.cginc>
 
+
 #ifndef Epsilon
 #define Epsilon UNITY_HALF_MIN
 #endif
@@ -10,6 +11,50 @@
         #define ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS 1
 #endif
 #endif
+
+#include <Packages/at.pimaker.ltcgi/Shaders/LTCGI_structs.cginc>
+
+namespace b_light
+{
+	namespace b_ltci
+	{
+		struct ltci_accumulator_struct
+		{
+			// let your imagination run wild on what to accumulate here...
+			float3 diffuse;
+			float3 specular;
+		};
+
+		void callback_diffuse(inout ltci_accumulator_struct acc, in ltcgi_output output);
+		void callback_specular(inout ltci_accumulator_struct acc, in ltcgi_output output);
+		// tell LTCGI that we want the V2 API, and which constructs to use
+		#define LTCGI_V2_CUSTOM_INPUT b_light::b_ltci::ltci_accumulator_struct
+		#define LTCGI_V2_DIFFUSE_CALLBACK b_light::b_ltci::callback_diffuse
+		#define LTCGI_V2_SPECULAR_CALLBACK b_light::b_ltci::callback_specular
+
+		void callback_diffuse(inout ltci_accumulator_struct acc, in ltcgi_output output)
+		{
+			acc.diffuse += output.intensity * output.color;
+		}
+
+		void callback_specular(inout ltci_accumulator_struct acc, in ltcgi_output output)
+		{
+			acc.specular += output.intensity * output.color;
+		}
+
+		float3 get_camera_pos()
+		{
+			float3 worldCam;
+			worldCam.x = unity_CameraToWorld[0][3];
+			worldCam.y = unity_CameraToWorld[1][3];
+			worldCam.z = unity_CameraToWorld[2][3];
+			return worldCam;
+		}
+	}
+}
+
+#include <Packages/at.pimaker.ltcgi/Shaders/LTCGI.cginc>
+
 
 namespace b_light
 {
@@ -138,6 +183,31 @@ namespace b_light
 		return attenuation;
 	}
 
+
+	half3 GetLTCGI(
+		in const float3 worldPos,
+		in const float3 worldNormal
+		#ifdef LIGHTMAP_ON
+		,in const float2 lightmapUv
+		#endif
+	)
+	{
+		b_ltci::ltci_accumulator_struct acc = (b_ltci::ltci_accumulator_struct)0;
+		LTCGI_Contribution(
+			acc, // our accumulator
+			worldPos, // world position of the shaded point
+			worldNormal, // world space normal
+			normalize(b_ltci::get_camera_pos() - worldPos), // view vector to shaded point, normalized
+			1.0f, // roughness
+			#ifdef LIGHTMAP_ON
+			lightmapUv // shadowmap coordinates (the normal Unity ones, they should be in sync with LTCGI maps)
+			#else
+			float2(0.0, 0.0)
+			#endif
+		);
+		return acc.diffuse + acc.specular;
+	}
+
 	fixed4 GetLighting(
 		const in float3 worldLightPos,
 		const in float3 worldPos,
@@ -161,19 +231,19 @@ namespace b_light
 	{
 		const half3 ambient =
 			GetAmbient(
-			worldPos,
-			worldNormal,
-			minAmbient,
-			ambientOcclusion
-			#ifdef LIGHTMAP_ON
+				worldPos,
+				worldNormal,
+				minAmbient,
+				ambientOcclusion
+				#ifdef LIGHTMAP_ON
             ,lightmapUv
-			#endif
-			#ifdef DYNAMICLIGHTMAP_ON
+				#endif
+				#ifdef DYNAMICLIGHTMAP_ON
             ,dynamicLightmapUV
-			#endif
-		);
+				#endif
+			);
 		const half3 ambientStepped = doStep(ambient);
-		
+
 
 		const float fadedAttenuation = fade_shadow(
 			worldNormal,
@@ -181,6 +251,14 @@ namespace b_light
             lightmapUv,
 			#endif
 			shadowAttenuation
+		);
+		
+		const half3 ltcgi = GetLTCGI(
+			worldPos,
+			worldNormal
+		#ifdef LIGHTMAP_ON
+				,lightmapUv
+		#endif
 		);
 
 		const float lightIntensity = doStep(GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal));
@@ -194,6 +272,7 @@ namespace b_light
 			#ifdef VERTEXLIGHT_ON
             + vertexStepped
 			#endif
+			+ ltcgi
 			, 1.0
 		);
 		return clamp(total, -1.0, 1.0);

@@ -47,7 +47,7 @@ Shader "Bigi/AudioLink_frag"
         Blend SrcAlpha OneMinusSrcAlpha
         Tags
         {
-            "RenderType" = "Opaque" "Queue" = "Geometry" "VRCFallback" = "ToonCutout"
+            "VRCFallback" = "ToonCutout" "LTCGI"="ALWAYS"
         }
 
         LOD 100
@@ -59,6 +59,7 @@ Shader "Bigi/AudioLink_frag"
                 "Queue" = "AlphaTest"
                 "RenderType" = "AlphaTest"
                 "LightMode" = "ForwardBase"
+                "LTCGI"="ALWAYS"
             }
             Cull Off
             ZWrite On
@@ -87,7 +88,7 @@ Shader "Bigi/AudioLink_frag"
 
             fragOutput frag(v2f i)
             {
-                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = GET_TEX_COLOR(GETUV);
                 #ifdef DO_ALPHA_PLS
                 clip(orig_color.a - (1.0-Epsilon));
                 #endif
@@ -95,14 +96,14 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 #ifdef NORMAL_MAPPING
-                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(GETUV), i.tangent, i.bitangent);
                 #endif
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
 
-                const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                const fixed4 mask = GET_MASK_COLOR(GETUV);
+                o.color = b_effects::apply_effects(GETUV, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }
@@ -155,19 +156,19 @@ Shader "Bigi/AudioLink_frag"
             fragOutput frag(v2f i)
             {
                 #ifdef DO_ALPHA_PLS
-                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = GET_TEX_COLOR(GETUV);
                 clip((orig_color.a - (1.0-Epsilon)) * -1.0);
                 fragOutput o;
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 #ifdef NORMAL_MAPPING
-                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(GETUV), i.tangent, i.bitangent);
                 #endif
 
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
-                const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                const fixed4 mask = GET_MASK_COLOR(GETUV);
+                o.color = b_effects::apply_effects(GETUV, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
                 #else
@@ -208,6 +209,7 @@ Shader "Bigi/AudioLink_frag"
             #include "./Includes/ToonVert.cginc"
             #include "./Includes/LightUtilsDefines.cginc"
             #include "./Includes/BigiEffects.cginc"
+            #include "./Includes/BigiShaderParams.cginc"
             #ifdef NORMAL_MAPPING
             #include "./Includes/NormalUtils.cginc"
             #endif
@@ -220,14 +222,14 @@ Shader "Bigi/AudioLink_frag"
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 #ifdef NORMAL_MAPPING
-                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(i.uv), i.tangent, i.bitangent);
+                i.normal = b_normalutils::recalculate_normals(i.normal, GET_NORMAL(GETUV), i.tangent, i.bitangent);
                 #endif
                 BIGI_GETLIGHT_DEFAULT(lighting);
 
-                const fixed4 orig_color = _Rounding > Epsilon ? GET_TEX_COLOR(i.uv/i.pos.w) : GET_TEX_COLOR(i.uv);
+                const fixed4 orig_color = GET_TEX_COLOR(GETUV);
 
-                const fixed4 mask = GET_MASK_COLOR(i.uv);
-                o.color = b_effects::apply_effects(i.uv, mask, orig_color, lighting, i.staticTexturePos);
+                const fixed4 mask = GET_MASK_COLOR(GETUV);
+                o.color = b_effects::apply_effects(GETUV, mask, orig_color, lighting, i.staticTexturePos);
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 o.color = o.color * _AddLightIntensity;
                 return o;
@@ -373,11 +375,11 @@ Shader "Bigi/AudioLink_frag"
                 UnityMetaInput metaIN;
                 UNITY_INITIALIZE_OUTPUT(UnityMetaInput, metaIN);
 
-                fixed4 orig_color = GET_TEX_COLOR(i.uv);
-                fixed4 mask_color = GET_MASK_COLOR(i.uv);
+                fixed4 orig_color = GET_TEX_COLOR(GETUV);
+                fixed4 mask_color = GET_MASK_COLOR(GETUV);
                 
                 
-                metaIN.Albedo = b_effects::apply_effects(i.uv,mask_color,orig_color,half4(1.0,1.0,1.0,1.0),i.staticTexturePos).rgb;
+                metaIN.Albedo = b_effects::apply_effects(GETUV,mask_color,orig_color,half4(1.0,1.0,1.0,1.0),i.staticTexturePos).rgb;
                 metaIN.Emission = b_effects::get_meta_emissions(orig_color,mask_color,_EmissionStrength) * 5.0;
                 
                 #if defined(EDITOR_VISUALIZATION)

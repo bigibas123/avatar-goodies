@@ -13,7 +13,6 @@ struct fragOutput {
 #endif
 #ifndef BIGI_DEFAULT_APPDATA
 #define BIGI_DEFAULT_APPDATA
-
 struct appdata
 {
 	float4 vertex : POSITION;

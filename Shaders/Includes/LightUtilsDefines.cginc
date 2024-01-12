@@ -52,7 +52,7 @@ B_VERTEX_LIGHT_ARG \
 B_LIGHTMAP_ARG \
 B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
-GET_AO(i.uv), \
+GET_AO(GETUV), \
 _LightSmoothness, \
 _LightThreshold \
 )

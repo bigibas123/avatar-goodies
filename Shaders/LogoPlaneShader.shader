@@ -21,13 +21,14 @@ Shader "Bigi/LogoPlane" {
 		#include <UnityCG.cginc>
 		uniform float _AL_General_Intensity;
 
-		
+
 		#define BIGI_OTHER_TEXTURE_ID_DEFINED
 		UNITY_INSTANCING_BUFFER_START(logoplaneparams)
-		UNITY_DEFINE_INSTANCED_PROP(int, _OtherTextureId)
+			UNITY_DEFINE_INSTANCED_PROP(int, _OtherTextureId)
 		UNITY_INSTANCING_BUFFER_END(logoplaneparams)
+
 		#define OTHER_TEXTURE_ID_REF UNITY_ACCESS_INSTANCED_PROP(logoplaneparams, _OtherTextureId)
-		
+
 		#include "./Includes/BigiShaderParams.cginc"
 		#include "./Includes/BigiShaderTextures.cginc"
 		#include "./Includes/ToonVert.cginc"
@@ -41,6 +42,14 @@ Shader "Bigi/LogoPlane" {
 			_LightThreshold = 0.0;
 			_AddLightIntensity = 1.0;
 			_VertLightIntensity = 1.0;
+			_Rounding = 0.0;
+			_MonoChrome = 0.0;
+			_Voronoi = 0.0;
+			_OutlineWidth = 0.0;
+			_MonoChrome = 0.0;
+			_Voronoi = 0.0;
+			_LightSmoothness = 0.2;
+			_LightThreshold = 0.0;
 		}
 
 		v2f vert(appdata v)
@@ -55,7 +64,7 @@ Shader "Bigi/LogoPlane" {
 			fragOutput o;
 			UNITY_INITIALIZE_OUTPUT(fragOutput, o);
 			UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)
-			const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+			const fixed4 orig_color = GET_TEX_COLOR(GETUV);
 			clip(orig_color.a - Epsilon);
 
 
@@ -87,7 +96,6 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
-
 			#include_with_pragmas "./Includes/Pragmas/ForwardBase.cginc"
 
 			#pragma vertex vert alpha
@@ -105,7 +113,6 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend One One
 			CGPROGRAM
-
 			#include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
 
 			#pragma vertex vert alpha
@@ -138,7 +145,6 @@ Shader "Bigi/LogoPlane" {
 			ZTest LEqual
 			Blend One One
 			CGPROGRAM
-
 			#include_with_pragmas "./Includes/Pragmas/ForwardAdd.cginc"
 
 			#pragma vertex vert alpha
@@ -152,7 +158,6 @@ Shader "Bigi/LogoPlane" {
 				"LightMode" = "Meta"
 			}
 			CGPROGRAM
-
 			#include_with_pragmas "./Includes/Pragmas/Meta.cginc"
 
 			#pragma vertex vertm alpha
@@ -207,7 +212,7 @@ Shader "Bigi/LogoPlane" {
 			{
 				UnityMetaInput metaIN;
 				UNITY_INITIALIZE_OUTPUT(UnityMetaInput, metaIN);
-				const fixed4 orig_color = GET_TEX_COLOR(i.uv);
+				const fixed4 orig_color = GET_TEX_COLOR(GETUV);
 				clip(orig_color.a - Epsilon);
 				const fixed4 normalColor = orig_color;
 

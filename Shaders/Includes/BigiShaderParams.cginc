@@ -40,7 +40,9 @@ uniform float _Voronoi;
 uniform float _LightSmoothness;
 uniform float _LightThreshold;
 
-uniform float _Rounding; 
+uniform float _Rounding;
+#define GET_UV(origuv,iposw) _Rounding > Epsilon ? origuv/iposw : origuv
+#define GETUV GET_UV(i.uv,i.pos.w)
 
 #endif
 

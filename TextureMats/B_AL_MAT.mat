@@ -100,6 +100,8 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LightDiffuseness: 0.1
+    - _LightSmoothness: 1
+    - _LightThreshold: 0
     - _Metallic: 0
     - _MinAmbient: 0.005
     - _Mode: 0
@@ -110,6 +112,7 @@ Material:
     - _OutlineWidth: 0.5
     - _Parallax: 0.02
     - _RoundFactor: 0
+    - _Rounding: 0
     - _SmoothnessTextureChannel: 0
     - _SpaceyScaling: 5
     - _SpecularHighlights: 1

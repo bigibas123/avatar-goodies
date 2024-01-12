@@ -8,8 +8,6 @@
 #pragma instancing_options assumeuniformscaling
 #pragma multi_compile_fog
 
-#pragma shader_feature_local LTCGI
-#pragma shader_feature_local LTCGI_DIFFUSE_OFF
 
 #pragma shader_feature_local MULTI_TEXTURE
 #pragma shader_feature_local DO_ALPHA_PLS
