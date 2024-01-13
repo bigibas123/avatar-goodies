@@ -242,8 +242,6 @@ namespace b_light
             ,dynamicLightmapUV
 				#endif
 			);
-		const half3 ambientStepped = doStep(ambient);
-
 
 		const float fadedAttenuation = fade_shadow(
 			worldNormal,
@@ -261,21 +259,18 @@ namespace b_light
 		#endif
 		);
 
-		const float lightIntensity = doStep(GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal));
-		#ifdef VERTEXLIGHT_ON
-        const fixed3 vertexStepped = doStep(vertex); // stepping taken care of in vertex functions, (maybe change later to move all shader parameters out of toon function)
-		#endif
+		const float lightIntensity = GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal);
 		const fixed3 diff = lightIntensity * lightColor;
 		const fixed4 total = fixed4(
-			diff
-			+ ambientStepped
+			doStep(diff)
+			+ doStep(ambient)
 			#ifdef VERTEXLIGHT_ON
-            + vertexStepped
+            + doStep(vertex)
 			#endif
-			+ ltcgi
+			+ doStep(ltcgi)
 			, 1.0
 		);
-		return clamp(total, -1.0, 1.0);
+		return clamp(total, -10.0, 1.5);
 	}
 
 	//Unity.cginc Shade4PointLights 
