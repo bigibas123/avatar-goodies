@@ -1116,7 +1116,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.1
+        defaultSliderValue: 0.25
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
