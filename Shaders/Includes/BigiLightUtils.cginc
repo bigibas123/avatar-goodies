@@ -229,27 +229,23 @@ namespace b_light
 		const in float lightthreshold
 	)
 	{
+		#ifdef UNITY_PASS_FORWARDBASE
 		const half3 ambient =
 			GetAmbient(
 				worldPos,
 				worldNormal,
 				minAmbient,
 				ambientOcclusion
-				#ifdef LIGHTMAP_ON
+		#ifdef LIGHTMAP_ON
             ,lightmapUv
-				#endif
-				#ifdef DYNAMICLIGHTMAP_ON
+		#endif
+		#ifdef DYNAMICLIGHTMAP_ON
             ,dynamicLightmapUV
-				#endif
+		#endif
 			);
+		
 
-		const float fadedAttenuation = fade_shadow(
-			worldNormal,
-			#ifdef LIGHTMAP_ON
-            lightmapUv,
-			#endif
-			shadowAttenuation
-		);
+	
 		
 		const half3 ltcgi = GetLTCGI(
 			worldPos,
@@ -258,16 +254,27 @@ namespace b_light
 				,lightmapUv
 		#endif
 		);
+		#endif
 
-		const float lightIntensity = GetWorldLightIntensity(fadedAttenuation,worldLightPos,worldNormal);
+		const float fadedAttenuation = fade_shadow(
+			worldNormal,
+			#ifdef LIGHTMAP_ON
+		lightmapUv,
+			#endif
+			shadowAttenuation
+		);
+
+		const float lightIntensity = GetWorldLightIntensity(fadedAttenuation, worldLightPos, worldNormal);
 		const fixed3 diff = lightIntensity * lightColor;
 		const fixed4 total = fixed4(
 			doStep(diff)
+			#ifdef UNITY_PASS_FORWARDBASE
 			+ doStep(ambient)
 			#ifdef VERTEXLIGHT_ON
             + doStep(vertex)
 			#endif
 			+ doStep(ltcgi)
+			#endif
 			, 1.0
 		);
 		return clamp(total, -10.0, 1.5);

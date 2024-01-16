@@ -2,7 +2,7 @@
 #define BIGI_FORWARD_ADD_PRAGMA
 #include_with_pragmas "./Global.cginc"
 
-#pragma multi_compile_fwdadd
+//#pragma multi_compile_fwdadd
 #pragma multi_compile_fwdadd_fullshadows
 #pragma multi_compile_shadowcollector
 #pragma multi_compile_lightpass
