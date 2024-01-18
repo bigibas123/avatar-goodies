@@ -33,6 +33,7 @@ uniform half _EmissionStrength;
 uniform float _AddLightIntensity;
 uniform float _VertLightIntensity;
 uniform float _MinAmbient;
+uniform float _Transmissivity;
 
 //Effects
 uniform float _MonoChrome;

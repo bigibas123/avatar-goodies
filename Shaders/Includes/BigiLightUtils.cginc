@@ -208,7 +208,7 @@ namespace b_light
 		return acc.diffuse + acc.specular;
 	}
 
-	fixed4 GetLighting(
+	fixed4 GetLighting_real(
 		const in float3 worldLightPos,
 		const in float3 worldPos,
 		const in float3 worldNormal,
@@ -278,6 +278,76 @@ namespace b_light
 			, 1.0
 		);
 		return clamp(total, -10.0, 1.5);
+	}
+
+
+	fixed4 GetLighting(
+		const in float3 worldLightPos,
+		const in float3 worldPos,
+		const in float3 worldNormal,
+		const in half shadowAttenuation,
+		const in half4 lightColor,
+		#ifdef VERTEXLIGHT_ON
+		const in float3 vertex,
+		#endif
+		#ifdef LIGHTMAP_ON
+		const in float2 lightmapUv,
+		#endif
+		#ifdef DYNAMICLIGHTMAP_ON
+		const in float2 dynamicLightmapUV,
+		#endif
+		const in float minAmbient,
+		const in float4 ambientOcclusion,
+		const in float lightsmoothness,
+		const in float lightthreshold,
+		const in float transmissivity
+	)
+	{
+		fixed4 ret = 0;
+		ret += GetLighting_real(
+			worldLightPos,
+			worldPos,
+			worldNormal,
+			shadowAttenuation,
+			lightColor,
+			#ifdef VERTEXLIGHT_ON
+		vertex,
+			#endif
+			#ifdef LIGHTMAP_ON
+		lightmapUv,
+			#endif
+			#ifdef DYNAMICLIGHTMAP_ON
+		dynamicLightmapUV,
+			#endif
+			minAmbient,
+			ambientOcclusion,
+			lightsmoothness,
+			lightthreshold
+		);
+		if (transmissivity > Epsilon)
+		{
+			ret += GetLighting_real(
+				worldLightPos,
+				worldPos,
+				worldNormal * -1,
+				shadowAttenuation,
+				lightColor,
+				#ifdef VERTEXLIGHT_ON
+				0,
+				#endif
+				#ifdef LIGHTMAP_ON
+				lightmapUv,
+				#endif
+				#ifdef DYNAMICLIGHTMAP_ON
+				dynamicLightmapUV,
+				#endif
+				0.0,
+				ambientOcclusion,
+				lightsmoothness,
+				lightthreshold
+			) * transmissivity;
+		}
+		return ret;
 	}
 
 	//Unity.cginc Shade4PointLights 

@@ -17,6 +17,7 @@ Shader "Bigi/AudioLink_frag"
         _AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
         _VertLightIntensity ("Vertex lighting intensity", Range(0.0,2.0)) = 1.0
         _MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
+        _Transmissivity ("Trasmission of light through the material", Range(0.0,1.0)) = 0.000
 
         [Header(Audiolink world theme colors)]
         _AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 1.0
@@ -41,7 +42,7 @@ Shader "Bigi/AudioLink_frag"
 
     }
     
-    CustomEditor "Characters.Common.Editor.Tools.BigiShaderEditor.BigiShaderEditor"
+    CustomEditor "tk.dingemans.bigibas123.BigiShaderEditor.BigiShaderEditor"
     SubShader
     {
         Blend SrcAlpha OneMinusSrcAlpha
@@ -229,8 +230,8 @@ Shader "Bigi/AudioLink_frag"
                 const fixed4 orig_color = GET_TEX_COLOR(GETUV);
 
                 const fixed4 mask = GET_MASK_COLOR(GETUV);
-                o.color = b_effects::apply_effects(GETUV, mask, orig_color, half4(1,1,1,1), i.staticTexturePos);
-                o.color = (o.color * lighting) * _AddLightIntensity;
+                o.color = b_effects::apply_effects(GETUV, mask, orig_color * lighting, 1, i.staticTexturePos);
+                o.color = o.color * _AddLightIntensity;
                 UNITY_APPLY_FOG(i.fogCoord, o.color);
                 return o;
             }

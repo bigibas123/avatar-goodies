@@ -54,7 +54,8 @@ B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
 GET_AO(GETUV), \
 _LightSmoothness, \
-_LightThreshold \
+_LightThreshold, \
+_Transmissivity \
 )
 
 #define BIGI_GETLIGHT_NOAO(outName) UNITY_LIGHT_ATTENUATION(shadowAtt,i,i.worldPos); \
@@ -70,7 +71,8 @@ B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
 1.0, \
 _LightSmoothness, \
-_LightThreshold \
+_LightThreshold, \
+_Transmissivity \
 )
 
 

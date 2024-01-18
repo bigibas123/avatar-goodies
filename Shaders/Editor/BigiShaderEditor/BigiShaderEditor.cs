@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
-namespace Characters.Common.Editor.Tools.BigiShaderEditor
+namespace tk.dingemans.bigibas123.BigiShaderEditor
 {
 	public class BigiShaderEditor : ShaderGUI
 	{
