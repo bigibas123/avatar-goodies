@@ -1,3 +1,5 @@
+#ifndef BIGI_LIGHT_UTILS_H
+#define BIGI_LIGHT_UTILS_H
 #pragma once
 
 #include <UnityCG.cginc>
@@ -137,15 +139,12 @@ namespace b_light
 		#if defined(UNITY_SAMPLE_FULL_SH_PER_PIXEL)
 		ret += max(0, ShadeSH9(half4(worldNormal, 1)));
 		#endif
-		if (ret.r > minAmbient || ret.g > minAmbient || ret.b > minAmbient)
+		if (ret.r <= minAmbient && ret.g <= minAmbient && ret.b <= minAmbient)
 		{
-			return ret * clamp(ambientOcclusion, 0.75, 1.0);
+			ret = max(ret, half3(minAmbient, minAmbient, minAmbient));
 		}
-		else
-		{
-			return max(ret, half3(minAmbient, minAmbient, minAmbient)) * clamp(
-				ambientOcclusion, 0.75, 1.0);
-		}
+		ret *= clamp(ambientOcclusion, 0.75, 1.0);
+		return ret;
 	}
 
 	fixed3 GetWorldLightIntensity(
@@ -409,3 +408,5 @@ namespace b_light
 		return ret;
 	}
 }
+
+#endif
