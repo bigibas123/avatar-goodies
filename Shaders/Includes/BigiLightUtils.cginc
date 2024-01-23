@@ -214,7 +214,8 @@ namespace b_light
 		const in half shadowAttenuation,
 		const in half4 lightColor,
 		#ifdef VERTEXLIGHT_ON
-        const in float3 vertex,
+		const in bool secondPass,
+        in float3 vertex,
 		#endif
 		#ifdef LIGHTMAP_ON
         const in float2 lightmapUv,
@@ -228,6 +229,12 @@ namespace b_light
 		const in float lightthreshold
 	)
 	{
+		#ifdef VERTEXLIGHT_ON
+		if(secondPass)
+		{
+			vertex = 0;
+		}
+		#endif
 		#ifdef UNITY_PASS_FORWARDBASE
 		const half3 ambient =
 			GetAmbient(
@@ -310,6 +317,7 @@ namespace b_light
 			shadowAttenuation,
 			lightColor,
 			#ifdef VERTEXLIGHT_ON
+			false,
 		vertex,
 			#endif
 			#ifdef LIGHTMAP_ON
@@ -332,7 +340,8 @@ namespace b_light
 				shadowAttenuation,
 				lightColor,
 				#ifdef VERTEXLIGHT_ON
-				0,
+				true,
+				vertex,
 				#endif
 				#ifdef LIGHTMAP_ON
 				lightmapUv,
