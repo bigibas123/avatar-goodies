@@ -25,13 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197339142499412263}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2876276419901115392}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 1.2800001, y: -0.11400001, z: 0}
 --- !u!114 &1197339142499412249
 MonoBehaviour:
@@ -46,24 +47,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.704.0
   config:
     features:
-    - id: 0
-    - id: 1
-    - id: 2
+    - rid: 0
+    - rid: 1
+    - rid: 2
   somethingIsBroken: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 1
+        version: 3
         name: Props/Bat
         state:
           actions:
-          - id: 3
+          - rid: 3
+          ResetMePlease2: 0
         saved: 0
         slider: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -84,25 +90,31 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
+          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
+          ResetMePlease2: 0
         transitionStateOut:
           actions: []
+          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
+          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
+          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
-    00000001:
+        invertRestLogic: 0
+    - rid: 1
       type: {class: SetIcon, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 1
@@ -113,14 +125,15 @@ MonoBehaviour:
           guid: b4e9eb3bad5a5044c976265defce2ea5
           id: b4e9eb3bad5a5044c976265defce2ea5|Assets/Characters/Rusk1/Exp-Anim/Clothes/sports_cricket_FILL0_wght400_GRAD0_opsz48.png
           objRef: {fileID: 2800000, guid: b4e9eb3bad5a5044c976265defce2ea5, type: 3}
-    00000002:
+    - rid: 2
       type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
         action:
           actions:
-          - id: 4
-    00000003:
+          - rid: 4
+          ResetMePlease2: 0
+    - rid: 3
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -128,7 +141,7 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 1197339142499412263}
         mode: 2
-    00000004:
+    - rid: 4
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -144,6 +157,7 @@ ParentConstraint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197339142499412263}
   m_Enabled: 1
+  serializedVersion: 2
   m_Weight: 1
   m_TranslationAtRest: {x: 0, y: 0, z: 0}
   m_RotationAtRest: {x: 0, y: 0, z: 0}
@@ -157,7 +171,7 @@ ParentConstraint:
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
-  m_IsContraintActive: 1
+  m_Active: 1
   m_IsLocked: 1
   m_Sources:
   - sourceTransform: {fileID: 0}
@@ -187,12 +201,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774988884124126133}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.0083, z: -0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1197339142499412262}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1297866119014163547
 MeshFilter:
@@ -213,10 +228,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -241,3 +258,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
