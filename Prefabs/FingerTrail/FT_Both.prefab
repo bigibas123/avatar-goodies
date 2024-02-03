@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.682.0
+  vrcfuryVersion: 1.728.0
   config:
     features:
     - rid: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.682.0
+  vrcfuryVersion: 1.728.0
   config:
     features:
     - rid: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 2
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.682.0
+  vrcfuryVersion: 1.728.0
   config:
     features:
     - rid: 0
@@ -520,7 +520,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8024959485866338529}
   m_LocalEulerAnglesHint: {x: -88.98001, y: -45.585003, z: -45.576004}
@@ -665,7 +665,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7013750800068416538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
