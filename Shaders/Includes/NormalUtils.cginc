@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef NORMAL_UTILS_H
+#define NORMAL_UTILS_H
 
 #include <UnityCG.cginc>
 
@@ -13,3 +14,4 @@ namespace b_normalutils
     }
 }
 
+#endif

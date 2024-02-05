@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef BIGI_LIGHTUTILDEFINES_H
+#define BIGI_LIGHTUTILDEFINES_H
 
 #include "./BigiShaderParams.cginc"
 #include "./BigiLightUtils.cginc"
@@ -48,7 +49,7 @@ i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
-B_VERTEX_LIGHT_ARG \
+i.vertexLighting, \
 B_LIGHTMAP_ARG \
 B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
@@ -65,7 +66,7 @@ i.worldPos, \
 i.normal, \
 shadowAtt, \
 _LightColor0, \
-B_VERTEX_LIGHT_ARG \
+i.vertexLighting, \
 B_LIGHTMAP_ARG \
 B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
@@ -88,4 +89,5 @@ const float3 outName = b_light::ProcessVertexLights( \
 #else
 #define BIGI_GETLIGHT_VERTEX(outName) const float3 outName = 0
 
+#endif
 #endif

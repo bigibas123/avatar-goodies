@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BIGI_SHADER_PARAMS
+#define BIGI_SHADER_PARAMS
 
 #include "./BigiShaderTextures.cginc"
 
@@ -63,4 +64,5 @@ struct fragOutput {
 #define Epsilon UNITY_HALF_MIN
 #endif
 
+#endif
 #endif

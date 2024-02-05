@@ -1,6 +1,5 @@
 #ifndef BIGI_LIGHT_UTILS_H
 #define BIGI_LIGHT_UTILS_H
-#pragma once
 
 #include <UnityCG.cginc>
 
@@ -213,10 +212,8 @@ namespace b_light
 		const in float3 worldNormal,
 		const in half shadowAttenuation,
 		const in half4 lightColor,
-		#ifdef VERTEXLIGHT_ON
 		const in bool secondPass,
         in float3 vertex,
-		#endif
 		#ifdef LIGHTMAP_ON
         const in float2 lightmapUv,
 		#endif
@@ -229,12 +226,10 @@ namespace b_light
 		const in float lightthreshold
 	)
 	{
-		#ifdef VERTEXLIGHT_ON
-		if(secondPass)
+		if (secondPass)
 		{
 			vertex = 0;
 		}
-		#endif
 		#ifdef UNITY_PASS_FORWARDBASE
 		const half3 ambient =
 			GetAmbient(
@@ -276,9 +271,7 @@ namespace b_light
 			doStep(diff)
 			#ifdef UNITY_PASS_FORWARDBASE
 			+ doStep(ambient)
-			#ifdef VERTEXLIGHT_ON
             + doStep(vertex)
-			#endif
 			+ doStep(ltcgi)
 			#endif
 			, 1.0
@@ -293,9 +286,7 @@ namespace b_light
 		const in float3 worldNormal,
 		const in half shadowAttenuation,
 		const in half4 lightColor,
-		#ifdef VERTEXLIGHT_ON
 		const in float3 vertex,
-		#endif
 		#ifdef LIGHTMAP_ON
 		const in float2 lightmapUv,
 		#endif
@@ -316,10 +307,8 @@ namespace b_light
 			worldNormal,
 			shadowAttenuation,
 			lightColor,
-			#ifdef VERTEXLIGHT_ON
 			false,
 		vertex,
-			#endif
 			#ifdef LIGHTMAP_ON
 		lightmapUv,
 			#endif
@@ -339,10 +328,8 @@ namespace b_light
 				worldNormal * -1,
 				shadowAttenuation,
 				lightColor,
-				#ifdef VERTEXLIGHT_ON
 				true,
 				vertex,
-				#endif
 				#ifdef LIGHTMAP_ON
 				lightmapUv,
 				#endif

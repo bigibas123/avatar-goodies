@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BIGI_SHADER_TEXTURES_INCL
+#define BIGI_SHADER_TEXTURES_INCL
 #include <HLSLSupport.cginc>
 #ifndef BIGI_SHADER_TEXTURES_H
 #define BIGI_SHADER_TEXTURES_H
@@ -37,5 +38,6 @@ UNITY_DECLARE_TEX2D_NOSAMPLER(_OcclusionMap);
 UNITY_DECLARE_TEX2D_NOSAMPLER(_BumpMap);
 UNITY_DECLARE_TEX2D(_Spacey);
 float4 _Spacey_ST;
+#endif
 #endif
 #endif

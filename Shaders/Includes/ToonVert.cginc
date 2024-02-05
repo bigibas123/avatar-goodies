@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BIGI_TOONVERT_INCL
+#define BIGI_TOONVERT_INCL
 
 
 #include <UnityCG.cginc>
@@ -41,9 +42,7 @@ struct v2f
 	float3 worldPos: TEXCOORD5;
 	float3 tangent : TEXCOORD6; // vect in left direction of texture coordinates
 	float3 bitangent : TEXCOORD7; // vect in up direction of texture coordinates
-	#if defined(VERTEXLIGHT_ON)
     float3 vertexLighting : TEXCOORD8;
-	#endif
 	#if defined(LIGHTMAP_ON) || defined(ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS)
 	float2 lightmapUV : TEXCOORD9;
 	#endif
@@ -112,6 +111,8 @@ v2f bigi_toon_vert(appdata v)
 	#ifdef VERTEXLIGHT_ON
     BIGI_GETLIGHT_VERTEX(vlight);
     o.vertexLighting = vlight;
+	#else
+	o.vertexLighting = 0;
 	#endif
 
 	o.tangent = UnityObjectToWorldDir(v.tangent);
@@ -121,4 +122,5 @@ v2f bigi_toon_vert(appdata v)
 
 	return o;
 }
+#endif
 #endif

@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef BIGI_SOUND_UTILS_DEFINES
+#define BIGI_SOUND_UTILS_DEFINES
 
 #include "./BigiSoundUtils.cginc"
 #include "./BigiShaderParams.cginc"
@@ -15,3 +16,5 @@ set.AL_TC_BassReactive = _AL_TC_BassReactive;
 #define GET_SOUND_COLOR_CALL(setin,lout) const half4 lout = b_sound::GetDMXOrALColor(setin);
 
 #define GET_SOUND_COLOR(outName) GET_SOUND_SETTINGS(bsoundSet); GET_SOUND_COLOR_CALL(bsoundSet,outName);
+
+#endif

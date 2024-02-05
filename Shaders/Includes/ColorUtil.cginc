@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef BIGI_COLORUTIL
+#define BIGI_COLORUTIL
 
 #ifndef Epsilon
 #include <UnityCG.cginc>
@@ -35,3 +36,5 @@ half3 HSVToRGB(in half3 c)
 half3 RGBtoHCV(in half r, in half g, in half b) { return RGBtoHCV(half3(r, g, b)); }
 half3 RGBToHSV(in half r, in half g, in half b) { return RGBToHSV(half3(r, g, b)); }
 half3 HSVToRGB(in half r, in half g, in half b) { return HSVToRGB(half3(r, g, b)); }
+
+#endif

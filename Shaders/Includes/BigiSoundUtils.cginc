@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BIGI_SOUND_UTILS
+#define BIGI_SOUND_UTILS
 
 #ifndef BIGI_DMXAL_INCLUDES
 #define BIGI_DMXAL_INCLUDES
@@ -90,4 +91,4 @@ namespace b_sound
         return AudioLinkGetChronoTime(0, 0);
     }
 }
-
+#endif

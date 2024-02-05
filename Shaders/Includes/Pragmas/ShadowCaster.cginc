@@ -3,10 +3,9 @@
 
 #include_with_pragmas "./Global.cginc"
 
+#pragma skip_variants FOG_LINEAR FOG_EXP FOG_EXP2
+#pragma multi_compile_instancing
 #pragma multi_compile_shadowcaster
-#pragma multi_compile_lightpass
-#pragma multi_compile_fwdbase
-#pragma multi_compile_fwdbasealpha
-#pragma multi_compile_lightpass
+#pragma multi_compile_fog
 
 #endif
