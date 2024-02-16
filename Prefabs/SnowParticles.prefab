@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8690090015459973696}
-  - component: {fileID: 4659591490313639759}
+  - component: {fileID: -6108878899653780255}
+  - component: {fileID: -6056066332889271136}
+  - component: {fileID: 8433752940381725279}
   m_Layer: 0
   m_Name: SnowParticles
   m_TagString: Untagged
@@ -34,7 +36,7 @@ Transform:
   - {fileID: 2240322271230859991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4659591490313639759
+--- !u!114 &-6108878899653780255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,42 +48,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - rid: 8182467096489230542
-    - rid: 8182467096489230548
-    - rid: 8182467096489230543
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
   references:
     version: 2
     RefIds:
-    - rid: 8182467096489230542
+    - rid: 1000
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 5
+        version: 6
         linkMode: 3
         propBone: {fileID: 7606471127619727707}
-        boneOnAvatar: 17
-        bonePathOnAvatar: 
+        linkTo:
+        - useBone: 1
+          bone: 17
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
         keepBoneOffsets2: 2
         removeBoneSuffix: 
-        fallbackBones: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 1
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
         physbonesOnAvatarBones: 0
-    - rid: 8182467096489230543
+        boneOnAvatar: 17
+        bonePathOnAvatar: 
+        fallbackBones: 
+--- !u!114 &-6056066332889271136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425090081724685778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 6
+        linkMode: 4
+        propBone: {fileID: 6211510924246559908}
+        linkTo:
+        - useBone: 1
+          bone: 18
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        keepBoneOffsets2: 2
+        removeBoneSuffix: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
+        boneOnAvatar: 18
+        bonePathOnAvatar: 
+        fallbackBones: 
+--- !u!114 &8433752940381725279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425090081724685778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/SnowCannon
         state:
           actions:
-          - rid: 8182467096489230551
-          - rid: 8182467096489230552
+          - rid: 1001
+          - rid: 1002
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -110,8 +188,8 @@ MonoBehaviour:
         hasTransition: 1
         transitionStateIn:
           actions:
-          - rid: 8182467096489230549
-          - rid: 8182467096489230550
+          - rid: 1003
+          - rid: 1004
           ResetMePlease2: 0
         transitionStateOut:
           actions: []
@@ -132,24 +210,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 1
         invertRestLogic: 0
-    - rid: 8182467096489230548
-      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 5
-        linkMode: 4
-        propBone: {fileID: 6211510924246559908}
-        boneOnAvatar: 18
-        bonePathOnAvatar: 
-        keepBoneOffsets2: 2
-        removeBoneSuffix: 
-        fallbackBones: 
-        skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
-        useOptimizedUpload: 0
-        useBoneMerging: 0
-        keepBoneOffsets: 0
-        physbonesOnAvatarBones: 0
-    - rid: 8182467096489230549
+    - rid: 1001
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -157,7 +218,7 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 6062455628301507504}
         mode: 0
-    - rid: 8182467096489230550
+    - rid: 1002
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -165,7 +226,7 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 7060571381787116681}
         mode: 0
-    - rid: 8182467096489230551
+    - rid: 1003
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -173,7 +234,7 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 6062455628301507504}
         mode: 0
-    - rid: 8182467096489230552
+    - rid: 1004
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1

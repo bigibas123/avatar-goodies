@@ -14,14 +14,6 @@
 #define GET_LIGHT_DIR() _WorldSpaceLightPos0.xyz
 #endif
 
-#ifndef B_VERTEX_LIGHT_ARG
-	#ifdef VERTEXLIGHT_ON
-		#define B_VERTEX_LIGHT_ARG i.vertexLighting,
-	#else
-		#define B_VERTEX_LIGHT_ARG
-	#endif
-#endif
-
 #ifndef B_LIGHTMAP_ARG
 	#ifdef LIGHTMAP_ON
 		#define B_LIGHTMAP_ARG i.lightmapUV,
@@ -50,6 +42,7 @@ i.normal, \
 shadowAtt, \
 _LightColor0, \
 i.vertexLighting, \
+_Reflectivity, \
 B_LIGHTMAP_ARG \
 B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \
@@ -67,6 +60,7 @@ i.normal, \
 shadowAtt, \
 _LightColor0, \
 i.vertexLighting, \
+_Reflectivity, \
 B_LIGHTMAP_ARG \
 B_DYNAMIC_LIGHTMAP_ARG \
 _MinAmbient, \

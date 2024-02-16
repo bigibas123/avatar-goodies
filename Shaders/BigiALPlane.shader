@@ -47,7 +47,8 @@ Shader "Bigi/ALTest" {
 				squarepos.x = i.uv.x % 0.5f * 2.0f;
 				squarepos.y = i.uv.y % 0.5f * 2.0f;
 
-				if (i.uv.x < 0.5 && i.uv.y < 0.5) {
+				if (i.uv.x < 0.5 && i.uv.y < 0.5)
+				{
 					float2 gridlocf = squarepos * float2(18, 6);
 					uint2 gridloc = gridlocf;
 
@@ -55,27 +56,58 @@ Shader "Bigi/ALTest" {
 					float softness = 4. / (pow(length(float2(ddx(softness_uv.x), ddy(softness_uv.y))), 0.5)) - 1.;
 
 					float2 charUV = float2(4, 6) - fmod(gridlocf, 1.0) * float2(4.0, 6.0);
-					if (gridloc.y < 1) {
+					if (gridloc.y < 1)
+					{
 						int character = AudioLinkGetMasterNameChar(gridloc.x);
 
 						o.color = PrintChar(character, charUV, softness, 0);
-					} else if (gridloc.y < 5) {
+					}
+					else if (gridloc.y < 5)
+					{
 						float time = AudioLinkGetChronoTime(0, gridloc.y - 1);
 						o.color = PrintNumberOnLine(time, charUV, softness, gridloc.x, 13, 4, false, 0);
 					}
+					else if (gridloc.y < 6)
+					{
+						float3 time = AudioLinkGetTimeOfDay();
+						if (gridloc.x < 15)
+						{
+							o.color = PrintNumberOnLine(time.x + 1, charUV, softness, gridloc.x, 15, 0, false, 0);
+						}
+						else if (gridloc.x < 16)
+						{
+							o.color = PrintChar(':', charUV, softness, 0);
+						}
+						else if (gridloc.x < 18)
+						{
+							o.color = PrintNumberOnLine(time.y, charUV, softness, gridloc.x, 18, 0, false, 0);
+						}
+					}
 					o.color.a = 1.0;
-				} else if (i.uv.x > 0.5 && i.uv.y < 0.5) {
+				}
+				else if (i.uv.x > 0.5 && i.uv.y < 0.5)
+				{
 					float2 gridlocf = squarepos * float2(4, 32);
 					uint band = gridlocf.x;
 					gridlocf.y = 31.0 - (gridlocf.y);
 					float sound;
-					if (gridlocf.y < 0.0) { sound = 1.0; } else { sound = AudioLinkLerp(ALPASS_AUDIOLINK + (gridlocf.yx)).r; }
+					if (gridlocf.y < 0.0) { sound = 1.0; }
+					else { sound = AudioLinkLerp(ALPASS_AUDIOLINK + (gridlocf.yx)).r; }
 
-					float3 bandColor = band < 1 ? float3(1, 0, 0) : band < 2 ? float3(1, 1, 0) : band < 3 ? float3(0, 1, 0) : float3(0, 0, 1);
+					float3 bandColor = band < 1
+											? float3(1, 0, 0)
+											: band < 2
+											? float3(1, 1, 0)
+											: band < 3
+											? float3(0, 1, 0)
+											: float3(0, 0, 1);
 					o.color = float4(bandColor * sound, 1.0);
-				} else {
+				}
+				else
+				{
 					squarepos.y -= 0.5;
-					half3 al = AudioLinkLerp(ALPASS_AUTOCORRELATOR + float2((abs(1. - i.uv.x * 2.)) * AUDIOLINK_WIDTH, 0)).rgb;
+					half3 al = AudioLinkLerp(
+						ALPASS_AUTOCORRELATOR + float2((abs(1. - i.uv.x * 2.)) * AUDIOLINK_WIDTH, 0)).rgb;
 					o.color = half4(
 						smoothstep(0.02, 0.0, abs(((al.r * 0.25) - squarepos.y))),
 						smoothstep(0.02, 0.0, abs(((al.g * 0.25) - squarepos.y))),
@@ -166,7 +198,8 @@ Shader "Bigi/ALTest" {
 			#include "UnityCG.cginc"
 			uniform int _Invisibility;
 
-			struct v2f {
+			struct v2f
+			{
 				V2F_SHADOW_CASTER;
 				UNITY_VERTEX_INPUT_INSTANCE_ID UNITY_VERTEX_OUTPUT_STEREO
 				//float4 uv : TEXCOORD0;

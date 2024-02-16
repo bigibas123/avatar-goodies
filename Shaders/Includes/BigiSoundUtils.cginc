@@ -14,11 +14,6 @@ namespace b_sound
 
     struct ALSettings {
         float AL_Theme_Weight;
-        float AL_Hue_Weight;
-        
-        half AL_Hue; // HSV Hue for a stable bassreactive color
-
-        half AL_Hue_BassReactive; //bool for bass reactivity of the AL_Hue
         half AL_TC_BassReactive; //bool for bass reactivity of the AL_Theme
     };
 
@@ -65,15 +60,7 @@ namespace b_sound
                 doMixProperly(mix, finalColor.rgb, soundIntensity * conf.AL_Theme_Weight);
             }
         }
-        //HueSlider
-        {
-            if (conf.AL_Hue_Weight > Epsilon) {
-                const float3 color = HSVToRGB(conf.AL_Hue, 1.0, 1.0);
-                const float soundIntensity = clamp(lerp(1.0,bassIntensity,conf.AL_Hue_BassReactive),0.0,1.0);
-                doMixProperly(mix, color, soundIntensity * conf.AL_Hue_Weight);
-            }
-        }
-        return half4(mix.totalColor, mix.totalWeight / (conf.AL_Hue_Weight + conf.AL_Theme_Weight + Epsilon));
+        return half4(mix.totalColor, mix.totalWeight / (conf.AL_Theme_Weight + Epsilon));
     }
 
     half4 GetThemeColor(const uint ccindex)

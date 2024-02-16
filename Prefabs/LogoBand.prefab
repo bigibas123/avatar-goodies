@@ -1,88 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6726587440868228952
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8973435600509765204}
-  - component: {fileID: 3442028561154676635}
-  - component: {fileID: 6886875990288510156}
-  m_Layer: 0
-  m_Name: LP_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 1
---- !u!4 &8973435600509765204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726587440868228952}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7683615337275116598}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &3442028561154676635
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726587440868228952}
-  m_Mesh: {fileID: 5239907867132663878, guid: 819c632423181594987cb4b08afd4ed9, type: 3}
---- !u!23 &6886875990288510156
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726587440868228952}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ee9986462325d914dad0878122368d2a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 7683615337275116598}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 2
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 1
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7055592349295351436
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7683615337275116598}
-  - component: {fileID: 5492813851144746374}
+  - component: {fileID: -1915468845302093969}
+  - component: {fileID: 99533917111007877}
+  - component: {fileID: 68363855449086082}
   m_Layer: 0
   m_Name: LogoBand
   m_TagString: Untagged
@@ -113,10 +32,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 8973435600509765204}
+  - {fileID: 5974271816470908551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5492813851144746374
+--- !u!114 &-1915468845302093969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,26 +47,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.658.0
-  config:
-    features:
-    - rid: 0
-    - rid: 1
-    - rid: 2
+  vrcfuryVersion: 1.748.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/On
         state:
           actions:
-          - rid: 3
+          - rid: 1001
           ResetMePlease2: 0
         saved: 1
         slider: 0
@@ -196,14 +114,46 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 1
+    - rid: 1001
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 7055592349295351436}
+        mode: 0
+--- !u!114 &99533917111007877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055592349295351436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.748.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/Logo
         state:
           actions:
-          - rid: 4
+          - rid: 1001
+          - rid: 6903258707450921395
           ResetMePlease2: 0
         saved: 1
         slider: 1
@@ -252,14 +202,62 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 2
+    - rid: 1001
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 337028461651415316}
+        affectAllMeshes: 0
+        propertyName: _OtherTextureId
+        value: 24
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 6903258707450921395
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 6564477706857464273}
+        affectAllMeshes: 0
+        propertyName: _OtherTextureId
+        value: 24
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &68363855449086082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055592349295351436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.748.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/LogoBand/AL
         state:
           actions:
-          - rid: 5
+          - rid: 1001
+          - rid: 6903258707450921396
           ResetMePlease2: 0
         saved: 1
         slider: 0
@@ -308,35 +306,113 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 3
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 7055592349295351436}
-        mode: 0
-    - rid: 4
+    - rid: 1001
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 6886875990288510156}
-        affectAllMeshes: 0
-        propertyName: _OtherTextureId
-        value: 24
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 5
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 6886875990288510156}
+        renderer: {fileID: 337028461651415316}
         affectAllMeshes: 0
         propertyName: _AL_General_Intensity
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 6903258707450921396
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 6564477706857464273}
+        affectAllMeshes: 0
+        propertyName: _AL_General_Intensity
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &6152578915834341740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7683615337275116598}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+        type: 3}
+      propertyPath: m_Name
+      value: band
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb4f4a6b2f1740d49b723800c4cc5d0a, type: 3}
+--- !u!23 &337028461651415316 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3328436700166686600, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6152578915834341740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5974271816470908551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6152578915834341740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6564477706857464273 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1043687621364607165, guid: bb4f4a6b2f1740d49b723800c4cc5d0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6152578915834341740}
+  m_PrefabAsset: {fileID: 0}

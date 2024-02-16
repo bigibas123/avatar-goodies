@@ -5,7 +5,6 @@
 
 #pragma multi_compile_fwdbase
 #pragma multi_compile_instancing
-#pragma multi_compile_fog
 #pragma multi_compile _ VERTEXLIGHT_ON
 
 

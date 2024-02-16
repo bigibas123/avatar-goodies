@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197339142499412262}
-  - component: {fileID: 1197339142499412249}
   - component: {fileID: 1197339142499412248}
+  - component: {fileID: 5177843504303590467}
+  - component: {fileID: 6637289177520334179}
+  - component: {fileID: 3968877366927272832}
   m_Layer: 0
   m_Name: Bat_holder
   m_TagString: Untagged
@@ -34,7 +36,34 @@ Transform:
   - {fileID: 2876276419901115392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 1.2800001, y: -0.11400001, z: 0}
---- !u!114 &1197339142499412249
+--- !u!1773428102 &1197339142499412248
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197339142499412263}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_RotationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1
+--- !u!114 &5177843504303590467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,26 +75,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.704.0
-  config:
-    features:
-    - rid: 0
-    - rid: 1
-    - rid: 2
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 6903258667174592730
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 6903258667174592730
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Props/Bat
         state:
           actions:
-          - rid: 3
+          - rid: 6903258667174592731
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -114,7 +142,38 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 1
+    - rid: 6903258667174592731
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 1197339142499412263}
+        mode: 2
+--- !u!114 &6637289177520334179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197339142499412263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 6903258667174592732
+  references:
+    version: 2
+    RefIds:
+    - rid: 6903258667174592732
       type: {class: SetIcon, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 1
@@ -125,23 +184,38 @@ MonoBehaviour:
           guid: b4e9eb3bad5a5044c976265defce2ea5
           id: b4e9eb3bad5a5044c976265defce2ea5|Assets/Characters/Rusk1/Exp-Anim/Clothes/sports_cricket_FILL0_wght400_GRAD0_opsz48.png
           objRef: {fileID: 2800000, guid: b4e9eb3bad5a5044c976265defce2ea5, type: 3}
-    - rid: 2
+--- !u!114 &3968877366927272832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197339142499412263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 6903258667174592733
+  references:
+    version: 2
+    RefIds:
+    - rid: 6903258667174592733
       type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
         action:
           actions:
-          - rid: 4
+          - rid: 6903258667174592734
           ResetMePlease2: 0
-    - rid: 3
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 1197339142499412263}
-        mode: 2
-    - rid: 4
+    - rid: 6903258667174592734
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -149,33 +223,6 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 1197339142499412263}
         mode: 1
---- !u!1773428102 &1197339142499412248
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1197339142499412263}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!1 &1774988884124126133
 GameObject:
   m_ObjectHideFlags: 0

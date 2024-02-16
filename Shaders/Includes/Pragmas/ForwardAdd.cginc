@@ -4,7 +4,6 @@
 
 #pragma multi_compile_fwdadd_fullshadows
 #pragma multi_compile_instancing
-#pragma multi_compile_fog
 
 #pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
 #endif

@@ -14,6 +14,7 @@ struct fragOutput {
 #endif
 #ifndef BIGI_DEFAULT_APPDATA
 #define BIGI_DEFAULT_APPDATA
+
 struct appdata
 {
 	float4 vertex : POSITION;
@@ -42,7 +43,7 @@ struct v2f
 	float3 worldPos: TEXCOORD5;
 	float3 tangent : TEXCOORD6; // vect in left direction of texture coordinates
 	float3 bitangent : TEXCOORD7; // vect in up direction of texture coordinates
-    float3 vertexLighting : TEXCOORD8;
+	float3 vertexLighting : TEXCOORD8;
 	#if defined(LIGHTMAP_ON) || defined(ADDITIONAL_MASKED_DIRECTIONAL_SHADOWS)
 	float2 lightmapUV : TEXCOORD9;
 	#endif
@@ -56,6 +57,16 @@ struct v2f
 #ifndef BIGI_V1_TOONVERTSHADER
 #define BIGI_V1_TOONVERTSHADER
 
+float4 round_val(float4 snapToPixel)
+{
+	float gridSize = 1.0 / (_Rounding + Epsilon);
+	float4 vt = snapToPixel;
+	vt.xyz = snapToPixel.xyz / snapToPixel.w;
+	vt.xy = floor(gridSize * vt.xy) / gridSize;
+	vt.xyz *= snapToPixel.w;
+	return vt;
+}
+
 
 v2f bigi_toon_vert(appdata v)
 {
@@ -63,27 +74,25 @@ v2f bigi_toon_vert(appdata v)
 	UNITY_SETUP_INSTANCE_ID(v);
 	UNITY_TRANSFER_INSTANCE_ID(v, o);
 	UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-	o.normal = UnityObjectToWorldNormal(v.normal);
 
-	
+
 	if (_Rounding > Epsilon)
 	{
-		float4 snapToPixel = UnityObjectToClipPos(v.vertex);
-		float gridSize = 1.0 / (_Rounding + Epsilon);
-		float4 vt = snapToPixel;
-		vt.xyz = snapToPixel.xyz / snapToPixel.w;
-		vt.xy = floor(gridSize * vt.xy) / gridSize;
-		vt.xyz *= snapToPixel.w;
-		o.pos = vt;
+		o.pos = UnityObjectToClipPos(round_val(v.vertex));
 		o.uv = (DO_TRANSFORM(v.texcoord)) * o.pos.w;
+		o.normal = UnityObjectToWorldNormal(round_val(float4(v.normal, 1.0)).xyz);
+		o.tangent = UnityObjectToWorldDir(round_val(v.tangent));
 	}
 	else
 	{
 		o.pos = UnityObjectToClipPos(v.vertex);
 		o.uv = (DO_TRANSFORM(v.texcoord));
+		o.normal = UnityObjectToWorldNormal(v.normal);
+		o.tangent = UnityObjectToWorldDir(v.tangent);
 	}
-	
-	
+	const float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
+	o.bitangent = cross(o.normal, o.tangent) * tangentSign;
+
 
 	#if defined(DIRECTIONAL) || defined(POINT) || defined(SPOT) || defined(DIRECTIONAL) || defined(POINT_COOKIE) || defined(DIRECTIONAL_COOKIE)
 	o._ShadowCoord = 0;
@@ -114,12 +123,7 @@ v2f bigi_toon_vert(appdata v)
 	#else
 	o.vertexLighting = 0;
 	#endif
-
-	o.tangent = UnityObjectToWorldDir(v.tangent);
-
-	const float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
-	o.bitangent = cross(o.normal, o.tangent) * tangentSign;
-
+	
 	return o;
 }
 #endif

@@ -137,6 +137,8 @@ namespace b_light
 		#endif
 		#if defined(UNITY_SAMPLE_FULL_SH_PER_PIXEL)
 		ret += max(0, ShadeSH9(half4(worldNormal, 1)));
+		#else
+		ret += max(0, ShadeSH9(half4(worldNormal, 1))); //HACKY Shouldn't do this but I still do!
 		#endif
 		if (ret.r <= minAmbient && ret.g <= minAmbient && ret.b <= minAmbient)
 		{
@@ -213,7 +215,8 @@ namespace b_light
 		const in half shadowAttenuation,
 		const in half4 lightColor,
 		const in bool secondPass,
-        in float3 vertex,
+		in float3 vertex,
+		const in float reflectivity,
 		#ifdef LIGHTMAP_ON
         const in float2 lightmapUv,
 		#endif
@@ -230,7 +233,7 @@ namespace b_light
 		{
 			vertex = 0;
 		}
-		#ifdef UNITY_PASS_FORWARDBASE
+		
 		const half3 ambient =
 			GetAmbient(
 				worldPos,
@@ -244,7 +247,7 @@ namespace b_light
             ,dynamicLightmapUV
 		#endif
 			);
-		
+		#ifdef UNITY_PASS_FORWARDBASE
 
 	
 		
@@ -260,23 +263,32 @@ namespace b_light
 		const float fadedAttenuation = fade_shadow(
 			worldNormal,
 			#ifdef LIGHTMAP_ON
-		lightmapUv,
+			lightmapUv,
 			#endif
 			shadowAttenuation
 		);
+
+		#ifdef UNITY_PASS_FORWARDBASE
+		float3 worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
+		half3 worldReflectionDir = reflect(-worldViewDir, worldNormal);
+		half4 reflectionData = UNITY_SAMPLE_TEXCUBE(unity_SpecCube0, worldReflectionDir);
+		half3 reflectionColor = DecodeHDR(reflectionData, unity_SpecCube0_HDR);
+		reflectionColor *= reflectivity;
+		#endif
 
 		const float lightIntensity = GetWorldLightIntensity(fadedAttenuation, worldLightPos, worldNormal);
 		const fixed3 diff = lightIntensity * lightColor;
 		const fixed4 total = fixed4(
 			doStep(diff)
-			#ifdef UNITY_PASS_FORWARDBASE
 			+ doStep(ambient)
+			#ifdef UNITY_PASS_FORWARDBASE
+			+ doStep(reflectionColor)
             + doStep(vertex)
 			+ doStep(ltcgi)
 			#endif
 			, 1.0
 		);
-		return clamp(total, -10.0, 1.5);
+		return clamp(total, -10.0, 5.0);
 	}
 
 
@@ -287,6 +299,7 @@ namespace b_light
 		const in half shadowAttenuation,
 		const in half4 lightColor,
 		const in float3 vertex,
+		const in float reflectivity,
 		#ifdef LIGHTMAP_ON
 		const in float2 lightmapUv,
 		#endif
@@ -308,7 +321,8 @@ namespace b_light
 			shadowAttenuation,
 			lightColor,
 			false,
-		vertex,
+			vertex,
+			reflectivity,
 			#ifdef LIGHTMAP_ON
 		lightmapUv,
 			#endif
@@ -330,6 +344,7 @@ namespace b_light
 				lightColor,
 				true,
 				vertex,
+				reflectivity,
 				#ifdef LIGHTMAP_ON
 				lightmapUv,
 				#endif

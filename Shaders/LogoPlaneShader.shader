@@ -5,7 +5,7 @@ Shader "Bigi/LogoPlane" {
 		_AL_General_Intensity("Audiolink Intensity",Range(0.0,1.0)) = 0.0
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.01
 	}
-	CustomEditor "Characters.Common.Editor.Tools.BigiShaderEditor.BigiShaderEditor"
+	CustomEditor "tk.dingemans.bigibas123.BigiShaderEditor.BigiShaderEditor"
 	SubShader {
 		Blend SrcAlpha OneMinusSrcAlpha
 		Tags {
@@ -73,8 +73,6 @@ Shader "Bigi/LogoPlane" {
 			const fixed4 normalColor = orig_color * lighting;
 
 			GET_SOUND_SETTINGS(soundSettings)
-
-			soundSettings.AL_Hue_Weight = 0.0;
 
 			soundSettings.AL_Theme_Weight = _AL_General_Intensity;
 			soundSettings.AL_TC_BassReactive = 1.0;
@@ -217,8 +215,7 @@ Shader "Bigi/LogoPlane" {
 				const fixed4 normalColor = orig_color;
 
 				GET_SOUND_SETTINGS(soundSettings)
-
-				soundSettings.AL_Hue_Weight = 0.0;
+				
 
 				soundSettings.AL_Theme_Weight = _AL_General_Intensity;
 				soundSettings.AL_TC_BassReactive = 1.0;
@@ -228,6 +225,7 @@ Shader "Bigi/LogoPlane" {
 
 				metaIN.Albedo = normalColor.rgb * normalColor.a;
 				metaIN.Emission = sound.rgb * sound.a * normalColor.a * 5.0;
+				metaIN.SpecularColor = metaIN.Albedo;
 
 				#if defined(EDITOR_VISUALIZATION)
                     metaIN.VizUV = i.vizUV;

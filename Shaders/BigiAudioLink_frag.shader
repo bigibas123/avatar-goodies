@@ -15,16 +15,12 @@ Shader "Bigi/AudioLink_frag" {
 		_AddLightIntensity ("Additive lighting intensity", Range(0.0,2.0)) = 1.0
 		_VertLightIntensity ("Vertex lighting intensity", Range(0.0,2.0)) = 1.0
 		_MinAmbient ("Minimum ambient intensity", Range(0.0,1.0)) = 0.005
-		_Transmissivity ("Trasmission of light through the material", Range(0.0,1.0)) = 0.000
+		_Transmissivity ("Transmission of light through the material", Range(0.0,1.0)) = 0.000
+		_Reflectivity ("Reflectivity of the material", Range(0.0,1.0)) = 0.000
 
 		[Header(Audiolink world theme colors)]
 		_AL_Theme_Weight("Weight", Range(0.0, 1.0)) = 1.0
 		_AL_TC_BassReactive("Bassreactivity", Range(0.0,1.0)) = 0.75
-
-		[Header(Audiolink Hue slider colors)]
-		_AL_Hue_Weight("Weight", Range(0.0,1.0)) = 0.0
-		_AL_Hue("Hue", Range(0.0,1.0)) = 0.0
-		_AL_Hue_BassReactive("Bassreactiviy", Range(0.0,1.0)) = 0.75
 
 		[Header(Effects)]
 		_MonoChrome("MonoChrome", Range(0.0,1.0)) = 0.0

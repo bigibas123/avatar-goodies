@@ -141,7 +141,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3327102408178516857, guid: d5d01414093d10147beca2e9f9039855,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1277323720558854797}
+      addedObject: {fileID: -7152443920701637299}
+    - targetCorrespondingSourceObject: {fileID: 3327102408178516857, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -252464495501166556}
     - targetCorrespondingSourceObject: {fileID: 6361323134036887930, guid: d5d01414093d10147beca2e9f9039855,
         type: 3}
       insertIndex: -1
@@ -153,7 +157,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 291787275533726779}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1277323720558854797
+--- !u!114 &-7152443920701637299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,16 +169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - rid: 0
-    - rid: 1
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 6903258667174592707
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 6903258667174592707
       type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 4
@@ -242,15 +248,38 @@ MonoBehaviour:
         submenu: 
         removePrefixes: []
         addPrefix: 
-    - rid: 1
+--- !u!114 &-252464495501166556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035598738333202242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 6903258667174592708
+  references:
+    version: 2
+    RefIds:
+    - rid: 6903258667174592708
       type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
         action:
           actions:
-          - rid: 2
+          - rid: 6903258667174592709
           ResetMePlease2: 0
-    - rid: 2
+    - rid: 6903258667174592709
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
@@ -282,11 +311,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
-  config:
-    features:
-    - rid: 0
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 0
   references:
     version: 2
     RefIds:

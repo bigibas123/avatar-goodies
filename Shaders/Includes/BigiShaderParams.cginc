@@ -13,12 +13,9 @@
 
 uniform float _DMX_Weight;
 uniform float _AL_Theme_Weight;
-uniform float _AL_Hue_Weight;
 
 uniform uint _DMX_Group;
-uniform half _AL_Hue;
 
-uniform half _AL_Hue_BassReactive;
 uniform half _AL_TC_BassReactive;
 
 //Both
@@ -35,6 +32,7 @@ uniform float _AddLightIntensity;
 uniform float _VertLightIntensity;
 uniform float _MinAmbient;
 uniform float _Transmissivity;
+uniform float _Reflectivity;
 
 //Effects
 uniform float _MonoChrome;

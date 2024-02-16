@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AL_General_Intensity: 0
+    - _AL_General_Intensity: 1
     - _MinAmbient: 0
     - _OtherTextureId: 0
     m_Colors: []

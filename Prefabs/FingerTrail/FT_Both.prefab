@@ -41,9 +41,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444688383980908565}
-  - component: {fileID: 4940743800736401243}
-  - component: {fileID: 7100793332111573945}
-  - component: {fileID: 365494594162558599}
+  - component: {fileID: 3323936444288559293}
+  - component: {fileID: 8873677318654825765}
+  - component: {fileID: -2299871556098137284}
+  - component: {fileID: 7054302918932731020}
+  - component: {fileID: 4883249342790390617}
+  - component: {fileID: 6163074306456239181}
+  - component: {fileID: -8715956856234285522}
   m_Layer: 0
   m_Name: FT_Both
   m_TagString: Untagged
@@ -68,7 +72,7 @@ Transform:
   - {fileID: 7013750800068416538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4940743800736401243
+--- !u!114 &3323936444288559293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,26 +84,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.728.0
-  config:
-    features:
-    - rid: 0
-    - rid: 1
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Fingertrail/Brightness
         state:
           actions:
-          - rid: 2
-          - rid: 3
+          - rid: 1001
+          - rid: 1002
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -148,15 +152,62 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 1
+    - rid: 1001
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682278392360}
+        affectAllMeshes: 0
+        propertyName: _Brightness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 1002
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 5959438682267134386}
+        affectAllMeshes: 0
+        propertyName: _Brightness
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8873677318654825765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Fingertrail/Hue
         state:
           actions:
-          - rid: 4
-          - rid: 5
+          - rid: 1001
+          - rid: 1002
           ResetMePlease2: 0
         saved: 0
         slider: 1
@@ -205,31 +256,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 2
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682278392360}
-        affectAllMeshes: 0
-        propertyName: _Brightness
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 3
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 5959438682267134386}
-        affectAllMeshes: 0
-        propertyName: _Brightness
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 4
+    - rid: 1001
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -241,7 +268,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 5
+    - rid: 1002
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -253,7 +280,7 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &7100793332111573945
+--- !u!114 &-2299871556098137284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,27 +292,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.728.0
-  config:
-    features:
-    - rid: 0
-    - rid: 1
-    - rid: 2
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 1000
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
         name: Fingertrail/On
         state:
           actions:
-          - rid: 3
-          - rid: 4
+          - rid: 1001
+          - rid: 1002
           ResetMePlease2: 0
         saved: 0
         slider: 0
@@ -334,7 +360,46 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
-    - rid: 1
+    - rid: 1001
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 6045609771331090632}
+        mode: 0
+    - rid: 1002
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 6045609771325465426}
+        mode: 0
+--- !u!114 &7054302918932731020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 4
@@ -403,39 +468,7 @@ MonoBehaviour:
         submenu: 
         removePrefixes: []
         addPrefix: 
-    - rid: 2
-      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        action:
-          actions:
-          - rid: 5
-          ResetMePlease2: 0
-    - rid: 3
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 6045609771331090632}
-        mode: 0
-    - rid: 4
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 6045609771325465426}
-        mode: 0
-    - rid: 5
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        obj: {fileID: 5313632208832924751}
-        mode: 0
---- !u!114 &365494594162558599
+--- !u!114 &4883249342790390617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,51 +480,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.728.0
-  config:
-    features:
-    - rid: 0
-    - rid: 1
+  vrcfuryVersion: 1.745.0
   somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 1000
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 1001
+          ResetMePlease2: 0
+    - rid: 1001
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 5313632208832924751}
+        mode: 0
+--- !u!114 &6163074306456239181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 5
+        version: 6
         linkMode: 3
         propBone: {fileID: 3316082899878869953}
+        linkTo:
+        - useBone: 1
+          bone: 29
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        keepBoneOffsets2: 2
+        removeBoneSuffix: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 0
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
         boneOnAvatar: 29
         bonePathOnAvatar: 
-        keepBoneOffsets2: 2
-        removeBoneSuffix: 
         fallbackBones: 
-        skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 0
-        useOptimizedUpload: 0
-        useBoneMerging: 0
-        keepBoneOffsets: 0
-        physbonesOnAvatarBones: 0
-    - rid: 1
+--- !u!114 &-8715956856234285522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313632208832924751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.745.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 5
+        version: 6
         linkMode: 3
         propBone: {fileID: 9193611560606458347}
-        boneOnAvatar: 44
-        bonePathOnAvatar: 
+        linkTo:
+        - useBone: 1
+          bone: 44
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
         keepBoneOffsets2: 2
         removeBoneSuffix: 
-        fallbackBones: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
         physbonesOnAvatarBones: 0
+        boneOnAvatar: 44
+        bonePathOnAvatar: 
+        fallbackBones: 
 --- !u!1 &6045609771325465426
 GameObject:
   m_ObjectHideFlags: 0
