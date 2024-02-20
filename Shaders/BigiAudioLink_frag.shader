@@ -1,6 +1,7 @@
 Shader "Bigi/AudioLink_frag" {
 	Properties {
 		[MainTexture] _MainTex ("Texture", 2D) = "black" {}
+		[Enum(UnityEngine.Rendering.CullMode)] _Cull("Cull", Float) = 0
 		[Toggle(DO_ALPHA_PLS)] _UsesAlpha("Is transparent", Float) = 1
 		_Spacey ("Spacey Texture", 2D) = "black" {}
 		_EmissionStrength ("Emission strength", Range(0.0,2.0)) = 1.0
@@ -52,7 +53,7 @@ Shader "Bigi/AudioLink_frag" {
 				"LightMode" = "ForwardBase"
 				"LTCGI"="ALWAYS"
 			}
-			Cull Off
+			Cull [_Cull]
 			ZWrite On
 			ZTest LEqual
 			Blend One OneMinusSrcAlpha
@@ -106,7 +107,7 @@ Shader "Bigi/AudioLink_frag" {
 				"RenderType" = "Transparent"
 				"Queue" = "Transparent"
 			}
-			Cull Off
+			Cull [_Cull]
 			ZWrite Off
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
@@ -173,7 +174,7 @@ Shader "Bigi/AudioLink_frag" {
 			Tags {
 				"LightMode" = "ForwardAdd"
 			}
-			Cull Off
+			Cull [_Cull]
 			ZWrite Off
 			ZTest LEqual
 			Blend SrcAlpha One
@@ -253,6 +254,7 @@ Shader "Bigi/AudioLink_frag" {
 			{
 				float4 vertex : POSITION;
 				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID };
 
 			//intermediate
@@ -272,8 +274,9 @@ Shader "Bigi/AudioLink_frag" {
 
 				GET_SOUND_COLOR(scol);
 				o.soundColor = scol;
-
-				float3 offset = v.normal.xyz * (_OutlineWidth * 0.01) * smoothstep(0.0, 0.5, scol.a);
+				
+				float4 heightPos = v.vertex * 10.0 + float4(0.0,15.0,0.0,0.0);
+				float3 offset = v.normal.xyz * (_OutlineWidth * 0.01) * b_sound::GetWaves(length(heightPos));
 
 				o.pos = UnityObjectToClipPos(v.vertex + offset);
 				o.pos = lerp(0.0, o.pos, smoothstep(0.0,Epsilon, _OutlineWidth));
