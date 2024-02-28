@@ -14,6 +14,7 @@
 #pragma shader_feature_local DO_ALPHA_PLS
 #pragma shader_feature_local NORMAL_MAPPING
 
+#pragma multi_compile_instancing
 
 #pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
 

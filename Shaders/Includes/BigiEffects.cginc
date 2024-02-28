@@ -9,7 +9,7 @@
 #define RANDOM_SCALE_4 float4(443.897, 441.423, .0973, 1.6334)
 #endif
 #endif
-#include <Assets/lygia/generative/voronoi.hlsl>
+#include <Packages/lygia/generative/voronoi.hlsl>
 
 
 namespace b_effects

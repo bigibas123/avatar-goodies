@@ -69,80 +69,24 @@ namespace b_light
 		in const float3 worldNormal,
 		in const float minAmbient,
 		in const float4 ambientOcclusion
-		#ifdef LIGHTMAP_ON
-        ,in const float2 lightmapUv
-		#endif
-		#ifdef DYNAMICLIGHTMAP_ON
-        ,in const float2 dynamicLightmapUV
-		#endif
 	)
 	{
+		//Maybe do lightmapping properly sometime, not today though because it broke a bunch of stuff.
 		half3 ret = 0;
-		#ifdef LIGHTPROBE_SH
-		#endif
-		#ifdef LIGHTMAP_ON
-
-        ret += DecodeLightmap(
-                    UNITY_SAMPLE_TEX2D(unity_Lightmap, lightmapUv)
-                    );
-        
-		#if defined(DIRLIGHTMAP_COMBINED)
-        float4 lightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(
-                    unity_LightmapInd, unity_Lightmap, lightmapUv
-                );
-            ret += DecodeDirectionalLightmap(
-                ret, lightmapDirection, worldNormal
-            );
-		#endif
-		#endif
-
-
-		#if defined(DYNAMICLIGHTMAP_ON)
-        float3 dynamicLightDiffuse = DecodeRealtimeLightmap(
-            UNITY_SAMPLE_TEX2D(unity_DynamicLightmap, dynamicLightmapUV)
-        );
-
-		#if defined(DIRLIGHTMAP_COMBINED)
-        float4 dynamicLightmapDirection = UNITY_SAMPLE_TEX2D_SAMPLER(
-            unity_DynamicDirectionality, unity_DynamicLightmap,
-            dynamicLightmapUV
-        );
-        ret += DecodeDirectionalLightmap(
-            dynamicLightDiffuse, dynamicLightmapDirection, worldNormal
-        );
-		#else
-        ret += dynamicLightDiffuse;
-		#endif
-		#endif
-
-
-		#if defined(UNITY_SHOULD_SAMPLE_SH) || (!defined(LIGHTMAP_ON) && !defined(DYNAMICLIGHTMAP_ON))
-		#if UNITY_LIGHT_PROBE_PROXY_VOLUME
-		if (unity_ProbeVolumeParams.x == 1) {
-			half3 probeLight = SHEvalLinearL0L1_SampleProbeVolume(
-						float4(worldNormal, 1), worldPos
-					);
-			probeLight = max(0, probeLight);
-		#if defined(UNITY_COLORSPACE_GAMMA)
-			ret += LinearToGammaSpace(probeLight);
-		#else
-				ret += probeLight;
-		#endif
-		}
-		else {
-			ret +=
-				max(0, ShadeSH9(float4(worldNormal, 1)));
-		}
-		#endif
-		#endif
-		#if defined(UNITY_SAMPLE_FULL_SH_PER_PIXEL)
-		ret += max(0, ShadeSH9(half4(worldNormal, 1)));
-		#else
-		ret += max(0, ShadeSH9(half4(worldNormal, 1))); //HACKY Shouldn't do this but I still do!
-		#endif
+		ret += max(0, ShadeSH9(half4(worldNormal, 1))); 
+		
 		if (ret.r <= minAmbient && ret.g <= minAmbient && ret.b <= minAmbient)
 		{
-			ret = max(ret, half3(minAmbient, minAmbient, minAmbient));
+			if (ret.r < Epsilon && ret.g < Epsilon && ret.b < Epsilon)
+			{
+				ret = max(ret, half3(minAmbient, minAmbient, minAmbient));
+			}
+			else
+			{
+				const half avg = (ret.r + ret.g + ret.b)/3.0;
+				const half mult = avg / minAmbient;
+				ret = ret * half3(ret.r * mult, ret.g * mult, ret.b * mult);
+			}
 		}
 		ret *= clamp(ambientOcclusion, 0.75, 1.0);
 		return ret;
@@ -233,19 +177,13 @@ namespace b_light
 		{
 			vertex = 0;
 		}
-		
+
 		const half3 ambient =
 			GetAmbient(
 				worldPos,
 				worldNormal,
 				minAmbient,
 				ambientOcclusion
-		#ifdef LIGHTMAP_ON
-            ,lightmapUv
-		#endif
-		#ifdef DYNAMICLIGHTMAP_ON
-            ,dynamicLightmapUV
-		#endif
 			);
 		#ifdef UNITY_PASS_FORWARDBASE
 

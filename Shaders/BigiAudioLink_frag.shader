@@ -55,7 +55,7 @@ Shader "Bigi/AudioLink_frag" {
 			}
 			Cull [_Cull]
 			ZWrite On
-			ZTest LEqual
+			ZTest Less
 			Blend One OneMinusSrcAlpha
 			Stencil {
 				Ref 1
@@ -230,7 +230,7 @@ Shader "Bigi/AudioLink_frag" {
 				"RenderType" = "TransparentCutout"
 			}
 			Cull Off
-			ZWrite On
+			ZWrite Off
 			ZTest LEqual
 			AlphaToMask On
 			Stencil {
@@ -275,7 +275,7 @@ Shader "Bigi/AudioLink_frag" {
 				GET_SOUND_COLOR(scol);
 				o.soundColor = scol;
 				
-				float4 heightPos = v.vertex * 10.0 + float4(0.0,15.0,0.0,0.0);
+				float4 heightPos = v.vertex * 10.0 + float4(0.0,7.0,0.0,0.0);
 				float3 offset = v.normal.xyz * (_OutlineWidth * 0.01) * b_sound::GetWaves(length(heightPos));
 
 				o.pos = UnityObjectToClipPos(v.vertex + offset);
@@ -298,86 +298,88 @@ Shader "Bigi/AudioLink_frag" {
 			ENDCG
 
 		}
-		Pass {
-			Name "META"
-			Tags {
-				"LightMode" = "Meta"
-			}
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
 
-			#include_with_pragmas "./Includes/Pragmas/Global.cginc"
-
-			#include "UnityCG.cginc"
-			#include "UnityMetaPass.cginc"
-			#include "./Includes/BigiEffects.cginc"
-			#include "./Includes/BigiShaderTextures.cginc"
-			#include "./Includes/BigiShaderParams.cginc"
-
-			struct v2f
-			{
-				UNITY_POSITION(pos);
-				float2 uv : TEXCOORD0;
-				float2 uvIllum : TEXCOORD1;
-				#ifdef EDITOR_VISUALIZATION
-                float2 vizUV : TEXCOORD2;
-                float4 lightCoord : TEXCOORD3;
-				#endif
-				float4 staticTexturePos : TEXCOORD4;
-				UNITY_VERTEX_OUTPUT_STEREO
-			};
-
-			float4 _Illum_ST;
-
-			v2f vert(appdata_full v)
-			{
-				v2f o;
-				UNITY_SETUP_INSTANCE_ID(v);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-				o.pos = UnityMetaVertexPosition(v.vertex, v.texcoord1.xy, v.texcoord2.xy, unity_LightmapST,
-												unity_DynamicLightmapST);
-				o.uv = DO_TRANSFORM(v.texcoord);
-				o.uvIllum = TRANSFORM_TEX(v.texcoord, _Illum);
-				#ifdef EDITOR_VISUALIZATION
-                    o.vizUV = 0;
-                    o.lightCoord = 0;
-                    if (unity_VisualizationMode == EDITORVIZ_TEXTURE)
-                        o.vizUV = UnityMetaVizUV(unity_EditorViz_UVIndex, v.texcoord.xy, v.texcoord1.xy, v.texcoord2.xy, unity_EditorViz_Texture_ST);
-                    else if (unity_VisualizationMode == EDITORVIZ_SHOWLIGHTMASK)
-                    {
-                        o.vizUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
-                        o.lightCoord = mul(unity_EditorViz_WorldToLight, mul(unity_ObjectToWorld, float4(v.vertex.xyz, 1)));
-                    }
-				#endif
-				o.staticTexturePos = ComputeScreenPos(o.pos);
-				return o;
-			}
-
-			sampler2D _Illum;
-
-			half4 frag(v2f i) : SV_Target
-			{
-				UnityMetaInput metaIN;
-				UNITY_INITIALIZE_OUTPUT(UnityMetaInput, metaIN);
-
-				fixed4 orig_color = GET_TEX_COLOR(GETUV);
-				fixed4 mask_color = GET_MASK_COLOR(GETUV);
-
-
-				metaIN.Albedo = b_effects::apply_effects(GETUV, mask_color, orig_color, half4(1.0, 1.0, 1.0, 1.0),
-																i.staticTexturePos).rgb;
-				metaIN.Emission = b_effects::get_meta_emissions(orig_color, mask_color, _EmissionStrength) * 5.0;
-
-				#if defined(EDITOR_VISUALIZATION)
-                    metaIN.VizUV = i.vizUV;
-                    metaIN.LightCoord = i.lightCoord;
-				#endif
-
-				return UnityMetaFragment(metaIN);
-			}
-			ENDCG
-		}
+//		Pass {
+//			Name "META"
+//			Tags {
+//				"LightMode" = "Meta"
+//			}
+//			CGPROGRAM
+//			#pragma vertex vert
+//			#pragma fragment frag
+//
+//			#include_with_pragmas "./Includes/Pragmas/Global.cginc"
+//
+//			#include "UnityCG.cginc"
+//			#include "UnityMetaPass.cginc"
+//			#include "./Includes/BigiEffects.cginc"
+//			#include "./Includes/BigiShaderTextures.cginc"
+//			#include "./Includes/BigiShaderParams.cginc"
+//
+//			struct v2f
+//			{
+//				UNITY_POSITION(pos);
+//				float2 uv : TEXCOORD0;
+//				float2 uvIllum : TEXCOORD1;
+//				#ifdef EDITOR_VISUALIZATION
+//                float2 vizUV : TEXCOORD2;
+//                float4 lightCoord : TEXCOORD3;
+//				#endif
+//				float4 staticTexturePos : TEXCOORD4;
+//				UNITY_VERTEX_OUTPUT_STEREO
+//			};
+//
+//			float4 _Illum_ST;
+//
+//			v2f vert(appdata_full v)
+//			{
+//				v2f o;
+//				UNITY_SETUP_INSTANCE_ID(v);
+//				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+//				o.pos = UnityMetaVertexPosition(v.vertex, v.texcoord1.xy, v.texcoord2.xy, unity_LightmapST,
+//												unity_DynamicLightmapST);
+//				o.uv = DO_TRANSFORM(v.texcoord);
+//				o.uvIllum = TRANSFORM_TEX(v.texcoord, _Illum);
+//				#ifdef EDITOR_VISUALIZATION
+//                    o.vizUV = 0;
+//                    o.lightCoord = 0;
+//                    if (unity_VisualizationMode == EDITORVIZ_TEXTURE)
+//                        o.vizUV = UnityMetaVizUV(unity_EditorViz_UVIndex, v.texcoord.xy, v.texcoord1.xy, v.texcoord2.xy, unity_EditorViz_Texture_ST);
+//                    else if (unity_VisualizationMode == EDITORVIZ_SHOWLIGHTMASK)
+//                    {
+//                        o.vizUV = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
+//                        o.lightCoord = mul(unity_EditorViz_WorldToLight, mul(unity_ObjectToWorld, float4(v.vertex.xyz, 1)));
+//                    }
+//				#endif
+//				o.staticTexturePos = ComputeScreenPos(o.pos);
+//				return o;
+//			}
+//
+//			sampler2D _Illum;
+//
+//			half4 frag(v2f i) : SV_Target
+//			{
+//				UnityMetaInput metaIN;
+//				UNITY_INITIALIZE_OUTPUT(UnityMetaInput, metaIN);
+//
+//				fixed4 orig_color = GET_TEX_COLOR(GETUV);
+//				fixed4 mask_color = GET_MASK_COLOR(GETUV);
+//
+//
+//				metaIN.Albedo = b_effects::apply_effects(GETUV, mask_color, orig_color, half4(1.0, 1.0, 1.0, 1.0),
+//																i.staticTexturePos).rgb;
+//				metaIN.Emission = b_effects::get_meta_emissions(orig_color, mask_color, _EmissionStrength) * 5.0;
+//				metaIN.SpecularColor = half3(0.0,0.0,0.0); 
+//
+//				#if defined(EDITOR_VISUALIZATION)
+//                    metaIN.VizUV = i.vizUV;
+//                    metaIN.LightCoord = i.lightCoord;
+//				#endif
+//
+//				return UnityMetaFragment(metaIN);
+//			}
+//			ENDCG
+//		}
 
 		//UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 
@@ -386,7 +388,7 @@ Shader "Bigi/AudioLink_frag" {
 			Tags {
 				"LightMode"="ShadowCaster"
 			}
-			Cull Off
+			Cull [_Cull]
 			ZWrite On
 			ZTest LEqual
 			Stencil {

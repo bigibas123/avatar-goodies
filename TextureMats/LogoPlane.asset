@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63232efd02427d04187518f16b9c8aa0, type: 3}
+  m_Script: {fileID: 11500000, guid: b47182575534a284caa2274aad2d79dd, type: 3}
   m_Name: LogoPlane
   m_EditorClassIdentifier: 
   filterMode: 0
