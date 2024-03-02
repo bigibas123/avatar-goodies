@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LogoPlane
-  m_Shader: {fileID: 4800000, guid: e42b0ecd8c0e59c4fbc42dcc42a61b76, type: 3}
+  m_Shader: {fileID: 4800000, guid: ddff9009cc01f0a4cb091fcccaf27c67, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - DO_ALPHA_PLS
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -23,14 +24,51 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTexArray:
         m_Texture: {fileID: 18700000, guid: a460c4af715a36941a70126c1ec07f2d, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Spacey:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AL_General_Intensity: 1
+    - _AL_TC_BassReactive: 0.75
+    - _AL_Theme_Weight: 1
+    - _AddLightIntensity: 1
+    - _Cull: 0
+    - _EmissionStrength: 1
+    - _LightSmoothness: 1
+    - _LightThreshold: 0
     - _MinAmbient: 0
+    - _MonoChrome: 0
+    - _MultiTexture: 0
     - _OtherTextureId: 0
+    - _OutlineWidth: 0
+    - _Reflectivity: 0
+    - _Rounding: 0
+    - _Transmissivity: 0
+    - _UsesAlpha: 1
+    - _UsesNormalMap: 0
+    - _VertLightIntensity: 1
+    - _Voronoi: 0
     m_Colors: []
   m_BuildTextureStacks: []

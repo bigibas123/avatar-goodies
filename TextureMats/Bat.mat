@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bat
-  m_Shader: {fileID: 4800000, guid: 516031fbe3ff3114a8e14d1649519109, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -1632,6 +1632,8 @@ Material:
     - _LightDiffuseness: 0.1
     - _LightDirection_MaskOn: 0
     - _LightDirection_MaskOn2: 0
+    - _LightSmoothness: 1
+    - _LightThreshold: 0
     - _LightingAOMapsUV: 0
     - _LightingAddDetailShadowStrengthA: 0
     - _LightingAddDetailShadowStrengthB: 0
@@ -1983,6 +1985,7 @@ Material:
     - _RedTextureStochastic: 0
     - _RedTextureUV: 0
     - _RefSpecFresnel: 1
+    - _Reflectivity: 0
     - _RenderingReduceClipDistance: 0
     - _RgbAlphaGlobalMaskBlendType: 2
     - _RgbAlphaGlobalMaskChannel: 0
@@ -2120,6 +2123,7 @@ Material:
     - _RimTexUV: 0
     - _RimVRParallaxStrength: 1
     - _RimWidth: 0.8
+    - _Rounding: 0
     - _SDFBlur: 0.1
     - _SDFShadingTextureUV: 0
     - _SSIgnoreCastedShadows: 0
@@ -2220,6 +2224,7 @@ Material:
     - _TextTimeEnabled: 0
     - _TextTimeRotation: 0
     - _TextTimeUV: 0
+    - _Transmissivity: 0
     - _Tweak_HighColorMaskLevel: 0
     - _Tweak_LightDirection_MaskLevel: 0
     - _Tweak_LightDirection_MaskLevel2: 0

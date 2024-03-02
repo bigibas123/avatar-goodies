@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shattered Halo_bigi
-  m_Shader: {fileID: 4800000, guid: 516031fbe3ff3114a8e14d1649519109, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -804,6 +804,8 @@ Material:
     - _Inverse_Clipping: 0
     - _InvertSmoothness: 0
     - _LightDiffuseness: 0
+    - _LightSmoothness: 1
+    - _LightThreshold: 0
     - _LightingAOTexUV: 0
     - _LightingAdditiveDetailStrength: 1
     - _LightingAdditiveEnable: 1
@@ -968,6 +970,7 @@ Material:
     - _RGBNormalBlend: 0
     - _RGBRed_UV: 0
     - _RGBUseVertexColors: 0
+    - _Reflectivity: 0
     - _RgbNormalAScale: 0
     - _RgbNormalAUV: 0
     - _RgbNormalBScale: 0
@@ -1084,6 +1087,7 @@ Material:
     - _TextTimeEnabled: 0
     - _TextTimeRotation: 0
     - _TextTimeUV: 0
+    - _Transmissivity: 0
     - _UVSec: 0
     - _Use_1stAs2nd: 0
     - _Use_1stShadeMapAlpha_As_ShadowMask: 0

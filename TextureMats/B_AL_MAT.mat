@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: B_AL_MAT
-  m_Shader: {fileID: 4800000, guid: 516031fbe3ff3114a8e14d1649519109, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -90,6 +90,7 @@ Material:
     - _AddLightIntensity: 0.1
     - _BumpScale: 1
     - _ColorChordIndex: 0
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DMXGroup: 2
     - _DetailNormalMapScale: 1
@@ -111,12 +112,14 @@ Material:
     - _OtherTextureId: 0
     - _OutlineWidth: 0.5
     - _Parallax: 0.02
+    - _Reflectivity: 0
     - _RoundFactor: 0
     - _Rounding: 0
     - _SmoothnessTextureChannel: 0
     - _SpaceyScaling: 5
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Transmissivity: 0
     - _UVSec: 0
     - _UsesAlpha: 0
     - _UsesNormalMap: 0

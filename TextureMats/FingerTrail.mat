@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FingerTrail
-  m_Shader: {fileID: 4800000, guid: 74bb3c9b2fc42b24fa8e78b1e509c325, type: 3}
+  m_Shader: {fileID: 4800000, guid: a9f9dbaad8d856e4a9089b7c991ca1a4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

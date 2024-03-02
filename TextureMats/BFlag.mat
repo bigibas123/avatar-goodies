@@ -8,10 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BFlag
-  m_Shader: {fileID: 4800000, guid: e42b0ecd8c0e59c4fbc42dcc42a61b76, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - DO_ALPHA_PLS
+  - MULTI_TEXTURE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -909,6 +911,8 @@ Material:
     - _IridescenceTime: 0
     - _Length: 0
     - _LightDiffuseness: 0
+    - _LightSmoothness: 1
+    - _LightThreshold: 0
     - _LightingAOTexUV: 0
     - _LightingAdditiveDetailStrength: 1
     - _LightingAdditiveEnable: 1
@@ -1077,6 +1081,7 @@ Material:
     - _RalivAdvancedHelp: 0
     - _RalivHelp: 0
     - _ReCurvature: 0
+    - _Reflectivity: 0
     - _RgbNormalAScale: 0
     - _RgbNormalAUV: 0
     - _RgbNormalBScale: 0
@@ -1106,6 +1111,7 @@ Material:
     - _RimWidth: 0.8
     - _RimWidthNoiseStrength: 0.1
     - _RimWidthNoiseTextureUV: 0
+    - _Rounding: 0
     - _SSSDistortion: 1
     - _SSSPower: 5
     - _SSSSCale: 0.25
@@ -1204,10 +1210,14 @@ Material:
     - _TextTimeEnabled: 0
     - _TextTimeRotation: 0
     - _TextTimeUV: 0
+    - _Transmissivity: 0
     - _Use_1stAs2nd: 0
     - _Use_1stShadeMapAlpha_As_ShadowMask: 0
     - _Use_2ndShadeMapAlpha_As_ShadowMask: 0
     - _Use_BaseAs1st: 0
+    - _UsesAlpha: 1
+    - _UsesNormalMap: 0
+    - _VertLightIntensity: 1
     - _VertexGlitchFrequency: 0
     - _VertexGlitchStrength: 1
     - _VertexGlitchThreshold: 1
