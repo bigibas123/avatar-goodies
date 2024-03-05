@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BFlag
-  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
+  m_Shader: {fileID: 4800000, guid: ddff9009cc01f0a4cb091fcccaf27c67, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -453,6 +453,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _VRSLShadowMask1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VRSL_LightTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _VertexManipulationHeightMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -491,7 +499,7 @@ Material:
     - _1st_ShadeMapUV: 0
     - _2ndShadeMapMask_Inverse: 0
     - _2nd_ShadeMapUV: 0
-    - _AL_General_Intensity: 0.25
+    - _AL_General_Intensity: 0.5
     - _AL_Hue: 0
     - _AL_Hue_BassReactive: 0
     - _AL_Hue_Weight: 0
@@ -1211,12 +1219,19 @@ Material:
     - _TextTimeRotation: 0
     - _TextTimeUV: 0
     - _Transmissivity: 0
+    - _UseGlobalVRSLLightTexture: 1
+    - _UseVRSLShadowMask1: 0
+    - _UseVRSLShadowMask1AStrength: 1
+    - _UseVRSLShadowMask1BStrength: 1
+    - _UseVRSLShadowMask1GStrength: 1
+    - _UseVRSLShadowMask1RStrength: 1
     - _Use_1stAs2nd: 0
     - _Use_1stShadeMapAlpha_As_ShadowMask: 0
     - _Use_2ndShadeMapAlpha_As_ShadowMask: 0
     - _Use_BaseAs1st: 0
     - _UsesAlpha: 1
     - _UsesNormalMap: 0
+    - _VRSLSpecularFunction: 0
     - _VertLightIntensity: 1
     - _VertexGlitchFrequency: 0
     - _VertexGlitchStrength: 1
@@ -1502,6 +1517,8 @@ Material:
     - shader_master_label: 0
     - shader_presets: 0
     - shader_properties_label_file: 0
+    - useVRSLGI: 1
+    - useVRSLGISpecular: 0
     m_Colors:
     - _1st_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _1st_ShadeMapPan: {r: 0, g: 0, b: 0, a: 0}

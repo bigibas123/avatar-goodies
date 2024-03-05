@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.809.0
   somethingIsBroken: 0
   config:
     features: []
@@ -381,7 +381,6 @@ MonoBehaviour:
           actions:
           - rid: 1001
           - rid: 1002
-          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -405,22 +404,17 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -459,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.809.0
   somethingIsBroken: 0
   config:
     features: []
@@ -476,7 +470,6 @@ MonoBehaviour:
         state:
           actions:
           - rid: 1001
-          ResetMePlease2: 0
         saved: 1
         slider: 0
         sliderInactiveAtZero: 1
@@ -500,22 +493,17 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -550,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.809.0
   somethingIsBroken: 0
   config:
     features: []
@@ -566,7 +554,7 @@ MonoBehaviour:
         action:
           actions:
           - rid: 1001
-          ResetMePlease2: 0
+          - rid: 2775620476952380006
     - rid: 1001
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -575,6 +563,18 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 5985990716632171686}
         mode: 0
+    - rid: 2775620476952380006
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 2602050844633520336}
+        affectAllMeshes: 0
+        propertyName: _OtherTextureId
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &6354558096093070015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8648028469036483768, guid: 830eeba7ecd601d478e2e8d43fa40eb1,
