@@ -150,6 +150,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6390287973324034439}
+    - targetCorrespondingSourceObject: {fileID: 3703868268603371696, guid: d5d01414093d10147beca2e9f9039855,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 853925190345391523}
   m_SourcePrefab: {fileID: 100100000, guid: d5d01414093d10147beca2e9f9039855, type: 3}
 --- !u!1 &3035598738333202242 stripped
 GameObject:
@@ -171,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.822.0
   somethingIsBroken: 0
   config:
     features: []
@@ -193,7 +197,6 @@ MonoBehaviour:
               halo/Halo FX.controller
             objRef: {fileID: 9100000, guid: 79998d7a88d1ef646b394ce928c57b29, type: 2}
           type: 5
-          ResetMePlease2: 0
         menus:
         - menu:
             version: 1
@@ -203,7 +206,6 @@ MonoBehaviour:
               halo/Halo Menu.asset
             objRef: {fileID: 11400000, guid: 2ab635bbae24c744ab713e859edb148a, type: 2}
           prefix: Props
-          ResetMePlease2: 0
         prms:
         - parameters:
             version: 1
@@ -212,20 +214,17 @@ MonoBehaviour:
             id: 2c9c13c7c81550041b86c8bfd51f0d50|Assets/ThatFatKidsStuff/Shareable
               halo/Halo Parameters.asset
             objRef: {fileID: 11400000, guid: 2c9c13c7c81550041b86c8bfd51f0d50, type: 2}
-          ResetMePlease2: 0
         smoothedPrms: []
         globalParams: []
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
-        useSecurityForToggle: 0
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
         rewriteBindings:
         - from: Shareable halo system/
           to: 
           delete: 0
-          ResetMePlease2: 0
         allowMissingAssets: 0
         controller:
           version: 1
@@ -248,6 +247,7 @@ MonoBehaviour:
         submenu: 
         removePrefixes: []
         addPrefix: 
+        useSecurityForToggle: 0
 --- !u!114 &-252464495501166556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.822.0
   somethingIsBroken: 0
   config:
     features: []
@@ -278,7 +278,6 @@ MonoBehaviour:
         action:
           actions:
           - rid: 6903258667174592709
-          ResetMePlease2: 0
     - rid: 6903258667174592709
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -287,6 +286,58 @@ MonoBehaviour:
         androidActive: 0
         obj: {fileID: 4731783234094539270}
         mode: 1
+--- !u!1 &3993121030915441803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3703868268603371696, guid: d5d01414093d10147beca2e9f9039855,
+    type: 3}
+  m_PrefabInstance: {fileID: 291787275533726779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &853925190345391523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993121030915441803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.822.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2775620994729247208
+  references:
+    version: 2
+    RefIds:
+    - rid: 2775620994729247208
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 6
+        linkMode: 4
+        propBone: {fileID: 3993121030915441803}
+        linkTo:
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        keepBoneOffsets2: 0
+        removeBoneSuffix: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
+        boneOnAvatar: 0
+        bonePathOnAvatar: 
+        fallbackBones: 
 --- !u!1 &4731783234094539270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5018708950110967357, guid: d5d01414093d10147beca2e9f9039855,
@@ -313,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.822.0
   somethingIsBroken: 0
   config:
     features: []
