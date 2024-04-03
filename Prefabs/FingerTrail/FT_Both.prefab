@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -104,9 +104,8 @@ MonoBehaviour:
           actions:
           - rid: 1001
           - rid: 1002
-          ResetMePlease2: 0
         saved: 0
-        slider: 0
+        slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
         defaultOn: 0
@@ -128,26 +127,21 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0.5
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -190,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -208,7 +202,6 @@ MonoBehaviour:
           actions:
           - rid: 1001
           - rid: 1002
-          ResetMePlease2: 0
         saved: 0
         slider: 1
         sliderInactiveAtZero: 0
@@ -232,22 +225,17 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -294,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -312,7 +300,6 @@ MonoBehaviour:
           actions:
           - rid: 1001
           - rid: 1002
-          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 1
@@ -336,22 +323,17 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -390,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -411,7 +393,6 @@ MonoBehaviour:
             id: f3765b85e9dac0d4d81651788bf4b413|Assets/Characters/Common/Prefabs/FingerTrail/FT_Both.controller
             objRef: {fileID: 9100000, guid: f3765b85e9dac0d4d81651788bf4b413, type: 2}
           type: 5
-          ResetMePlease2: 0
         menus:
         - menu:
             version: 1
@@ -420,7 +401,6 @@ MonoBehaviour:
             id: 1f37a060fb33cf843b08ed7b932256cd|Assets/Characters/Common/Prefabs/FingerTrail/FT_Menu.asset
             objRef: {fileID: 11400000, guid: 1f37a060fb33cf843b08ed7b932256cd, type: 2}
           prefix: Fingertrail
-          ResetMePlease2: 0
         prms:
         - parameters:
             version: 1
@@ -428,24 +408,20 @@ MonoBehaviour:
             guid: 078b2a65d10f59943a1aa23196ed02ed
             id: 078b2a65d10f59943a1aa23196ed02ed|Assets/Characters/Common/Prefabs/FingerTrail/FT_Params.asset
             objRef: {fileID: 11400000, guid: 078b2a65d10f59943a1aa23196ed02ed, type: 2}
-          ResetMePlease2: 0
         smoothedPrms: []
         globalParams: []
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
-        useSecurityForToggle: 0
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
         rewriteBindings:
         - from: FingerTrail_R
           to: FingerTrail_R_Parent/FingerTrail_R
           delete: 0
-          ResetMePlease2: 0
         - from: FingerTrail_L
           to: FingerTrail_L_Parent/FingerTrail_L
           delete: 0
-          ResetMePlease2: 0
         allowMissingAssets: 0
         controller:
           version: 1
@@ -468,6 +444,7 @@ MonoBehaviour:
         submenu: 
         removePrefixes: []
         addPrefix: 
+        useSecurityForToggle: 0
 --- !u!114 &4883249342790390617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -498,7 +475,6 @@ MonoBehaviour:
         action:
           actions:
           - rid: 1001
-          ResetMePlease2: 0
     - rid: 1001
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -521,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
@@ -567,7 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  vrcfuryVersion: 1.829.0
   somethingIsBroken: 0
   config:
     features: []
