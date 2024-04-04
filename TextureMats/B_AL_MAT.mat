@@ -55,13 +55,17 @@ Material:
     - _EmissionStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
-    - _MinAmbient: 0.005
+    - _MinAmbient: 0
     - _MonoChrome: 0
     - _MultiTexture: 0
+    - _OcclusionStrength: 0
     - _OtherTextureId: 0
     - _OutlineWidth: 0.5
     - _Reflectivity: 0
     - _Rounding: 0
+    - _Smoothness: 0
+    - _SpecularIntensity: 0
+    - _Specularness: 0
     - _Transmissivity: 0
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
