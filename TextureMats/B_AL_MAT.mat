@@ -51,7 +51,6 @@ Material:
     m_Floats:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
-    - _Cull: 0
     - _EmissionStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
@@ -61,14 +60,13 @@ Material:
     - _OcclusionStrength: 0
     - _OtherTextureId: 0
     - _OutlineWidth: 0.5
-    - _Reflectivity: 0
     - _Rounding: 0
     - _Smoothness: 0
     - _SpecularIntensity: 0
-    - _Specularness: 0
     - _Transmissivity: 0
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
+    - _VRSLGIStrength: 0
     - _Voronoi: 0
     m_Colors: []
   m_BuildTextureStacks: []
