@@ -518,7 +518,7 @@ MonoBehaviour:
         state:
           actions:
           - rid: 2848584089839076028
-        saved: 0
+        saved: 1
         slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
         state:
           actions:
           - rid: 2848584044941148531
-        saved: 0
+        saved: 1
         slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
         state:
           actions:
           - rid: 2848584044941148533
-        saved: 0
+        saved: 1
         slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
@@ -1288,7 +1288,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.5
+        defaultSliderValue: 1
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
