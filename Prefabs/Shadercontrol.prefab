@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -458,13 +458,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 743608667316002351}
-  - component: {fileID: 2380166107913755748}
   - component: {fileID: 5183566291918366601}
   - component: {fileID: 5765054413947069768}
   - component: {fileID: 1750894472688763307}
-  - component: {fileID: 7691818626009248036}
-  - component: {fileID: 2404100551512478313}
-  - component: {fileID: 5600305970426108569}
   m_Layer: 0
   m_Name: Lighting_Base
   m_TagString: Untagged
@@ -484,94 +480,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 8348796787827457997}
+  - {fileID: 868293860158437107}
   m_Father: {fileID: 778328994621869660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2380166107913755748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545355027768267030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 2848584089839076027
-  references:
-    version: 2
-    RefIds:
-    - rid: 2848584089839076027
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/VRSL-GI-Strenght
-        state:
-          actions:
-          - rid: 2848584089839076028
-        saved: 1
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0.25
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 2848584089839076028
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _VRSLGIStrength
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &5183566291918366601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -671,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -756,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -827,13 +740,47 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &7691818626009248036
+--- !u!1 &2314710030553821843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 868293860158437107}
+  - component: {fileID: 2295122432552768563}
+  - component: {fileID: 3050623844954677917}
+  - component: {fileID: 2434541842384897521}
+  m_Layer: 0
+  m_Name: Specular
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &868293860158437107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314710030553821843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 743608667316002351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2295122432552768563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545355027768267030}
+  m_GameObject: {fileID: 2314710030553821843}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -841,92 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 2848584044941148543
-  references:
-    version: 2
-    RefIds:
-    - rid: 2848584044941148543
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/Lighting/Mapping/Specular
-        state:
-          actions:
-          - rid: 2848584044941148544
-        saved: 0
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 2848584044941148544
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        renderer: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _SpecularIntensity
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &2404100551512478313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545355027768267030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -997,13 +859,13 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &5600305970426108569
+--- !u!114 &3050623844954677917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545355027768267030}
+  m_GameObject: {fileID: 2314710030553821843}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -1011,7 +873,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2848584044941148543
+  references:
+    version: 2
+    RefIds:
+    - rid: 2848584044941148543
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/Mapping/Specular
+        state:
+          actions:
+          - rid: 2848584044941148544
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 2848584044941148544
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _SpecularIntensity
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2434541842384897521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314710030553821843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1171,7 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1184,6 +1131,209 @@ MonoBehaviour:
       type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
+--- !u!1 &3369371144689356525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8348796787827457997}
+  - component: {fileID: 8482631414471649172}
+  - component: {fileID: 2988524012725028043}
+  m_Layer: 0
+  m_Name: 3rdParty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8348796787827457997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369371144689356525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 743608667316002351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8482631414471649172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369371144689356525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.833.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2848584089839076027
+  references:
+    version: 2
+    RefIds:
+    - rid: 2848584089839076027
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/VRSL-GI-Strenght
+        state:
+          actions:
+          - rid: 2848584089839076028
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0.25
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 2848584089839076028
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _VRSLGIStrength
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2988524012725028043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369371144689356525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.6f1
+  vrcfuryVersion: 1.833.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2848584089839076027
+  references:
+    version: 2
+    RefIds:
+    - rid: 2848584089839076027
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/Lighting/LTCGI-Strength
+        state:
+          actions:
+          - rid: 2848584089839076028
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0.5
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 2848584089839076028
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LTCGIStrength
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7506841291436503709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1319,7 +1469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1404,7 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1489,7 +1639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1574,7 +1724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.830.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []

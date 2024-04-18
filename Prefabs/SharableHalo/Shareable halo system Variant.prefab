@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.822.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -205,7 +205,7 @@ MonoBehaviour:
             id: 2ab635bbae24c744ab713e859edb148a|Assets/ThatFatKidsStuff/Shareable
               halo/Halo Menu.asset
             objRef: {fileID: 11400000, guid: 2ab635bbae24c744ab713e859edb148a, type: 2}
-          prefix: Props
+          prefix: Props/HaloSys
         prms:
         - parameters:
             version: 1
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.822.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.822.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.822.0
+  vrcfuryVersion: 1.833.0
   somethingIsBroken: 0
   config:
     features: []

@@ -11,9 +11,10 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - LTCGI_ENABLED
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
@@ -36,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 47c89f15a293b0c40a6ced84c20cb1cd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -52,6 +53,8 @@ Material:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
     - _EmissionStrength: 1
+    - _EnableLTCGI: 1
+    - _LTCGIStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
     - _MinAmbient: 0
