@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - LTCGI_ENABLED
   m_InvalidKeywords:
   - POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
   - POI_LIGHT_DATA_ADDITIVE_ENABLE
@@ -60,6 +61,8 @@ Material:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
     - _EmissionStrength: 1
+    - _EnableLTCGI: 1
+    - _LTCGIStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
     - _MinAmbient: 0.005
