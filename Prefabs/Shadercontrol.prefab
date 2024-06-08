@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5242357965342433618}
   - component: {fileID: 5022401394018403210}
   - component: {fileID: 949711680038423355}
+  - component: {fileID: 6014874657946983790}
   m_Layer: 0
   m_Name: AudioLink
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -289,6 +290,74 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6014874657946983790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065393302309926653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113277
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113277
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113278
+          - rid: 516245032536113279
+          - rid: 516245032536113280
+    - rid: 516245032536113278
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_Theme_Weight
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113279
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _OutlineWidth
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113280
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_TC_BassReactive
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1276534898185953680
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778328994621869660}
   - component: {fileID: 3727054894932098732}
+  - component: {fileID: 3943274770900914812}
   m_Layer: 0
   m_Name: Shadercontrol
   m_TagString: Untagged
@@ -339,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -410,6 +480,48 @@ MonoBehaviour:
         value: 17
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &3943274770900914812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276534898185953680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113264
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113264
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113265
+    - rid: 516245032536113265
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _OtherTextureId
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1545355027768267030
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +534,7 @@ GameObject:
   - component: {fileID: 5183566291918366601}
   - component: {fileID: 5765054413947069768}
   - component: {fileID: 1750894472688763307}
+  - component: {fileID: 6963592292426603638}
   m_Layer: 0
   m_Name: Lighting_Base
   m_TagString: Untagged
@@ -460,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -545,7 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -630,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -684,7 +797,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.005
+        defaultSliderValue: 0.2
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -701,6 +814,74 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6963592292426603638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545355027768267030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113266
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113266
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113267
+          - rid: 516245032536113268
+          - rid: 516245032536113269
+    - rid: 516245032536113267
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightSmoothness
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113268
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LightThreshold
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113269
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _MinAmbient
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2314710030553821843
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +894,7 @@ GameObject:
   - component: {fileID: 2295122432552768563}
   - component: {fileID: 3050623844954677917}
   - component: {fileID: 2434541842384897521}
+  - component: {fileID: 4647736931116625815}
   m_Layer: 0
   m_Name: Specular
   m_TagString: Untagged
@@ -749,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -834,7 +1016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -919,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -988,6 +1170,74 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
         value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &4647736931116625815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314710030553821843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113273
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113273
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113274
+          - rid: 516245032536113275
+          - rid: 516245032536113276
+    - rid: 516245032536113274
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _Smoothness
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113275
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _SpecularIntensity
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113276
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _OcclusionStrength
+        value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3128672897895715690
@@ -1079,7 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1103,6 +1353,7 @@ GameObject:
   - component: {fileID: 8348796787827457997}
   - component: {fileID: 8482631414471649172}
   - component: {fileID: 2988524012725028043}
+  - component: {fileID: 357084357269941269}
   m_Layer: 0
   m_Name: 3rdParty
   m_TagString: Untagged
@@ -1139,7 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1224,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1295,6 +1546,61 @@ MonoBehaviour:
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &357084357269941269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369371144689356525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113270
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113270
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113271
+          - rid: 516245032536113272
+    - rid: 516245032536113271
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _VRSLGIStrength
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113272
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _LTCGIStrength
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7506841291436503709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1615,7 @@ GameObject:
   - component: {fileID: 7200933879261281362}
   - component: {fileID: 8777263355426895253}
   - component: {fileID: 389486326308475922}
+  - component: {fileID: 2942847178441234568}
   m_Layer: 0
   m_Name: Effects
   m_TagString: Untagged
@@ -1345,7 +1652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1430,7 +1737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1515,7 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1600,7 +1907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1685,7 +1992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.920.0
+  vrcfuryVersion: 1.941.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1754,5 +2061,99 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _Rounding
         value: 0.05
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2942847178441234568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506841291436503709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.941.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113917
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113917
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113918
+          - rid: 516245032536113919
+          - rid: 516245032536113920
+          - rid: 516245032536113921
+          - rid: 516245032536113922
+    - rid: 516245032536113918
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _EmissionStrength
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113919
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _Transmissivity
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113920
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _MonoChrome
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113921
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _Voronoi
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113922
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        renderer: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _Rounding
+        value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}

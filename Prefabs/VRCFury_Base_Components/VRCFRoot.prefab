@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -217,7 +217,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3613120668839508531}
-  - component: {fileID: 3228611087748713293}
   - component: {fileID: 104489314770149746}
   - component: {fileID: 4112279314350096014}
   m_Layer: 0
@@ -242,34 +241,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6014019912849638548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3228611087748713293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6313507421659298800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 6903258687774130723
-  references:
-    version: 2
-    RefIds:
-    - rid: 6903258687774130723
-      type: {class: BlendshapeOptimizer, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        keepMmdShapes: 0
 --- !u!114 &104489314770149746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -311,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
@@ -406,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.906.0
+  vrcfuryVersion: 1.942.0
   somethingIsBroken: 0
   config:
     features: []
