@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3800454069532858042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8479653049806574529}
+  - component: {fileID: 5514091983093995444}
+  - component: {fileID: 5011249481341586905}
+  m_Layer: 0
+  m_Name: Dances
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8479653049806574529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800454069532858042}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5514091983093995444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800454069532858042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.942.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2775620481669398552
+  references:
+    version: 2
+    RefIds:
+    - rid: 2775620481669398552
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: 
+        state:
+          actions:
+          - rid: 2775620481669398553
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 1
+        globalParam: AFK
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 2775620481669398553
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 641677ed7bac4e940af6353fbf0d66d7|Assets/Phone/Texting afk (wide).anim
+          objRef: {fileID: 7400000, guid: 641677ed7bac4e940af6353fbf0d66d7, type: 2}
+--- !u!114 &5011249481341586905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800454069532858042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.942.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245144109580332
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245144109580332
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Dances
+        state:
+          actions:
+          - rid: 516245144109580363
+        saved: 0
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 516245144109580363
+      type: {class: FlipBookBuilderAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        states: []
+        pages:
+        - state:
+            actions: []
+        - state:
+            actions:
+            - rid: 516245144109580367
+        - state:
+            actions:
+            - rid: 516245144109580366
+        - state:
+            actions:
+            - rid: 516245144109580365
+        - state:
+            actions:
+            - rid: 516245144109580364
+        - state:
+            actions:
+            - rid: 516245144109580368
+        - state:
+            actions:
+            - rid: 516245144109580469
+    - rid: 516245144109580364
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 6d2a40f28fe3ad948b44b23426bf21b3|Assets/OBORODUKI_KOBO/Meme_Animation/Unwelcome
+            School_dance.anim
+          objRef: {fileID: 7400000, guid: 6d2a40f28fe3ad948b44b23426bf21b3, type: 2}
+    - rid: 516245144109580365
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 7da9829f24a73784a95a5b4b46950ac6|Assets/OBORODUKI_KOBO/Meme_Animation/kyofu_allback_step.anim
+          objRef: {fileID: 7400000, guid: 7da9829f24a73784a95a5b4b46950ac6, type: 2}
+    - rid: 516245144109580366
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 1b5d38742229cc4409b8a57dbc4f2159|Assets/VRSuya/INTERNET_YAMERO/VRSuya_INTERNET_YAMERO.anim
+          objRef: {fileID: 7400000, guid: 1b5d38742229cc4409b8a57dbc4f2159, type: 2}
+    - rid: 516245144109580367
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 373e3cb7bfc683945a743c69fd4a6ec3|Assets/Lethal Company/3.0/Game Animations/Quota
+            Dance.anim
+          objRef: {fileID: 7400000, guid: 373e3cb7bfc683945a743c69fd4a6ec3, type: 2}
+    - rid: 516245144109580368
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 41cb233d355fe5c43b079d85df664e4f|Assets/VRSuya/Loli_Kami_Requiem/VRSuya_Loli_Kami_Requiem.anim
+          objRef: {fileID: 7400000, guid: 41cb233d355fe5c43b079d85df664e4f, type: 2}
+    - rid: 516245144109580469
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: c3d2a0ab51f5aad4fbd4ad9f7048fbf5|Assets/Lethal Company/3.0/Game Animations/Run.anim
+          objRef: {fileID: 7400000, guid: c3d2a0ab51f5aad4fbd4ad9f7048fbf5, type: 2}
