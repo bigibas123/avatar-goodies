@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 3e104616d2d24254af1688dea9afa0af, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - ALPHA_MUL
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -29,6 +30,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha_Multiply: 1
     - _TextureId: 0
     m_Colors: []
   m_BuildTextureStacks: []
