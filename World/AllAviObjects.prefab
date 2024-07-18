@@ -3215,11 +3215,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1189626709141234081, guid: 1b621ce8b1af413468e54ac4ec1ee76d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7978492838865222794}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b621ce8b1af413468e54ac4ec1ee76d, type: 3}
 --- !u!4 &8220295122117686858 stripped
 Transform:
@@ -3227,45 +3223,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7628514205950086481}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8745861218574740720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1189626709141234081, guid: 1b621ce8b1af413468e54ac4ec1ee76d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7628514205950086481}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7978492838865222794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745861218574740720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c681e963dec01f440b1d30de40beab66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: {r: 0.9526798, g: 0.41037735, b: 1, a: 1}
-  DoubleSided: 0
-  Dynamic: 0
-  TextureIndex: 0
-  Diffuse: 1
-  Specular: 1
-  DiffuseFromLm: 0
-  diffMode: 1
-  LightmapChannel: 0
-  LightmapIntensity: 1
-  ColorMode: 0
-  SingleUV: {x: 0, y: 0}
-  AudioLinkBand: 0
-  FlipUV: 0
-  RendererMode: 3
-  RendererList: []
-  RendererDistance: 15
-  Cylinder: 1
-  CylinderBase: {x: -0.5, y: 0.53, z: 0}
-  CylinderHeight: 0.15
-  CylinderRadius: 0.6
-  CylinderSize: 1.5707964
-  CylinderAngle: 6.28
-  AffectAvatars: 1
