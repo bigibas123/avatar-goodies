@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.942.0
+  vrcfuryVersion: 1.991.0
   somethingIsBroken: 0
   config:
     features: []
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.942.0
+  vrcfuryVersion: 1.991.0
   somethingIsBroken: 0
   config:
     features: []
@@ -151,13 +151,13 @@ MonoBehaviour:
           - rid: 516245144109580363
         saved: 0
         slider: 1
-        sliderInactiveAtZero: 0
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
         exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
+        enableExclusiveTag: 1
+        exclusiveTag: dance
         resetPhysbones: []
         hasExitTime: 0
         enableIcon: 0
@@ -199,8 +199,6 @@ MonoBehaviour:
         androidActive: 0
         states: []
         pages:
-        - state:
-            actions: []
         - state:
             actions:
             - rid: 516245144109580367
