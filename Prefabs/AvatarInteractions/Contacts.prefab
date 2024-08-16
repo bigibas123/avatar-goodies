@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &474888589293756011
+--- !u!1 &2252313759944097548
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6590200030270774462}
-  - component: {fileID: 6241364207522142012}
-  - component: {fileID: 7798204698579178967}
+  - component: {fileID: 4801945283997105625}
+  - component: {fileID: 5713713759105414747}
+  - component: {fileID: 8497797797281838256}
   m_Layer: 0
   m_Name: Slapcontact
   m_TagString: Untagged
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6590200030270774462
+--- !u!4 &4801945283997105625
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474888589293756011}
+  m_GameObject: {fileID: 2252313759944097548}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.6808083, y: 0.26397046, z: -0.6302369, w: -0.26385823}
+  m_LocalPosition: {x: -0.43014988, y: 0.9041926, z: 0.010293245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1196337129929525722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6241364207522142012
+--- !u!114 &5713713759105414747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474888589293756011}
+  m_GameObject: {fileID: 2252313759944097548}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -802764141, guid: 80f1b8067b0760e4bb45023bc2e9de66, type: 3}
@@ -59,13 +59,13 @@ MonoBehaviour:
   - icecheese
   - ice_cheese
   - iceman_cheese
---- !u!114 &7798204698579178967
+--- !u!114 &8497797797281838256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474888589293756011}
+  m_GameObject: {fileID: 2252313759944097548}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1002.0
   somethingIsBroken: 0
   config:
     features: []
@@ -87,7 +87,7 @@ MonoBehaviour:
       data:
         version: 6
         linkMode: 1
-        propBone: {fileID: 474888589293756011}
+        propBone: {fileID: 2252313759944097548}
         linkTo:
         - useBone: 1
           bone: 30
@@ -105,3 +105,35 @@ MonoBehaviour:
         boneOnAvatar: 0
         bonePathOnAvatar: 
         fallbackBones: 
+--- !u!1 &4494720218527958864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1196337129929525722}
+  m_Layer: 0
+  m_Name: Contacts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1196337129929525722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494720218527958864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 4801945283997105625}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
