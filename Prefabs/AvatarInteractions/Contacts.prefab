@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4801945283997105625}
   - component: {fileID: 5713713759105414747}
   - component: {fileID: 8497797797281838256}
+  - component: {fileID: 3964626622813898248}
   m_Layer: 0
   m_Name: Slapcontact
   m_TagString: Untagged
@@ -105,6 +106,87 @@ MonoBehaviour:
         boneOnAvatar: 0
         bonePathOnAvatar: 
         fallbackBones: 
+--- !u!114 &3964626622813898248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2252313759944097548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1002.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421405018882215
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421405018882215
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/Contacts/Cheese
+        state:
+          actions:
+          - rid: 3382421405018882216
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 1
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 1
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 1e26764c407923643acc3a52b2a8813a|Assets/GoGo/GoLoco/Icons/IconVRC/Cheese.png
+          objRef: {fileID: 2800000, guid: 1e26764c407923643acc3a52b2a8813a, type: 3}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 3382421405018882216
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 2252313759944097548}
+        mode: 0
 --- !u!1 &4494720218527958864
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,5 +217,387 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4801945283997105625}
+  - {fileID: 6198026969474134242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7473440452768320585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6198026969474134242}
+  - component: {fileID: 9177964868446817741}
+  - component: {fileID: 614533768941399590}
+  - component: {fileID: 8258522807906297543}
+  - component: {fileID: 6518468632977484086}
+  m_Layer: 0
+  m_Name: NexuulBonk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6198026969474134242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1196337129929525722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9177964868446817741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1450912254, guid: 80f1b8067b0760e4bb45023bc2e9de66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootTransform: {fileID: 0}
+  shapeType: 0
+  radius: 0.1
+  height: 2
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  collisionTags:
+  - 'NexuulMallet '
+  - Tabbybat
+  - Cheese
+  - cheese
+  allowSelf: 1
+  allowOthers: 1
+  localOnly: 0
+  receiverType: 0
+  parameter: Nexuulbonk
+  minVelocity: 0.05
+--- !u!114 &614533768941399590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1002.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421402629177436
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421402629177436
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 6
+        linkMode: 4
+        propBone: {fileID: 7473440452768320585}
+        linkTo:
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        keepBoneOffsets2: 2
+        removeBoneSuffix: 
+        skinRewriteScalingFactor: 0
+        scalingFactorPowersOf10Only: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
+        boneOnAvatar: 0
+        bonePathOnAvatar: 
+        fallbackBones: 
+--- !u!114 &8258522807906297543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1002.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421402629177437
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421402629177437
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: 
+        state:
+          actions:
+          - rid: 3382421402629177530
+          - rid: 3382421402629177541
+          - rid: 3382421402629177542
+          - rid: 3382421402629177797
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 1
+        transitionStateIn:
+          actions:
+          - rid: 3382421402629177543
+          - rid: 3382421402629177544
+          - rid: 3382421402629177545
+          - rid: 3382421402629177796
+        transitionStateOut:
+          actions:
+          - rid: 3382421402629177554
+          - rid: 3382421402629177798
+        transitionTimeIn: 2
+        transitionTimeOut: 5
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 0
+        defaultSliderValue: 0
+        useGlobalParam: 1
+        globalParam: Nexuulbonk
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 3382421402629177530
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 3382421402629177541
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 52de55e3d3dd29e469b96bdea6ca003c|Assets/Characters/Nebbia/ExpAnim/New/FT/Ears_Left_Down.anim
+          objRef: {fileID: 7400000, guid: 52de55e3d3dd29e469b96bdea6ca003c, type: 2}
+    - rid: 3382421402629177542
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: d5b3167b570d7d44baaa819e5c4bb69e|Assets/Characters/Nebbia/ExpAnim/New/FT/Ears_Right_Down.anim
+          objRef: {fileID: 7400000, guid: d5b3167b570d7d44baaa819e5c4bb69e, type: 2}
+    - rid: 3382421402629177543
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 52de55e3d3dd29e469b96bdea6ca003c|Assets/Characters/Nebbia/ExpAnim/New/FT/Ears_Left_Down.anim
+          objRef: {fileID: 7400000, guid: 52de55e3d3dd29e469b96bdea6ca003c, type: 2}
+    - rid: 3382421402629177544
+      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        clip:
+          version: 1
+          fileID: 0
+          guid: 
+          id: d5b3167b570d7d44baaa819e5c4bb69e|Assets/Characters/Nebbia/ExpAnim/New/FT/Ears_Right_Down.anim
+          objRef: {fileID: 7400000, guid: d5b3167b570d7d44baaa819e5c4bb69e, type: 2}
+    - rid: 3382421402629177545
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 3382421402629177554
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 3382421402629177796
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3057\u3044\u305F\u3051"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 3382421402629177797
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3057\u3044\u305F\u3051"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 3382421402629177798
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        blendShape: "\u3057\u3044\u305F\u3051"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+--- !u!114 &6518468632977484086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1002.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421405018882215
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421405018882215
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/Contacts/Bonk
+        state:
+          actions:
+          - rid: 3382421405018882216
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 1
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 1
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 9e97f2b49b435bc448d65479621ae567|Packages/cc.dingemans.bigibas123.logoassets/Runtime/Textures/Logos/Square/tinygangbig.png
+          objRef: {fileID: 2800000, guid: 9e97f2b49b435bc448d65479621ae567, type: 3}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+    - rid: 3382421405018882216
+      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        obj: {fileID: 7473440452768320585}
+        mode: 0
