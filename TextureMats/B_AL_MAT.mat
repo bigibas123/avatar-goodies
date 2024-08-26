@@ -31,7 +31,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 65139a2bdb5f1684b92fba1f3457a364, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2, y: 1.125}
         m_Offset: {x: 0, y: 0}
     - _MainTexArray:
         m_Texture: {fileID: 0}
@@ -46,15 +46,21 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Spacey:
-        m_Texture: {fileID: 2800000, guid: 1615447c7542cee45a4363ec136984e4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31cecdb9c4becb24bacf2c26f57713b5, type: 3}
         m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _SpecSmoothMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
+    - _AOEnabled: 0
     - _EmissionStrength: 1
     - _EnableLTCGI: 1
+    - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
