@@ -3060,6 +3060,10 @@ PrefabInstance:
       value: https://www.youtube.com/watch?v=dJfHF312STE
       objectReference: {fileID: 0}
     - target: {fileID: 967283404053619123, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
+      propertyPath: resolution
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 967283404053619123, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
       propertyPath: enableGlobalVideoTexture
       value: 1
       objectReference: {fileID: 0}
