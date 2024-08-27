@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1002.0
+  vrcfuryVersion: 1.1013.0
   somethingIsBroken: 0
   config:
     features: []
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1002.0
+  vrcfuryVersion: 1.1013.0
   somethingIsBroken: 0
   config:
     features: []
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1002.0
+  vrcfuryVersion: 1.1013.0
   somethingIsBroken: 0
   config:
     features: []
@@ -314,6 +314,11 @@ MonoBehaviour:
         linkMode: 4
         propBone: {fileID: 7473440452768320585}
         linkTo:
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: Hair_root
         - useBone: 1
           bone: 10
           useObj: 0
@@ -344,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1002.0
+  vrcfuryVersion: 1.1013.0
   somethingIsBroken: 0
   config:
     features: []
@@ -534,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1002.0
+  vrcfuryVersion: 1.1013.0
   somethingIsBroken: 0
   config:
     features: []
