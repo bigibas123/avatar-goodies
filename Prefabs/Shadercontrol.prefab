@@ -418,7 +418,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
-        name: Shader/Effects/TV/Enable
+        name: Shader/Effects/TV
         state:
           actions:
           - rid: 3382421608123859814
@@ -459,7 +459,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0
+        defaultSliderValue: 0.5
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
