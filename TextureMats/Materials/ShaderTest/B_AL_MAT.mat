@@ -58,6 +58,7 @@ Material:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
     - _AOEnabled: 0
+    - _Cull: 0
     - _EmissionStrength: 1
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
@@ -81,6 +82,10 @@ Material:
     - _UsesNormalMap: 0
     - _VRSLGIStrength: 0
     - _Voronoi: 0
+    - _ZTestOFWB: 4
+    - _ZTestTFWB: 4
+    - _ZWriteOFWB: 1
+    - _ZWriteTFWB: 0
     m_Colors:
     - _TV_Square_Position: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
