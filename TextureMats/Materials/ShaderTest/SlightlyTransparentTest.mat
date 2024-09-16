@@ -102,7 +102,7 @@ Material:
     - _LightSmoothness: 1
     - _LightThreshold: 0
     - _Metallic: 0
-    - _MinAmbient: 0
+    - _MinAmbient: 0.01
     - _Mode: 3
     - _MonoChrome: 0
     - _MultiTexture: 0
@@ -128,6 +128,7 @@ Material:
     - _ZTestOFB: 0
     - _ZTestOFWB: 4
     - _ZTestOL: 4
+    - _ZTestSP: 4
     - _ZTestTFWA: 4
     - _ZTestTFWB: 4
     - _ZWrite: 0
