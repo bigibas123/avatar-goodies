@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -114,9 +114,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -134,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -199,9 +203,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -219,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -284,9 +292,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -304,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -328,9 +340,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -340,9 +356,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -352,9 +372,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -405,7 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -470,9 +494,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -490,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -512,9 +540,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -566,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -631,9 +663,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LightSmoothness
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -651,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -716,9 +752,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LightThreshold
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -736,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -760,9 +800,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LightSmoothness
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -772,9 +816,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LightThreshold
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -784,9 +832,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MinAmbient
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -841,7 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -903,12 +955,16 @@ MonoBehaviour:
     - rid: 2848584044941148559
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OtherTextureId
+        propertyType: 0
         value: 17
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -926,7 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -945,12 +1001,16 @@ MonoBehaviour:
     - rid: 516245032536113265
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OtherTextureId
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1004,7 +1064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1069,9 +1129,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MinAmbient
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1089,7 +1153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1111,9 +1175,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MinAmbient
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1166,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1231,9 +1299,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1251,7 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1316,9 +1388,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1336,7 +1412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1401,9 +1477,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1421,7 +1501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1445,9 +1525,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1457,9 +1541,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1469,9 +1557,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1606,7 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1671,9 +1763,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _VRSLGIStrength
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1691,7 +1787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1756,9 +1852,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LTCGIStrength
+        propertyType: 0
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1776,7 +1876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1799,9 +1899,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _VRSLGIStrength
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1811,9 +1915,13 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LTCGIStrength
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1865,7 +1973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -1927,12 +2035,16 @@ MonoBehaviour:
     - rid: 2848584044941148551
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MonoChrome
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1950,7 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2012,12 +2124,16 @@ MonoBehaviour:
     - rid: 2848584044941148553
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Voronoi
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2035,7 +2151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2055,24 +2171,32 @@ MonoBehaviour:
     - rid: 516245032536113920
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MonoChrome
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113921
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Voronoi
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2127,7 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2189,12 +2313,16 @@ MonoBehaviour:
     - rid: 2848584044941148528
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _EmissionStrength
+        propertyType: 0
         value: 2
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2212,7 +2340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2274,12 +2402,16 @@ MonoBehaviour:
     - rid: 2848584044941148540
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Transmissivity
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2297,7 +2429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2359,12 +2491,16 @@ MonoBehaviour:
     - rid: 2848584044941148557
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Rounding
+        propertyType: 0
         value: 0.05
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2382,7 +2518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1014.0
+  vrcfuryVersion: 1.1071.1-beta.12
   somethingIsBroken: 0
   config:
     features: []
@@ -2405,60 +2541,80 @@ MonoBehaviour:
     - rid: 516245032536113918
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _EmissionStrength
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113919
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Transmissivity
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113920
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _MonoChrome
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113921
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Voronoi
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113922
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
+        renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Rounding
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}

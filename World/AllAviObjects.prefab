@@ -1174,6 +1174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2554317477677488184}
+  - component: {fileID: 9142526396032012879}
   m_Layer: 0
   m_Name: SunContainer
   m_TagString: Untagged
@@ -1197,6 +1198,27 @@ Transform:
   - {fileID: 2554317476195109746}
   m_Father: {fileID: 2554317477900899593}
   m_LocalEulerAnglesHint: {x: 36.119003, y: 23.184002, z: 3.8320003}
+--- !u!95 &9142526396032012879
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554317477677488185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa71c12e0a169414fabb52520f760d05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2554317477900899594
 GameObject:
   m_ObjectHideFlags: 0
