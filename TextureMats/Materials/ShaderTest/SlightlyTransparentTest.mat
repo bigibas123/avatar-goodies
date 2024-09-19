@@ -14,6 +14,7 @@ Material:
   m_ValidKeywords:
   - DO_ALPHA_PLS
   - LTCGI_ENABLED
+  - ROUNDING_DISABLED
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _EMISSION
@@ -84,14 +85,14 @@ Material:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
     - _AOEnabled: 0
-    - _Alpha_Threshold: 0.9
+    - _Alpha_Threshold: 1
     - _BumpScale: 1
     - _ColorMask: 15
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
-    - _EmissionStrength: 1
+    - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
@@ -102,7 +103,7 @@ Material:
     - _LightSmoothness: 1
     - _LightThreshold: 0
     - _Metallic: 0
-    - _MinAmbient: 0.01
+    - _MinAmbient: 0.2
     - _Mode: 3
     - _MonoChrome: 0
     - _MultiTexture: 0
@@ -111,14 +112,15 @@ Material:
     - _OutlineWidth: 0
     - _Parallax: 0.02
     - _Rounding: 0
+    - _RoundingDisabled: 1
     - _Smoothness: 0.4
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularIntensity: 0.4
     - _SquareTVTest: 0
     - _SrcBlend: 1
-    - _TV_Square_Opacity: 1
-    - _Transmissivity: 0
+    - _TV_Square_Opacity: 0
+    - _Transmissivity: 0.3
     - _UVSec: 0
     - _UsesAlpha: 1
     - _UsesNormalMap: 0

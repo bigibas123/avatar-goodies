@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
+  - ROUNDING_DISABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
@@ -58,31 +59,36 @@ Material:
     - _AL_TC_BassReactive: 0
     - _AL_Theme_Weight: 0
     - _AOEnabled: 0
+    - _Alpha_Threshold: 1
     - _Cull: 0
-    - _EmissionStrength: 1
+    - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 1
     - _LightThreshold: 0
-    - _MinAmbient: 0
+    - _MinAmbient: 0.2
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 0
     - _OtherTextureId: 0
-    - _OutlineWidth: 0.5
+    - _OutlineWidth: 0
     - _Rounding: 0
-    - _Smoothness: 0
-    - _SpecularIntensity: 0
+    - _RoundingDisabled: 1
+    - _Smoothness: 0.4
+    - _SpecularIntensity: 0.4
     - _SquareTVTest: 0
-    - _TV_Square_Opacity: 1
-    - _Transmissivity: 0
+    - _TV_Square_Opacity: 0
+    - _Transmissivity: 0.3
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
     - _VRSLGIStrength: 0
     - _Voronoi: 0
+    - _ZTestFWA: 4
     - _ZTestOFWB: 4
+    - _ZTestOL: 4
+    - _ZTestSP: 4
     - _ZTestTFWB: 4
     - _ZWriteOFWB: 1
     - _ZWriteTFWB: 0
