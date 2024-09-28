@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - ALPHA_MUL
+  - DO_HOVER
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -31,6 +32,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha_Multiply: 1
+    - _Hover: 1
     - _TextureId: 0
     m_Colors: []
   m_BuildTextureStacks: []
