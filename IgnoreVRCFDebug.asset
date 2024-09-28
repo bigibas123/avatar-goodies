@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672cf279ebc041f5b87addc7c6c980bb, type: 3}
+  m_Name: IgnoreVRCFDebug
+  m_EditorClassIdentifier: 
+  comment: 'Ignores VRCFury debug components
+
+'
+  meaninglessComponents:
+  - className: VRCFuryDebugInfo
+    guid: 19d6be1140c9472cbc89e515ffd74126
+    fileID: 11500000
+  - className: VRCFury
+    guid: d9e94e501a2d4c95bff3d5601013d923
+    fileID: 11500000
+  - className: VRCFuryNoUpdateWhenOffscreen
+    guid: 325fd324ef90492c8b08804b6f62cc0d
+    fileID: 11500000
+  - className: VRCFuryHideGizmoUnlessSelected
+    guid: 973a3360b5c04a279549138b3d548290
+    fileID: 11500000
+  - className: VRCFurySocketGizmo
+    guid: a93df76833a04889b400fea362da558c
+    fileID: 11500000
