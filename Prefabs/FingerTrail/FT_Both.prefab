@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -146,27 +146,36 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 1001
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682278392360}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771331090632}
         affectAllMeshes: 0
         propertyName: _Brightness
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 1002
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682267134386}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771325465426}
         affectAllMeshes: 0
         propertyName: _Brightness
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -184,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -244,27 +253,36 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 1001
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682278392360}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771331090632}
         affectAllMeshes: 0
         propertyName: _Hue
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 1002
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682267134386}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771325465426}
         affectAllMeshes: 0
         propertyName: _Hue
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -282,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -342,12 +360,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 1001
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 6045609771331090632}
         mode: 0
     - rid: 1002
@@ -356,6 +377,8 @@ MonoBehaviour:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 6045609771325465426}
         mode: 0
 --- !u!114 &7054302918932731020
@@ -372,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -417,6 +440,7 @@ MonoBehaviour:
         rootBindingsApplyToAvatar: 0
         rewriteBindings: []
         allowMissingAssets: 0
+        injectSpsDepthParam: 
         controller:
           version: 1
           fileID: 0
@@ -453,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -478,6 +502,9 @@ MonoBehaviour:
         removeBoneSuffix: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 0
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -499,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -524,6 +551,9 @@ MonoBehaviour:
         removeBoneSuffix: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 0
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -545,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.994.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -568,48 +598,64 @@ MonoBehaviour:
     - rid: 3382421104168796738
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682267134386}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771325465426}
         affectAllMeshes: 0
         propertyName: _Brightness
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 3382421104168796739
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682278392360}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771331090632}
         affectAllMeshes: 0
         propertyName: _Brightness
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 3382421104168796740
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682267134386}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771325465426}
         affectAllMeshes: 0
         propertyName: _Hue
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 3382421104168796741
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
-        renderer: {fileID: 5959438682278392360}
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 6045609771331090632}
         affectAllMeshes: 0
         propertyName: _Hue
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -619,6 +665,8 @@ MonoBehaviour:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 5313632208832924751}
         mode: 0
 --- !u!1 &6045609771325465426

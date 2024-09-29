@@ -112,7 +112,7 @@ MonoBehaviour:
     - rid: 2848584044941148547
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -202,7 +202,7 @@ MonoBehaviour:
     - rid: 2848584044941148555
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -292,7 +292,7 @@ MonoBehaviour:
     - rid: 2848584044941148549
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -340,7 +340,7 @@ MonoBehaviour:
     - rid: 516245032536113278
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -349,14 +349,14 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113279
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -365,14 +365,14 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113280
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -495,7 +495,7 @@ MonoBehaviour:
     - rid: 3382421608123859814
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -541,7 +541,7 @@ MonoBehaviour:
     - rid: 3382421608123859816
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1508,7 +1508,7 @@ MonoBehaviour:
     - rid: 2848584044941148542
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1517,7 +1517,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1598,7 +1598,7 @@ MonoBehaviour:
     - rid: 2848584044941148544
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1688,7 +1688,7 @@ MonoBehaviour:
     - rid: 2848584044941148538
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
-        propertyType: 0
+        propertyType: 4
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1736,7 +1736,7 @@ MonoBehaviour:
     - rid: 516245032536113274
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1745,14 +1745,14 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113275
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1761,14 +1761,14 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
     - rid: 516245032536113276
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
-        version: 0
+        version: 2
         desktopActive: 0
         androidActive: 0
         localOnly: 0
@@ -1777,7 +1777,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
-        propertyType: 0
+        propertyType: 4
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
