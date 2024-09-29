@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -108,12 +108,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148547
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -136,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -195,12 +198,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148555
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -223,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -282,12 +288,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148549
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -310,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -334,6 +343,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -348,6 +359,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -362,6 +375,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -417,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -476,12 +491,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 3382421608123859814
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -504,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -526,6 +544,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -582,7 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -641,12 +661,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148531
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -669,7 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -728,12 +751,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 3456031639770759327
       type: {class: FlipBookBuilderAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         states: []
         pages:
         - state:
@@ -775,6 +801,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -789,6 +817,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -803,6 +833,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -817,6 +849,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -831,6 +865,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -845,6 +881,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -859,6 +897,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -873,6 +913,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -887,6 +929,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -901,6 +945,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -915,6 +961,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -937,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -961,6 +1009,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -975,6 +1025,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -989,6 +1041,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1048,7 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1107,12 +1161,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148559
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1135,7 +1192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1157,6 +1214,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1215,7 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1274,12 +1333,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148536
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1302,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1324,6 +1386,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1381,7 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1440,12 +1504,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148542
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1468,7 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1527,12 +1594,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148544
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1555,7 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1614,12 +1684,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148538
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1642,7 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1666,6 +1739,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1680,6 +1755,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1694,6 +1771,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1833,7 +1912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1892,12 +1971,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584089839076028
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -1920,7 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1979,12 +2061,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584089839076028
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2007,7 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2030,6 +2115,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2044,6 +2131,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2100,7 +2189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2159,12 +2248,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148551
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2187,7 +2279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2246,12 +2338,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148553
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2274,7 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2297,6 +2392,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2311,6 +2408,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2370,7 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2424,17 +2523,20 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0.5
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148528
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2457,7 +2559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2516,12 +2618,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148540
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2544,7 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2603,12 +2708,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2848584044941148557
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2631,7 +2739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1075.0
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2657,6 +2765,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2671,6 +2781,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2685,6 +2797,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2699,6 +2813,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
@@ -2713,6 +2829,8 @@ MonoBehaviour:
         version: 2
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1

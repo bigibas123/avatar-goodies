@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1072.1-beta.2
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -101,6 +101,7 @@ MonoBehaviour:
         scalingFactorPowersOf10Only: 1
         removeParentConstraints: 1
         forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1072.1-beta.2
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -181,6 +182,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 3382421405018882216
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -300,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1072.1-beta.2
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -320,6 +322,11 @@ MonoBehaviour:
           bone: 10
           useObj: 0
           obj: {fileID: 0}
+          offset: PBCollider_Head
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
           offset: Hair_root
         - useBone: 1
           bone: 10
@@ -332,6 +339,7 @@ MonoBehaviour:
         scalingFactorPowersOf10Only: 1
         removeParentConstraints: 1
         forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -353,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1072.1-beta.2
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -421,6 +429,7 @@ MonoBehaviour:
         globalParam: Nexuulbonk
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 3382421402629177530
       type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -563,7 +572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1072.1-beta.2
+  vrcfuryVersion: 1.1084.0
   somethingIsBroken: 0
   config:
     features: []
@@ -622,6 +631,7 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 3382421405018882216
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
