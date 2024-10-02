@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
-  - ROUNDING_DISABLED
   m_InvalidKeywords:
   - POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
   - POI_LIGHT_DATA_ADDITIVE_ENABLE
@@ -23,12 +22,13 @@ Material:
   - _RIM2STYLE_POIYOMI
   - _RIMSTYLE_POIYOMI
   - _STOCHASTICMODE_DELIOT_HEITZ
-  m_LightmapFlags: 4
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - TransparentForwardBase
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -64,39 +64,39 @@ Material:
     m_Ints:
     - _LightSteps: 1
     m_Floats:
-    - _AL_TC_BassReactive: 0
-    - _AL_Theme_Weight: 0
+    - _AL_TC_BassReactive: 0.75
+    - _AL_Theme_Weight: 1
     - _AOEnabled: 0
-    - _Alpha_Threshold: 1
+    - _Alpha_Threshold: -0.01
     - _Cull: 2
     - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
-    - _LightSmoothness: 1
-    - _MinAmbient: 0.2
+    - _LightSmoothness: 0.01
+    - _MinAmbient: 0.1
     - _MonoChrome: 0
     - _MultiTexture: 0
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0.5
     - _OtherTextureId: 0
     - _OutlineWidth: 0
     - _Rounding: 0
-    - _RoundingDisabled: 1
+    - _RoundingDisabled: 0
     - _Smoothness: 0.4
     - _SpecularIntensity: 0.4
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
-    - _Transmissivity: 0.3
+    - _Transmissivity: 0
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
-    - _VRSLGIStrength: 0.5
+    - _VRSLGIStrength: 0.25
     - _Voronoi: 0
     - _ZTestFWA: 4
     - _ZTestOFWB: 4
     - _ZTestOL: 4
     - _ZTestSP: 4
-    - _ZTestTFWB: 2
+    - _ZTestTFWB: 1
     - _ZWriteOFWB: 1
     - _ZWriteTFWB: 0
     m_Colors:

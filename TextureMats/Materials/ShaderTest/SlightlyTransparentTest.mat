@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - DO_ALPHA_PLS
   - LTCGI_ENABLED
-  - ROUNDING_DISABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -57,30 +56,30 @@ Material:
     m_Ints:
     - _LightSteps: 1
     m_Floats:
-    - _AL_TC_BassReactive: 0
-    - _AL_Theme_Weight: 0
+    - _AL_TC_BassReactive: 0.75
+    - _AL_Theme_Weight: 1
     - _AOEnabled: 0
     - _Alpha_Threshold: 1
-    - _Cull: 2
+    - _Cull: 0
     - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
-    - _LightSmoothness: 1
-    - _MinAmbient: 0.2
+    - _LightSmoothness: 0.01
+    - _MinAmbient: 0.1
     - _MonoChrome: 0
     - _MultiTexture: 0
-    - _OcclusionStrength: 0
+    - _OcclusionStrength: 0.5
     - _OtherTextureId: 0
     - _OutlineWidth: 0
     - _Rounding: 0
-    - _RoundingDisabled: 1
+    - _RoundingDisabled: 0
     - _Smoothness: 0.4
     - _SpecularIntensity: 0.4
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
-    - _Transmissivity: 0.3
+    - _Transmissivity: 0
     - _UsesAlpha: 1
     - _UsesNormalMap: 0
     - _VRSLGIStrength: 0.25
