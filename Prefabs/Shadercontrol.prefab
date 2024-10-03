@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -121,7 +121,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -211,7 +211,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -301,7 +301,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -349,7 +349,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_Theme_Weight
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -365,7 +365,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OutlineWidth
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -381,7 +381,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _AL_TC_BassReactive
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1462,7 +1462,7 @@ MonoBehaviour:
         state:
           actions:
           - rid: 2848584044941148542
-        saved: 0
+        saved: 1
         slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
@@ -1517,7 +1517,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1552,7 +1552,7 @@ MonoBehaviour:
         state:
           actions:
           - rid: 2848584044941148544
-        saved: 0
+        saved: 1
         slider: 1
         sliderInactiveAtZero: 0
         securityEnabled: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1697,7 +1697,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1745,7 +1745,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Smoothness
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1761,7 +1761,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _SpecularIntensity
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2279,7 +2279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2469,7 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2739,7 +2739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1084.0
+  vrcfuryVersion: 1.1093.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2756,8 +2756,6 @@ MonoBehaviour:
           actions:
           - rid: 516245032536113918
           - rid: 516245032536113919
-          - rid: 516245032536113920
-          - rid: 516245032536113921
           - rid: 516245032536113922
     - rid: 516245032536113918
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
@@ -2787,38 +2785,6 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _Transmissivity
-        propertyType: 0
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 516245032536113920
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _MonoChrome
-        propertyType: 0
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 516245032536113921
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _Voronoi
         propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
