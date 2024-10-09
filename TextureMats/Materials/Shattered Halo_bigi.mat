@@ -74,16 +74,16 @@ Material:
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 0.01
-    - _MinAmbient: 0.1
+    - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
-    - _OcclusionStrength: 0.5
+    - _OcclusionStrength: 1
     - _OtherTextureId: 0
     - _OutlineWidth: 0
     - _Rounding: 0
     - _RoundingDisabled: 0
-    - _Smoothness: 0.4
-    - _SpecularIntensity: 0.4
+    - _Smoothness: 1
+    - _SpecularIntensity: 0
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0
