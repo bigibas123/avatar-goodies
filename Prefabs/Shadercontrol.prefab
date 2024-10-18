@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -193,7 +193,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.5
+        defaultSliderValue: 0.25
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -486,7 +486,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.5
+        defaultSliderValue: 1
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
-        propertyType: 4
+        propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -550,7 +550,7 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _TV_Square_Opacity
-        propertyType: 4
+        propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -656,7 +656,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.25
+        defaultSliderValue: 0.099999994
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -746,7 +746,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0
+        defaultSliderValue: 0.049999997
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1002,7 +1002,6 @@ MonoBehaviour:
           actions:
           - rid: 516245032536113267
           - rid: 3456031599234383954
-          - rid: 516245032536113269
     - rid: 516245032536113267
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -1015,22 +1014,6 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _LightSmoothness
-        propertyType: 0
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 516245032536113269
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _MinAmbient
         propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
@@ -1102,7 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1192,7 +1175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1274,7 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1328,7 +1311,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.099999994
+        defaultSliderValue: 0.049999997
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -1364,7 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1443,7 +1426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1456,7 +1439,7 @@ MonoBehaviour:
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
-        name: Shader/Lighting/Mapping/AO_Strength
+        name: Shader/Lighting/AO_Strength
         state:
           actions:
           - rid: 2848584044941148538
@@ -1533,7 +1516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1696,7 +1679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1786,7 +1769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1840,7 +1823,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.5
+        defaultSliderValue: 1
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -1876,7 +1859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1973,7 +1956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2063,7 +2046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2153,7 +2136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2253,7 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2343,7 +2326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2397,7 +2380,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.05
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -2433,7 +2416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2523,7 +2506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1124.0
   somethingIsBroken: 0
   config:
     features: []

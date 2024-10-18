@@ -73,7 +73,7 @@ Material:
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
-    - _LightSmoothness: 0.01
+    - _LightSmoothness: 0.05
     - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
@@ -82,8 +82,8 @@ Material:
     - _OutlineWidth: 0
     - _Rounding: 0
     - _RoundingDisabled: 0
-    - _Smoothness: 1
-    - _SpecularIntensity: 0
+    - _Smoothness: 0.3
+    - _SpecularIntensity: 0.2
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0
