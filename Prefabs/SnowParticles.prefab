@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1135.0
   somethingIsBroken: 0
   config:
     features: []
@@ -75,6 +75,9 @@ MonoBehaviour:
         removeBoneSuffix: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 1
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -95,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1135.0
   somethingIsBroken: 0
   config:
     features: []
@@ -121,6 +124,9 @@ MonoBehaviour:
         removeBoneSuffix: 
         skinRewriteScalingFactor: 0
         scalingFactorPowersOf10Only: 1
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -141,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1135.0
   somethingIsBroken: 0
   config:
     features: []
@@ -160,7 +166,6 @@ MonoBehaviour:
           actions:
           - rid: 1001
           - rid: 1002
-          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 0
@@ -184,24 +189,19 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 1
         transitionStateIn:
           actions:
           - rid: 1003
           - rid: 1004
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 4
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 0
@@ -210,12 +210,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 1
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 1001
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 6062455628301507504}
         mode: 0
     - rid: 1002
@@ -224,6 +227,8 @@ MonoBehaviour:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 7060571381787116681}
         mode: 0
     - rid: 1003
@@ -232,6 +237,8 @@ MonoBehaviour:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 6062455628301507504}
         mode: 0
     - rid: 1004
@@ -240,6 +247,8 @@ MonoBehaviour:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         obj: {fileID: 7060571381787116681}
         mode: 0
 --- !u!1 &6062455628301507504
@@ -411,7 +420,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5072,13 +5081,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 1
   m_VertexStreams: 000304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -5097,7 +5108,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2240322271230859991}
-  - component: {fileID: 3217522844162600774}
   m_Layer: 0
   m_Name: Emitter_R_Parent
   m_TagString: Untagged
@@ -5121,33 +5131,6 @@ Transform:
   - {fileID: 8752515092705132653}
   m_Father: {fileID: 8690090015459973696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1773428102 &3217522844162600774
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211510924246559908}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0.4322534, y: 0.9724669, z: -0.0018909574}
-  m_RotationAtRest: {x: -81.9495, y: -44.950657, z: -44.95009}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!1 &7060571381787116681
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,7 +5300,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9978,13 +9961,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 1
   m_VertexStreams: 000304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
