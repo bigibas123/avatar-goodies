@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -175,8 +175,9 @@ MonoBehaviour:
       type: {class: MmdCompatibility, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
-        disableLayers: []
-        globalParam: 
+        disableLayers:
+        - name: '[MMD Disable]'
+        globalParam: MMD
 --- !u!1 &4074268633206676865
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -283,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -310,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []
@@ -439,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1083.0
+  vrcfuryVersion: 1.1143.0
   somethingIsBroken: 0
   config:
     features: []

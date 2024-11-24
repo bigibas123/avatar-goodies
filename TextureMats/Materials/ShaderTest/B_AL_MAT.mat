@@ -13,7 +13,9 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
-  m_InvalidKeywords: []
+  - PROTV_SQUARE_ENABLED
+  m_InvalidKeywords:
+  - TV_SQUARE_TEST
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -63,7 +65,7 @@ Material:
     - _Cull: 2
     - _EmissionStrength: 2
     - _EnableLTCGI: 1
-    - _EnableProTVSquare: 0
+    - _EnableProTVSquare: 1
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 0.05
@@ -77,7 +79,7 @@ Material:
     - _RoundingDisabled: 0
     - _Smoothness: 0
     - _SpecularIntensity: 0
-    - _SquareTVTest: 0
+    - _SquareTVTest: 1
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0
     - _UsesAlpha: 0
