@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -188,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6999261228352301576}
   - component: {fileID: 4525568150892838071}
+  - component: {fileID: 1574365658233892147}
   m_Layer: 0
   m_Name: Manual avatar fixes
   m_TagString: Untagged
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -237,6 +238,41 @@ MonoBehaviour:
       type: {class: DescriptorDebug, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
+--- !u!114 &1574365658233892147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074268633206676865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1146.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 7309498435186458715
+  references:
+    version: 2
+    RefIds:
+    - rid: 7309498435186458715
+      type: {class: SpsOptions, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        menuIcon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 67ffc96c6f31a5d4381a7b2100c0f4f3|Packages/com.vrcfury.vrcfury/VrcfResources/sps_icon.png
+          objRef: {fileID: 2800000, guid: 67ffc96c6f31a5d4381a7b2100c0f4f3, type: 3}
+        menuPath: SPS
+        saveSockets: 0
 --- !u!1 &6313507421659298800
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -311,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
@@ -440,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1143.0
+  vrcfuryVersion: 1.1146.0
   somethingIsBroken: 0
   config:
     features: []
