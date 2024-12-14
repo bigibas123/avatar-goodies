@@ -13,12 +13,11 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
-  - PROTV_SQUARE_ENABLED
-  m_InvalidKeywords:
-  - TV_SQUARE_TEST
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 1
+  - ROUNDING_DISABLED
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
@@ -40,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: 47c89f15a293b0c40a6ced84c20cb1cd, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -48,40 +47,38 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Spacey:
-        m_Texture: {fileID: 2800000, guid: 1615447c7542cee45a4363ec136984e4, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecSmoothMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints:
-    - _LightSteps: 5
+    m_Ints: []
     m_Floats:
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
     - _AOEnabled: 0
     - _Alpha_Threshold: -0.01
-    - _Cull: 2
-    - _EmissionStrength: 2
+    - _Cull: 0
+    - _EmissionStrength: 1
     - _EnableLTCGI: 1
-    - _EnableProTVSquare: 1
+    - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
-    - _LightSmoothness: 0.05
-    - _MinAmbient: 0.05
+    - _LightSmoothness: 1
+    - _LightSteps: 1
+    - _MinAmbient: 0.005
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
     - _OutlineWidth: 0
     - _Rounding: 0
-    - _RoundingDisabled: 0
-    - _Smoothness: 0
-    - _SpecularIntensity: 0
-    - _SquareTVTest: 1
-    - _TV_Square_Opacity: 0
-    - _Transmissivity: 0
+    - _RoundingDisabled: 1
+    - _SquareTVTest: 0
+    - _TV_Square_Opacity: 1
+    - _Transmissivity: 0.2
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
     - _VRSLGIStrength: 0.25
