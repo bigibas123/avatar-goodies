@@ -59,14 +59,15 @@ Material:
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
     - _AOEnabled: 0
-    - _Alpha_Threshold: 1
-    - _Cull: 0
+    - _Alpha_Threshold: 0.991
+    - _Cull: 2
     - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 0.05
+    - _LightSteps: 1
     - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
