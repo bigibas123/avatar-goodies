@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.991.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -106,12 +106,15 @@ MonoBehaviour:
         globalParam: AFK
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 2775620481669398553
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -132,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.991.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -191,12 +194,15 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 516245144109580363
       type: {class: FlipBookBuilderAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         states: []
         pages:
         - state:
@@ -205,6 +211,7 @@ MonoBehaviour:
         - state:
             actions:
             - rid: 516245144109580366
+            - rid: 1334312491424940284
         - state:
             actions:
             - rid: 516245144109580365
@@ -223,6 +230,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -236,6 +245,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -248,6 +259,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -260,6 +273,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -273,6 +288,8 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
@@ -285,9 +302,19 @@ MonoBehaviour:
         version: 0
         desktopActive: 0
         androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
         clip:
           version: 1
           fileID: 0
           guid: 
           id: c3d2a0ab51f5aad4fbd4ad9f7048fbf5|Assets/Lethal Company/3.0/Game Animations/Run.anim
           objRef: {fileID: 7400000, guid: c3d2a0ab51f5aad4fbd4ad9f7048fbf5, type: 2}
+    - rid: 1334312491424940284
+      type: {class: BlockBlinkingAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0

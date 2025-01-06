@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -92,6 +92,16 @@ MonoBehaviour:
         linkTo:
         - useBone: 1
           bone: 30
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        - useBone: 1
+          bone: 33
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        - useBone: 1
+          bone: 27
           useObj: 0
           obj: {fileID: 0}
           offset: 
@@ -123,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -193,173 +203,6 @@ MonoBehaviour:
         remoteOnly: 0
         obj: {fileID: 2252313759944097548}
         mode: 0
---- !u!1 &3868685159132418727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3710225154295558249}
-  - component: {fileID: 6337896732339964880}
-  - component: {fileID: 8357046366137489105}
-  m_Layer: 0
-  m_Name: FireContact
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3710225154295558249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3868685159132418727}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.011658069, y: 0.013111674, z: 0.93104017, w: 0.36449477}
-  m_LocalPosition: {x: -0.38655782, y: 0.9438275, z: 0.00047767162}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 7074625568284265364}
-  m_Father: {fileID: 1196337129929525722}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6337896732339964880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3868685159132418727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 3382421089830567963
-  references:
-    version: 2
-    RefIds:
-    - rid: 3382421089830567963
-      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 6
-        linkMode: 1
-        propBone: {fileID: 3868685159132418727}
-        linkTo:
-        - useBone: 1
-          bone: 17
-          useObj: 0
-          obj: {fileID: 0}
-          offset: 
-        keepBoneOffsets2: 0
-        removeBoneSuffix: 
-        skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
-        removeParentConstraints: 1
-        forceMergedName: 
-        forceOneWorldScale: 0
-        useOptimizedUpload: 0
-        useBoneMerging: 0
-        keepBoneOffsets: 0
-        physbonesOnAvatarBones: 0
-        boneOnAvatar: 0
-        bonePathOnAvatar: 
-        fallbackBones: 
---- !u!114 &8357046366137489105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3868685159132418727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 3382421405018882215
-  references:
-    version: 2
-    RefIds:
-    - rid: 3382421405018882215
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Props/Contacts/Fire
-        state:
-          actions:
-          - rid: 3382421405018882216
-        saved: 1
-        slider: 0
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 1
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: d45ac7443962d2f4089628f940fb1944|Assets/Campfire/Icons/CampfireToggle.png
-          objRef: {fileID: 2800000, guid: d45ac7443962d2f4089628f940fb1944, type: 3}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-        expandIntoTransition: 1
-    - rid: 3382421405018882216
-      type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 1
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        obj: {fileID: 3868685159132418727}
-        mode: 0
 --- !u!1 &4494720218527958864
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,110 +237,6 @@ Transform:
   - {fileID: 6198026969474134242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5128032355691772825
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7074625568284265364}
-  - component: {fileID: 4050697761403566027}
-  - component: {fileID: 1919366256373181403}
-  - component: {fileID: 8000222678167478695}
-  m_Layer: 0
-  m_Name: Fire
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7074625568284265364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128032355691772825}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.55674857, y: 0.44648817, z: 0.41845146, w: 0.56176305}
-  m_LocalPosition: {x: -0.0097, y: 0.0442, z: 0.0074}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 3710225154295558249}
-  m_LocalEulerAnglesHint: {x: 14.587, y: 91.104, z: 88.232}
---- !u!33 &4050697761403566027
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128032355691772825}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1919366256373181403
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128032355691772825}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ee6072db797d30746ad557fedc7c5a86, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8000222678167478695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128032355691772825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -802764141, guid: 80f1b8067b0760e4bb45023bc2e9de66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rootTransform: {fileID: 7074625568284265364}
-  shapeType: 0
-  radius: 1
-  height: 2
-  position: {x: 0, y: 0, z: -0.5}
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  collisionTags:
-  - CigCollission
 --- !u!1 &7473440452768320585
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -633,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -844,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1154.0
   somethingIsBroken: 0
   config:
     features: []
@@ -914,3 +653,81 @@ MonoBehaviour:
         remoteOnly: 0
         obj: {fileID: 7473440452768320585}
         mode: 0
+--- !u!1001 &7920571733248070066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1196337129929525722}
+    m_Modifications:
+    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702976774350606028, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366914089090384661, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_Name
+      value: FireBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3865578
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9438275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00047767162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.36449477
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.011658069
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.013111674
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.93104017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+--- !u!4 &3710225154295558249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+  m_PrefabInstance: {fileID: 7920571733248070066}
+  m_PrefabAsset: {fileID: 0}
