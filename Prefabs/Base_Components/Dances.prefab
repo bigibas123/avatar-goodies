@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1157.0
   somethingIsBroken: 0
   config:
     features: []
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1157.0
   somethingIsBroken: 0
   config:
     features: []
@@ -163,13 +163,14 @@ MonoBehaviour:
         exclusiveTag: dance
         resetPhysbones: []
         hasExitTime: 0
-        enableIcon: 0
+        enableIcon: 1
         icon:
           version: 1
           fileID: 0
           guid: 
-          id: 
-          objRef: {fileID: 0}
+          id: 9a20b3a6641e1af4e95e058f361790cb|Packages/com.vrchat.avatars/Samples/AV3
+            Demo Assets/Expressions Menu/Icons/person_dance.png
+          objRef: {fileID: 2800000, guid: 9a20b3a6641e1af4e95e058f361790cb, type: 3}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
         separateLocal: 0
