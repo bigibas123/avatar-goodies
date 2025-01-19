@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1163.0
   somethingIsBroken: 0
   config:
     features: []
@@ -86,8 +86,7 @@ MonoBehaviour:
     - rid: 3382421089830567963
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 6
-        linkMode: 1
+        version: 7
         propBone: {fileID: 2252313759944097548}
         linkTo:
         - useBone: 1
@@ -105,13 +104,17 @@ MonoBehaviour:
           useObj: 0
           obj: {fileID: 0}
           offset: 
-        keepBoneOffsets2: 0
         removeBoneSuffix: 
-        skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
         removeParentConstraints: 1
         forceMergedName: 
         forceOneWorldScale: 0
+        recursive: 1
+        alignPosition: 1
+        alignRotation: 1
+        alignScale: 1
+        autoScaleFactor: 1
+        scalingFactorPowersOf10Only: 1
+        skinRewriteScalingFactor: 1
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -119,6 +122,8 @@ MonoBehaviour:
         boneOnAvatar: 0
         bonePathOnAvatar: 
         fallbackBones: 
+        keepBoneOffsets2: 0
+        linkMode: 1
 --- !u!114 &3964626622813898248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1163.0
   somethingIsBroken: 0
   config:
     features: []
@@ -313,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1163.0
   somethingIsBroken: 0
   config:
     features: []
@@ -326,7 +331,6 @@ MonoBehaviour:
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 6
-        linkMode: 4
         propBone: {fileID: 7473440452768320585}
         linkTo:
         - useBone: 1
@@ -344,13 +348,17 @@ MonoBehaviour:
           useObj: 0
           obj: {fileID: 0}
           offset: 
-        keepBoneOffsets2: 2
         removeBoneSuffix: 
-        skinRewriteScalingFactor: 0
-        scalingFactorPowersOf10Only: 1
         removeParentConstraints: 1
         forceMergedName: 
         forceOneWorldScale: 0
+        recursive: 0
+        alignPosition: 0
+        alignRotation: 0
+        alignScale: 0
+        autoScaleFactor: 1
+        scalingFactorPowersOf10Only: 1
+        skinRewriteScalingFactor: 0
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -358,6 +366,8 @@ MonoBehaviour:
         boneOnAvatar: 0
         bonePathOnAvatar: 
         fallbackBones: 
+        keepBoneOffsets2: 2
+        linkMode: 4
 --- !u!114 &8258522807906297543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1163.0
   somethingIsBroken: 0
   config:
     features: []
@@ -583,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1154.0
+  vrcfuryVersion: 1.1163.0
   somethingIsBroken: 0
   config:
     features: []
