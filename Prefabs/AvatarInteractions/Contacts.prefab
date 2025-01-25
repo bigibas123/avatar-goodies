@@ -691,6 +691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireBall
       objectReference: {fileID: 0}
+    - target: {fileID: 6366914089090384661, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3865578
