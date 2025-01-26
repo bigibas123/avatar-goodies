@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1163.0
+  vrcfuryVersion: 1.1169.0
   somethingIsBroken: 0
   config:
     features: []
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1163.0
+  vrcfuryVersion: 1.1169.0
   somethingIsBroken: 0
   config:
     features: []
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1163.0
+  vrcfuryVersion: 1.1169.0
   somethingIsBroken: 0
   config:
     features: []
@@ -330,7 +330,7 @@ MonoBehaviour:
     - rid: 3382421402629177436
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 6
+        version: 7
         propBone: {fileID: 7473440452768320585}
         linkTo:
         - useBone: 1
@@ -347,18 +347,23 @@ MonoBehaviour:
           bone: 10
           useObj: 0
           obj: {fileID: 0}
+          offset: Head_root
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
           offset: 
         removeBoneSuffix: 
         removeParentConstraints: 1
         forceMergedName: 
         forceOneWorldScale: 0
         recursive: 0
-        alignPosition: 0
-        alignRotation: 0
-        alignScale: 0
-        autoScaleFactor: 1
+        alignPosition: 1
+        alignRotation: 1
+        alignScale: 1
+        autoScaleFactor: 0
         scalingFactorPowersOf10Only: 1
-        skinRewriteScalingFactor: 0
+        skinRewriteScalingFactor: 1
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -382,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1163.0
+  vrcfuryVersion: 1.1169.0
   somethingIsBroken: 0
   config:
     features: []
@@ -593,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1163.0
+  vrcfuryVersion: 1.1169.0
   somethingIsBroken: 0
   config:
     features: []
