@@ -702,45 +702,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2585795769479461216, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2585795769479461216, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1504061410180182388}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
---- !u!1 &6360297713766509331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2585795769479461216, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
-  m_PrefabInstance: {fileID: 8910027302680646259}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1504061410180182388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6360297713766509331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 8409359973799952415
-  references:
-    version: 2
-    RefIds:
-    - rid: 8409359973799952415
-      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
 --- !u!4 &6808215375628528144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
