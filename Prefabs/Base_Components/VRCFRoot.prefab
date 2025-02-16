@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8511047393946426903}
-  - {fileID: 8547876898982393666}
+  - {fileID: 6808215375628528144}
   m_Father: {fileID: 6014019912849638548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &300021782829747276
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -100,7 +100,7 @@ MonoBehaviour:
             guid: 
             id: cdc105c12e7951745988f10cce134cd5|Assets/Characters/Common/Prefabs/Base_Components/EyeTrackReset/EyeTrackResetMenu.asset
             objRef: {fileID: 11400000, guid: cdc105c12e7951745988f10cce134cd5, type: 2}
-          prefix: VRCFT/Extra
+          prefix: Face Tracking/Extra
         prms:
         - parameters:
             version: 1
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1172.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -633,7 +633,7 @@ MonoBehaviour:
       type: {class: RemoveBlinking, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
---- !u!1001 &109098111240272293
+--- !u!1001 &8910027302680646259
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -641,57 +641,108 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3657277842230797803}
     m_Modifications:
-    - target: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
-      propertyPath: m_Name
-      value: '!Pawlygon - Facetracking Controller - Unified Expressions'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+    - target: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946562089263428192, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      propertyPath: cachedExecutionGroupIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946562089263428192, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      propertyPath: latestValidExecutionGroupIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969986300718363375, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      propertyPath: m_Name
+      value: VRCFury - Face Tracking - UE Blendshapes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923609399596397873, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      propertyPath: cachedExecutionGroupIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923609399596397873, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      propertyPath: latestValidExecutionGroupIndex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
---- !u!4 &8547876898982393666 stripped
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2585795769479461216, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504061410180182388}
+  m_SourcePrefab: {fileID: 100100000, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+--- !u!1 &6360297713766509331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2585795769479461216, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+  m_PrefabInstance: {fileID: 8910027302680646259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504061410180182388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6360297713766509331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1183.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 8409359973799952415
+  references:
+    version: 2
+    RefIds:
+    - rid: 8409359973799952415
+      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+--- !u!4 &6808215375628528144 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
-  m_PrefabInstance: {fileID: 109098111240272293}
+  m_CorrespondingSourceObject: {fileID: 2728448342756374627, guid: 40f7093df8038624c89c1bf989071a1d, type: 3}
+  m_PrefabInstance: {fileID: 8910027302680646259}
   m_PrefabAsset: {fileID: 0}
