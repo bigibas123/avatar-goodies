@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1169.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1169.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -238,7 +238,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4801945283997105625}
-  - {fileID: 3710225154295558249}
   - {fileID: 6198026969474134242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -318,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1169.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -387,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1169.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -437,10 +436,12 @@ MonoBehaviour:
           - rid: 3382421402629177544
           - rid: 3382421402629177545
           - rid: 3382421402629177796
+          - rid: 8409359973799952658
         transitionStateOut:
           actions:
           - rid: 3382421402629177554
           - rid: 3382421402629177798
+          - rid: 8409359973799952660
         transitionTimeIn: 2
         transitionTimeOut: 5
         localTransitionStateIn:
@@ -584,6 +585,30 @@ MonoBehaviour:
         blendShapeValue: 100
         renderer: {fileID: 0}
         allRenderers: 1
+    - rid: 8409359973799952658
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 8409359973799952660
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
 --- !u!114 &6518468632977484086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1169.0
+  vrcfuryVersion: 1.1183.0
   somethingIsBroken: 0
   config:
     features: []
@@ -668,85 +693,3 @@ MonoBehaviour:
         remoteOnly: 0
         obj: {fileID: 7473440452768320585}
         mode: 0
---- !u!1001 &7920571733248070066
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1196337129929525722}
-    m_Modifications:
-    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.00000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236367011964917190, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0000019073486
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702976774350606028, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 6366914089090384661, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_Name
-      value: FireBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 6366914089090384661, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.3865578
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9438275
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00047767162
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.36449477
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.011658069
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.013111674
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.93104017
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
---- !u!4 &3710225154295558249 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6815872683742405083, guid: 98bc6a9e9338439489ef2d3093c11a5f, type: 3}
-  m_PrefabInstance: {fileID: 7920571733248070066}
-  m_PrefabAsset: {fileID: 0}
