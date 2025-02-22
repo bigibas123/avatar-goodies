@@ -17,5 +17,14 @@ MonoBehaviour:
   - className: VRCFuryDebugInfo
     guid: 19d6be1140c9472cbc89e515ffd74126
     fileID: 11500000
+  - className: VRCFuryHideGizmoUnlessSelected
+    guid: 973a3360b5c04a279549138b3d548290
+    fileID: 11500000
+  - className: VRCFurySocketGizmo
+    guid: a93df76833a04889b400fea362da558c
+    fileID: 11500000
+  - className: VRCFuryNoUpdateWhenOffscreen
+    guid: 325fd324ef90492c8b08804b6f62cc0d
+    fileID: 11500000
   parametersReadByExternalTools: []
   parametersChangedByExternalTools: []
