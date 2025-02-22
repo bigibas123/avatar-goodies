@@ -14,6 +14,7 @@ Material:
   m_ValidKeywords:
   - DO_ALPHA_PLS
   - LTCGI_ENABLED
+  - ROUNDING_ENABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -73,14 +74,15 @@ Material:
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _Rounding: 0
     - _RoundingDisabled: 0
+    - _RoundingEnabled: 1
     - _Smoothness: 0
     - _SpecularIntensity: 0
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
-    - _Transmissivity: 0
+    - _Transmissivity: 1
     - _UsesAlpha: 1
     - _UsesNormalMap: 0
     - _VRSLGIStrength: 0.25

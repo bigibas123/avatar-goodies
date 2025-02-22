@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
+  - ROUNDING_ENABLED
   m_InvalidKeywords:
   - POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
   - POI_LIGHT_DATA_ADDITIVE_ENABLE
@@ -75,14 +76,16 @@ Material:
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
     - _LightSmoothness: 0.05
+    - _LightSteps: 1
     - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _Rounding: 0
     - _RoundingDisabled: 0
+    - _RoundingEnabled: 1
     - _Smoothness: 0
     - _SpecularIntensity: 0
     - _SquareTVTest: 0
