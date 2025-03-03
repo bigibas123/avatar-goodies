@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
@@ -456,7 +456,7 @@ MonoBehaviour:
         globalParam: Nexuulbonk
         holdButton: 0
         invertRestLogic: 0
-        expandIntoTransition: 1
+        expandIntoTransition: 0
     - rid: 3382421402629177530
       type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -546,7 +546,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         blendShape: "\u3050\u308B\u3050\u308B\u76EE"
-        blendShapeValue: 100
+        blendShapeValue: 0
         renderer: {fileID: 0}
         allRenderers: 1
     - rid: 3382421402629177796
@@ -582,7 +582,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         blendShape: "\u3057\u3044\u305F\u3051"
-        blendShapeValue: 100
+        blendShapeValue: 0
         renderer: {fileID: 0}
         allRenderers: 1
     - rid: 8409359973799952658
@@ -606,7 +606,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         blendShape: "\u3050\u308B\u3050\u308B"
-        blendShapeValue: 100
+        blendShapeValue: 0
         renderer: {fileID: 0}
         allRenderers: 1
 --- !u!114 &6518468632977484086
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
