@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -202,6 +202,158 @@ MonoBehaviour:
       type: {class: RemoveHandGestures2, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
+--- !u!1 &1731718563016472603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2706081047073437179}
+  - component: {fileID: 2453987578215215049}
+  m_Layer: 0
+  m_Name: HeadContactHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2706081047073437179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731718563016472603}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.298381e-16, y: 1.1996484, z: 0.0015047789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 4788091083352480071}
+  m_Father: {fileID: 6014019912849638548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2453987578215215049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731718563016472603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1193.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421402629177436
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421402629177436
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 7
+        propBone: {fileID: 2697962739093058855}
+        linkTo:
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: PBCollider_Head
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: Hair_root
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: Head_root
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        removeBoneSuffix: 
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
+        recursive: 0
+        alignPosition: 1
+        alignRotation: 1
+        alignScale: 1
+        autoScaleFactor: 0
+        scalingFactorPowersOf10Only: 1
+        skinRewriteScalingFactor: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
+        boneOnAvatar: 0
+        bonePathOnAvatar: 
+        fallbackBones: 
+        keepBoneOffsets2: 2
+        linkMode: 4
+--- !u!1 &2697962739093058855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4788091083352480071}
+  - component: {fileID: 7701713592165426464}
+  m_Layer: 0
+  m_Name: HeadContact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4788091083352480071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697962739093058855}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.0371, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2706081047073437179}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &7701713592165426464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697962739093058855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8028d33728ef49f5b9d44b564480aeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1193.0
+  radius: 0.06
+  height: 0.15
+  rootTransform: {fileID: 0}
 --- !u!1 &2909790389436812455
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -278,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -305,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -368,7 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -395,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -463,7 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -490,7 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -541,6 +693,7 @@ Transform:
   - {fileID: 6999261228352301576}
   - {fileID: 8855121628758205837}
   - {fileID: 3657277842230797803}
+  - {fileID: 2706081047073437179}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7804155772207107323
@@ -620,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1183.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []

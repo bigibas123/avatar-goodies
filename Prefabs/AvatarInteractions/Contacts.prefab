@@ -52,6 +52,7 @@ MonoBehaviour:
   height: 2
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
+  localOnly: 0
   collisionTags:
   - Cheese
   - cheese
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1190.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1190.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -294,12 +295,14 @@ MonoBehaviour:
   height: 2
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
+  localOnly: 0
   collisionTags:
   - 'NexuulMallet '
-  - TabbyBat
+  - BatHit
+  - CigCollission
+  - Parry_Detect
   allowSelf: 1
   allowOthers: 1
-  localOnly: 0
   receiverType: 0
   parameter: Nexuulbonk
   minVelocity: 0.05
@@ -317,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1190.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -386,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1190.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
@@ -623,7 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1190.0
+  vrcfuryVersion: 1.1193.0
   somethingIsBroken: 0
   config:
     features: []
