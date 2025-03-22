@@ -1,5 +1,274 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &349593553186435093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039245538665492848}
+  - component: {fileID: 8797170816172696176}
+  m_Layer: 0
+  m_Name: SelectMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1039245538665492848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349593553186435093}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7958434126629267325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8797170816172696176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349593553186435093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d70f0c8ddc465c937d2ee8b8d373d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithmVersion: 1
+  skinnedMeshes:
+  - targetMesh: {fileID: 0}
+    originalMesh: {fileID: 2959467708922500008, guid: bf41ee3130eefcb42badccae27913ce1, type: 3}
+    overrideBoneZero: {fileID: 0}
+  - targetMesh: {fileID: 0}
+    originalMesh: {fileID: 1227798843081062602, guid: bf41ee3130eefcb42badccae27913ce1, type: 3}
+    overrideBoneZero: {fileID: 0}
+  - targetMesh: {fileID: 0}
+    originalMesh: {fileID: 3661225544016063354, guid: bf41ee3130eefcb42badccae27913ce1, type: 3}
+    overrideBoneZero: {fileID: 0}
+  - targetMesh: {fileID: 0}
+    originalMesh: {fileID: 805446803732501122, guid: bf41ee3130eefcb42badccae27913ce1, type: 3}
+    overrideBoneZero: {fileID: 0}
+  activeBlendshapes: []
+--- !u!1 &1077606745312626161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7958434126629267325}
+  - component: {fileID: 225626876920154346}
+  m_Layer: 0
+  m_Name: HeadSquishBlendhape
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7958434126629267325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077606745312626161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1039245538665492848}
+  - {fileID: 7213580894971825355}
+  m_Father: {fileID: 6198026969474134242}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225626876920154346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077606745312626161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb658d12bab89324886ee2bdfee91979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithmVersion: 1
+  avatar: {fileID: 0}
+  selectors:
+  - {fileID: 8797170816172696176}
+  - {fileID: 268918834857399383}
+  shapeName: HeadSquish
+  previewWeight: 100
+  shapeDefaultWeight: 0
+  previewRecalculatedNormals: 0
+  insideCurveResponse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  surfaceCurveResponse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lateralMargin: 0
+  lateralPower: 0
+  lateralCenterDisplacementDistance: 0.03
+  lateralCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  origin: {x: 0, y: -0.1, z: 0}
+  originRotation: {x: 0.70710677, y: 0, z: 0, w: -0.70710677}
+  maximumCompression: 0.41338468
+  size: 0.07001006
+  clippingPrevention: 0.05
+  lateralIsCylindrical: 0
+  frameCount: 15
+  animationRepathingShapeName: 
+--- !u!1 &1858085241281529750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7213580894971825355}
+  - component: {fileID: 268918834857399383}
+  m_Layer: 0
+  m_Name: PointSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7213580894971825355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858085241281529750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7958434126629267325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &268918834857399383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858085241281529750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2220eac9ca5498387dab1197264df07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithmVersion: 1
+  offset: {x: 0, y: 0, z: 0}
+  distance: 0.32372263
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rootTransform: {fileID: 6198026969474134242}
 --- !u!1 &2252313759944097548
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1193.0
+  vrcfuryVersion: 1.1214.0
   somethingIsBroken: 0
   config:
     features: []
@@ -139,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1193.0
+  vrcfuryVersion: 1.1214.0
   somethingIsBroken: 0
   config:
     features: []
@@ -270,11 +539,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7473440452768320585}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.298381e-16, y: 1.1996484, z: 0.0015047789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 7958434126629267325}
   m_Father: {fileID: 1196337129929525722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9177964868446817741
@@ -320,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1193.0
+  vrcfuryVersion: 1.1214.0
   somethingIsBroken: 0
   config:
     features: []
@@ -389,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1193.0
+  vrcfuryVersion: 1.1214.0
   somethingIsBroken: 0
   config:
     features: []
@@ -398,6 +668,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1328761413600019093
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: HeadSquish
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
     - rid: 3382421402629177437
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
@@ -409,6 +691,7 @@ MonoBehaviour:
           - rid: 3382421402629177541
           - rid: 3382421402629177542
           - rid: 3382421402629177797
+          - rid: 1328761413600019093
         saved: 0
         slider: 0
         sliderInactiveAtZero: 0
@@ -626,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1193.0
+  vrcfuryVersion: 1.1214.0
   somethingIsBroken: 0
   config:
     features: []
