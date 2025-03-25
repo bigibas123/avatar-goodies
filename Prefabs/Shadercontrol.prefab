@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1065393302309926653
+--- !u!1 &47458600860964163
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 16718880522749210}
-  - component: {fileID: 5242357965342433618}
-  - component: {fileID: 5022401394018403210}
-  - component: {fileID: 949711680038423355}
-  - component: {fileID: 6014874657946983790}
+  - component: {fileID: 5121608749855076471}
+  - component: {fileID: 113365974280924284}
+  - component: {fileID: 3958908054301902038}
   m_Layer: 0
-  m_Name: AudioLink
+  m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &16718880522749210
+--- !u!4 &5121608749855076471
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065393302309926653}
+  m_GameObject: {fileID: 47458600860964163}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 778328994621869660}
+  m_Father: {fileID: 16718880522749210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5242357965342433618
+--- !u!114 &113365974280924284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065393302309926653}
+  m_GameObject: {fileID: 47458600860964163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -49,97 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 2848584044941148545
-  references:
-    version: 2
-    RefIds:
-    - rid: 2848584044941148545
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Shader/AudioLink/Weight
-        state:
-          actions:
-          - rid: 2848584044941148547
-        saved: 1
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 1
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-        expandIntoTransition: 1
-    - rid: 2848584044941148547
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _AL_Theme_Weight
-        propertyType: 0
-        value: 1
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &5022401394018403210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065393302309926653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -215,13 +123,13 @@ MonoBehaviour:
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &949711680038423355
+--- !u!114 &3958908054301902038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065393302309926653}
+  m_GameObject: {fileID: 47458600860964163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -229,28 +137,107 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
   content:
-    rid: 2848584044941148548
+    rid: 516245032536113277
   references:
     version: 2
     RefIds:
-    - rid: 2848584044941148548
+    - rid: 516245032536113277
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113279
+    - rid: 516245032536113279
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _OutlineWidth
+        propertyType: 0
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &532892580564040951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3988533416292160395}
+  - component: {fileID: 2495757306350331115}
+  - component: {fileID: 7914304164038956366}
+  m_Layer: 0
+  m_Name: Mode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3988533416292160395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532892580564040951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 16718880522749210}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2495757306350331115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532892580564040951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1218.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 1328761487664873901
+  references:
+    version: 2
+    RefIds:
+    - rid: 1328761487664873901
       type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 3
-        name: Shader/AudioLink/Bass
+        name: Shader/AudioLink/Mode
         state:
           actions:
-          - rid: 2848584044941148549
+          - rid: 1328761487664873903
         saved: 1
-        slider: 1
+        slider: 0
         sliderInactiveAtZero: 0
         securityEnabled: 0
-        defaultOn: 0
+        defaultOn: 1
         includeInRest: 0
         exclusiveOffState: 0
         enableExclusiveTag: 0
@@ -283,13 +270,13 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.75
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
         expandIntoTransition: 1
-    - rid: 2848584044941148549
+    - rid: 1328761487664873903
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
@@ -300,18 +287,18 @@ MonoBehaviour:
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
-        propertyName: _AL_TC_BassReactive
+        propertyName: _AL_Mode
         propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &6014874657946983790
+--- !u!114 &7914304164038956366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065393302309926653}
+  m_GameObject: {fileID: 532892580564040951}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -319,25 +306,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
   content:
-    rid: 516245032536113277
+    rid: 1328761487664873902
   references:
     version: 2
     RefIds:
-    - rid: 516245032536113277
+    - rid: 1328761487664873902
       type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
         action:
           actions:
-          - rid: 516245032536113278
-          - rid: 516245032536113279
-          - rid: 516245032536113280
-    - rid: 516245032536113278
+          - rid: 1328761487664873904
+    - rid: 1328761487664873904
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 2
@@ -348,43 +333,45 @@ MonoBehaviour:
         renderer: {fileID: 0}
         renderer2: {fileID: 0}
         affectAllMeshes: 1
-        propertyName: _AL_Theme_Weight
+        propertyName: _AL_Mode
         propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 516245032536113279
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _OutlineWidth
-        propertyType: 0
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
-    - rid: 516245032536113280
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 0}
-        affectAllMeshes: 1
-        propertyName: _AL_TC_BassReactive
-        propertyType: 0
-        value: 0
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1065393302309926653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16718880522749210}
+  m_Layer: 0
+  m_Name: AudioLink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16718880522749210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065393302309926653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2214858923476423079}
+  - {fileID: 5121608749855076471}
+  - {fileID: 3988533416292160395}
+  m_Father: {fileID: 778328994621869660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157291363457651525
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -522,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -602,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -692,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1023,7 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1123,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1213,7 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1295,7 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1385,7 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1464,7 +1451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1554,7 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1582,6 +1569,283 @@ MonoBehaviour:
         renderer2: {fileID: 0}
         affectAllMeshes: 1
         propertyName: _OcclusionStrength
+        propertyType: 0
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &2985169552249712440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2214858923476423079}
+  - component: {fileID: 277578573672302929}
+  - component: {fileID: 8809639706381842927}
+  - component: {fileID: 1148256255966778027}
+  m_Layer: 0
+  m_Name: Weight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2214858923476423079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985169552249712440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 16718880522749210}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277578573672302929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985169552249712440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1218.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2848584044941148545
+  references:
+    version: 2
+    RefIds:
+    - rid: 2848584044941148545
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/AudioLink/Weight
+        state:
+          actions:
+          - rid: 2848584044941148547
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 1
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+        expandIntoTransition: 1
+    - rid: 2848584044941148547
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_Theme_Weight
+        propertyType: 0
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8809639706381842927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985169552249712440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1218.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 2848584044941148548
+  references:
+    version: 2
+    RefIds:
+    - rid: 2848584044941148548
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Shader/AudioLink/Bass
+        state:
+          actions:
+          - rid: 2848584044941148549
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0.75
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+        expandIntoTransition: 1
+    - rid: 2848584044941148549
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_TC_BassReactive
+        propertyType: 0
+        value: 1
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1148256255966778027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985169552249712440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1218.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 516245032536113277
+  references:
+    version: 2
+    RefIds:
+    - rid: 516245032536113277
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 516245032536113278
+          - rid: 516245032536113280
+    - rid: 516245032536113278
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_Theme_Weight
+        propertyType: 0
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 516245032536113280
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 0}
+        affectAllMeshes: 1
+        propertyName: _AL_TC_BassReactive
         propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}
@@ -1684,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1745,7 +2009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1835,7 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1925,7 +2189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2021,7 +2285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2111,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2191,7 +2455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2281,7 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2371,7 +2635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2472,7 +2736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2562,7 +2826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2652,7 +2916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2742,7 +3006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1210.0
+  vrcfuryVersion: 1.1218.0
   somethingIsBroken: 0
   config:
     features: []
