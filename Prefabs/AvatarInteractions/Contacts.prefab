@@ -191,11 +191,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   origin: {x: 0, y: -0.1, z: 0}
   originRotation: {x: 0.70710677, y: 0, z: 0, w: -0.70710677}
-  maximumCompression: 0.41338468
-  size: 0.07001006
+  maximumCompression: 0.6
+  size: 0.18
   clippingPrevention: 0.05
   lateralIsCylindrical: 0
-  frameCount: 15
+  frameCount: 1
   animationRepathingShapeName: 
 --- !u!1 &1858085241281529750
 GameObject:
@@ -728,7 +728,7 @@ MonoBehaviour:
           - rid: 3382421402629177554
           - rid: 3382421402629177798
           - rid: 8409359973799952660
-        transitionTimeIn: 2
+        transitionTimeIn: 0.15
         transitionTimeOut: 5
         localTransitionStateIn:
           actions: []
