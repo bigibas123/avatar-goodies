@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1214.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1214.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -521,11 +521,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6198026969474134242}
   - component: {fileID: 9177964868446817741}
+  - component: {fileID: 7944149789074927616}
   - component: {fileID: 614533768941399590}
   - component: {fileID: 8258522807906297543}
   - component: {fileID: 6518468632977484086}
   m_Layer: 0
-  m_Name: NexuulBonk
+  m_Name: HeadBonk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +566,7 @@ MonoBehaviour:
   height: 2
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
-  localOnly: 0
+  localOnly: 1
   collisionTags:
   - 'NexuulMallet '
   - BatHit
@@ -574,8 +575,86 @@ MonoBehaviour:
   allowSelf: 1
   allowOthers: 1
   receiverType: 0
-  parameter: Nexuulbonk
+  parameter: HeadBonk_Hit
   minVelocity: 0.05
+--- !u!114 &7944149789074927616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473440452768320585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1226.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 4028253393791484219
+  references:
+    version: 2
+    RefIds:
+    - rid: 4028253393791484219
+      type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 4
+        controllers:
+        - controller:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 7f193f327d29a694d990d6ee0bbdfe50|Assets/Characters/Common/Prefabs/AvatarInteractions/HeadBonk_FX.controller
+            objRef: {fileID: 9100000, guid: 7f193f327d29a694d990d6ee0bbdfe50, type: 2}
+          type: 5
+        menus: []
+        prms:
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 2a7d737dc77b7974f8b99521dcc0c77e|Assets/Characters/Common/Prefabs/AvatarInteractions/ContactsParameters.asset
+            objRef: {fileID: 11400000, guid: 2a7d737dc77b7974f8b99521dcc0c77e, type: 2}
+        smoothedPrms: []
+        globalParams:
+        - HeadBonk_Hit
+        - HeadBonk_Active
+        allNonsyncedAreGlobal: 0
+        ignoreSaved: 0
+        toggleParam: 
+        rootObjOverride: {fileID: 0}
+        rootBindingsApplyToAvatar: 0
+        rewriteBindings: []
+        allowMissingAssets: 0
+        injectSpsDepthParam: 
+        injectSpsVelocityParam: 
+        controller:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        menu:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        parameters:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        submenu: 
+        removePrefixes: []
+        addPrefix: 
+        useSecurityForToggle: 0
 --- !u!114 &614533768941399590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1214.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -659,7 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1214.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -687,14 +766,13 @@ MonoBehaviour:
         name: 
         state:
           actions:
-          - rid: 3382421402629177530
           - rid: 3382421402629177541
           - rid: 3382421402629177542
-          - rid: 3382421402629177797
           - rid: 1328761413600019093
+          - rid: 4028253393791484487
         saved: 0
-        slider: 0
-        sliderInactiveAtZero: 0
+        slider: 1
+        sliderInactiveAtZero: 1
         securityEnabled: 0
         defaultOn: 0
         includeInRest: 0
@@ -715,7 +793,7 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-        hasTransition: 1
+        hasTransition: 0
         transitionStateIn:
           actions:
           - rid: 3382421402629177543
@@ -739,22 +817,10 @@ MonoBehaviour:
         simpleOutTransition: 0
         defaultSliderValue: 0
         useGlobalParam: 1
-        globalParam: Nexuulbonk
+        globalParam: HeadBonk_Active
         holdButton: 0
         invertRestLogic: 0
-        expandIntoTransition: 0
-    - rid: 3382421402629177530
-      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
-        blendShapeValue: 100
-        renderer: {fileID: 0}
-        allRenderers: 1
+        expandIntoTransition: 1
     - rid: 3382421402629177541
       type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -847,7 +913,53 @@ MonoBehaviour:
         blendShapeValue: 100
         renderer: {fileID: 0}
         allRenderers: 1
-    - rid: 3382421402629177797
+    - rid: 3382421402629177798
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3057\u3044\u305F\u3051"
+        blendShapeValue: 0
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 4028253393791484487
+      type: {class: FlipBookBuilderAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 1
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        states: []
+        pages:
+        - state:
+            actions: []
+        - state:
+            actions:
+            - rid: 4028253393791484488
+            - rid: 4028253393791484489
+            - rid: 4028253393791484490
+        - state:
+            actions:
+            - rid: 4028253393791484534
+            - rid: 4028253393791484535
+            - rid: 4028253393791484536
+    - rid: 4028253393791484488
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 4028253393791484489
       type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -859,7 +971,31 @@ MonoBehaviour:
         blendShapeValue: 100
         renderer: {fileID: 0}
         allRenderers: 1
-    - rid: 3382421402629177798
+    - rid: 4028253393791484490
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 4028253393791484534
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B\u76EE"
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 4028253393791484535
       type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 0
@@ -868,7 +1004,19 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         blendShape: "\u3057\u3044\u305F\u3051"
-        blendShapeValue: 0
+        blendShapeValue: 100
+        renderer: {fileID: 0}
+        allRenderers: 1
+    - rid: 4028253393791484536
+      type: {class: BlendShapeAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        blendShape: "\u3050\u308B\u3050\u308B"
+        blendShapeValue: 100
         renderer: {fileID: 0}
         allRenderers: 1
     - rid: 8409359973799952658
@@ -909,7 +1057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1214.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []

@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: Nexuulbonk
+  - name: HeadBonk_Hit
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0
+  - name: HeadBonk_Active
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
