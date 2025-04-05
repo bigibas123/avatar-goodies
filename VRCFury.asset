@@ -26,5 +26,8 @@ MonoBehaviour:
   - className: VRCFuryNoUpdateWhenOffscreen
     guid: 325fd324ef90492c8b08804b6f62cc0d
     fileID: 11500000
+  - className: VRCFuryTest
+    guid: 8ef9e6b301ba4ac59c2f7d2b836565e7
+    fileID: 11500000
   parametersReadByExternalTools: []
   parametersChangedByExternalTools: []
