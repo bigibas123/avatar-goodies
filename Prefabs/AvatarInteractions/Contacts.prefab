@@ -622,7 +622,6 @@ MonoBehaviour:
             objRef: {fileID: 11400000, guid: 2a7d737dc77b7974f8b99521dcc0c77e, type: 2}
         smoothedPrms: []
         globalParams:
-        - HeadBonk_Hit
         - HeadBonk_Active
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
