@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -473,7 +473,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 1
+        defaultSliderValue: 0
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2545,7 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2635,7 +2635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2736,7 +2736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
@@ -3006,7 +3006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1218.0
+  vrcfuryVersion: 1.1226.0
   somethingIsBroken: 0
   config:
     features: []
