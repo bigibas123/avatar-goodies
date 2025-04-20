@@ -2175,7 +2175,7 @@ MonoBehaviour:
         affectAllMeshes: 1
         propertyName: _LTCGIStrength
         propertyType: 0
-        value: 2
+        value: 5
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2988524012725028043
