@@ -3171,10 +3171,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 967283404053619123, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
-      propertyPath: ytdlpURL
-      value: https://www.youtube.com/watch?v=Yf3yO5r4LG8
-      objectReference: {fileID: 0}
-    - target: {fileID: 967283404053619123, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
       propertyPath: standbyTexture
       value: 
       objectReference: {fileID: 2800000, guid: a44b73b775b225f449d60f5ebe4a5e74, type: 3}

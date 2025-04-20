@@ -90,8 +90,11 @@ Material:
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
+    - _LightEnvironmentMultiplier: 1
+    - _LightMainMultiplier: 1
     - _LightSmoothness: 1
     - _LightSteps: 1
+    - _LightVertexMultiplier: 1
     - _MinAmbient: 0.005
     - _MonoChrome: 0
     - _MultiTexture: 0
