@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - LTCGI_ENABLED
-  - ROUNDING_ENABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -27,6 +26,18 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal3:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -57,18 +68,32 @@ Material:
     m_Ints:
     - _LightSteps: 5
     m_Floats:
+    - _AL_Mode: 0
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
-    - _AOEnabled: 0
+    - _AL_WireFrameWidth: 0.05
     - _Alpha_Threshold: -0.01
     - _Cull: 2
+    - _Decal1Enabled: 0
+    - _Decal1_BlendMode: 0
+    - _Decal1_Opacity: 1
+    - _Decal2Enabled: 0
+    - _Decal2_BlendMode: 0
+    - _Decal2_Opacity: 1
+    - _Decal3Enabled: 0
+    - _Decal3_BlendMode: 0
+    - _Decal3_Opacity: 1
+    - _DoMirrorThing: 1
     - _EmissionStrength: 2
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _LTCGIStrength: 1
+    - _LightEnvironmentMultiplier: 1
+    - _LightMainMultiplier: 1
     - _LightSmoothness: 0.05
     - _LightSteps: 1
+    - _LightVertexMultiplier: 1
     - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
@@ -76,7 +101,6 @@ Material:
     - _OtherTextureId: 0
     - _OutlineWidth: 0.1
     - _Rounding: 0
-    - _RoundingEnabled: 1
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0
@@ -92,5 +116,8 @@ Material:
     - _ZWriteOFWB: 1
     - _ZWriteTFWB: 0
     m_Colors:
+    - _Decal1_Position: {r: 0, g: 0, b: 1, a: 1}
+    - _Decal2_Position: {r: 0, g: 0, b: 1, a: 1}
+    - _Decal3_Position: {r: 0, g: 0, b: 1, a: 1}
     - _TV_Square_Position: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []

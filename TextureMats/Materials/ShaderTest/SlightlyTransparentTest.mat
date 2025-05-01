@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - DO_ALPHA_PLS
   - LTCGI_ENABLED
-  - ROUNDING_ENABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -73,7 +72,6 @@ Material:
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
     - _AL_WireFrameWidth: 0.05
-    - _AOEnabled: 0
     - _Alpha_Threshold: 0.991
     - _Cull: 2
     - _Decal1Enabled: 0
@@ -103,7 +101,6 @@ Material:
     - _OtherTextureId: 0
     - _OutlineWidth: 0.1
     - _Rounding: 0
-    - _RoundingEnabled: 1
     - _SquareTVTest: 0
     - _TV_Square_Opacity: 0
     - _Transmissivity: 1
