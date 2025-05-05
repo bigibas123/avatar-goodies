@@ -328,7 +328,7 @@ MonoBehaviour:
         renderer2: {fileID: 3384651199011903743}
         affectAllMeshes: 0
         propertyName: _TextureId
-        propertyType: 4
+        propertyType: 0
         value: 23
         valueVector: {x: 0, y: 0, z: 0, w: 0}
         valueColor: {r: 1, g: 1, b: 1, a: 1}
