@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DO_ALPHA_PLS
-  - LTCGI_ENABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -72,6 +71,7 @@ Material:
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
     - _AL_WireFrameWidth: 0.05
+    - _Alpha_Multiplier: 1
     - _Alpha_Threshold: 0.991
     - _Cull: 2
     - _Decal1Enabled: 0
@@ -111,6 +111,7 @@ Material:
     - _Transmissivity: 0.05
     - _UsesAlpha: 1
     - _UsesNormalMap: 0
+    - _VRCLVStrength: 1
     - _VRSLGIStrength: 0.25
     - _Voronoi: 0
     - _ZTestFWA: 4
