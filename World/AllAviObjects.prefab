@@ -1032,7 +1032,6 @@ GameObject:
   - component: {fileID: 2554317477418346497}
   - component: {fileID: 2554317477418346498}
   - component: {fileID: 2554317477418346499}
-  - component: {fileID: 4010662296509231991}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1126,45 +1125,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4010662296509231991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554317477418346509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4aa5f6b68167b4fa9aa2ed478c4412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: {r: 0.54901963, g: 0, b: 1, a: 1}
-  DoubleSided: 1
-  Dynamic: 0
-  TextureIndex: 0
-  Diffuse: 1
-  Specular: 0
-  DiffuseFromLm: 1
-  diffMode: 0
-  LightmapChannel: 1
-  LightmapIntensity: 1
-  ColorMode: 0
-  SingleUV: {x: 0, y: 0}
-  AudioLinkBand: 0
-  FlipUV: 0
-  RendererMode: 3
-  RendererList: []
-  RendererDistance: 15
-  Cylinder: 0
-  CylinderBase: {x: 0, y: 0, z: 0}
-  CylinderHeight: 1
-  CylinderRadius: 1
-  CylinderSize: 1.5707964
-  CylinderAngle: 0
-  AffectAvatars: 1
-  EmissiveRenderers:
-  - {fileID: 2554317477418346498}
-  Initialized: 1
 --- !u!1 &2554317477677488185
 GameObject:
   m_ObjectHideFlags: 0
