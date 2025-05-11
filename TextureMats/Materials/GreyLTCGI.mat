@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _LTCGI: 1
     - _MapIsRoughness: 0
     - _Metallic: 0

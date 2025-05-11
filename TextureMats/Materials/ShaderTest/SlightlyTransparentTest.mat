@@ -67,6 +67,7 @@ Material:
     m_Ints:
     - _LightSteps: 5
     m_Floats:
+    - _AL_BlockWireFrame: 0
     - _AL_Mode: 2
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
