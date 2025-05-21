@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1000
-  m_Range: 0.5
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -145,14 +145,14 @@ MonoBehaviour:
   SmoothBlending: 0.25
   Texture0: {fileID: 11700000, guid: bea16a57962ac974294c76051ea4c279, type: 2}
   Texture1: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
-  Texture2: {fileID: 11700000, guid: 898b6782a9c9e744288c048d33a28d62, type: 2}
+  Texture2: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
   Exposure: 0
   DarkLights: 0
   BrightLights: 0
   Bake: 1
   AdaptiveResolution: 1
-  VoxelsPerUnit: 8
-  Resolution: {x: 80, y: 80, z: 80}
+  VoxelsPerUnit: 0.8
+  Resolution: {x: 8, y: 8, z: 8}
   PreviewVoxels: 0
   LightVolumeInstance: {fileID: 3247620657981347499}
   LightVolumeSetup: {fileID: 0}
@@ -180,18 +180,18 @@ MonoBehaviour:
   BoundsUvwMax2: {x: 0.9, y: 0.9, z: 0.98888886, w: 0}
   InvLocalEdgeSmoothing: {x: 40, y: 40, z: 40, w: 0}
   InvWorldMatrix:
-    e00: 1
+    e00: 0.1
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 1
+    e11: 0.1
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 1
-    e23: 20
+    e22: 0.1
+    e23: 2
     e30: 0
     e31: 0
     e32: 0
