@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1028,7 +1028,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 9e97f2b49b435bc448d65479621ae567|Packages/cc.dingemans.bigibas123.logoassets/Runtime/Textures/Logos/Square/tinygangbig.png
+          id: 9e97f2b49b435bc448d65479621ae567|Packages/cc.dingemans.bigibas123.logoassets/Runtime/Textures/Logos/Square/Memes/tinygangbig.png
           objRef: {fileID: 2800000, guid: 9e97f2b49b435bc448d65479621ae567, type: 3}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
