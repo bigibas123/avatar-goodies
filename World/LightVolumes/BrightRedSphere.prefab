@@ -1,99 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1328416060526175440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5389203155483319243}
-  - component: {fileID: 1234947278734326865}
-  m_Layer: 0
-  m_Name: RedLight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5389203155483319243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328416060526175440}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 453977006451684495}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &1234947278734326865
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328416060526175440}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 1000
-  m_Range: 5
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &2986331725892759405
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,14 +48,18 @@ MonoBehaviour:
   Dynamic: 1
   Additive: 1
   Color: {r: 1, g: 1, b: 1, a: 1}
+  Intensity: 1
   SmoothBlending: 0.25
-  Texture0: {fileID: 11700000, guid: bea16a57962ac974294c76051ea4c279, type: 2}
-  Texture1: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
-  Texture2: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
+  Texture0: {fileID: 11700000, guid: a40cad87bceaee74cae6b6a70d032604, type: 2}
+  Texture1: {fileID: 11700000, guid: 87c94352fedb77e4d836d340e278c538, type: 2}
+  Texture2: {fileID: 11700000, guid: fd6b9c6859b29ea43854a8a8c950ae7e, type: 2}
+  ShadowsTexture: {fileID: 0}
   Exposure: 0
-  DarkLights: 0
-  BrightLights: 0
+  Shadows: 0
+  Highlights: 0
   Bake: 1
+  PointLightShadows: 1
+  BlurShadows: 1
   AdaptiveResolution: 1
   VoxelsPerUnit: 0.8
   Resolution: {x: 8, y: 8, z: 8}
@@ -169,15 +79,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Color: {r: 1, g: 1, b: 1, a: 1}
+  Intensity: 1
   IsDynamic: 1
   IsAdditive: 1
   InvBakedRotation: {x: 0, y: 0, z: 0, w: 1}
-  BoundsUvwMin0: {x: 0.1, y: 0.1, z: 0.67777777, w: 0}
-  BoundsUvwMin1: {x: 0.1, y: 0.1, z: 0.7888889, w: 0}
-  BoundsUvwMin2: {x: 0.1, y: 0.1, z: 0.9, w: 0}
-  BoundsUvwMax0: {x: 0.9, y: 0.9, z: 0.76666665, w: 0}
-  BoundsUvwMax1: {x: 0.9, y: 0.9, z: 0.87777776, w: 0}
-  BoundsUvwMax2: {x: 0.9, y: 0.9, z: 0.98888886, w: 0}
+  BoundsUvwMin0: {x: 0.1, y: 0.1, z: 0.7583333, w: 0.79999995}
+  BoundsUvwMin1: {x: 0.1, y: 0.1, z: 0.84166664, w: 0.79999995}
+  BoundsUvwMin2: {x: 0.1, y: 0.1, z: 0.925, w: 0.06666666}
+  BoundsUvwMinOcclusion: {x: 0, y: 0, z: 0, w: 0}
+  BoundsUvwMax0: {x: 0.9, y: 0.9, z: 0.825, w: 0}
+  BoundsUvwMax1: {x: 0.9, y: 0.9, z: 0.90833336, w: 0}
+  BoundsUvwMax2: {x: 0.9, y: 0.9, z: 0.9916667, w: 0}
   InvLocalEdgeSmoothing: {x: 40, y: 40, z: 40, w: 0}
   InvWorldMatrix:
     e00: 0.1
@@ -191,14 +103,19 @@ MonoBehaviour:
     e20: 0
     e21: 0
     e22: 0.1
-    e23: 2
+    e23: 5
     e30: 0
     e31: 0
     e32: 0
     e33: 1
+  RelativeRotation: {x: 0, y: 0, z: 0, w: 1}
   RelativeRotationRow0: {x: 1, y: 0, z: 0}
   RelativeRotationRow1: {x: 0, y: 1, z: 0}
   IsRotated: 0
+  BakeOcclusion: 0
+  IsInitialized: 1
+  LightVolumeManager: {fileID: 0}
+  IsIterartedThrough: 0
 --- !u!1 &3760515930219200754
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +146,5 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 517944195349810405}
-  - {fileID: 5389203155483319243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -50,18 +50,34 @@ MonoBehaviour:
   - {fileID: 2329633824719715244}
   - {fileID: 7107866576041339848}
   - {fileID: 2042787154802353892}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   LightVolumesWeights:
   - 0
   - 0
   - 0
   - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  PointLightVolumes: []
+  Resolution: 128
+  Format: 17
+  LightsBrightnessCutoff: 0.35
   BakingMode: 0
   Denoise: 1
+  DilateInvalidProbes: 1
+  DilationIterations: 1
+  DilationBackfaceBias: 0.1
   FixLightProbesL1: 1
   LightProbesBlending: 1
   SharpBounds: 1
   AutoUpdateVolumes: 0
   AdditiveMaxOverdraw: 4
+  DestroyInPlayMode: 0
   LightVolumeDataList:
   - Weight: 0
     LightVolumeInstance: {fileID: 234974844610106549}
@@ -73,6 +89,7 @@ MonoBehaviour:
     LightVolumeInstance: {fileID: 8464206956036443987}
   LightVolumeManager: {fileID: 3608426183386343210}
   _bakingModePrev: 0
+  IsLegacyUVWConverted: 1
 --- !u!114 &3608426183386343210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,16 +102,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c164fbf42cf794a8edc0fd006e1b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightVolumeAtlas: {fileID: 11700000, guid: b6d83c5af6a31a141a6712397cd2c62d, type: 2}
+  LightVolumeAtlas: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
   LightProbesBlending: 1
   SharpBounds: 1
   AutoUpdateVolumes: 0
   AdditiveMaxOverdraw: 4
+  LightsBrightnessCutoff: 0.35
   LightVolumeInstances:
   - {fileID: 234974844610106549}
   - {fileID: 4751609609175592320}
   - {fileID: 8995410411754828420}
   - {fileID: 8464206956036443987}
+  PointLightVolumeInstances: []
+  CustomTextures: {fileID: 0}
+  CubemapsCount: 0
+  IsRangeDirty: 0
 --- !u!1 &8073059980977592514
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,21 +166,21 @@ PrefabInstance:
       value: BrightBlueSphere
       objectReference: {fileID: 0}
     - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
+      propertyPath: InvWorldMatrix.e03
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
+      propertyPath: InvWorldMatrix.e13
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: InvWorldMatrix.e23
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6042739617060065553, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: Texture0
+    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
+      propertyPath: LightVolumeManager
       value: 
-      objectReference: {fileID: 11700000, guid: 753be45093af0764d8612d93b8400b75, type: 2}
-    - target: {fileID: 6042739617060065553, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: Texture1
-      value: 
-      objectReference: {fileID: 11700000, guid: c26c59ae386e64b43b6f8a411f841018, type: 2}
-    - target: {fileID: 6042739617060065553, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: Texture2
-      value: 
-      objectReference: {fileID: 11700000, guid: 8870ebe63b4dc4449afb0cb908eb1550, type: 2}
+      objectReference: {fileID: 3608426183386343210}
     - target: {fileID: 6042739617060065553, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: LightVolumeSetup
       value: 
@@ -248,9 +270,13 @@ PrefabInstance:
       value: BrightWhiteSphere
       objectReference: {fileID: 0}
     - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
-      propertyPath: InvWorldMatrix.e23
+      propertyPath: InvWorldMatrix.e13
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
+      propertyPath: LightVolumeManager
+      value: 
+      objectReference: {fileID: 3608426183386343210}
     - target: {fileID: 5616194903879546262, guid: 6661c788fa22777429829af246e532d0, type: 3}
       propertyPath: LightVolumeSetup
       value: 
@@ -376,25 +402,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
+      propertyPath: InvWorldMatrix.e13
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
       propertyPath: InvWorldMatrix.e23
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
+      propertyPath: LightVolumeManager
+      value: 
+      objectReference: {fileID: 3608426183386343210}
     - target: {fileID: 3760515930219200754, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
       propertyPath: m_Name
       value: BrightRedSphere
       objectReference: {fileID: 0}
-    - target: {fileID: 4917449970064965404, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
-      propertyPath: Texture0
-      value: 
-      objectReference: {fileID: 11700000, guid: bea16a57962ac974294c76051ea4c279, type: 2}
-    - target: {fileID: 4917449970064965404, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
-      propertyPath: Texture1
-      value: 
-      objectReference: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
-    - target: {fileID: 4917449970064965404, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
-      propertyPath: Texture2
-      value: 
-      objectReference: {fileID: 11700000, guid: 2a543f3e5b7862349a64e05bb4b7fa5d, type: 2}
     - target: {fileID: 4917449970064965404, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
       propertyPath: LightVolumeSetup
       value: 
@@ -440,9 +462,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 8037837688367046971}
     m_Modifications:
     - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
+      propertyPath: InvWorldMatrix.e03
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
+      propertyPath: InvWorldMatrix.e13
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
       propertyPath: InvWorldMatrix.e23
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
+      propertyPath: LightVolumeManager
+      value: 
+      objectReference: {fileID: 3608426183386343210}
     - target: {fileID: 4222619417216460474, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -483,18 +517,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4698839800596973605, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: Texture0
-      value: 
-      objectReference: {fileID: 11700000, guid: a77f111de7b49094399d40a8321c61ce, type: 2}
-    - target: {fileID: 4698839800596973605, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: Texture1
-      value: 
-      objectReference: {fileID: 11700000, guid: 63d816b4b11b7014191430d7be87d697, type: 2}
-    - target: {fileID: 4698839800596973605, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: Texture2
-      value: 
-      objectReference: {fileID: 11700000, guid: 928f01e5a9530bc4fadc7222b38b113b, type: 2}
     - target: {fileID: 4698839800596973605, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
       propertyPath: LightVolumeSetup
       value: 

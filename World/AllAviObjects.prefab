@@ -3249,30 +3249,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2554317477900899593}
     m_Modifications:
-    - target: {fileID: 234974844610106549, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065503883023728439, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374545586766356569, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107008783728678876, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7806765624468330762, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8037837688367046971, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3316,14 +3292,6 @@ PrefabInstance:
     - target: {fileID: 8073059980977592514, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: m_Name
       value: LightVolumes
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464206956036443987, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
