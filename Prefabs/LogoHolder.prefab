@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4789e612184f1c4ebd4a4c20c369544, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68,7 +68,7 @@ PrefabInstance:
       addedObject: {fileID: 716372186989121012}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4789e612184f1c4ebd4a4c20c369544, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7155422523418435947}
+      addedObject: {fileID: 667390352387543620}
   m_SourcePrefab: {fileID: 100100000, guid: f4789e612184f1c4ebd4a4c20c369544, type: 3}
 --- !u!1 &3384651199011903743 stripped
 GameObject:
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1249.0
   somethingIsBroken: 0
   config:
     features: []
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1249.0
   somethingIsBroken: 0
   config:
     features: []
@@ -242,7 +242,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 3384651199011903743}
---- !u!114 &7155422523418435947
+--- !u!114 &667390352387543620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,84 +251,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 3384651199011903743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Script: {fileID: 11500000, guid: a37fc0da9bdb4be5a5e50a1a25afe17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 7871994448893181964
-  references:
-    version: 2
-    RefIds:
-    - rid: 7871994448893181964
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Props/DroppableLogo/Logo
-        state:
-          actions:
-          - rid: 7871994448893181965
-        saved: 0
-        slider: 1
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 0
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-        transitionStateOut:
-          actions: []
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-        localTransitionStateOut:
-          actions: []
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-        expandIntoTransition: 1
-    - rid: 7871994448893181965
-      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 2
-        desktopActive: 0
-        androidActive: 0
-        localOnly: 0
-        remoteOnly: 0
-        renderer: {fileID: 0}
-        renderer2: {fileID: 3384651199011903743}
-        affectAllMeshes: 0
-        propertyName: _TextureId
-        propertyType: 0
-        value: 23
-        valueVector: {x: 0, y: 0, z: 0, w: 0}
-        valueColor: {r: 1, g: 1, b: 1, a: 1}
+  slots:
+  - enabled: 1
+    renderer: {fileID: 3888944199107344682}
+    slot: 0
+    menuPath: Props/DroppableLogo/Logo
+    sourceProperty: _MainTexArray
+    targetShader: {fileID: 4800000, guid: 5ad730916d1841c3a2049bbcf2bd788b, type: 3}
+    targetProperty: _MainTex
+  - enabled: 0
+    renderer: {fileID: 3888944199107344682}
+    slot: 1
+    menuPath: 
+    sourceProperty: 
+    targetShader: {fileID: 0}
+    targetProperty: 
+--- !u!23 &3888944199107344682 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f4789e612184f1c4ebd4a4c20c369544, type: 3}
+  m_PrefabInstance: {fileID: 2466243634462811566}
+  m_PrefabAsset: {fileID: 0}
