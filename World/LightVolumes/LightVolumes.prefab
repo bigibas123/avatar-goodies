@@ -50,15 +50,7 @@ MonoBehaviour:
   - {fileID: 2329633824719715244}
   - {fileID: 7107866576041339848}
   - {fileID: 2042787154802353892}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   LightVolumesWeights:
-  - 0
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
@@ -103,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightVolumeAtlas: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
+  LightVolumeAtlasBase: {fileID: 0}
+  AtlasPostProcessors: []
   LightProbesBlending: 1
   SharpBounds: 1
   AutoUpdateVolumes: 0
