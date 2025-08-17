@@ -50,7 +50,15 @@ MonoBehaviour:
   - {fileID: 2329633824719715244}
   - {fileID: 7107866576041339848}
   - {fileID: 2042787154802353892}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   LightVolumesWeights:
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0
@@ -95,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightVolumeAtlas: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
-  LightVolumeAtlasBase: {fileID: 0}
+  LightVolumeAtlasBase: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
   AtlasPostProcessors: []
   LightProbesBlending: 1
   SharpBounds: 1
@@ -158,18 +166,6 @@ PrefabInstance:
     - target: {fileID: 2282447612060195456, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: m_Name
       value: BrightBlueSphere
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: InvWorldMatrix.e03
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: LightVolumeManager
@@ -262,10 +258,6 @@ PrefabInstance:
     - target: {fileID: 3919298807700221787, guid: 6661c788fa22777429829af246e532d0, type: 3}
       propertyPath: m_Name
       value: BrightWhiteSphere
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
       propertyPath: LightVolumeManager
@@ -396,14 +388,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
       propertyPath: LightVolumeManager
       value: 
       objectReference: {fileID: 3608426183386343210}
@@ -455,18 +439,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8037837688367046971}
     m_Modifications:
-    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: InvWorldMatrix.e03
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
       propertyPath: LightVolumeManager
       value: 

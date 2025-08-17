@@ -89,8 +89,9 @@ MonoBehaviour:
   Exposure: 0
   Shadows: 0
   Highlights: 0
-  Bake: 1
+  Bake: 0
   PointLightShadows: 1
+  ShadowsScale: 1
   BlurShadows: 1
   AdaptiveResolution: 1
   VoxelsPerUnit: 0.8
@@ -118,7 +119,7 @@ MonoBehaviour:
   BoundsUvwMin0: {x: 0.1, y: 0.1, z: 0.008333334, w: 0.79999995}
   BoundsUvwMin1: {x: 0.1, y: 0.1, z: 0.09166667, w: 0.79999995}
   BoundsUvwMin2: {x: 0.1, y: 0.1, z: 0.175, w: 0.06666667}
-  BoundsUvwMinOcclusion: {x: 0, y: 0, z: 0, w: 0}
+  BoundsUvwMinOcclusion: {x: 0, y: 0, z: 0, w: 1}
   BoundsUvwMax0: {x: 0.9, y: 0.9, z: 0.075, w: 0}
   BoundsUvwMax1: {x: 0.9, y: 0.9, z: 0.15833333, w: 0}
   BoundsUvwMax2: {x: 0.9, y: 0.9, z: 0.24166666, w: 0}

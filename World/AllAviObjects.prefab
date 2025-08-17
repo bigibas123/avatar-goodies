@@ -3262,16 +3262,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 2554317477900899593}
     m_Modifications:
     - target: {fileID: 234974844610106549, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: BoundsUvwMin2.w
-      value: 0.08888889
-      objectReference: {fileID: 0}
-    - target: {fileID: 234974844610106549, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: InvWorldMatrix.e13
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: BoundsUvwMin2.w
-      value: 0.08888888
       objectReference: {fileID: 0}
     - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: InvWorldMatrix.e13
@@ -3322,16 +3314,8 @@ PrefabInstance:
       value: LightVolumes
       objectReference: {fileID: 0}
     - target: {fileID: 8464206956036443987, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: BoundsUvwMin2.w
-      value: 0.08888888
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464206956036443987, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: InvWorldMatrix.e13
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: BoundsUvwMin2.w
-      value: 0.08888888
       objectReference: {fileID: 0}
     - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: InvWorldMatrix.e13

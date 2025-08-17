@@ -652,22 +652,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 234974844610106549, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
+    - target: {fileID: 2042787154802353892, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: Bake
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e03
-      value: 5
+    - target: {fileID: 2042787154802353892, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumeSetup
+      value: 
+      objectReference: {fileID: 4756287881551833446}
+    - target: {fileID: 2329633824719715244, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: Bake
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 2329633824719715244, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumeSetup
+      value: 
+      objectReference: {fileID: 4756287881551833446}
     - target: {fileID: 4933205443714698706, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -100
@@ -688,6 +688,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 7107866576041339848, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: Bake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107866576041339848, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumeSetup
+      value: 
+      objectReference: {fileID: 4756287881551833446}
     - target: {fileID: 8037837688367046971, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -732,26 +740,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightVolumes
       objectReference: {fileID: 0}
-    - target: {fileID: 8464206956036443987, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
+    - target: {fileID: 8457179698401748474, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: Bake
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8464206956036443987, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e03
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e13
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995410411754828420, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
-      propertyPath: InvWorldMatrix.e23
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 8457179698401748474, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumeSetup
+      value: 
+      objectReference: {fileID: 4756287881551833446}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -789,6 +785,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6055543284888850396, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
   m_PrefabInstance: {fileID: 4756287881551833441}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4756287881551833446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3083010918987919069, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+  m_PrefabInstance: {fileID: 4756287881551833441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5adcba82967531c4fb3c866ec8858572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
