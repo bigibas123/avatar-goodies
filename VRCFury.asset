@@ -14,6 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comment: 
   meaninglessComponents:
+  - className: VRCFuryGlobalCollider
+    guid: 8028d33728ef49f5b9d44b564480aeff
+    fileID: 11500000
+  - className: VRCFury
+    guid: d9e94e501a2d4c95bff3d5601013d923
+    fileID: 11500000
+  - className: VRCFuryHapticPlug
+    guid: 2d4cd252f8c146639507ecd55bc2b48a
+    fileID: 11500000
+  - className: VRCFuryHapticSocket
+    guid: 703106f8586c4f64b5aa39b6b4676684
+    fileID: 11500000
   - className: VRCFuryDebugInfo
     guid: 19d6be1140c9472cbc89e515ffd74126
     fileID: 11500000
