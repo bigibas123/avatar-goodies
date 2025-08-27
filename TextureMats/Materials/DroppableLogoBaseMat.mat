@@ -98,9 +98,7 @@ Material:
     - _Decal3_Opacity: 1
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
-    - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
-    - _EnableSpecularSmooth: 0
     - _FinalLightMultiply: 1
     - _LTCGIStrength: 1
     - _LightAddMultiplier: 1
@@ -109,9 +107,6 @@ Material:
     - _LightSmoothness: 1
     - _LightSteps: 1
     - _LightVertexMultiplier: 1
-    - _MainStencilPass: 2
-    - _MainStencilRef: 148
-    - _MainStencilWriteMask: 255
     - _MinAmbient: 0.001
     - _MonoChrome: 0
     - _MultiTexture: 0
@@ -129,7 +124,6 @@ Material:
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
     - _VRCLVStrength: 1
-    - _VRSLGIStrength: 0.25
     - _Voronoi: 0
     - _ZTestFWA: 4
     - _ZTestOFWB: 4
