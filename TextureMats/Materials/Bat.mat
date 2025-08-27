@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - DECAL_1_ENABLED
   - DECAL_2_ENABLED
-  - DO_ALPHA_PLS
   m_InvalidKeywords:
   - LTCGI_ENABLED
   m_LightmapFlags: 1
@@ -28,6 +27,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Bump2ndMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -75,13 +78,16 @@ Material:
     m_Ints:
     - _LightSteps: 5
     m_Floats:
+    - _AL_BandMapDistance: 0
     - _AL_BlockWireFrame: 0
     - _AL_Mode: 2
     - _AL_TC_BassReactive: 0.75
     - _AL_Theme_Weight: 1
     - _AL_WireFrameWidth: 0.05
     - _Alpha_Multiplier: 1
-    - _Alpha_Threshold: 0
+    - _Alpha_Threshold: -0.01
+    - _Bump2ndScale: 1
+    - _BumpScale: 1
     - _Cull: 2
     - _Decal1Enabled: 1
     - _Decal1_BlendMode: 0
@@ -116,9 +122,13 @@ Material:
     - _OutlineWidth: 0.1
     - _Rounding: 0
     - _SquareTVTest: 0
+    - _StencilRMask: 32
+    - _StencilRef: 32
+    - _StencilWMask: 32
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0.05
-    - _UsesAlpha: 1
+    - _Uses2ndNormalMap: 0
+    - _UsesAlpha: 0
     - _UsesNormalMap: 0
     - _VRCLVStrength: 1
     - _VRSLGIStrength: 0.25
