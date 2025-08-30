@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   radius: 0.06
   height: 0.15
   rootTransform: {fileID: 0}
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -659,6 +659,121 @@ MonoBehaviour:
         version: 3
         fromPath: Dances
         toPath: Body/Dances
+--- !u!1 &6309850287065204828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3823595256317073352}
+  - component: {fileID: 6812370916184181460}
+  m_Layer: 0
+  m_Name: LockLocomotion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3823595256317073352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309850287065204828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6014019912849638548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6812370916184181460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309850287065204828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1252.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 4968588167956661091
+  references:
+    version: 2
+    RefIds:
+    - rid: 4968588167956661091
+      type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 4
+        controllers:
+        - controller:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 49a55462842f954498b127ecd75a7b8d|Assets/Characters/Common/Prefabs/Base_Components/LockLocomotion/LockLocomotionController.controller
+            objRef: {fileID: 9100000, guid: 49a55462842f954498b127ecd75a7b8d, type: 2}
+          type: 5
+        menus:
+        - menu:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 5dfc3a9403f2de043842a0727be3fb87|Assets/Characters/Common/Prefabs/Base_Components/LockLocomotion/LockLocomotionMenu.asset
+            objRef: {fileID: 11400000, guid: 5dfc3a9403f2de043842a0727be3fb87, type: 2}
+          prefix: 
+        prms:
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: dd76181e177ca64419ff807bdeef8eb7|Assets/Characters/Common/Prefabs/Base_Components/LockLocomotion/LockLocomotionParams.asset
+            objRef: {fileID: 11400000, guid: dd76181e177ca64419ff807bdeef8eb7, type: 2}
+        smoothedPrms: []
+        globalParams: []
+        allNonsyncedAreGlobal: 0
+        ignoreSaved: 0
+        toggleParam: 
+        rootObjOverride: {fileID: 0}
+        rootBindingsApplyToAvatar: 0
+        rewriteBindings: []
+        allowMissingAssets: 0
+        injectSpsDepthParam: 
+        injectSpsVelocityParam: 
+        controller:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        menu:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        parameters:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        submenu: 
+        removePrefixes: []
+        addPrefix: 
+        useSecurityForToggle: 0
 --- !u!1 &6313507421659298800
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -733,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -786,6 +901,7 @@ Transform:
   - {fileID: 3657277842230797803}
   - {fileID: 8538999420239535511}
   - {fileID: 2706081047073437179}
+  - {fileID: 3823595256317073352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7804155772207107323
@@ -866,7 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
