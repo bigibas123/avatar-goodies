@@ -12,7 +12,7 @@ it's a work in progress and some options probably need to be subdivided even mor
 But it's a start...
 
 
-* **hat**: Top of head
+* **hat**: On top of head above hair
 * **cap**: Front of head above bangs, e.g. when swimming goggles are in the way or the sun-blocking part of a cap is present
 * **glasses**: In front of eyes
 * **hair**: Hair replacements, e.g. different styles or diving drysuits
@@ -37,6 +37,7 @@ But it's a start...
 * **belt**: Accessory wrapping slightly above hips
 * **panties**: Form fitting clothing article around hips
 * **pants**: Clothing slightly seperated around hip area
+* **skirt**: Clothing with quite a large seperation around the hip area
 * **stocking_l**: Form fitting clothing around entire left leg
 * **stocking_r**: Form fitting clothing around entire right leg
 * **pantleg_l**: Covers upper leg on the left side
