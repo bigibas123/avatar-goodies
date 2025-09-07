@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1248.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -140,7 +140,6 @@ PrefabInstance:
       value: FBA VRCFury Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5172707106774344819, guid: a6c7c760ab4eed6448c41b3396d6e04c, type: 3}
     - {fileID: 1392607852445078449, guid: a6c7c760ab4eed6448c41b3396d6e04c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -186,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1248.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
@@ -275,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1248.0
+  vrcfuryVersion: 1.1252.0
   somethingIsBroken: 0
   config:
     features: []
