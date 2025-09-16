@@ -455,7 +455,7 @@ namespace SLZ.SLZEditorTools
                 ShaderMessage[] messages = compileInfo.Messages;
                 foreach (var message in messages)
                 {
-                    string logMsg = $"{message.severity}: {message.message}\nfile:{message.file}, line: {message.line}";
+                    string logMsg = $"{message.severity}: {message.message}\nfile: {message.file}, line: {message.line}\ndetails: {message.messageDetails}";
                     switch (message.severity)
                     {
                         case ShaderCompilerMessageSeverity.Error:
