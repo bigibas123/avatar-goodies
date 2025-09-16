@@ -53,7 +53,8 @@ PrefabInstance:
       value: TVHolder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8309070689385191162, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
