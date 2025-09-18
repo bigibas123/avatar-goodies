@@ -457,7 +457,7 @@ MonoBehaviour:
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
-        defaultSliderValue: 0.5
+        defaultSliderValue: 0.25
         useGlobalParam: 0
         globalParam: 
         holdButton: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 6182529707312857977}
-        scale: 16
+        scale: 32
 --- !u!114 &4263191166888116119
 MonoBehaviour:
   m_ObjectHideFlags: 0
