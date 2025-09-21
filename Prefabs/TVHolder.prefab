@@ -53,8 +53,7 @@ PrefabInstance:
       value: TVHolder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8309070689385191162, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
@@ -76,9 +75,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4263191166888116119}
   m_SourcePrefab: {fileID: 100100000, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
---- !u!1 &1520553339163157289 stripped
+--- !u!1 &202795734576466930 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5483058769111375105, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6619678438611940826, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
   m_PrefabInstance: {fileID: 6416973965954383400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6182529707312857977 stripped
@@ -284,6 +283,8 @@ MonoBehaviour:
         state:
           actions:
           - rid: 4994601106555011174
+          - rid: 4994601325571867207
+          - rid: 4994601325571867208
         saved: 1
         slider: 1
         sliderInactiveAtZero: 0
@@ -336,7 +337,39 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         renderer: {fileID: 0}
-        renderer2: {fileID: 1520553339163157289}
+        renderer2: {fileID: 202795734576466930}
+        affectAllMeshes: 0
+        propertyName: _WavinessFactor
+        propertyType: 0
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 4994601325571867207
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 7626477391568650869}
+        affectAllMeshes: 0
+        propertyName: _WavinessFactor
+        propertyType: 0
+        value: 2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 4994601325571867208
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 7054789324781059832}
         affectAllMeshes: 0
         propertyName: _WavinessFactor
         propertyType: 0
@@ -373,6 +406,8 @@ MonoBehaviour:
         action:
           actions:
           - rid: 4994601106555011176
+          - rid: 4994601325571867209
+          - rid: 4994601325571867210
     - rid: 4994601106555011176
       type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -382,7 +417,39 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         renderer: {fileID: 0}
-        renderer2: {fileID: 1520553339163157289}
+        renderer2: {fileID: 202795734576466930}
+        affectAllMeshes: 0
+        propertyName: _WavinessFactor
+        propertyType: 0
+        value: -2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 4994601325571867209
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 7626477391568650869}
+        affectAllMeshes: 0
+        propertyName: _WavinessFactor
+        propertyType: 0
+        value: -2
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+    - rid: 4994601325571867210
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 7054789324781059832}
         affectAllMeshes: 0
         propertyName: _WavinessFactor
         propertyType: 0
@@ -513,3 +580,13 @@ MonoBehaviour:
         remoteOnly: 0
         obj: {fileID: 6182529707312857977}
         scale: 0.125
+--- !u!1 &7054789324781059832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5122265882551582512, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
+  m_PrefabInstance: {fileID: 6416973965954383400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7626477391568650869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5702934725348508579, guid: 66a940e1348b130478dd6e09d4ac6e11, type: 3}
+  m_PrefabInstance: {fileID: 6416973965954383400}
+  m_PrefabAsset: {fileID: 0}
