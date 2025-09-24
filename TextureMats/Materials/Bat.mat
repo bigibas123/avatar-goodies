@@ -109,12 +109,12 @@ Material:
     - _LightSmoothness: 1
     - _LightSteps: 1
     - _LightVertexMultiplier: 1
-    - _MinAmbient: 0.001
+    - _MinAmbient: 0.05
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
-    - _OutlineWidth: 0.1
+    - _OutlineWidth: 0.05
     - _Rounding: 0
     - _SquareTVTest: 0
     - _StencilRMask: 32
