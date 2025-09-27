@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 672cf279ebc041f5b87addc7c6c980bb, type: 3}
-  m_Name: VRCFury
+  m_Name: VRCFury_AAO_Ignore
   m_EditorClassIdentifier: 
   comment: 
   meaninglessComponents:
