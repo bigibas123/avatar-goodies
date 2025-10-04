@@ -3265,6 +3265,14 @@ PrefabInstance:
       propertyPath: InvWorldMatrix.e13
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3083010918987919069, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083010918987919069, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
+      propertyPath: LightVolumesWeights.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4751609609175592320, guid: e0e267ec241dc3146b7b10eeef04ec0b, type: 3}
       propertyPath: InvWorldMatrix.e13
       value: -1
