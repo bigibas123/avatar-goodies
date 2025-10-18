@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -19930,7 +19930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -19959,7 +19959,7 @@ MonoBehaviour:
             id: bf7bd9539559b264f9a975f89f555970|Assets/!Cam/Toybox/Watergun/Resources/Expressions/Watergun
               Main Menu.asset
             objRef: {fileID: 11400000, guid: bf7bd9539559b264f9a975f89f555970, type: 2}
-          prefix: 
+          prefix: Props
         prms:
         - parameters:
             version: 1
@@ -20087,7 +20087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -20173,7 +20173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -25295,7 +25295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -44985,7 +44985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -49913,7 +49913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1234.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
