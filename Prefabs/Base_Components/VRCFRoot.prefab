@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8511047393946426903}
-  - {fileID: 4832106656509900378}
+  - {fileID: 5098337754110843173}
   m_Father: {fileID: 6014019912849638548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &300021782829747276
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -100,7 +100,7 @@ MonoBehaviour:
             guid: 
             id: cdc105c12e7951745988f10cce134cd5|Assets/Characters/Common/Prefabs/Base_Components/EyeTrackReset/EyeTrackResetMenu.asset
             objRef: {fileID: 11400000, guid: cdc105c12e7951745988f10cce134cd5, type: 2}
-          prefix: Face Tracking/Extra
+          prefix: VRCFT/Extra
         prms:
         - parameters:
             version: 1
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   radius: 0.06
   height: 0.15
   rootTransform: {fileID: 0}
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -784,7 +784,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3613120668839508531}
   - component: {fileID: 104489314770149746}
-  - component: {fileID: 4112279314350096014}
   m_Layer: 0
   m_Name: Optimizers
   m_TagString: Untagged
@@ -821,7 +820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -834,35 +833,6 @@ MonoBehaviour:
       type: {class: DirectTreeOptimizer, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 0
---- !u!114 &4112279314350096014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6313507421659298800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 2848584023625171217
-  references:
-    version: 2
-    RefIds:
-    - rid: 2848584023625171217
-      type: {class: UnlimitedParameters, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
-        includeBools: 1
-        includePuppets: 0
 --- !u!1 &6857493207217546223
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1252.0
+  vrcfuryVersion: 1.1258.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1057,7 +1027,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8479653049806574529, guid: a0a4d86be0bcdc84db7e9383d09c63cd, type: 3}
   m_PrefabInstance: {fileID: 228937281587875414}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7409109856791924281
+--- !u!1001 &3594822257064925122
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1065,74 +1035,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3657277842230797803}
     m_Modifications:
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+      propertyPath: m_Name
+      value: '!Pawlygon - Facetracking Controller - Unified Expressions'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    - target: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3946562089263428192, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-      propertyPath: cachedExecutionGroupIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3946562089263428192, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-      propertyPath: latestValidExecutionGroupIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969986300718363375, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-      propertyPath: m_Name
-      value: VF_UE_TongueSteps_VRCFT
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923609399596397873, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-      propertyPath: cachedExecutionGroupIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923609399596397873, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-      propertyPath: latestValidExecutionGroupIndex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2585795769479461216, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
---- !u!4 &4832106656509900378 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+--- !u!4 &5098337754110843173 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
-  m_PrefabInstance: {fileID: 7409109856791924281}
+  m_CorrespondingSourceObject: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+  m_PrefabInstance: {fileID: 3594822257064925122}
   m_PrefabAsset: {fileID: 0}
