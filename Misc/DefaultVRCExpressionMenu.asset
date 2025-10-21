@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: DefaultVRCExpressionMenu
   m_EditorClassIdentifier: 
-  Parameters: {fileID: 11400000, guid: 75250ab7e903bb84eb214af7b15df43e, type: 2}
+  Parameters: {fileID: 11400000, guid: 26a22bb797e2ed541b0dd53b826d9b81, type: 2}
   controls: []
