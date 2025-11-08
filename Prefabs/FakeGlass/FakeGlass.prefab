@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1761253453308542595}
   - component: {fileID: 363137237400155758}
-  - component: {fileID: 411002037883111018}
   - component: {fileID: 1085802616652073225}
+  - component: {fileID: 2739199966907819543}
+  - component: {fileID: 2709895631096430900}
+  - component: {fileID: 2275502162568791154}
   m_Layer: 0
   m_Name: FakeGlass
   m_TagString: Untagged
@@ -32,8 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6052390681888656564}
-  - {fileID: 8586065700902776718}
+  - {fileID: 1761253454326512800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &363137237400155758
@@ -49,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1267.0
   somethingIsBroken: 0
   config:
     features: []
@@ -62,19 +63,25 @@ MonoBehaviour:
     - rid: 0
       type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
       data:
-        version: 6
-        linkMode: 3
-        propBone: {fileID: 8586065700902776717}
+        version: 7
+        propBone: {fileID: 1761253453308542592}
         linkTo:
         - useBone: 1
           bone: 18
           useObj: 0
           obj: {fileID: 0}
           offset: 
-        keepBoneOffsets2: 1
         removeBoneSuffix: 
-        skinRewriteScalingFactor: 0
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
+        recursive: 0
+        alignPosition: 1
+        alignRotation: 1
+        alignScale: 1
+        autoScaleFactor: 1
         scalingFactorPowersOf10Only: 1
+        skinRewriteScalingFactor: 1
         useOptimizedUpload: 0
         useBoneMerging: 0
         keepBoneOffsets: 0
@@ -82,97 +89,8 @@ MonoBehaviour:
         boneOnAvatar: 18
         bonePathOnAvatar: 
         fallbackBones: 
---- !u!114 &411002037883111018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761253453308542592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 0
-      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        name: Props/FakeGlass/WC
-        state:
-          actions:
-          - rid: 1
-          ResetMePlease2: 0
-        saved: 0
-        slider: 0
-        sliderInactiveAtZero: 0
-        securityEnabled: 0
-        defaultOn: 1
-        includeInRest: 0
-        exclusiveOffState: 0
-        enableExclusiveTag: 0
-        exclusiveTag: 
-        resetPhysbones: []
-        hasExitTime: 0
-        enableIcon: 0
-        icon:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 
-          objRef: {fileID: 0}
-        enableDriveGlobalParam: 0
-        driveGlobalParam: 
-        separateLocal: 0
-        localState:
-          actions: []
-          ResetMePlease2: 0
-        hasTransition: 0
-        transitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        transitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        transitionTimeIn: 0
-        transitionTimeOut: 0
-        localTransitionStateIn:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionStateOut:
-          actions: []
-          ResetMePlease2: 0
-        localTransitionTimeIn: 0
-        localTransitionTimeOut: 0
-        simpleOutTransition: 1
-        defaultSliderValue: 0
-        useGlobalParam: 0
-        globalParam: 
-        holdButton: 0
-        invertRestLogic: 0
-    - rid: 1
-      type: {class: AnimationClipAction, ns: VF.Model.StateAction, asm: VRCFury}
-      data:
-        version: 0
-        desktopActive: 0
-        androidActive: 0
-        clip:
-          version: 1
-          fileID: 0
-          guid: 
-          id: 6910460e500abcc4d8a3ee57aeaaf10f|Assets/Characters/Common/Prefabs/FakeGlass/WC_OFF.anim
-          objRef: {fileID: 7400000, guid: 6910460e500abcc4d8a3ee57aeaaf10f, type: 2}
+        keepBoneOffsets2: 1
+        linkMode: 3
 --- !u!114 &1085802616652073225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1267.0
   somethingIsBroken: 0
   config:
     features: []
@@ -204,7 +122,6 @@ MonoBehaviour:
         state:
           actions:
           - rid: 1
-          ResetMePlease2: 0
         saved: 0
         slider: 0
         sliderInactiveAtZero: 0
@@ -228,22 +145,17 @@ MonoBehaviour:
         separateLocal: 0
         localState:
           actions: []
-          ResetMePlease2: 0
         hasTransition: 0
         transitionStateIn:
           actions: []
-          ResetMePlease2: 0
         transitionStateOut:
           actions: []
-          ResetMePlease2: 0
         transitionTimeIn: 0
         transitionTimeOut: 0
         localTransitionStateIn:
           actions: []
-          ResetMePlease2: 0
         localTransitionStateOut:
           actions: []
-          ResetMePlease2: 0
         localTransitionTimeIn: 0
         localTransitionTimeOut: 0
         simpleOutTransition: 1
@@ -252,14 +164,236 @@ MonoBehaviour:
         globalParam: 
         holdButton: 0
         invertRestLogic: 0
+        expandIntoTransition: 1
     - rid: 1
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
         version: 1
         desktopActive: 0
         androidActive: 0
-        obj: {fileID: 1761253454326512801}
+        localOnly: 0
+        remoteOnly: 0
+        obj: {fileID: 1761253453308542592}
         mode: 0
+--- !u!114 &2739199966907819543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253453308542592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1267.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 8622879441735385178
+  references:
+    version: 2
+    RefIds:
+    - rid: 8622879441735385178
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/FakeGlass/WC
+        state:
+          actions:
+          - rid: 8622879441735385179
+        saved: 0
+        slider: 0
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+        expandIntoTransition: 1
+    - rid: 8622879441735385179
+      type: {class: WorldDropAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 0
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        obj: {fileID: 1761253454326512801}
+--- !u!114 &2709895631096430900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253453308542592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1267.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 8622879453151494144
+  references:
+    version: 2
+    RefIds:
+    - rid: 8622879453151494144
+      type: {class: Toggle, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 3
+        name: Props/FakeGlass/QueSelection
+        state:
+          actions:
+          - rid: 8622879453151494145
+        saved: 1
+        slider: 1
+        sliderInactiveAtZero: 0
+        securityEnabled: 0
+        defaultOn: 0
+        includeInRest: 0
+        exclusiveOffState: 0
+        enableExclusiveTag: 0
+        exclusiveTag: 
+        resetPhysbones: []
+        hasExitTime: 0
+        enableIcon: 0
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        enableDriveGlobalParam: 0
+        driveGlobalParam: 
+        separateLocal: 0
+        localState:
+          actions: []
+        hasTransition: 0
+        transitionStateIn:
+          actions: []
+        transitionStateOut:
+          actions: []
+        transitionTimeIn: 0
+        transitionTimeOut: 0
+        localTransitionStateIn:
+          actions: []
+        localTransitionStateOut:
+          actions: []
+        localTransitionTimeIn: 0
+        localTransitionTimeOut: 0
+        simpleOutTransition: 1
+        defaultSliderValue: 0
+        useGlobalParam: 0
+        globalParam: 
+        holdButton: 0
+        invertRestLogic: 0
+        expandIntoTransition: 1
+    - rid: 8622879453151494145
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 1761253454326512801}
+        affectAllMeshes: 0
+        propertyName: _SelectedQueue
+        propertyType: 0
+        value: 6
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2275502162568791154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253453308542592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1267.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 8622879453151494146
+  references:
+    version: 2
+    RefIds:
+    - rid: 8622879453151494146
+      type: {class: ApplyDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
+        action:
+          actions:
+          - rid: 8622879453151494147
+    - rid: 8622879453151494147
+      type: {class: MaterialPropertyAction, ns: VF.Model.StateAction, asm: VRCFury}
+      data:
+        version: 2
+        desktopActive: 0
+        androidActive: 0
+        localOnly: 0
+        remoteOnly: 0
+        renderer: {fileID: 0}
+        renderer2: {fileID: 1761253454326512801}
+        affectAllMeshes: 0
+        propertyName: _SelectedQueue
+        propertyType: 0
+        value: 0
+        valueVector: {x: 0, y: 0, z: 0, w: 0}
+        valueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1761253454326512801
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1761253454326512800
 Transform:
@@ -291,7 +425,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6043894485995315020}
+  m_Father: {fileID: 1761253453308542595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1761253454326512802
 MeshFilter:
@@ -343,237 +477,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5270341351488519871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4018748606314701172}
-  - component: {fileID: 8631656578350601857}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4018748606314701172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5270341351488519871}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6043894485995315020}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8631656578350601857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5270341351488519871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.745.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 0
-      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
---- !u!1 &6046154525769841736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6043894485995315020}
-  - component: {fileID: 6046154525769841739}
-  m_Layer: 0
-  m_Name: Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6043894485995315020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046154525769841736}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4018748606314701172}
-  - {fileID: 1761253454326512800}
-  m_Father: {fileID: 6052390681888656564}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1773428102 &6046154525769841739
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046154525769841736}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 8586065700902776718}
-    weight: 1
---- !u!1 &6046897881657083608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6052390681888656564}
-  - component: {fileID: 3357672797918991365}
-  - component: {fileID: 880908975062946937}
-  m_Layer: 0
-  m_Name: World Constraint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6052390681888656564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046897881657083608}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6043894485995315020}
-  m_Father: {fileID: 1761253453308542595}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1773428102 &3357672797918991365
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046897881657083608}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 1720321125886419532, guid: e86e0e4bebce5834ab8ed64ac5f3b3cc,
-      type: 3}
-    weight: 1
---- !u!1818360610 &880908975062946937
-ScaleConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046897881657083608}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 1, y: 1, z: 1}
-  m_AffectScalingX: 1
-  m_AffectScalingY: 1
-  m_AffectScalingZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 1720321125886419532, guid: e86e0e4bebce5834ab8ed64ac5f3b3cc,
-      type: 3}
-    weight: 1
---- !u!1 &8586065700902776717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8586065700902776718}
-  m_Layer: 0
-  m_Name: Reset Target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8586065700902776718
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8586065700902776717}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1761253453308542595}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
