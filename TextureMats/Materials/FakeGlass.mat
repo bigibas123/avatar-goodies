@@ -25,6 +25,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _SelectedQueue: 0
+    - _DetectionDiff: 4
+    - _SampleDistance: 32
+    - _SelectedFunction: 0
+    - _SelectedQueue: 1
     m_Colors: []
   m_BuildTextureStacks: []
