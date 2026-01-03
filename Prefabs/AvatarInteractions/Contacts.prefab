@@ -261,6 +261,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   localOnly: 0
+  contentTypes: -1
   collisionTags:
   - Cheese
   - cheese
@@ -506,11 +507,14 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   localOnly: 1
+  contentTypes: -1
   collisionTags:
   - 'NexuulMallet '
   - BatHit
   - CigCollission
   - Parry_Detect
+  - Weapon
+  - DamageBlunt
   allowSelf: 1
   allowOthers: 1
   receiverType: 0
