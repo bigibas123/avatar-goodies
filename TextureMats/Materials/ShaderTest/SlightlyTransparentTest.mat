@@ -101,6 +101,7 @@ Material:
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0
     - _FinalLightMultiply: 1
+    - _GlobalOutputMax: 1
     - _LTCGIStrength: 1
     - _LightAddMultiplier: 1
     - _LightEnvironmentMultiplier: 1
