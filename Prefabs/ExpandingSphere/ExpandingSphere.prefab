@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 244955d23469be745bf2d255fb3dea41, type: 2}
+  - {fileID: 2100000, guid: 5e092bfb753c6e44e97cb1ea3b96693b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1296.0
+  vrcfuryVersion: 1.1298.0
   somethingIsBroken: 0
   config:
     features: []
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1296.0
+  vrcfuryVersion: 1.1298.0
   somethingIsBroken: 0
   config:
     features: []
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1296.0
+  vrcfuryVersion: 1.1298.0
   somethingIsBroken: 0
   config:
     features: []
@@ -339,7 +339,7 @@ MonoBehaviour:
         renderer: {fileID: 0}
         renderer2: {fileID: 276070691505660744}
         affectAllMeshes: 0
-        propertyName: _Offset
+        propertyName: _DissolveStrength
         propertyType: 0
         value: 1
         valueVector: {x: 0, y: 0, z: 0, w: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1296.0
+  vrcfuryVersion: 1.1298.0
   somethingIsBroken: 0
   config:
     features: []
@@ -385,7 +385,7 @@ MonoBehaviour:
         renderer: {fileID: 0}
         renderer2: {fileID: 276070691505660744}
         affectAllMeshes: 0
-        propertyName: _Offset
+        propertyName: _DissolveStrength
         propertyType: 0
         value: 0
         valueVector: {x: 0, y: 0, z: 0, w: 0}

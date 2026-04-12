@@ -8,10 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ExpandingSphere
-  m_Shader: {fileID: 4800000, guid: 33fb9e47c9b049d6856974abbb726d01, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - DO_ALPHA_PLS
+  - ENABLE_DISSOLVE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -22,9 +24,135 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _Bump2ndMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9a230e284f3cbfc48a230695e4774d38, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexArray:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Spacey:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecSmoothMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Offset: 0
-    m_Colors: []
+    - _AL_BandMapDistance: 0
+    - _AL_BlockWireFrame: 0
+    - _AL_Mode: 0
+    - _AL_TC_BassReactive: 0.75
+    - _AL_Theme_Weight: 1
+    - _AL_WireFrameWidth: 0.05
+    - _Alpha_Multiplier: 1
+    - _Alpha_Threshold: 0.99999
+    - _Bump2ndScale: 1
+    - _BumpScale: 1
+    - _Cull: 2
+    - _Decal1Enabled: 0
+    - _Decal1_BlendMode: 0
+    - _Decal1_Opacity: 1
+    - _Decal2Enabled: 0
+    - _Decal2_BlendMode: 0
+    - _Decal2_Opacity: 1
+    - _Decal3Enabled: 0
+    - _Decal3_BlendMode: 0
+    - _Decal3_Opacity: 1
+    - _DissolveStrength: 0
+    - _DoMirrorThing: 1
+    - _EmissionStrength: 1
+    - _EnableDissolveEffect: 1
+    - _EnableProTVSquare: 0
+    - _FinalLightMultiply: 1
+    - _GlobalOutputMax: 1
+    - _LTCGIStrength: 1
+    - _LightAddMultiplier: 1
+    - _LightEnvironmentMultiplier: 1
+    - _LightMainMultiplier: 1
+    - _LightSmoothness: 1
+    - _LightSteps: 1
+    - _LightVertexMultiplier: 1
+    - _MinAmbient: 0.05
+    - _MonoChrome: 0
+    - _MultiTexture: 0
+    - _OcclusionStrength: 1
+    - _OtherTextureId: 0
+    - _OutlineWidth: 0
+    - _Rounding: 0
+    - _SquareTVTest: 0
+    - _StencilRMask: 32
+    - _StencilRef: 32
+    - _StencilWMask: 32
+    - _TV_Square_Opacity: 1
+    - _Transmissivity: 0
+    - _UDIMDiscardRow0_0: 0
+    - _UDIMDiscardRow0_1: 0
+    - _UDIMDiscardRow0_2: 0
+    - _UDIMDiscardRow0_3: 0
+    - _UDIMDiscardRow1_0: 0
+    - _UDIMDiscardRow1_1: 0
+    - _UDIMDiscardRow1_2: 0
+    - _UDIMDiscardRow1_3: 0
+    - _UDIMDiscardRow2_0: 0
+    - _UDIMDiscardRow2_1: 0
+    - _UDIMDiscardRow2_2: 0
+    - _UDIMDiscardRow2_3: 0
+    - _UDIMDiscardRow3_0: 0
+    - _UDIMDiscardRow3_1: 0
+    - _UDIMDiscardRow3_2: 0
+    - _UDIMDiscardRow3_3: 0
+    - _Uses2ndNormalMap: 0
+    - _UsesAlpha: 1
+    - _UsesNormalMap: 0
+    - _VRCLVStrength: 1
+    - _Voronoi: 0
+    - _ZTestFWA: 4
+    - _ZTestOFWB: 4
+    - _ZTestOL: 4
+    - _ZTestSP: 4
+    - _ZTestTFWB: 2
+    - _ZWriteOFWB: 1
+    - _ZWriteTFWB: 1
+    m_Colors:
+    - _Decal1_Position: {r: 0, g: 0, b: 1, a: 1}
+    - _Decal2_Position: {r: 0, g: 0, b: 1, a: 1}
+    - _Decal3_Position: {r: 0, g: 0, b: 1, a: 1}
+    - _TV_Square_Position: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
