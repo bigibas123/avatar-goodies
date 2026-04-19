@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BIGI_LTCGI_ENABLED
   - DO_ALPHA_PLS
   m_InvalidKeywords: []
   m_LightmapFlags: 1
@@ -95,8 +96,10 @@ Material:
     - _Decal3Enabled: 0
     - _Decal3_BlendMode: 0
     - _Decal3_Opacity: 1
+    - _DissolveStrength: 0
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
+    - _EnableDissolveEffect: 0
     - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _EnableSpecularSmooth: 0

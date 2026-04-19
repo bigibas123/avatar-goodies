@@ -99,10 +99,11 @@ Material:
     - _DoMirrorThing: 1
     - _EmissionStrength: 1
     - _EnableDissolveEffect: 1
+    - _EnableLTCGI: 0
     - _EnableProTVSquare: 0
     - _FinalLightMultiply: 1
     - _GlobalOutputMax: 1
-    - _LTCGIStrength: 1
+    - _LTCGIStrength: 0
     - _LightAddMultiplier: 1
     - _LightEnvironmentMultiplier: 1
     - _LightMainMultiplier: 1

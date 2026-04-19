@@ -98,11 +98,15 @@ Material:
     - _Decal3Enabled: 0
     - _Decal3_BlendMode: 0
     - _Decal3_Opacity: 1
+    - _DissolveStrength: 0
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
+    - _EnableDissolveEffect: 0
+    - _EnableLTCGI: 0
     - _EnableProTVSquare: 0
     - _FinalLightMultiply: 1
-    - _LTCGIStrength: 1
+    - _GlobalOutputMax: 1
+    - _LTCGIStrength: 0
     - _LightAddMultiplier: 1
     - _LightEnvironmentMultiplier: 1
     - _LightMainMultiplier: 1
@@ -122,6 +126,22 @@ Material:
     - _StencilWMask: 32
     - _TV_Square_Opacity: 0
     - _Transmissivity: 0.05
+    - _UDIMDiscardRow0_0: 0
+    - _UDIMDiscardRow0_1: 0
+    - _UDIMDiscardRow0_2: 0
+    - _UDIMDiscardRow0_3: 0
+    - _UDIMDiscardRow1_0: 0
+    - _UDIMDiscardRow1_1: 0
+    - _UDIMDiscardRow1_2: 0
+    - _UDIMDiscardRow1_3: 0
+    - _UDIMDiscardRow2_0: 0
+    - _UDIMDiscardRow2_1: 0
+    - _UDIMDiscardRow2_2: 0
+    - _UDIMDiscardRow2_3: 0
+    - _UDIMDiscardRow3_0: 0
+    - _UDIMDiscardRow3_1: 0
+    - _UDIMDiscardRow3_2: 0
+    - _UDIMDiscardRow3_3: 0
     - _Uses2ndNormalMap: 0
     - _UsesAlpha: 0
     - _UsesNormalMap: 0
