@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BIGI_LTCGI_ENABLED
   - DECAL_1_ENABLED
   - DECAL_2_ENABLED
   m_InvalidKeywords:
@@ -102,7 +103,7 @@ Material:
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
     - _EnableDissolveEffect: 0
-    - _EnableLTCGI: 0
+    - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _FinalLightMultiply: 1
     - _GlobalOutputMax: 1

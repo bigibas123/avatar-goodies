@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BIGI_LTCGI_ENABLED
   - DO_ALPHA_PLS
   - ENABLE_DISSOLVE
   m_InvalidKeywords: []
@@ -99,7 +100,7 @@ Material:
     - _DoMirrorThing: 1
     - _EmissionStrength: 1
     - _EnableDissolveEffect: 1
-    - _EnableLTCGI: 0
+    - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _FinalLightMultiply: 1
     - _GlobalOutputMax: 1

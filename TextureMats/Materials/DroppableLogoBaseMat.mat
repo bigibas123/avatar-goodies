@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - BIGI_LTCGI_ENABLED
   m_InvalidKeywords:
   - LTCGI_ENABLED
   m_LightmapFlags: 1
@@ -100,7 +101,7 @@ Material:
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
     - _EnableDissolveEffect: 0
-    - _EnableLTCGI: 0
+    - _EnableLTCGI: 1
     - _EnableProTVSquare: 0
     - _FinalLightMultiply: 1
     - _GlobalOutputMax: 1
