@@ -38,7 +38,8 @@ But it's a start...
 * **glove_r**: Covering of hand midsection (covering of fingers is optional) (left)
 * **navel_piercing**: Navel piercing (might needd to be split up, currently refers to middle and bottom ridge of navel)
 * **belt**: Accessory wrapping slightly above hips
-* **panties**: Form fitting clothing article around hips
+* **slip**: Form fitting clothing article around the hips and crotch area
+* **boxers**: Clothing covering the legs around the crotch area, frequently combined with slip, some garter belts might count as *boxers* but not as *slip*
 * **pants**: Clothing slightly seperated around hip area
 * **skirt**: Clothing with quite a large seperation around the hip area
 * **stocking_l**: Form fitting clothing around entire left leg
