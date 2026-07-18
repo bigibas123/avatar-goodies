@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8511047393946426903}
   - {fileID: 5098337754110843173}
+  - {fileID: 727132810274207604}
   m_Father: {fileID: 6014019912849638548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &300021782829747276
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -119,6 +120,7 @@ MonoBehaviour:
         rootBindingsApplyToAvatar: 0
         rewriteBindings: []
         allowMissingAssets: 0
+        injectParams: []
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -189,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -249,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -350,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   radius: 0.06
   height: 0.15
   rootTransform: {fileID: 0}
@@ -402,7 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -430,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -457,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -520,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -547,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -568,6 +570,7 @@ MonoBehaviour:
           objRef: {fileID: 2800000, guid: 67ffc96c6f31a5d4381a7b2100c0f4f3, type: 3}
         menuPath: SPS
         saveSockets: 0
+        legacyModeEnabledOnAvatarLoad: 0
 --- !u!1 &4880992257669818434
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +580,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2363255365702483529}
-  - component: {fileID: 5730539822874690385}
   - component: {fileID: 8112336733630711455}
   m_Layer: 0
   m_Name: DefaultMoves
@@ -601,35 +603,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8855121628758205837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5730539822874690385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4880992257669818434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 1766867949884801024
-  references:
-    version: 2
-    RefIds:
-    - rid: 1766867949884801024
-      type: {class: MoveMenuItem, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 3
-        fromPath: Lock Locomotion
-        toPath: Body/Lock Locomotion
 --- !u!114 &8112336733630711455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,7 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -705,7 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -733,7 +706,7 @@ MonoBehaviour:
             guid: 
             id: 5dfc3a9403f2de043842a0727be3fb87|Assets/Characters/Common/Prefabs/Base_Components/LockLocomotion/LockLocomotionMenu.asset
             objRef: {fileID: 11400000, guid: 5dfc3a9403f2de043842a0727be3fb87, type: 2}
-          prefix: 
+          prefix: Body
         prms:
         - parameters:
             version: 1
@@ -750,6 +723,7 @@ MonoBehaviour:
         rootBindingsApplyToAvatar: 0
         rewriteBindings: []
         allowMissingAssets: 0
+        injectParams: []
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -820,7 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -952,7 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1258.0
+  vrcfuryVersion: 1.1369.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1026,6 +1000,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8479653049806574529, guid: a0a4d86be0bcdc84db7e9383d09c63cd, type: 3}
   m_PrefabInstance: {fileID: 228937281587875414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1153558301457773622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3657277842230797803}
+    m_Modifications:
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028743969228905405, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_Name
+      value: VSync
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+--- !u!4 &727132810274207604 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+  m_PrefabInstance: {fileID: 1153558301457773622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3594822257064925122
 PrefabInstance:

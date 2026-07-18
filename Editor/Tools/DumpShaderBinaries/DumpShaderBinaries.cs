@@ -25,6 +25,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Utility for dumping compiled shader programs from unity, for the purpose of using offline analysis tools provided by various software vendors 
 */
 
+
+#if MORE_MENUS_PLEASE
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -774,3 +776,5 @@ namespace SLZ.SLZEditorTools
         #endregion // Frame_Debugger_Reflection
     }
 }
+
+#endif

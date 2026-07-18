@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1784060094757908934}
   m_Father: {fileID: 8037837688367046971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3083010918987919069
@@ -60,10 +61,16 @@ MonoBehaviour:
   - 0
   - 0
   PointLightVolumes: []
-  Resolution: 128
-  Format: 17
-  LightsBrightnessCutoff: 0.35
+  CookieResolution: 128
+  BrightnessCutoff: 0.35
+  ShadowResolution: 256
+  ShadowTextureFormat: 1
+  ShadowBleedReduction: 0.2
+  ShadowMinVariance: 0
+  ShadowMinVarianceMobile: 1
   BakingMode: 0
+  VolumeBitmask: 1
+  ProbeBitmask: 1
   Denoise: 1
   DilateInvalidProbes: 1
   DilationIterations: 1
@@ -73,7 +80,9 @@ MonoBehaviour:
   LightProbesBlending: 1
   SharpBounds: 1
   AutoUpdateVolumes: 0
+  AutoUpdateTextures: 1
   AdditiveMaxOverdraw: 4
+  ForceSceneLighting: 0
   DestroyInPlayMode: 0
   LightVolumeDataList:
   - Weight: 0
@@ -84,9 +93,9 @@ MonoBehaviour:
     LightVolumeInstance: {fileID: 8995410411754828420}
   - Weight: 0
     LightVolumeInstance: {fileID: 8464206956036443987}
+  AtlasPostProcessors: []
   LightVolumeManager: {fileID: 3608426183386343210}
   _bakingModePrev: 0
-  IsLegacyUVWConverted: 1
 --- !u!114 &3608426183386343210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,23 +108,122 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c164fbf42cf794a8edc0fd006e1b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightVolumeAtlas: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
   LightVolumeAtlasBase: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
-  AtlasPostProcessors: []
+  LightVolumeAtlas: {fileID: 11700000, guid: 2400229dc9c4a3441b8f1ae88dcb8000, type: 2}
+  CustomTexturesWidth: 128
+  CustomTexturesHeight: 128
+  LightsBrightnessCutoff: 0.35
+  ShadowTexturesWidth: 256
+  ShadowTexturesHeight: 256
+  ShadowTextureFormat: 1
+  ShadowBleedReduction: 0.2
+  ShadowMinVariance: 0.0001
   LightProbesBlending: 1
   SharpBounds: 1
   AutoUpdateVolumes: 0
+  AutoUpdateTextures: 1
   AdditiveMaxOverdraw: 4
-  LightsBrightnessCutoff: 0.35
-  LightVolumeInstances:
-  - {fileID: 234974844610106549}
-  - {fileID: 4751609609175592320}
-  - {fileID: 8995410411754828420}
-  - {fileID: 8464206956036443987}
+  ForceSceneLighting: 0
+  LightVolumeInstances: []
   PointLightVolumeInstances: []
   CustomTextures: {fileID: 0}
   CubemapsCount: 0
-  IsRangeDirty: 0
+  ShadowTextures: {fileID: 0}
+  ShadowCubemapsCount: 0
+  ShadowMapsCount: 0
+  CubemapFaceMaterial: {fileID: 0}
+  RuntimeShadowCamera: {fileID: -3773475900066540861}
+  RuntimeShadowDepthEncodeMaterial: {fileID: 0}
+  RuntimeShadowBlurMaterial: {fileID: 0}
+  RuntimeShadowBlurQualityPreset: -1
+  RuntimeShadowBlurUniformKeyword: -1
+  RuntimeShadowBlurDirectKeyword: -1
+  RuntimeShadowBlurSphericalKeyword: -1
+  HasAutoCustomTextureUpdates: 0
+  HasAutoShadowTextureUpdates: 0
+--- !u!1 &5038340490708871833
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784060094757908934}
+  - component: {fileID: -3773475900066540861}
+  m_Layer: 0
+  m_Name: Runtime Shadow Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1784060094757908934
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038340490708871833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3653837753819199518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &-3773475900066540861
+Camera:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038340490708871833}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &8073059980977592514
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +271,10 @@ PrefabInstance:
     - target: {fileID: 2282447612060195456, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: m_Name
       value: BrightBlueSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
+      propertyPath: RegistryOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5597472184405870685, guid: 3b6a35ff598c9af45bc172d1c9af5b51, type: 3}
       propertyPath: LightVolumeManager
@@ -255,6 +367,10 @@ PrefabInstance:
     - target: {fileID: 3919298807700221787, guid: 6661c788fa22777429829af246e532d0, type: 3}
       propertyPath: m_Name
       value: BrightWhiteSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
+      propertyPath: RegistryOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4318819837781181657, guid: 6661c788fa22777429829af246e532d0, type: 3}
       propertyPath: LightVolumeManager
@@ -385,6 +501,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
+      propertyPath: RegistryOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247620657981347499, guid: 0a3e14a7451471a439e1f5a76d47a422, type: 3}
       propertyPath: LightVolumeManager
       value: 
       objectReference: {fileID: 3608426183386343210}
@@ -436,6 +556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8037837688367046971}
     m_Modifications:
+    - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
+      propertyPath: RegistryOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2346445475602079241, guid: 3d7108cbc17868044a0eacf066821eb9, type: 3}
       propertyPath: LightVolumeManager
       value: 
