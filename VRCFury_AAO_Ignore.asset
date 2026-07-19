@@ -41,5 +41,8 @@ MonoBehaviour:
   - className: VRCFuryTest
     guid: 8ef9e6b301ba4ac59c2f7d2b836565e7
     fileID: 11500000
+  - className: VRCFurySpsGreenScreenFix
+    guid: 62488ce102aa93e4b82c4e864ce2d8f4
+    fileID: 11500000
   parametersReadByExternalTools: []
   parametersChangedByExternalTools: []
