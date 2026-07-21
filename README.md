@@ -51,6 +51,8 @@ But it's a start...
 * **tail**: Part that comes out between the butcrack 
 * **shoe_l**: Covers left foot
 * **shoe_r**: Covers right foot
+* **sock_l**: Covers left foot form-fitting
+* **sock_r**: Covers right foot form-fitting 
 * **high_heel_l**: Requires left foot to be in high heel positions,<br/>
               you'd have an *exclusive off state* toggle with this exclusive tag setting the high heels blendshape to 0 on the main avi
               and an apply during upload setting the high heels blendshape to 100
