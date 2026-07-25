@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8511047393946426903}
   - {fileID: 5098337754110843173}
+  - {fileID: 849327863584847038}
   - {fileID: 727132810274207604}
   m_Father: {fileID: 6014019912849638548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -352,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   radius: 0.06
   height: 0.15
   rootTransform: {fileID: 0}
@@ -404,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -459,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -522,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -613,7 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -640,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -708,7 +709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -769,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -885,7 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1018,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1369.0
+  vrcfuryVersion: 1.1384.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1155,6 +1156,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1879417601851589442, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
   m_PrefabInstance: {fileID: 1153558301457773622}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3320294763754671325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3657277842230797803}
+    m_Modifications:
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946562089263428192, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: cachedExecutionGroupIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946562089263428192, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: latestValidExecutionGroupIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969986300718363375, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_Name
+      value: VF_UE_TongueSteps_VRCFT
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923609399596397873, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: cachedExecutionGroupIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923609399596397873, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: latestValidExecutionGroupIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663561798402423689, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2585795769479461216, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+--- !u!4 &849327863584847038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2728448342756374627, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+  m_PrefabInstance: {fileID: 3320294763754671325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3594822257064925122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1210,10 +1294,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5070822277137234993}
   m_SourcePrefab: {fileID: 100100000, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
 --- !u!4 &5098337754110843173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
   m_PrefabInstance: {fileID: 3594822257064925122}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7317240887149254719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
+  m_PrefabInstance: {fileID: 3594822257064925122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5070822277137234993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317240887149254719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1384.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3446571515155316814
+  references:
+    version: 2
+    RefIds:
+    - rid: 3446571515155316814
+      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
