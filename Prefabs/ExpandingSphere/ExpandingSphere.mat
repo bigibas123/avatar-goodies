@@ -12,13 +12,13 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - BIGI_LTCGI_ENABLED
   - DO_ALPHA_PLS
   - ENABLE_DISSOLVE
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_InvalidKeywords:
+  - BIGI_LTCGI_ENABLED
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -111,7 +111,7 @@ Material:
     - _LightSmoothness: 1
     - _LightSteps: 1
     - _LightVertexMultiplier: 1
-    - _MinAmbient: 0.05
+    - _MinAmbient: 0.005
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 1

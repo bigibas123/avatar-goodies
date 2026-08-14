@@ -12,10 +12,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - BIGI_LTCGI_ENABLED
   - DECAL_1_ENABLED
   - DECAL_2_ENABLED
   m_InvalidKeywords:
+  - BIGI_LTCGI_ENABLED
   - LTCGI_ENABLED
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -114,12 +114,12 @@ Material:
     - _LightSmoothness: 1
     - _LightSteps: 1
     - _LightVertexMultiplier: 1
-    - _MinAmbient: 0.05
+    - _MinAmbient: 0.005
     - _MonoChrome: 0
     - _MultiTexture: 0
     - _OcclusionStrength: 1
     - _OtherTextureId: 0
-    - _OutlineWidth: 0.05
+    - _OutlineWidth: 0
     - _Rounding: 0
     - _SquareTVTest: 0
     - _StencilRMask: 32
