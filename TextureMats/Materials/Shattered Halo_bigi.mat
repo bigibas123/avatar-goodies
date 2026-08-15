@@ -91,13 +91,13 @@ Material:
     - _Cull: 2
     - _Decal1Enabled: 0
     - _Decal1_BlendMode: 0
-    - _Decal1_Opacity: 1
+    - _Decal1_Opacity: 0
     - _Decal2Enabled: 0
     - _Decal2_BlendMode: 0
-    - _Decal2_Opacity: 1
+    - _Decal2_Opacity: 0
     - _Decal3Enabled: 0
     - _Decal3_BlendMode: 0
-    - _Decal3_Opacity: 1
+    - _Decal3_Opacity: 0
     - _DissolveStrength: 0
     - _DoMirrorThing: 1
     - _EmissionStrength: 2

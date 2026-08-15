@@ -11,11 +11,11 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8a99ff97b2650d7429bac9b889aac4e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - DECAL_1_ENABLED
-  - DECAL_2_ENABLED
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - BIGI_LTCGI_ENABLED
+  - DECAL_1_ENABLED
+  - DECAL_2_ENABLED
   - LTCGI_ENABLED
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -98,7 +98,7 @@ Material:
     - _Decal2_Opacity: 0
     - _Decal3Enabled: 0
     - _Decal3_BlendMode: 0
-    - _Decal3_Opacity: 1
+    - _Decal3_Opacity: 0
     - _DissolveStrength: 0
     - _DoMirrorThing: 1
     - _EmissionStrength: 2
