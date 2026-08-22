@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   radius: 0.06
   height: 0.15
   rootTransform: {fileID: 0}
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -475,6 +475,7 @@ MonoBehaviour:
         version: 0
         disableLayers:
         - name: '[MMD Disable]'
+        - name: '[MMD Disable]*'
         globalParam: MMD
 --- !u!1 &3090701664975580192
 GameObject:
@@ -523,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -552,7 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -614,7 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -641,7 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -709,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -770,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -886,7 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1019,7 +1020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1236,6 +1237,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3969986300718363375, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8267613228904387154}
+    - targetCorrespondingSourceObject: {fileID: 3969986300718363375, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8458868921292178117}
   m_SourcePrefab: {fileID: 100100000, guid: b022bab8112640045a1d4c5c7ba78fac, type: 3}
 --- !u!4 &849327863584847038 stripped
 Transform:
@@ -1261,7 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
+  vrcfuryVersion: 1.1421.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1276,6 +1280,33 @@ MonoBehaviour:
         version: 3
         fromPath: Face Tracking
         toPath: VRCFT/Face Tracking
+--- !u!114 &8458868921292178117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804879120204824114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1421.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3537452673486028919
+  references:
+    version: 2
+    RefIds:
+    - rid: 3537452673486028919
+      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 0
 --- !u!1001 &3594822257064925122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1331,45 +1362,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5070822277137234993}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
 --- !u!4 &5098337754110843173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8584899821783518951, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
   m_PrefabInstance: {fileID: 3594822257064925122}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7317240887149254719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6084169695969873917, guid: ca618adb2c3333545a1f36d72a73a3ef, type: 3}
-  m_PrefabInstance: {fileID: 3594822257064925122}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5070822277137234993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7317240887149254719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 3
-  unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1390.0
-  somethingIsBroken: 0
-  config:
-    features: []
-  content:
-    rid: 3446571515155316814
-  references:
-    version: 2
-    RefIds:
-    - rid: 3446571515155316814
-      type: {class: DeleteDuringUpload, ns: VF.Model.Feature, asm: VRCFury}
-      data:
-        version: 0
