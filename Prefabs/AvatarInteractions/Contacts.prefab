@@ -258,6 +258,7 @@ MonoBehaviour:
   shapeType: 0
   radius: 0.07
   height: 2
+  size: {x: 1, y: 1, z: 1}
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   localOnly: 0
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -348,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -450,8 +451,66 @@ Transform:
   - {fileID: 4801945283997105625}
   - {fileID: 6198026969474134242}
   - {fileID: 938965111478459974}
+  - {fileID: 4743578056381633106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4695120890473222798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2750514352757751534}
+  - component: {fileID: 1402229554161957419}
+  m_Layer: 0
+  m_Name: HeadCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2750514352757751534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695120890473222798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.0371, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4743578056381633106}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1402229554161957419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695120890473222798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631200402, guid: 2a2c05204084d904aa4945ccff20d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootTransform: {fileID: 0}
+  shapeType: 1
+  insideBounds: 0
+  radius: 0.1
+  height: 0.3
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  bonesAsSpheres: 0
+  globalCollision: 2
+  globalCollisionAllowSelf: 0
+  globalCollisionAllowOthers: 1
+  globalCollisionFlags: -1
+  _globalCollisionSerializationVersion: 1
 --- !u!1 &6389712538901983740
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -531,8 +590,13 @@ MonoBehaviour:
         toggleParam: 
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
+        overwriteLocomotion: 1
         rewriteBindings: []
         allowMissingAssets: 0
+        injectParams: []
+        faceTrackingMeshes: []
+        faceTrackingBlendshapeSets: []
+        faceTrackingParameterBehaviors: []
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -573,6 +637,7 @@ MonoBehaviour:
   shapeType: 0
   radius: 0.25
   height: 2
+  size: {x: 1, y: 1, z: 1}
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   localOnly: 0
@@ -581,9 +646,15 @@ MonoBehaviour:
   - Fire
   allowSelf: 1
   allowOthers: 1
+  useFaceProximity: 0
   receiverType: 2
   parameter: FireTriggered
   minVelocity: 0.05
+  writeToMaterials: 0
+  writeToMaterialsContactTags: 0
+  separateShaderParameter: 
+  shaderTargetRenderers: []
+  advancedParameters: 0
 --- !u!114 &5299387612242680517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -652,7 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -781,6 +852,7 @@ MonoBehaviour:
   shapeType: 0
   radius: 0.1
   height: 2
+  size: {x: 1, y: 1, z: 1}
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   localOnly: 1
@@ -794,9 +866,15 @@ MonoBehaviour:
   - DamageBlunt
   allowSelf: 1
   allowOthers: 1
+  useFaceProximity: 0
   receiverType: 0
   parameter: HeadBonk_Hit
   minVelocity: 0.05
+  writeToMaterials: 0
+  writeToMaterialsContactTags: 0
+  separateShaderParameter: 
+  shaderTargetRenderers: []
+  advancedParameters: 0
 --- !u!114 &7944149789074927616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -848,8 +926,13 @@ MonoBehaviour:
         toggleParam: 
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
+        overwriteLocomotion: 1
         rewriteBindings: []
         allowMissingAssets: 0
+        injectParams: []
+        faceTrackingMeshes: []
+        faceTrackingBlendshapeSets: []
+        faceTrackingParameterBehaviors: []
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -888,7 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -957,7 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1276,7 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1278.0
+  vrcfuryVersion: 1.1436.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1346,3 +1429,105 @@ MonoBehaviour:
         remoteOnly: 0
         obj: {fileID: 7473440452768320585}
         mode: 0
+--- !u!1 &8957995663950766002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4743578056381633106}
+  - component: {fileID: 5068570417471457376}
+  m_Layer: 0
+  m_Name: HeadColliderHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4743578056381633106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957995663950766002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.298381e-16, y: 1.1996484, z: 0.0015047789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2750514352757751534}
+  m_Father: {fileID: 1196337129929525722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5068570417471457376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957995663950766002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1436.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3382421402629177436
+  references:
+    version: 2
+    RefIds:
+    - rid: 3382421402629177436
+      type: {class: ArmatureLink, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 7
+        propBone: {fileID: 4695120890473222798}
+        linkTo:
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: PBCollider_Head
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: Hair_root
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: Head_root
+        - useBone: 1
+          bone: 10
+          useObj: 0
+          obj: {fileID: 0}
+          offset: 
+        removeBoneSuffix: 
+        removeParentConstraints: 1
+        forceMergedName: 
+        forceOneWorldScale: 0
+        recursive: 0
+        alignPosition: 1
+        alignRotation: 1
+        alignScale: 1
+        autoScaleFactor: 0
+        scalingFactorPowersOf10Only: 1
+        skinRewriteScalingFactor: 1
+        useOptimizedUpload: 0
+        useBoneMerging: 0
+        keepBoneOffsets: 0
+        physbonesOnAvatarBones: 0
+        boneOnAvatar: 0
+        bonePathOnAvatar: 
+        fallbackBones: 
+        keepBoneOffsets2: 2
+        linkMode: 4

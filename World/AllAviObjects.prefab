@@ -3050,14 +3050,6 @@ PrefabInstance:
       propertyPath: enableGlobalVideoTexture
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 967283404053619123, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
-      propertyPath: showVideoPreviewInComponent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208934818770322006, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
-      propertyPath: m_Url
-      value: https://bigibas123.dingemans.cc/Shibuya-AL-Version.mp4
-      objectReference: {fileID: 0}
     - target: {fileID: 8800328339556915021, guid: 6e8e0ee5a3655884ea49447ae9e6e665, type: 3}
       propertyPath: m_Name
       value: AudioLinkAvatar
