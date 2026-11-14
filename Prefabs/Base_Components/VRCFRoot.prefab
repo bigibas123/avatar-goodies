@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -127,6 +127,8 @@ MonoBehaviour:
         faceTrackingMeshes: []
         faceTrackingBlendshapeSets: []
         faceTrackingParameterBehaviors: []
+        visemeDampenMode: 0
+        visemeDampenAmount: 1
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -197,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -258,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -286,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -377,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -406,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -468,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -495,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -516,7 +518,15 @@ MonoBehaviour:
           objRef: {fileID: 2800000, guid: 67ffc96c6f31a5d4381a7b2100c0f4f3, type: 3}
         menuPath: SPS
         saveSockets: 0
+        addDpsTipLight: 0
+        tpsDepthAnimationCompatibility: 0
+        legacySocketCompatibility: 0
+        autoModeAvailable: 1
+        autoModeDefaultOn: 0
+        autoModeSaved: 0
+        legacyModeAvailable: 0
         legacyModeEnabledOnAvatarLoad: 0
+        legacyModeSaved: 0
 --- !u!1 &4880992257669818434
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -624,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -674,6 +684,8 @@ MonoBehaviour:
         faceTrackingMeshes: []
         faceTrackingBlendshapeSets: []
         faceTrackingParameterBehaviors: []
+        visemeDampenMode: 0
+        visemeDampenAmount: 1
         injectSpsDepthParam: 
         injectSpsVelocityParam: 
         controller:
@@ -744,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -876,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1065,6 +1077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VSync
       objectReference: {fileID: 0}
+    - target: {fileID: 5028743969228905405, guid: ea41adc76c4f260f594cd7d147d69de5, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1187,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
@@ -1216,7 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1436.0
+  vrcfuryVersion: 1.1454.0
   somethingIsBroken: 0
   config:
     features: []
